@@ -1,1 +1,1 @@
-Tänkte skapa denna till at börja med
+Salmade anteckningar från möten Mail samt Helsingborg Convention & Event Bureau. 
