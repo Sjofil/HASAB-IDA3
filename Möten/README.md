@@ -1,1 +1,1 @@
-Salmade anteckningar från möten Mail samt Helsingborg Convention & Event Bureau. 
+Salmade anteckningar från möten med Malin samt Helsingborg Convention & Event Bureau. 
