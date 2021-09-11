@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+
+% ---- Commands ------- %
+\newcommand{\documentNumber}[1]{
+    \LARGE  \textbf{ Kravprocessbok } \\
+    \medskip
+}
+\newcommand{\documentVersion}[1]{
+    \medskip
+}
+\newcommand{\documentTitle}[1]{
+    \centerline{\rule{13cm}{0.4pt}}
+    \bigskip \bigskip
+    \LARGE \textbf{Projekt IDA3} \\
+    \bigskip
+    \LARGE {#1} \\
+    \bigskip \bigskip
+    \centerline{\rule{13cm}{0.4pt}}
+}
+\newcommand{\documentGroup}[1]{
+    \bigskip \bigskip
+    \LARGE Group {#1} \\
+    \bigskip
+}
+\newcommand{\documentResponsible}[1]{
+    \LARGE Responsible: {#1} \\
+    \medskip
+}
+\newcommand{\documentAuthors}[1]{
+    \LARGE Authors: {#1} \\
+    \medskip    
+}
+\newcommand{\documentDate}[1]{
+    \date {#1} 
+}
+\renewcommand{\arraystretch}{1.7}  % Vertical padding for tables
+
+\renewcommand{\contentsname}{Innehållsförtäckning}
+
+% --- Header & Footer ---- %
+\pagestyle{fancy}
+\lhead{\leftmark}
+\rhead{}
+\rfoot{\thepage}
+\cfoot{}
+\lfoot{}
+
+
+% ------------------------------------------------ #
+
+% ----- FILL THIS ----- %
+\title {
+    % Full name - SHORTNAME
+    \documentTitle {Helsingborg Event and Convention Bureau}
+    
+    % Format: YYYY-MM-DD
+    \documentDate {2021-08-12}
+}
+
+\begin{document}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+
+\tableofcontents
+
+
+\newpage
+
+\section{Vecka 36 första inlämning}
+
+\end{document}
