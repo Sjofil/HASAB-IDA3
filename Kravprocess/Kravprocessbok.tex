@@ -7,7 +7,8 @@
 
 % ---- Commands ------- %
 \newcommand{\documentNumber}[1]{
-    \LARGE  \textbf{ Kravprocessbok } \\
+    \LARGE  \textbf{ Kravprocessbok }
+    \\
     \medskip
 }
 \newcommand{\documentVersion}[1]{
@@ -22,22 +23,12 @@
     \bigskip \bigskip
     \centerline{\rule{13cm}{0.4pt}}
 }
-\newcommand{\documentGroup}[1]{
-    \bigskip \bigskip
-    \LARGE Group {#1} \\
-    \bigskip
-}
-\newcommand{\documentResponsible}[1]{
-    \LARGE Responsible: {#1} \\
-    \medskip
-}
-\newcommand{\documentAuthors}[1]{
-    \LARGE Authors: {#1} \\
-    \medskip    
-}
+
 \newcommand{\documentDate}[1]{
     \date {#1} 
 }
+
+
 \renewcommand{\arraystretch}{1.7}  % Vertical padding for tables
 
 \renewcommand{\contentsname}{Innehållsförtäckning}
@@ -55,6 +46,8 @@
 
 % ----- FILL THIS ----- %
 \title {
+    \documentNumber {01}    
+
     % Full name - SHORTNAME
     \documentTitle {Helsingborg Event and Convention Bureau}
     
@@ -65,6 +58,7 @@
 \begin{document}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
 \maketitle
+\author{}
 \thispagestyle{empty}
 
 \newpage
@@ -74,6 +68,13 @@
 
 \newpage
 
-\section{Vecka 36 första inlämning}
+\section{Första inlämning v.36}
+
+\section{Krav}
+    \subsection{Funktionella krav}
+    
+    \subsection{Design krav}
+    
+    \subsection{Projekt krav}
 
 \end{document}
