@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+
+% ---- Commands ------- %
+
+\newcommand{\documentVersion}[1]{
+    \medskip
+}
+\newcommand{\documentTitle}[1]{
+    \centerline{\rule{13cm}{0.4pt}}
+    \bigskip \bigskip
+    \LARGE \textbf{Sammanställning av information} \\
+    \bigskip
+    \LARGE {#1} \\
+    \bigskip \bigskip
+    \centerline{\rule{13cm}{0.4pt}}
+}
+
+\newcommand{\documentAuthors}[1]{
+    \LARGE Authors: {#1} \\
+    \medskip    
+}
+\newcommand{\documentDate}[1]{
+    \date {#1} 
+}
+
+% ------------------------------------------------ #
+
+% ----- FILL THIS ----- %
+\title {
+    % Full name - SHORTNAME
+    \documentTitle {Helsingborg Event and Convention Bureau}
+    
+    % Format: YYYY-MM-DD
+    \documentDate {}
+}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+
+
+
+
+\newpage
+
+\section{Vad handlar projektet om?}
+    Skapa ett verktyg som gör det möjligt för aktörer inom Helsingborg att rappotera in data om hållbarhetsfrågor. Aktörer omfattar brascherna Hotell, flygplatser, byråer, restauranger, arenor samt aktörer med akademisk förankring, till exempel Campus Helsingborg. Datan ska sedan sammanställas varje år till ett format som gör det enkelt för Helsingborg Convention and Event Bureau att skicka vidare till slutstationen GDSM. Det är även från GDSM frågorna om hållbarhet kommer ifrån.
+    \\
+    
+\section{Vilka krav har vi kunnat ta fram?}
+    \subsection{Kvalitetskrav samt icke funktionella krav}
+        \begin{itemize}
+            \item Ska framförallt vara användarvänlig och effektiv(Detta måste såklart göras om till kvalitetskrav och vara mer mätbart).
+            \\
+            \item Verktyget ska vara en hemsida.
+            \\
+            \item Aktörer ska få tillgång till hemsida via länk som skickas ut med mail(detta står HCEB står för).
+            \\
+            \item Hotellaktörer ska endast svara på frågor inom deras bransch, likväl resterande branscher. 
+            \\
+            \item Eftersom GDSM varje år kan ändra sin frågor kommer en admin inlogg till hemsidan behövas. Detta innebär också att ett enkelt sätt att extrahera statistiken kommer att vara möjligt via detta admin inlogg. 
+            \\
+            \item Små snuttar med nödvändig information ska finnas tillgänglig att läsa under utvalda frågor.
+            \\
+             \item Sammanställningen av data måste såklart generera en felfri statistik.(Göras om till ett mer konkret krav).
+        \end{itemize}
+        
+       \subsection{Funktionella krav}
+            \begin{itemize}
+             \item Indata har vi fått tillgång till.
+             \end{itemize}
+    
+
+
+\end{document}
