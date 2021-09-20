@@ -1,0 +1,446 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+
+% ---- Commands ------- %
+\newcommand{\documentNumber}[1]{
+    \LARGE  \textbf{ Kravprocessbok }
+    \\
+    \medskip
+}
+\newcommand{\documentVersion}[1]{
+    \medskip
+}
+\newcommand{\documentTitle}[1]{
+    \centerline{\rule{13cm}{0.4pt}}
+    \bigskip \bigskip
+    \LARGE \textbf{Projekt IDA3} \\
+    \bigskip
+    \LARGE {#1} \\
+    \bigskip \bigskip
+    \centerline{\rule{13cm}{0.4pt}}
+}
+
+\newcommand{\documentDate}[1]{
+    \date {#1} 
+}
+
+
+\renewcommand{\arraystretch}{1.7}  % Vertical padding for tables
+
+\renewcommand{\contentsname}{Innehållsförtäckning}
+
+% --- Header & Footer ---- %
+\pagestyle{fancy}
+\lhead{\leftmark}
+\rhead{}
+\rfoot{\thepage}
+\cfoot{}
+\lfoot{}
+
+
+% ------------------------------------------------ #
+
+% ----- FILL THIS ----- %
+\title {
+    \documentNumber {01}    
+
+    % Full name - SHORTNAME
+    \documentTitle {Helsingborg Event and Convention Bureau}
+    
+    % Format: YYYY-MM-DD
+    \documentDate {2021-08-20}
+    \documentVersion Vv 0.2
+    
+    \author{Anna Bergvall - Oscar Blixt - Pontus Persson - Filip Sjövall - David Vilppu}
+}
+
+\begin{document}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+\maketitle
+
+\thispagestyle{empty}
+
+
+
+\newpage
+
+\tableofcontents
+
+
+\newpage
+
+\section{Dokument Historia}
+\begin{tabular}{ l | l | l }
+    Version & Date & Description \\
+    \hline
+    0.1 & 2021-09-12 & Dokumentet skapat. Övning 1 och 2 inlagd. \\
+    \hline
+    0.2 & 2021-09-20 & Övning 3 och 4 inlagd.
+   
+\end{tabular}
+
+\newpage
+
+\section{Loggbok}
+    \subsection{Vecka 36}
+    \\
+    Denna veckan har varit stort fokus på att komma igång. Det var första veckan vi träffades som grupp och pratade ihop oss om vad projektet kommer innebära. Arbetet har därför legat mer åt att organisera projektgruppen än kravhantering. \\ Varsitt möte med Malin Planander på Miljlbron samt Malin Hollgren, våran "kund" och två övningar inom kursen gav oss däremot en skjuts med att komma igång med kravarbetet, så under veckan har vi samlat på oss en del krav som nu måste konkritiseras och dokumenteras. 
+    
+    \newpage
+    
+
+\section{Intressenter och elicitering v.36}
+
+    \subsection{Nyckelintressenter}
+        \begin{itemize}
+            \item \textbf{Malin Hollberg, Helsingborg Convention and Event Bureau}.
+                \\
+            \item \textbf{Slutanvändarna}. Det vill säga de som jobbar inom supply chain.
+                \\
+            \item \textbf{GDSM} - Global Destination Sustainability Movment. Företaget som tar hand om statistiken vårt system kommer att sammanställa.
+             \\
+            \item \textbf{Malin Planander, Miljöbron}.
+        \end{itemize}
+        
+    \subsection{Viktiga intressenter}
+        \begin{itemize}
+            \item \textbf{Helsingborg Arena och Scen}.
+            \\
+            \item \textbf{Utvecklarna av verktyget}. Vi som jobbar med projektet.
+                \\
+            \item \textbf{Campus Helsingborg}. Våra handledare
+        \end{itemize}
+        
+    \subsection{Mindre viktiga intressenter}
+    \begin{itemize}
+            \item \textbf{Företag som planerar event i Helsingborg}.
+                \\
+            \item \textbf{Robin Nilsson}. Verksamhetsledare på Campus Vänner.
+            
+    \end{itemize}
+    
+    \subsection{Användare och utvärdering av nyckelintressenter}
+    
+    \begin{itemize}
+        \item Vilka användare har vi i systemet?
+            \begin{itemize}
+                \item [--] \textbf{Slutanvändarna}, det vill säga supply chain. Användarna som kommer rappotera in data från sitt företag. 
+                \item[--] \textbf{Malin Hollgren} kommer att vara admin av system samt extrahera statistiken som verktyget sammanställer. 
+            \end{itemize}
+        \item Utvärdering av nyckelintressenter
+            \begin{itemize}
+                \item [] \textbf{Malin Hollgren}, projektledare för möten och kongresser på Helsingborg Convention and Event Bureau
+                    \begin{itemize}
+                        \item[--] \textbf{Fackkunskap :} Kunskap om verktygets funktion och hur statistiken kommer att användas.
+                        \\
+                        \item[--] \textbf{Nuvarande arbetssätt :} Tillförser oss med nödvändig information kring produkten, slutanvändarna samt generell information.
+                        \\
+                        \item[--] \textbf{Behov :}Ett lätthanterligt verktyf som genererar statistik från användarna som sedan enkelt kan kopieras och skickas in till GDSM.
+                        \\
+                        \item[--] \textbf{Önksemål :}Kunna se enskilda inrapporteringar från företag.
+                        \\
+                        \item[--] \textbf{Prioriteringar :}Ett slutgiltigt verktyg som gör fungerar utifrån behovet, samt att det ska vara enklet för slutanvändarna.
+                        \\
+                    \end{itemize}
+           
+                \item [] \textbf{Global Destination Sustainability Movement}, slutstationen för den statistik vårt verktyg samlar in.
+                    \begin{itemize}
+                        \item[--] \textbf{Fackkunskap :} Hur frågor ska tolkas och hur det ska rapporteras in från företagen.
+                        \\
+                        \item[--] \textbf{Nuvarande arbetssätt :} Hjälpa oss att förstå vissa frågor ska tolkas.
+                        \\
+                        \item[--] \textbf{Behov och prioriteringar :} Statistik som passar deras format.
+                        \\
+                    \end{itemize}
+                    
+                     \item [] \textbf{Malin Planander, Miljöbron}
+                    \begin{itemize}
+                        \item[--] \textbf{Fackkunskap :}Hur arbetet med företaget ska gå framåt på bästa sätt. Generell kunskap om liknande projekt/sammarbeten.
+                        \\
+                        \item[--] \textbf{Nuvarande arbetssätt :} Hjälper oss med hålla kontakten med företaget, bidrar med generell kunskap om projektet samt bokar in framtida möten med oss och företaget.
+                        \\
+                        \item[--] \textbf{Behov, önskemål och prioriteringar :}Att projketet går så smidigt som möjligt och att det blir en lyckad slutprodukt.
+                        
+                    \end{itemize}
+            \end{itemize}
+              
+        \subsection{Personas}
+        
+        \begin{itemize}
+            \item [] \textbf{Joakim Gröte}
+            \\
+            Joakim Gröte är 45 år gammal och har ett nystartat familjeföretag med sin fru inom restaurangbranschen, detta har varit hans dröm hela livet. Han är  nyinflyttad i en lägenhet i Helsingborg med henne och sitt barn. Joakim har mindre erfarenhet med datorer eftersom han hela sitt liv valt att fokusera på köket och matlagning. Mer än att surfa på nätet och betala räkningar har han i stort sätt aldrig gjort. När det kommer till mer avancerade datorrelaterade uppgifter låter han sin fru ta hand om detta. Efter stressiga dagar i köket är det sista Joakim vill att sätta sig framför ett mer komplicerat datorprogram. 
+            
+             \item [] \textbf{Frida}
+            \\
+            Frida, 40. Jobbar som miljöansvarig på Elite Hotel i Helsingborg. Hon är tekniskt kunnig men har begränsat med tid på grund av att hon har många bollar i luften. Hon jobbar hemifrån och har två barn som hon måste vara tillgänglig inför och de behöver hennes uppmärksamhet. Samtidigt är hon mån om Elites rykte som ett hotell som försöker uppnå hållbarhet men hon ogillar enkäter starkt.
+            
+             \item [] \textbf{Kurt}
+            \\
+            Kurt, 55, gör pizza men ser dåligt. Han är egenföretagare. Eftersom många av hans bagare inte tar jobbet på allvar måste han vara tillgänglig överallt. Det sista han vill är att lägga en massa tid på svara på enkäter. Pga sina barnbarn är han insatt i Greta Thunbergs arbete. Han tänker därför svara på enkäten han har fått gällande hållbarhetsutveckling då han sitter på toa.
+            
+            \item [] \textbf{Jocke}
+            \\
+            Jocke, 35, jobbar på konsert- och eventlokalen Tivoli i Helsingborg som programansvarig. Inga barn. Han bryr sig inte så mycket om omvärlden utan har bara intresse för sig själv och missar lätt både viktiga och oviktiga mail. Det är hans chef som trycker på med hållbarhetsfrågor och vill att Jocke ska svara på en hållbarhetsenkät. Han tänker ta sig genom enkäten snabbt eftersom han har lite tålamod. Eftersom han ofta får leveranser finns en risk att han blir avbruten mitt i det han gör. Han jobbar inte så gärna från sitt skrivbord utan är mer tillgänglig på mobilen. Han vill att Helsingborg Stad ska gilla Tivoli så att de kan få mer bidrag till sin verksamhet. 
+            
+            \item [] \textbf{Pelle Plutt}
+            \\
+            Pelle Plutt är 45 år och jobbar som Miljöansvarig för Scandic Hotels i Helsingborgsområdet. Pelle bor i en 3a i centrala Helsingborg med sin sambo Karin Kanon. Pelle brukar gå eller köra elscooter till jobbet. Pelle har ett eget kontor i Scandics huvudkontor i Helsingborg där han har tillgång till en pc, samt en IT-avdelning för stöd vid IT-ärenden. Pelle försöker dock undvika att kalla på IT-avdelningen då han upplever dem som lite dryga. Han har relativt goda kunskaper i program som excel och word, däremot har han ingen djupare förståelse för hur datorer och program fungerar. Pelle gillar inte att sätta sig in i nya system då han ofta tycker det är krångligt.
+            
+             \item [] \textbf{Bogdan Mylleberga}
+            \\
+            Bogdan Mylleberga är 43 år och arbetar som Miljöansvarig på Ängelholm-Helsingborg Airport. Bogdan är mån om och ansvarar över flygplatsens alla miljöaspekter. Allt från val av fossilt bränsle, till återvinning av plastflaskor. Han jobbar mestadels från sin dator med att sammanställa och analysera data som samlas in från flygplatsen. Eftersom han arbetar mycket med datorn kan Bogdan arbeta hemma en hel del, vilket är lyckosamt eftersom Bogdan blev pappa för sex månader sedan. Nu kan han umgås mer med sin dotter Aada och sin mammalediga fru Kharin.
+
+            Bogdan är bekymrad över att de datorsystem som han tvingas använda på arbetet börjar bli så pass utdaterade att de har svårt att hantera ny data i takt med teknologins framfart. Systemet är alltså anpassat efter gammal teknik. Bogdans högsta önskning är att ett enkelt och smidigt rapporteringssystem, som kunde samla in flygplatsens miljöhantering, är på ingång.
+
+        \end{itemize}
+        \end{itemize}
+        
+        \newpage
+        \subsection{Identifierade krav och elicitering}
+            \begin{itemize}
+                \item Rapporteringsverktyget ska vara lätthanterligt.
+                    \begin{description}
+                        \item[Teknik :]Intervju med användare för att se vad detta innebär, möjligtvis hitta en tid som användare max vill lägga på ett formulär?
+                    \end{description}
+                    \\
+            \item Rapporteringsverktyget ska generera statistik som enkelt kan föras vidare till GDSM.
+                    \begin{description}
+                        \item[Teknik :]Intervju med Malin Hollgren, hur ser processen ut när hon ska skicka in data till GDSM, vad innebär statistik som är "enkel" att föra vidare?
+                    \end{description}
+                    \\
+             \item Lägga till/ta bort frågor samt extrahera statistik.
+                    \begin{description}
+                        \item[Teknik :]Intervju med Malin Hollgren, möjligtvis använda sig ett admin inlogg för att sköta detta?
+                    \end{description}
+                
+             \item Malin/admin ska kunna se enskilda rapporter från företag
+                    \begin{description}
+                        \item[Teknik :]Brainstorming inom gruppen för att komma fram till hur detta ska göra.
+                    \end{description}
+                \\
+                \item Designförslag? Vilka färger ska användas?
+                    \begin{description}
+                        \item[Teknik :] Intervju med Malin, någon input? Även Brainstorm inom gruppen för att komma fram till möjlig design.
+                    \end{description}
+                \\
+                 \item Snabb rappotering.
+                    \begin{description}
+                        \item[Teknik :] Intervju med slutanvändare, vad känner är "enkel" rapportering? Observation av slutanvändare.
+                    \end{description}
+                 \\
+                 \item Problemfri rappotering.
+                    \begin{description}
+                        \item[Teknik :]Intervju med Malin och slutanvändare. Vad innebär problem rapportering? Hemsidan inte crasha? 
+                    \end{description}
+                    
+                
+                
+                
+                
+            \end{itemize}
+            
+            
+        
+        
+        
+   
+    
+        
+    
+    
+    \newpage
+    
+\section{Krav och liknande lösningar v37}
+    \subsection{Liknande Lösningar}
+
+\begin{itemize}
+    \item Företag : Google.
+     \item Produkt : Google Formulär.
+     \item Lösningsförslag : Semi-modulär enkät som kan anpassas till kundens behov. Kan anpassas för att kunna användas till exempelvis festinbjudan, registrering för evenemang samt för att samla in kontaktuppgifter.
+   
+
+    \item Styrkor : Ett simpelt och modulärt verktyg som enkelt kan göras om för att passa kundens behov. Verktyget är gratis och smidigt inkorporerat med googles övriga tjänster,  vilket också gör det väldigt lättillgängligt. Formuläret har en stor utbredning då många vet hur det fungerar. Det går mycket snabbt att sätta upp en enkät på egen hand. Formuläret kommer som en färdig produkt vilket gör den användarvänlig.
+    
+    \item Svagheter : Formuläret har en begränsad funktionalitet när det kommer till design, vilket leder till låg variation i utseende. Det är svårt att anpassa hur in-datan ska omvandlas till ut-data. Om formulären behövs anpassas till olika personer måste flera formulär skapas och det blir svårt att  skicka ut till en större skara människor. Det är svårt att få tag i support då det inte är ett lokalt företag. Det går ej att utöka funktionaliteten efter behov då det redan är en ”färdig produkt”.
+\end{itemize}
+    
+\subsection{Input funktionella krav}
+\subsubsection{Funktioner/uppgifter för produkt}
+  
+    \begin{itemize}
+        \item \textbf{Funktioner och uppgifter för produkten}
+        \begin{itemize}
+            \item [--]Användare ska kunna välja vilken bransch de tillhör och få upp frågor som endast påverkar denna bransch.
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Design krav, exempelvis virtual windows.
+          \end{description}
+          
+           \begin{itemize}
+            \item [--]Användare ska kunna mata in data i form av ”radio-button”. Alltså inga flervalsalternativ.
+
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Virtual Windows.
+          \end{description}
+          
+          \begin{itemize}
+            \item [--]Användare ska kunna fylla i text-fields.
+
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Virtual Windows. 
+          \end{description}
+          
+          \begin{itemize}
+            \item [--]Systemet ska sammanställa den data som matas in av användarna till en separat fil.
+
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Er-diagram och Data Dictionary.
+          \end{description}
+          
+          \begin{itemize}
+            \item [--]Admin ska kunna hämta denna sammanställda data.
+
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Virtual Windows och Data Dictionary.
+          \end{description}
+          
+          \begin{itemize}
+            \item [--]Admin ska kunna redigera frågor, lägga till frågor samt ta bort frågor från fråge-formuläret.
+
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Data Dictionary.
+          \end{description}
+    \end{itemize}
+  
+ \subsubsection{In och utdata}
+   \begin{itemize}
+       \item Indata : Indata kommer bestå av frågor där användaren svarar med antingen ja/nej, val på skala 1-5, fri text.
+       \begin{description}
+              \item Kravstil : Virtual Windows.
+          \end{description}
+          
+          \item Utdata :
+            \begin{enumerate}
+                \item  Utdata kommer bestå av ett textdokument med sammanställd data.
+                \item Admin ska kunna skriva in nya frågor i systemet, samt kunna ta bort/lägga till frågor.
+            \end{enumerate}
+              
+       \begin{description}
+              \item Kravstil 1 : Data Dictionary.
+              \item Kravstil 2 : Virtual Windows.
+          \end{description}
+   \end{itemize}
+   
+\subsubsection{Format för in och utdata}
+    \begin{itemize}
+        \item Indata : Indata ska vara radiobuttons, textfields, länkar samt knappar.
+        \begin{description}
+              \item Kravstil : Task description.
+          \end{description}
+          
+          \item Utdata : Utdata ska bestå av ett textdokument.
+        \begin{description}
+              \item Kravstil : Virtual Windows.
+          \end{description}
+    \end{itemize}
+
+\subsubsection{Hur data ska lagras}
+    \begin{itemize}
+        \item Utdata ska lagras i en databas i form av Integers och text/String.
+        \begin{description}
+              \item Kravstil : Er-diagram.
+          \end{description}
+    \end{itemize}
+    
+\newpage
+\subsubsection{Krav inom olika områden}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width = 500px]{24.png}
+    \label{fig:24}
+\end{figure}
+\newpage
+\subsection{Kvalitetsfaktorer, kvalitetskrav och risker}
+
+\subsubsection{Kvalitetsfaktorer}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width = 500px]{41.png}
+    \label{fig:24}
+\end{figure}
+
+
+
+
+\subsubsection{Kritiska och viktiga kvalitetsfaktorer}
+
+\begin{itemize}
+
+    \item Användbarhet : En lättanvändlig produkt bidrar till att fler användare slutför formuläret vilket ger vår kund bättre statistik. Detta kan i slutändan leda till att kunden får ett stipendium av GDSM
+    
+     \item Tillgänglighet : Det skall alltid gå att rapportera och extrahera data från verktyget när användaren är uppkopplad till internet. Detta leder till att fler användare kommer kunna rapportera och inte stoppas av möjliga tidskrav, vilket i sin tur leder till bättre statistik och möjligtvis ett stipendium av GDSM
+ 
+     
+   \item Prestanda : Sidan ska inte fastna eller hänga sig då detta riskerar att irritera användaren som kan sluta rapportera. En välfungerande sida leder till att fler användare rapporterar in data vilket även detta leder till bättre statistik och möjligtvis ett stipendium av GDSM till kunden.
+
+     \item Säkerhet : Endast behöriga användare ska få tillgång till rapporteringverktyget. Statistiken får inte vara korrupt då detta kan leda till felaktig statistik och ett oanvändbart verktyg.
+     
+     \item Korrekthet : Statistiken måste stämma överens med verkligheten och får inte bestå av felaktig data då även detta leder till ett oanvändbart verktyg.
+     \\
+     
+     \item Testbarhet : Verktyget måste kunna testas så att kraven kan valideras. Det ska även gå att kolla statistikens korrekthet så att felaktig sammanställning av data inte uppstår.
+     
+     \item Återanvändbarhet : Kunden vill samla in statistik årligen vilket gör att koden måste kunna återanvändas i samma eller liknande syfte.
+     
+\end{itemize}
+
+\subsubsection{Kravtext}
+
+\begin{itemize}
+    \item  Användbarhet : 95 procent av användarna ska kunna slutföra rapporteringen inom 3 min.
+    \item  Tillgänglighet : 
+    \begin{itemize}
+        \item [--]Verktyget ska vara tillgängligt 98 procent av ett år om man har en obesvarad länk.
+        \item [--]Verktyget ska vara tillgängligt från iOS, macOS, windows och android. 
+    \end{itemize}
+    \item Säkerhet : Endast de som har blivit tilldelade en länk via mail ska kunna rappotera data.
+    \item Korrekthet : Statistiken ska vara 100 procent korrekt utifrån användarnas rapportering.
+    \item Testbarhet :
+    \begin{itemize}
+        \item [--]Testläge för rapportering ska finnas.
+        \item [--]Tester ska ej påverka den slutgiltiga statistiken. 
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Riskområden}
+
+\begin{itemize}
+    \item Användbarhet : Stora kunskapskillnader hos användare kan leda till att kravet kan vara svårt att säkerhetsställa.
+    \item Tillgänglighet : 
+    \begin{itemize}
+        \item [--]Oförutsägbara händelser så som strömavbrott och serverfel kan leda till att kravet ej alltid kan uppfyllas. 
+        \item[--] Gammal mjukvara hos användare kan leda till att alla inte har tillgång till verktyget.
+    \end{itemize}
+    \item Säkerhet : Vid ett anfall kan skickliga hackare få tillgång till hemsidan och korrumpera datan.
+    \item Återanvändbarhet : Då vi endast gör detta som ett skolprojekt är support till kunden inte alltid möjlig
+\end{itemize}
+
+
+
+
+
+\bibliographystyle{alpha}
+
+
+\end{document}
