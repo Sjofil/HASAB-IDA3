@@ -52,7 +52,8 @@
     \documentTitle {Helsingborg Event and Convention Bureau}
     
     % Format: YYYY-MM-DD
-    \documentDate {2021-08-12}
+    \documentDate {2021-08-20}
+    \documentVersion Vv 0.2
     
     \author{Anna Bergvall - Oscar Blixt - Pontus Persson - Filip Sjövall - David Vilppu}
 }
@@ -76,7 +77,9 @@
 \begin{tabular}{ l | l | l }
     Version & Date & Description \\
     \hline
-    0.1 & 2021-09-12 & Dokumentet skapat. \\
+    0.1 & 2021-09-12 & Dokumentet skapat. Övning 1 och 2 inlagd. \\
+    \hline
+    0.2 & 2021-09-20 & Övning 3 och 4 inlagd.
    
 \end{tabular}
 
@@ -87,6 +90,8 @@
     \\
     Denna veckan har varit stort fokus på att komma igång. Det var första veckan vi träffades som grupp och pratade ihop oss om vad projektet kommer innebära. Arbetet har därför legat mer åt att organisera projektgruppen än kravhantering. \\ Varsitt möte med Malin Planander på Miljlbron samt Malin Hollgren, våran "kund" och två övningar inom kursen gav oss däremot en skjuts med att komma igång med kravarbetet, så under veckan har vi samlat på oss en del krav som nu måste konkritiseras och dokumenteras. 
     
+    \subsection{Vecka 37}
+    Denna veckan har fokus legat på att prata ihop oss med gruppen om de möten vi hade förra veckan, och utifrån dessa börja framställa krav. Vi har haft en del sjukdomar och medlemmar i gruppen som varit bortresta vilket gjort att vi ej kunnat ha några möten. Däremot har delgrupperna jobbat enskilt med övningarna och vi har kunnat kommunicera med varandra genom meddelanden.
     \newpage
     
 
@@ -214,7 +219,7 @@
                     \begin{description}
                         \item[Teknik :]Intervju med Malin Hollgren, möjligtvis använda sig ett admin inlogg för att sköta detta?
                     \end{description}
-                \\
+                
              \item Malin/admin ska kunna se enskilda rapporter från företag
                     \begin{description}
                         \item[Teknik :]Brainstorming inom gruppen för att komma fram till hur detta ska göra.
@@ -252,9 +257,192 @@
     
     \newpage
     
-\section{Krav}
-    \subsection{Kvalitetskrav och icke funktionella krav}
+\section{Krav och liknande lösningar v37}
+    \subsection{Liknande Lösningar}
 
-    \subsection{Funktionella krav}
+\begin{itemize}
+    \item Företag : Google.
+     \item Produkt : Google Formulär.
+     \item Lösningsförslag : Semi-modulär enkät som kan anpassas till kundens behov. Kan anpassas för att kunna användas till exempelvis festinbjudan, registrering för evenemang samt för att samla in kontaktuppgifter.
+   
+
+    \item Styrkor : Ett simpelt och modulärt verktyg som enkelt kan göras om för att passa kundens behov. Verktyget är gratis och smidigt inkorporerat med googles övriga tjänster,  vilket också gör det väldigt lättillgängligt. Formuläret har en stor utbredning då många vet hur det fungerar. Det går mycket snabbt att sätta upp en enkät på egen hand. Formuläret kommer som en färdig produkt vilket gör den användarvänlig.
+    
+    \item Svagheter : Formuläret har en begränsad funktionalitet när det kommer till design, vilket leder till låg variation i utseende. Det är svårt att anpassa hur in-datan ska omvandlas till ut-data. Om formulären behövs anpassas till olika personer måste flera formulär skapas och det blir svårt att  skicka ut till en större skara människor. Det är svårt att få tag i support då det inte är ett lokalt företag. Det går ej att utöka funktionaliteten efter behov då det redan är en ”färdig produkt”.
+\end{itemize}
+    
+\subsection{Input funktionella krav}
+\subsubsection{Funktioner/uppgifter för produkt}
+  
+    \begin{itemize}
+        \item \textbf{Funktioner och uppgifter för produkten}
+        \begin{itemize}
+            \item [--]Användare ska kunna välja vilken bransch de tillhör och få upp frågor som endast påverkar denna bransch.
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Design krav, exempelvis virtual windows.
+          \end{description}
+          
+           \begin{itemize}
+            \item [--]Användare ska kunna mata in data i form av ”radio-button”. Alltså inga flervalsalternativ.
+
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Virtual Windows.
+          \end{description}
+          
+          \begin{itemize}
+            \item [--]Användare ska kunna fylla i text-fields.
+
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Virtual Windows. 
+          \end{description}
+          
+          \begin{itemize}
+            \item [--]Systemet ska sammanställa den data som matas in av användarna till en separat fil.
+
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Er-diagram och Data Dictionary.
+          \end{description}
+          
+          \begin{itemize}
+            \item [--]Admin ska kunna hämta denna sammanställda data.
+
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Virtual Windows och Data Dictionary.
+          \end{description}
+          
+          \begin{itemize}
+            \item [--]Admin ska kunna redigera frågor, lägga till frågor samt ta bort frågor från fråge-formuläret.
+
+        \end{itemize}
+          \begin{description}
+              \item Kravstil : Data Dictionary.
+          \end{description}
+    \end{itemize}
+  
+ \subsubsection{In och utdata}
+   \begin{itemize}
+       \item Indata : Indata kommer bestå av frågor där användaren svarar med antingen ja/nej, val på skala 1-5, fri text.
+       \begin{description}
+              \item Kravstil : Virtual Windows.
+          \end{description}
+          
+          \item Utdata :
+            \begin{enumerate}
+                \item  Utdata kommer bestå av ett textdokument med sammanställd data.
+                \item Admin ska kunna skriva in nya frågor i systemet, samt kunna ta bort/lägga till frågor.
+            \end{enumerate}
+              
+       \begin{description}
+              \item Kravstil 1 : Data Dictionary.
+              \item Kravstil 2 : Virtual Windows.
+          \end{description}
+   \end{itemize}
+   
+\subsubsection{Format för in och utdata}
+    \begin{itemize}
+        \item Indata : Indata ska vara radiobuttons, textfields, länkar samt knappar.
+        \begin{description}
+              \item Kravstil : Task description.
+          \end{description}
+          
+          \item Utdata : Utdata ska bestå av ett textdokument.
+        \begin{description}
+              \item Kravstil : Virtual Windows.
+          \end{description}
+    \end{itemize}
+
+\subsubsection{Hur data ska lagras}
+    \begin{itemize}
+        \item Utdata ska lagras i en databas i form av Integers och text/String.
+        \begin{description}
+              \item Kravstil : Er-diagram.
+          \end{description}
+    \end{itemize}
+    
+\newpage
+\subsubsection{Krav inom olika områden}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width = 500px]{24.png}
+    \label{fig:24}
+\end{figure}
+\newpage
+\subsection{Kvalitetsfaktorer, kvalitetskrav och risker}
+
+\subsubsection{Kvalitetsfaktorer}
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width = 500px]{41.png}
+    \label{fig:24}
+\end{figure}
+
+
+
+
+\subsubsection{Kritiska och viktiga kvalitetsfaktorer}
+
+\begin{itemize}
+
+    \item Användbarhet : En lättanvändlig produkt bidrar till att fler användare slutför formuläret vilket ger vår kund bättre statistik. Detta kan i slutändan leda till att kunden får ett stipendium av GDSM
+    
+     \item Tillgänglighet : Det skall alltid gå att rapportera och extrahera data från verktyget när användaren är uppkopplad till internet. Detta leder till att fler användare kommer kunna rapportera och inte stoppas av möjliga tidskrav, vilket i sin tur leder till bättre statistik och möjligtvis ett stipendium av GDSM
+ 
+     
+   \item Prestanda : Sidan ska inte fastna eller hänga sig då detta riskerar att irritera användaren som kan sluta rapportera. En välfungerande sida leder till att fler användare rapporterar in data vilket även detta leder till bättre statistik och möjligtvis ett stipendium av GDSM till kunden.
+
+     \item Säkerhet : Endast behöriga användare ska få tillgång till rapporteringverktyget. Statistiken får inte vara korrupt då detta kan leda till felaktig statistik och ett oanvändbart verktyg.
+     
+     \item Korrekthet : Statistiken måste stämma överens med verkligheten och får inte bestå av felaktig data då även detta leder till ett oanvändbart verktyg.
+     \\
+     
+     \item Testbarhet : Verktyget måste kunna testas så att kraven kan valideras. Det ska även gå att kolla statistikens korrekthet så att felaktig sammanställning av data inte uppstår.
+     
+     \item Återanvändbarhet : Kunden vill samla in statistik årligen vilket gör att koden måste kunna återanvändas i samma eller liknande syfte.
+     
+\end{itemize}
+
+\subsubsection{Kravtext}
+
+\begin{itemize}
+    \item  Användbarhet : 95 procent av användarna ska kunna slutföra rapporteringen inom 3 min.
+    \item  Tillgänglighet : 
+    \begin{itemize}
+        \item [--]Verktyget ska vara tillgängligt 98 procent av ett år om man har en obesvarad länk.
+        \item [--]Verktyget ska vara tillgängligt från iOS, macOS, windows och android. 
+    \end{itemize}
+    \item Säkerhet : Endast de som har blivit tilldelade en länk via mail ska kunna rappotera data.
+    \item Korrekthet : Statistiken ska vara 100 procent korrekt utifrån användarnas rapportering.
+    \item Testbarhet :
+    \begin{itemize}
+        \item [--]Testläge för rapportering ska finnas.
+        \item [--]Tester ska ej påverka den slutgiltiga statistiken. 
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Riskområden}
+
+\begin{itemize}
+    \item Användbarhet : Stora kunskapskillnader hos användare kan leda till att kravet kan vara svårt att säkerhetsställa.
+    \item Tillgänglighet : 
+    \begin{itemize}
+        \item [--]Oförutsägbara händelser så som strömavbrott och serverfel kan leda till att kravet ej alltid kan uppfyllas. 
+        \item[--] Gammal mjukvara hos användare kan leda till att alla inte har tillgång till verktyget.
+    \end{itemize}
+    \item Säkerhet : Vid ett anfall kan skickliga hackare få tillgång till hemsidan och korrumpera datan.
+    \item Återanvändbarhet : Då vi endast gör detta som ett skolprojekt är support till kunden inte alltid möjlig
+\end{itemize}
+
+
+
+
+
+\bibliographystyle{alpha}
+
 
 \end{document}
