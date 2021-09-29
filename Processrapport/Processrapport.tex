@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+
+% ---- Commands ------- %
+\newcommand{\documentNumber}[1]{
+    \LARGE  \textbf{ Processrapport }
+    \\
+    \medskip
+}
+\newcommand{\documentVersion}[1]{
+    \medskip
+}
+\newcommand{\documentTitle}[1]{
+    \centerline{\rule{13cm}{0.4pt}}
+    \bigskip \bigskip
+    \LARGE \textbf{Projekt IDA3} \\
+    \bigskip
+    \LARGE {#1} \\
+    \bigskip \bigskip
+    \centerline{\rule{13cm}{0.4pt}}
+}
+
+\newcommand{\documentDate}[1]{
+    \date {#1} 
+}
+
+
+\renewcommand{\arraystretch}{1.7}  % Vertical padding for tables
+
+\renewcommand{\contentsname}{Innehållsförtäckning}
+
+% --- Header & Footer ---- %
+\pagestyle{fancy}
+\lhead{\leftmark}
+\rhead{}
+\rfoot{\thepage}
+\cfoot{}
+\lfoot{}
+
+
+% ------------------------------------------------ #
+
+% ----- FILL THIS ----- %
+\title {
+    \documentNumber {01}    
+
+    % Full name - SHORTNAME
+    \documentTitle {Helsingborg Event and Convention Bureau}
+    
+    % Format: YYYY-MM-DD
+    \documentDate {2021-09-29}
+    \documentVersion Vv 0.1
+    
+    \author{Anna Bergvall - Oscar Blixt - Pontus Persson - Filip Sjövall - David Vilppu - Sabah Zafar}
+}
+
+\begin{document}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+\maketitle
+
+\thispagestyle{empty}
+
+
+
+\newpage
+
+\tableofcontents
+
+
+\newpage
+
+\section{Dokument Historia}
+\begin{tabular}{ l | l | l }
+    Version & Date & Description \\
+    \hline
+    0.1 & 2021-09-29 & Dokumentet skapat. Övning 1 och 2 inlagd. \\
+    \hline
+   
+\end{tabular}
+
+\newpage
+% ----- SKRIV UNDER VARJE TITEL ----- %
+\section{Analys}
+\subsection{Målbild}
+\subsection{Process}
+\subsection{Team}
+\subsection{Resultat}
+
+\section{Utveckling och process}
+\subsection{Arbetsrapport YY MM DD}
+\subsection{Arbetsrapport YY MM DD}
+\subsection{Arbetsrapport YY MM DD}
+\subsection{Arbetsrapport YY MM DD}
+
+\section{Referenser}
+
+\section{Bilagor}
+\subsection{ÄNDRA TILL EGEN RUBRIK}
+\subsection{ÄNDRA TILL EGEN RUBRIK}
+\subsection{ÄNDRA TILL EGEN RUBRIK}
+
+
+
+
+
+
+\bibliographystyle{alpha}
+
+
+\end{document}
