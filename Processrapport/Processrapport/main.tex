@@ -4,6 +4,11 @@
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{float}
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+ 
+\usepackage{array}
+\usepackage{makecell}
 
 % ---- Commands ------- %
 \newcommand{\documentNumber}[1]{
@@ -28,8 +33,11 @@
     \date {#1} 
 }
 
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[5pt]}
+\renewcommand\cellgape{\Gape[5pt]}
 
-\renewcommand{\arraystretch}{1.7}  % Vertical padding for tables
 
 \renewcommand{\contentsname}{Innehållsförtäckning}
 
@@ -173,8 +181,9 @@ Om vi skulle hamna i tidsnöd och inte ha tid att implementera alla krav så sku
 \\
 \noindent
 Enligt kursbeskrivningen förväntas vi lägga 96 timmar på självstudier under lp3. Vi har alltså resurser på 576 timmar i projektgruppen. Om vi räknar ihop timmarna i kolumnen "mellan" nedan så blir det 523 timmar. Då har vi råd med att någonting tar längre tid. Förhoppningsvis blir det även någon modul som tar mindre tid än beräknat.
-
-\newpage
+\\
+\\
+\\
 \begin{tabular}{c||c||c||c}
     ID & är beroende av... & Beskrivning av aktivitet/mål & Tidsuppskattning \\
    \hline
@@ -249,14 +258,14 @@ Enligt kursbeskrivningen förväntas vi lägga 96 timmar på självstudier under
   
 \end{tabular}
 
-\\
+\newpage
 \begin{figure}[htp]
     \centering
-    \includegraphics[width = \textwidth, angle=90]{Pert.jpg}
+    \includegraphics[width = 165px, angle=90]{Pert.jpg}
     \label{fig:24}
 \end{figure}
 
-\newpage
+
 \subsection{Tidsplan}
 
 \begin{figure}[htp]
@@ -402,86 +411,131 @@ kan våga säga ifrån och erbjuda hjälp.
 \subsubsection{Projektrisker}
 Risker som påverkar tidsplanen eller andra resursaspekter. 
 \begin{enumerate}
-\item Dålig kommunikation och missförstånd
-\item Dålig uppskattning av tid
-\item Stora förändringar i kraven
-\item Oförutsätbara händelser - till exempel sjukdom
-\item Konflikter
-\item Dålig struktur/planering av projektet
-\item Kompetens saknas (till exempel kunskaper i Python)
-\item Brist på erfarenhet
-\item Vi får inte tillgång till hur utdata från vårt system ska formateras i tid
-\item Upptagen kontaktperson - långsamma svar
+\item Dålig kommunikation och missförstånd.
+\item Dålig uppskattning av tid.
+\item Förändringar i kraven.
+\item Oförutsätbara händelser som till exempel sjukdom.
+\item Konflikter inom gruppen.
+\item Dålig struktur/planering av projektet.
+\item Kompetens saknas (till exempel kunskaper i Python).
+\item Brist på erfarenhet.
+\item Vi får inte tillgång till hur utdata från vårt system ska formateras i tid.
+\item Upptagen kontaktperson vilket kan resultera i långsamma svar.
 \end{enumerate}
 
 \subsubsection{Produktrisker}
 Risker som påverkar prestandan eller kvaliteten på produkten.
 \begin{enumerate}
-    \item Vi uppfyller inte kraven
-    \item Produkten är inte tillräckligt intuitiv och enkel att använda med tanke på att användarna har så olika kunskaper och erfarenhet
-    \item Dåligt utformad kod - svårt att lägga till och ändra funktioner
-    \item Bristande javadokumentatiom
-    \item För lite testning - bristande kvalitet eller glömt testa vissa funktioner
-    \item För få fyller i formuläret
-    \item För dålig servertjänst - leder till överbelastning
-    \item Vi lyckas inte deploya produkten - exempelvis problem med servern som vi inte kan förutse nu
-    \item Produkten är inte tillräckligt säker
-    \item Dåliga tester förvränger värdefull data
+    \item Vi uppfyller inte kraven.
+    \item Produkten är inte tillräckligt intuitiv och enkel att använda med tanke på att användarna har så olika kunskaper och erfarenhet.
+    \item Dåligt utformad kod - svårt att lägga till och ändra funktioner.
+    \item Bristande javadokumentatiom.
+    \item För lite testning som kan leda till bristande kvalitet.
+    \item För få fyller i formuläret.
+    \item För dålig servertjänst som kan leder till bland annat överbelastning.
+    \item Vi lyckas inte deploya produkten - exempelvis problem med servern som vi inte kan förutse nu.
+    \item Produkten är inte tillräckligt säker.
+    \item Dåliga tester som förvränger värdefull data.
 \end{enumerate}
 
 \subsubsection{Affärsrisker}
 Risker som påverkar organisationen, förlorade intäkter.
 
 \begin{enumerate}
-    \item Systemet kommer inte till användning
-    \item Finns redan bättre verktyg?
-    \item CSN ökar räntan med 900\%
+    \item Systemet kommer inte till användning.
+    \item Finns redan bättre verktyg som kunden väljer istället.
 \end{enumerate}
 
 \subsection{Riskanalys enligt miniriskmetoden}
+Vi har här använt oss av en metod som kallas miniriskmetoden för att identifiera och analysera risker. Vi tog hjälp av "Riskanalys"[4] för att genomföra denna metoden. Det slutade med att vi har kommit fram till ett antal risker och ska nu uppskatta sannolikheten att det sker och konsekvensen att de sker på en skala 1-4. 
+\\
 
-Vi har kommit fram till ett antal risker och ska nu uppskatta sannolikheten att det sker och konsekvensen att de sker på en skala 1-4. 
-
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-Risk-ID & Risk & Sannolikhet & Konsekvens & Riskmått \\
-\hline
-   Projekt1 & Dålig kommunikation och missförstånd &  3 & 3 & 9 \\
-   Projekt2 &  Dålig tidsuppskattning & 4 & 4 & 16 \\
-   Projektrisk 3 & Stora förändringar i kraven &4 & 1 & 4 \\
-   Projektrisk 4 & Oförutsägbara händelser & 2 & 3 & 6 \\
-   Projektrisk 5 & Konflikter &4 & 3 & 12 \\
-   Projektrisk 6 & Dålig planering av projektet & 4 & 2 & 8 \\
-   Projektrisk 7 & TEXT & 4 & 1 & 4 \\
-   Projekt8 & Brist på erfarenhet & 3 & 2 & 6 \\
-    Projekt9 & TEXT & 2 & 4 & 8 \\
-    Projekt10 & TEXT & 2 & 3 & 6 \\
-   \hline
-   Produkt1 & Uppfyller inte kraven & 2 & 2 & 4 \\
-   Produkt2 & TEXT & 2 & 4 & 8 \\
-   Produkt3 & Dåligt utformad kod & 3 & 1 & 3\\
-   Produkt4 & Bristande javadokumentation & 4 & 2 & 8 \\
-   Produkt5 & TEXT &  3 & 1 & 3 \\
-   Produkt5 & För lite testning  & 3 & 2 & 6 \\
-   Produktrisk 5 & TEXT & 1 & 4 & 4 \\
-   Produktrisk 6 & TEXT & 1 & 4 & 4 \\
-   Produkt8 & TEXT & 1 & 1 & 1 \\
-Produkt9 & Produkten inte tillräckligt säker & 2 & 2 & 4 \\
-
-\hline
-\end{tabular}
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \thead{\makecell{Risk-\\nummer}} & \thead{Projektrisk} & \thead{Sannolikhet} & \thead{Konsekvens} & \thead{Riskmått}\\
+      \hline
+      2 &\makecell{Dålig uppfattning \\ av tid} & 4 & 4 & 16 \\
+      \hline
+      5 &\makecell{Konflikter inom \\ gruppen} & 4 & 3 & 12 \\
+      \hline
+      1 &\makecell{Dålig kommunikation\\ och missförstånd} & 3 & 3 & 9 \\
+      \hline
+      6 &\makecell{Dålig planering av\\ projektet} & 4 & 2 & 8 \\
+      \hline
+      9 &\makecell{Försenad information \\ om format på utdata} & 4 & 2 & 8 \\
+      \hline
+     4 & \makecell{Oförutsägbara händelser} & 2 & 3 & 6 \\
+      \hline
+      8 & \makecell{Brist på erfarenhet} & 3 & 2 & 6 \\
+      \hline
+     10 & \makecell{Upptagen kontaktperson,\\innebär långsamma svar} & 2 & 3 & 6 \\
+      \hline
+     7 & \makecell{Kompetens saknas} & 4 & 1 & 4 \\
+      \hline
+     3 & \makecell{Förändringar\\i kraven} & 4 & 1 & 4 \\
+      \hline
+      \end{tabular}
+\end{center}
+      
+      \begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \thead{\makecell{Risk-\\nummer}} & \thead{Produktrisk} & \thead{Sannolikhet} & \thead{Konsekvens} & \thead{Riskmått}\\
+       \hline
+      2 & \makecell{Produkten är ej \\ tillräckligt intuitiv} & 2 & 4 & 8 \\
+      \hline
+     4 & \makecell{Bristande javadokumentation} & 4 & 2 & 8 \\
+      \hline
+      6 & \makecell{För få slutanvändare fyller\\ i formuläret} & 3 & 2 & 6 \\
+      \hline
+      5 & \makecell{För lite testning} & 3 & 2 & 6 \\
+      \hline
+      8 &\makecell{Lyckas ej implementera \\ hemsida på server} & 1 & 4 & 4 \\
+      \hline
+     7 & \makecell{dåligt val av servertjänst, \\leder till text\\överbelastning } & 1 & 4 & 4 \\
+      \hline
+     1 & \makecell{Uppfyller ej kraven} & 2 & 2 & 4 \\
+      \hline
+      9 &\makecell{Produkten är inte \\ tillräckligt säker} & 2 & 2 & 4 \\
+      \hline
+     3 &\makecell{Dåligt utformad kod} & 3 & 1 & 3 \\
+      \hline
+     10 & \makecell{Dåliga tester som \\förvränger värdefull\\data} & 1 & 1 & 1 \\
+      \hline
+    \end{tabular}
+\end{center}
 
 \newpage
+\subsection{Utvärdering av risker enligt miniriskmetoden}
+Här hart vi valt de tre av de rikser med högst riskmått från projket- och produktrisker. Vi har sedan sett vad vi ska vidta för återgärd och vad det förväntade utfallet av återgärden blir. 
 
-\begin{tabular}{|c|c|c|}
-     Risk-ID & Riskmått & Åtgärdsförslag & Utfall av åtgärd  \\
-     \hline
-     Projekt1 & 9 & Vi har regelbundna möten och ground rules. % TEXT\\
-     Projekt2 & 16 & Försöka ligga i fas. Planera sprinterna noga.
-     Omstrukturera fort om det behövs. & TEXT \\
-     Projekt5 & 12 & Se till att vara tydlig i sin kommunikation. Var en god lyssnare. Se till att sätta sig in i andras situation. & TEXT \\
-     Produkt2 & 8 & Ha en plan för användartest. & Vi får fler användartester. \\
-\end{tabular}
+ \begin{center}
+    \begin{tabular}{ | c | c | c | c |}
+      \hline
+      \thead{\makecell{Risk-\\nummer}} & \thead{Projektrisk} & \thead{Åtgärd} & \thead{Förväntat utfall} \\
+      \hline
+      1 & \makecell{Dålig kommunikation\\ och missförstånd} &  \makecell{Tydligt kommunikationsplan \\ samt uppsatta ground roules.}  & \makecell{Bättre stämning och \\ minskad risk för missförstånd.} \\
+      \hline
+      1 & \makecell{Dålig tidsuppfattning} &  \makecell{En god struktur samt \\ kontinuerlig uppföjning \\under sprints.}  & \makecell{Bättre stämning och \\ En bättre uppfattning om \\ projektet ligger i fas.} \\
+      \hline
+      1 & \makecell{Konflikter inom \\ gruppen} &  \makecell{Respektera varandra, \\ god kommunikartion och, \\ visa förtroende för andra.}  & \makecell{Alla kommer trivas bättre och \\ mer framgångsrikt projekt.} \\
+      \hline
+       &\makecell{\textbf{Produktrisk}\\} &   &  \\
+      \hline
+     1 & \makecell{Produkten är ej \\ tillräckligt intuitiv} & Mer användartest.  & \makecell{Bättre helhetsbil av användare} \\
+      \hline
+       1 &\makecell{Bristande \\ javadokumentation} &\makecell{ Använd javas guide för\\ dokumentation.} & \makecell{Koden blir mer återanvändbar och \\ projektmedlemmarna får en större \\ förståelse över koden.} \\
+      \hline
+      1 & \makecell{För lite testning} & \makecell{Se till att ha en plan över\\ hur ofta och vad man testar.} & \makecell{Med en plan över hur ofta och vad  \\ man tester eliminerar\\ man risken att ha för få tester.} \\
+      \hline
+    \end{tabular}
+  \end{center}
+  
+  \subsection{Hur sker uppföljning av risker?}
+I början av varje sprint ska risker kopplade till de delmoment som sprinten innehåller identifieras och diskuteras. Eftersom vi använder oss av sprinter som löper i en vecka, kommer vi att i mitten av veckan under ett möte följa upp om någon av gruppmedlemmarna har stött på ett hinder. Om en gruppmedlem har stött på problem under sprinten, ska det problemet analyseras och jämföra om någon av de risker vi har dokumenterat stämmer överens med problemet. Eftersom vi har åtgärder för de risker vi har dokumenterat kan vi enklare hantera problemet, eftersom vi då har en tydlig riskhantering.
+
+
 \section{Utveckling och process}
 
 
