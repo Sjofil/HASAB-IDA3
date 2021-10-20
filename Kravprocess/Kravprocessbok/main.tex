@@ -102,7 +102,8 @@
     Denna veckan började vi med att strukturera upp kravspecifikationen utseende i form av rubriker, samt komma överens om arbetsfördelning inom delgrupperna. Vi har även framställt varsin prototyp av hemsidans utseende som vi diskuterat i gruppen. Utifrån dessa ska vi ta fram en mer omfattande designprototyp som skall visas upp för Malin Hollgren. Vi har även haft en fortsatt diskussion om dataserver och vilken vi ska använda. Detta måste vidarediskuteras med Malin. Övning fem gjordes inom delgrupperna och sammanställdes inom hela gruppen.
     
     \subsection{Vecka 39}
-    Denna vecka har arbetet med krav lagts åt sidan för att arbeta mer med uppgifter inom projektet. Men tack vare det överlappande arbetet har även framsteg inom kravhantering gjorts. Vi i gruppen har bestämt oss för att jobba agilt med hjälp av Scrum-boards. Vi har därför börjat använda oss av hemsidan atlassian för att strukturera upp våran board. Med tanke på att vi kommer behöva experimentera med Scrum för att förfina arbetsmetoden så har vi än så länge inte bestämt mycket mer än att vi kommer använda oss av sprints som preliminärt kommer att ske i tvåveckors intervaller.
+    Denna vecka har arbetet med krav lagts åt sidan för att arbeta mer med uppgifter inom projektet. Men tack vare det överlappande arbetet har även framsteg inom kravhantering gjorts. Vi i gruppen har bestämt oss för att jobba agilt med hjälp av Scrum-boards. Vi har därför börjat använda oss av hemsidan atlassian för att strukturera upp våran board. Med tanke på att vi kommer behöva experimentera med Scrum för att förfina arbetsmetoden så har vi än så länge inte bestämt mycket mer än att vi kommer använda oss av sprints som preliminärt kommer att ske i tvåveckors intervaller. 
+    Med kravarbetet har vi valt att börja skriva in User stories som krav i våran scrumboard för att sedan referera hit i våran kravspecifikation. Detta för att underlätta så att krav inte finns på flera ställen samtidigt.
     Kommande vecka ska: \\ 
     \begin{itemize}
         \item Arbetet med strukturen av våran Scrumboard fortsätta.
@@ -116,7 +117,7 @@
     \\
     På onsdagen hade vi sedan vårt första uppföljningsmöte med Malin där bland annat prototyperna diskuterades samt att vi klarade upp vissa frågor om design och frågor som handlade om hur användarna ska identifiera sig på hemsidan togs upp. I diskussionen om identifiering av användare kom Malin med förslag där hon ville att användarna skulle kunna identifiera sig via samma länk som de använder för att få tillgång till formuläret. Detta förlaget tog vi in men kom fram till att det inte går att genomföra med våra resurser och vi fortsatta spåna på en andra ideér där vi kom fram till att varje användare ska tilldelas en unik kod som de använder för att logga in i formuläret. \\
     \\
-    Veckan fortsatte med övningar i processboken och avslutades med ett möte på fredagen där veckan som gått diskuterades.
+    Veckan fortsatte att vi skapade vårt första dokument för kravspecifikationen och avslutades med ett möte på fredagen där vi pratade om veckan som gått.
     
     \subsection{Vecka 41}
     I början av denna vecka hade vi ett arbetspass som sträckte sig hela dagen. Det var även under denna vecka vi påbörjade första sprinten, som vi beslutade skulle sträcka sig över en-veckorsperioder istället för två-veckorsperioder. Gruppen hade sedan tidigare bestämt att vi skulle bli klara med ER-diagram och UML-diagram. ER-diagramet blev klart och UML-diagramet bestämde vi oss för att slopa. Under arbetspasset sattes även en bas för all programmering upp, dvs. en html-fil kopplad till en utvecklingsserver som kommunicerar via Python. Vi diskuterade även att vi bör förtydliga för HASAB vad vi förväntar oss av dem. Vi skickade även en ny prototyp som skulle representera de egenskaper som Malin Hollgren tyckte om när vi presenterade ett flertal prototyper vecka 40. \\
@@ -125,6 +126,12 @@
   
     \newpage
     
+\section{Terminologi}
+    \begin{enumerate}
+        \item \textbf{Slutanvändare} - Användare inom supply chain som kommer rapportera in data i formuläret.
+        
+    \end{enumerate}
+    
 
 \section{Intressenter och elicitering v.36}
 
@@ -132,19 +139,18 @@
         \begin{itemize}
             \item \textbf{Malin Hollberg, Helsingborg Convention and Event Bureau}.
                 \\
-            \item \textbf{Slutanvändarna}. Det vill säga de som jobbar inom supply chain.
+            \item \textbf{Slutanvändarna}.
                 \\
-            \item \textbf{GDSM} - Global Destination Sustainability Movment. Företaget som tar hand om statistiken vårt system kommer att sammanställa.
-             \\
-            \item \textbf{Malin Planander, Miljöbron}.
+             \item \textbf{Utvecklarna av verktyget}. Vi som jobbar med projektet.
+                \\
         \end{itemize}
         
     \subsection{Viktiga intressenter}
         \begin{itemize}
-            \item \textbf{Helsingborg Arena och Scen}.
+            \item \textbf{GDSM} - Global Destination Sustainability Movment. Företaget som tar hand om statistiken vårt system kommer att sammanställa.
+             \\
+            \item \textbf{Malin Planander, Miljöbron}.
             \\
-            \item \textbf{Utvecklarna av verktyget}. Vi som jobbar med projektet.
-                \\
             \item \textbf{Campus Helsingborg}. Våra handledare
         \end{itemize}
         
@@ -161,10 +167,10 @@
     \begin{itemize}
         \item Vilka användare har vi i systemet?
             \begin{itemize}
-                \item [--] \textbf{Slutanvändarna}, det vill säga supply chain. Användarna som kommer rappotera in data från sitt företag. 
-                \item[--] \textbf{Malin Hollgren} kommer att vara admin av system samt extrahera statistiken som verktyget sammanställer. 
+                \item [--] \textbf{Slutanvändarna}
+                \item[--] \textbf{Admin} kommer att vara Malin Hollgren. Kommer extrahera statistiken som verktyget sammanställer. 
             \end{itemize}
-        \item Utvärdering av nyckelintressenter
+        \item Utvärdering av nyckelintressenter och viktiga intressenter.
             \begin{itemize}
                 \item [] \textbf{Malin Hollgren}, projektledare för möten och kongresser på Helsingborg Convention and Event Bureau
                     \begin{itemize}
@@ -276,16 +282,7 @@
                 
                 
             \end{itemize}
-            
-            
         
-        
-        
-   
-    
-        
-    
-    
     \newpage
     
 \section{Krav och liknande lösningar}
