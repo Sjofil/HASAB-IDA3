@@ -104,6 +104,8 @@
         \item \textbf{Administratör:} Administratören har tillgång till systemets alla funktioner.
         \item \textbf{Slutanvändare:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
         \item\textbf{Stabila krav:}  Stabila krav är krav som inte är ändringbenägna - de baseras på funktioner som är grundläggande för att systemet ska möta beställarens behov.
+        \item \textbf{Ändringbenägna krav:}  Krav som är listade här kan förändras eller tas bort.
+        \item \textbf{Uteslutna krav:}  Krav som är listade här är inte längre aktuella.
     \end{enumerate}
     
     \section{Hemsidans design}
@@ -115,16 +117,44 @@
     \section{Hemsidans funktion}
     
     \subsection{Stabila krav}
-    \subsection{Ändringsbenägna krav}
-    \subsection{Uteslutna krav}
     
-    \section{Hemsidans design}
-    
-    \subsection{Stabila krav}
-    \subsection{Ändringsbenägna krav}
-    \subsection{Uteslutna krav}
+     \subsubsection{Krav}
+    Användaren skall introduceras till formuläret enligt Scenario 5.1.1.
     
     \subsubsection{Krav}
+    Användaren loggar in på formuläret enligt scenario 5.1.2.
+    
+    \subsubsection{Krav}
+    Användaren slutför och skickar in formuläret enligt scenario 5.1.3.
+    
+    \subsection{Ändringsbenägna krav}
+    \subsection{Uteslutna krav}
+    
+    \newpage
+     \section{Hemsidans hantering av data}
+    
+    \subsection{Stabila krav}
+    \subsubsection{Krav}
+    Systemet ska ha fungera enligt diagramet nedan.
+    
+    \begin{figure}[h!]
+    \includegraphics[width=150mm]{Kontextdiagram.png}
+    \caption{Kontext-diagram}
+    \end{figure}
+    
+    \newpage
+    \subsection{Krav}
+    Systemt ska hantera data enligt diagrammet nedan.
+       \begin{figure}[h!]
+    
+    \includegraphics[width=150mm]{ERDIAGRAM.png}
+    \caption{ER-Diagram}
+    \end{figure}
+    
+    \newpage
+    \subsection{Ändringsbenägna krav}
+    
+     \subsubsection{Krav}
     Följande scenario ska stödjas av systemet.
         \\
        \indent \textbf{Scenario:}
@@ -147,60 +177,29 @@
     3. Användaren möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
     
     
-    \subsubsection{Krav}
-    Användaren skall introduceras till formuläret enligt Scenario 5.1.1
     
-    \subsubsection{Krav}
-    Användaren loggar in på formuläret enligt scenario 5.1.2
+    \subsection{Uteslutna krav}
     
-    \subsubsection{Krav}
-    Användaren slutför och skickar in formuläret enligt scenario 5.1.3
-    
-    \subsubsection{Krav}
-    Systemet ska ha samma gränssnitt som kontextdiagramet visar.
-    
-    \begin{figure}[h!]
-    \caption{Kontext-diagram}
-    \includegraphics[width=150mm]{Kontextdiagram.png}
-    
-    \end{figure}
-    
+  
+   
     \section{Kvalitetskrav}
-    \subsection{Prestanda}
-    \subsubsection{Krav}
+    \subsection{Stabila krav}
+  
+     \subsection{Ändringsbenägna krav}
+     
+     \subsubsection{Krav}
     Systemet ska ha en svarstid på max ... sekunder.
     
-
-    \subsection{Säkerhet}
     \subsubsection{Krav}
-    Inloggning på hemsidan ska endast kunna ske via identifiering av behörig person.
+    Rapportering i systemet ska endast kunna göras av en användare som har fått tillgång till hemsidan via mail eller av admin.
     
-    \subsection{Användbarhet}
+     \subsubsection{Krav}
+    ../.. användare ska kunna besvara enkäten inom ..minuter.
+    
     \subsubsection{Krav}
-    ../.. användare ska kunna besvara enkäten inom ..minuter
-    \subsubsection{Krav}
-    ../.. användare ska anse att enkäten var lätt att svara på
+    ../.. användare ska anse att enkäten var lätt att svara på.
     
-    \section{Ändringsbenägna krav}
-    Krav som är listade här kan förändras eller tas bort.
-    
-    \begin{figure}[h!]
-    
-    \includegraphics[width=150mm]{ERDIAGRAM.png}
-    \caption{ER-Diagram}
-    \end{figure}
-    
-    \section{Uteslutna krav}
-    Krav som är listade här är inte längre aktuella.
-    
-    
-
-    
-        
-
-
-
-
+    \subsection{Uteslutna krav}
 \bibliographystyle{alpha}
 
 
