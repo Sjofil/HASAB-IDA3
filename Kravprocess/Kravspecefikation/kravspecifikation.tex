@@ -1,0 +1,207 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+
+% ---- Commands ------- %
+\newcommand{\documentNumber}[1]{
+    \LARGE  \textbf{ Kravspecifikation }
+    \\
+    \medskip
+}
+\newcommand{\documentVersion}[1]{
+    \medskip
+}
+\newcommand{\documentTitle}[1]{
+    \centerline{\rule{13cm}{0.4pt}}
+    \bigskip \bigskip
+    \LARGE \textbf{Projekt IDA3} \\
+    \bigskip
+    \LARGE {#1} \\
+    \bigskip \bigskip
+    \centerline{\rule{13cm}{0.4pt}}
+}
+
+\newcommand{\documentDate}[1]{
+    \date {#1} 
+}
+
+
+\renewcommand{\arraystretch}{1.7}  % Vertical padding for tables
+
+\renewcommand{\contentsname}{Innehållsförtäckning}
+
+% --- Header & Footer ---- %
+\pagestyle{fancy}
+\lhead{\leftmark}
+\rhead{}
+\rfoot{\thepage}
+\cfoot{}
+\lfoot{}
+
+
+% ------------------------------------------------ #
+
+% ----- FILL THIS ----- %
+\title {
+    \documentNumber {01}    
+
+    % Full name - SHORTNAME
+    \documentTitle {Helsingborg Event and Convention Bureau}
+    
+    % Format: YYYY-MM-DD
+    \documentDate {2021-08-20}
+    \documentVersion Vv 0.1
+    
+    \author{Anna Bergvall - Oscar Blixt - Pontus Persson - Filip Sjövall - David Vilppu - Sahab Zafar}
+}
+
+\begin{document}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+\maketitle
+
+\thispagestyle{empty}
+
+
+
+\newpage
+
+\tableofcontents
+
+
+\newpage
+
+\section{Dokument Historia}
+\begin{tabular}{ l | l | l }
+    Version & Date & Description \\
+    \hline
+    0.1 & 2021-10-06 & Dokumentet skapat. \\
+    
+\end{tabular}
+
+\section{Introduktion}
+    Detta dokument representerar kraven för systemet. Systemet är ett frågeformulär vars syfte är att få Helsingborg att bli miljöcertifierad av GDSM. Huvudfunktionaliteten är att HASAB ska kunna sammanställa den data som tillkommit till följd av svar på formuläret från näringslivet. Systemet ska kunna interagera med databas, server och klient.
+    
+
+\section{Bakgrund och mål}
+
+    \subsection{Mål}
+       Målet är att få Helsingborg stad att bli miljöcertifierad genom att utveckla ett webbaserat frågeformulär som är snabbt och enkelt för användaren att svara på.
+        
+    \subsection{Viktiga aktörer}
+    Systemet kan användas av följande intressenter:
+    \begin{enumerate}
+        \item \textbf{Slutanvändare:} Slutanvändaren kommer interagera med systemet genom att logga in och svara på de frågor som är relevant för dennes bransch.
+        \item \textbf{HASAB:} HASAB ska tilldelas rollen administratör och således ha tillgång till en administrationssida där de kan ta bort, lägga till och redigera frågor och användare.
+    \end{enumerate}
+    
+    \section{Terminologi}
+    \begin{enumerate}
+        \item \textbf{HASAB:} Förkortning av Helsingborg Arena och Scen AB vilket är företaget som ska utnyttja systemet.
+        \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ samt statistikföring över svaren.
+        \item \textbf{Administratör:} Administratören har tillgång till systemets alla funktioner.
+        \item \textbf{Slutanvändare:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
+        \item\textbf{Stabila krav:}  Stabila krav är krav som inte är ändringbenägna - de baseras på funktioner som är grundläggande för att systemet ska möta beställarens behov.
+    \end{enumerate}
+    
+    \section{Hemsidans design}
+    
+    \subsection{Stabila krav}
+    \subsection{Ändringsbenägna krav}
+    \subsection{Uteslutna krav}
+    
+    \section{Hemsidans funktion}
+    
+    \subsection{Stabila krav}
+    \subsection{Ändringsbenägna krav}
+    \subsection{Uteslutna krav}
+    
+    \section{Hemsidans design}
+    
+    \subsection{Stabila krav}
+    \subsection{Ändringsbenägna krav}
+    \subsection{Uteslutna krav}
+    
+    \subsubsection{Krav}
+    Följande scenario ska stödjas av systemet.
+        \\
+       \indent \textbf{Scenario:}
+        \\
+       \indent \textbf{Förutsättningar:}
+            \begin{itemize}
+                \item  Användaren får ett mejl från HCEB.
+                \item Användaren klickar på länken till formuläret som finns i mejlet.
+                \item Användaren möts av formulärets startsida.
+            \end{itemize}
+ 
+    \subsubsection{Scenario}
+    1. Användaren befinner sig på startsidan. \\
+    2. Avändaren skriver in koden som finns i mejlet användaren har fått och trycker "gå vidare". \\
+    3. Användaren är nu inloggad och möts av första frågan\\
+    
+    \subsubsection{Scenario}
+    1. Användaren är inloggad och svarar på samtliga frågor. \\
+    2. Användaren kommer till sista sidan och trycker på "Skicka in". \\
+    3. Användaren möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
+    
+    
+    \subsubsection{Krav}
+    Användaren skall introduceras till formuläret enligt Scenario 5.1.1
+    
+    \subsubsection{Krav}
+    Användaren loggar in på formuläret enligt scenario 5.1.2
+    
+    \subsubsection{Krav}
+    Användaren slutför och skickar in formuläret enligt scenario 5.1.3
+    
+    \subsubsection{Krav}
+    Systemet ska ha samma gränssnitt som kontextdiagramet visar.
+    
+    \begin{figure}[h!]
+    \caption{Kontext-diagram}
+    \includegraphics[width=150mm]{Kontextdiagram.png}
+    
+    \end{figure}
+    
+    \section{Kvalitetskrav}
+    \subsection{Prestanda}
+    \subsubsection{Krav}
+    Systemet ska ha en svarstid på max ... sekunder.
+    
+
+    \subsection{Säkerhet}
+    \subsubsection{Krav}
+    Inloggning på hemsidan ska endast kunna ske via identifiering av behörig person.
+    
+    \subsection{Användbarhet}
+    \subsubsection{Krav}
+    ../.. användare ska kunna besvara enkäten inom ..minuter
+    \subsubsection{Krav}
+    ../.. användare ska anse att enkäten var lätt att svara på
+    
+    \section{Ändringsbenägna krav}
+    Krav som är listade här kan förändras eller tas bort.
+    
+    \begin{figure}[h!]
+    
+    \includegraphics[width=150mm]{ERDIAGRAM.png}
+    \caption{ER-Diagram}
+    \end{figure}
+    
+    \section{Uteslutna krav}
+    Krav som är listade här är inte längre aktuella.
+    
+    
+
+    
+        
+
+
+
+
+\bibliographystyle{alpha}
+
+
+\end{document}
