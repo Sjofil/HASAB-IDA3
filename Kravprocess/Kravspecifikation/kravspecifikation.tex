@@ -78,6 +78,7 @@
     Version & Date & Description \\
     \hline
     0.1 & 2021-10-06 & Dokumentet skapat. \\
+    0.2 & 2021-11-05 & Första utkast\\
     
 \end{tabular}
 
@@ -92,13 +93,13 @@
         
     \subsection{Viktiga aktörer}
     Systemet kan användas av följande intressenter:
-    \begin{enumerate}
+    \begin{itemize}
         \item \textbf{Slutanvändare:} Slutanvändaren kommer interagera med systemet genom att logga in och svara på de frågor som är relevant för dennes bransch.
         \item \textbf{HASAB:} HASAB ska tilldelas rollen administratör och således ha tillgång till en administrationssida där de kan ta bort, lägga till och redigera frågor och användare.
-    \end{enumerate}
+     \end{itemize}
     
     \section{Terminologi}
-    \begin{enumerate}
+    \begin{itemize}
         \item \textbf{HASAB:} Förkortning av Helsingborg Arena och Scen AB vilket är företaget som ska utnyttja systemet.
         \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ samt statistikföring över svaren.
         \item \textbf{Administratör:} Administratören har tillgång till systemets alla funktioner.
@@ -106,7 +107,7 @@
         \item\textbf{Stabila krav:}  Stabila krav är krav som inte är ändringbenägna - de baseras på funktioner som är grundläggande för att systemet ska möta beställarens behov.
         \item \textbf{Ändringbenägna krav:}  Krav som är listade här kan förändras eller tas bort.
         \item \textbf{Uteslutna krav:}  Krav som är listade här är inte längre aktuella.
-    \end{enumerate}
+    \end{itemize}
     
     \section{Hemsidans design}
     
@@ -125,45 +126,44 @@
     \section{Hemsidans funktion}
     
     \subsection{Stabila krav}
-       \subsubsection{Krav}
+    \subsection{Ändringsbenägna krav}
+    
+      \subsubsection{Krav}
     Följande scenario ska stödjas av systemet.
         \\
-       \indent \textbf{Scenario:}
+       \indent \textbf{Scenario:} Slutanvändaren navigerar till hemsidan via mail.
         \\
-       \indent \textbf{Förutsättningar:}
-            \begin{itemize}
-                \item  Användaren får ett mejl från HCEB.
-                \item Användaren klickar på länken till formuläret som finns i mejlet.
-                \item Användaren möts av formulärets startsida.
-            \end{itemize}
+       \indent \textbf{Förutsättningar:} Slutanvändaren har mått ett mail med en länk till hemsidan.
+            \begin{enumerate}
+                \item Slutanvändaren klickar på länken till formuläret som finns i mejlet.
+                \item Slutanvändaren möts av formulärets startsida.
+            \end{enumerate}
             
         \subsubsection{Krav}
     Följande scenario ska stödjas av systemet.
         \\
-       \indent \textbf{Scenario:}
+       \indent \textbf{Scenario:} Slutanvändaren ska registrera sig på hemsidan för att få fortsätta rapportering.
         \\
-       \indent \textbf{Förutsättningar:}
-       Användaren har fått mejl från HCEB samt klickat på länken i mejlet.
-            \begin{itemize}
-                \item   Användaren befinner sig på startsidan.
-                \item Avändaren skriver in koden som finns i mejlet användaren har fått och trycker "gå vidare".
-                \item  Användaren är nu inloggad och möts av första frågan.
-            \end{itemize}
+       \indent \textbf{Förutsättningar:} Slutanvändaren har fått en engångskod i samma mail som länken samt att slutanvändaren befinner sig på startsidan.
+            \begin{enumerate}
+               \item Slutavändaren skriver in koden som finns i mejlet.
+               \item Slutanvändaren trycker på knappen "Gå vidare".
+                \item  Användaren är nu registrerad och möts av en ny sida med första frågan.
+            \end{enumerate}
+   
         \subsubsection{Krav}
     Följande scenario ska stödjas av systemet.
         \\
-       \indent \textbf{Scenario:}
+       \indent \textbf{Scenario:} Slutanvändaren ska skicka in slutgiltig rapportering.
         \\
-       \indent \textbf{Förutsättningar:}
-       Användaren har fått mejl från HCEB samt klickat på länken i mejlet.
-            \begin{itemize}
-                \item   Användaren är inloggad och svarar på samtliga frågor.
-                \item Användaren kommer till sista sidan och trycker på "Skicka in"
-                \item   Användaren möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
-            \end{itemize}
-     
-    
-    \subsection{Ändringsbenägna krav}
+       \indent \textbf{Förutsättningar:} Slutanvändaren har svarat på samtliga frågor och befinner sig på sidan med den sista frågan.
+            \begin{enumerate}
+                \item Slutanvändaren klickar på knappen "Slutför formulär".
+                \item Slutanvändaren möts av en sidan med tack text enligt krav 5.2.1.
+                \item Slutanvändaren trycker på knappen "Skicka in formulär".
+                \item   Slutanvändaren möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
+            \end{enumerate}
+          
     \subsection{Uteslutna krav}
     
     \newpage
