@@ -53,7 +53,7 @@
     
     % Format: YYYY-MM-DD
     \documentDate {2021-08-20}
-    \documentVersion Vv 0.1
+    \documentVersion Vv 0.2
     
     \author{Anna Bergvall - Oscar Blixt - Pontus Persson - Filip Sjövall - David Vilppu - Sahab Zafar}
 }
@@ -111,24 +111,24 @@
     
     \section{Hemsidans design}
     
-    \subsection{Stabila krav}
+    \subsection*{Stabila krav}
      
-    \subsection{Ändringsbenägna krav}
-     \subsubsection{Krav}
+    \subsection*{Ändringsbenägna krav}
+     \subsubsection*{R1}
     Systemet ska ha ett utseende likt bilden nedan.
     
     \begin{figure}[h!]
     \includegraphics[width=150mm]{prototyp.png}
      \caption{prototyp}
     \end{figure}
-    \subsection{Uteslutna krav}
+    \subsection*{Uteslutna krav}
     
     \section{Hemsidans funktion}
     
-    \subsection{Stabila krav}
-    \subsection{Ändringsbenägna krav}
+    \subsection*{Stabila krav}
+    \subsection*{Ändringsbenägna krav}
     
-      \subsubsection{Krav}
+      \subsubsection*{R2}
     Följande scenario ska stödjas av systemet.
         \\
        \indent \textbf{Scenario:} Slutanvändaren navigerar till hemsidan via mail.
@@ -139,7 +139,7 @@
                 \item Slutanvändaren möts av formulärets startsida.
             \end{enumerate}
             
-        \subsubsection{Krav}
+        \subsubsection*{R3}
     Följande scenario ska stödjas av systemet.
         \\
        \indent \textbf{Scenario:} Slutanvändaren ska registrera sig på hemsidan för att få fortsätta rapportering.
@@ -151,7 +151,7 @@
                 \item  Användaren är nu registrerad och möts av en ny sida med första frågan.
             \end{enumerate}
    
-        \subsubsection{Krav}
+        \subsubsection*{R4}
     Följande scenario ska stödjas av systemet.
         \\
        \indent \textbf{Scenario:} Slutanvändaren ska skicka in slutgiltig rapportering.
@@ -164,36 +164,36 @@
                 \item   Slutanvändaren möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
             \end{enumerate}
 
-\subsubsection{Krav från scrumboard}
+\subsubsection*{Krav från scrumboard}
 Följande mapning gäller för de krav som finns på projektets scrumboard,\\ d.v.s https://majken.atlassian.net/jira/software/projects/SF/boards/1.\\
-När ett krav ska refereras till använd denna graf.\\
-$$ R.1\rightarrow SF-1$$
-$$R.2\rightarrow SF-5$$
-$$R.3\rightarrow SF-6$$
-$$R.4\rightarrow SF-7$$
-$$R.5\rightarrow SF-9$$
-$$R.6\rightarrow SF-12$$
-$$R.7\rightarrow SF-22$$
-$$R.8\rightarrow SF-13$$
-$$R.9\rightarrow SF-14$$
-$$R.10\rightarrow SF-16$$
-$$R.11\rightarrow SF-17$$
-$$R.12\rightarrow SF-18$$
-$$R.13\rightarrow SF-21$$
-$$R.14\rightarrow SF-25$$
-$$R.15\rightarrow SF-64$$
-$$R.16\rightarrow SF-65$$
-$$R.17\rightarrow SF-73$$
-$$R.18\rightarrow SF-74$$
+När ett krav ska refereras till används denna graf.\\
+$$SR1\rightarrow SF-1$$
+$$SR2\rightarrow SF-5$$
+$$SR3\rightarrow SF-6$$
+$$SR4\rightarrow SF-7$$
+$$SR5\rightarrow SF-9$$
+$$SR6\rightarrow SF-12$$
+$$SR7\rightarrow SF-22$$
+$$SR8\rightarrow SF-13$$
+$$SR9\rightarrow SF-14$$
+$$SR10\rightarrow SF-16$$
+$$SR11\rightarrow SF-17$$
+$$SR12\rightarrow SF-18$$
+$$SR13\rightarrow SF-21$$
+$$SR14\rightarrow SF-25$$
+$$SR15\rightarrow SF-64$$
+$$SR16\rightarrow SF-65$$
+$$SR17\rightarrow SF-73$$
+$$SR18\rightarrow SF-74$$
 
-    \subsection{Uteslutna krav}
+    \subsection*{Uteslutna krav}
     
     \newpage
      \section{Hemsidans hantering av data}
     
-    \subsection{Stabila krav}
-    \subsubsection{Krav}
-    Systemet ska ha fungera enligt diagramet nedan.
+    \subsection*{Stabila krav}
+    \subsubsection*{R5}
+    Systemet ska fungera enligt diagramet nedan.
     
     \begin{figure}[h!]
     \includegraphics[width=150mm]{Kontextdiagram.png}
@@ -201,7 +201,7 @@ $$R.18\rightarrow SF-74$$
     \end{figure}
     
     \newpage
-    \subsection{Krav}
+    \subsubsection*{R6}
     Systemt ska hantera data enligt diagrammet nedan.
        \begin{figure}[h!]
     
@@ -210,29 +210,29 @@ $$R.18\rightarrow SF-74$$
     \end{figure}
     
     \newpage
-    \subsection{Ändringsbenägna krav}
-    \subsection{Uteslutna krav}
+    \subsection*{Ändringsbenägna krav}
+    \subsection*{Uteslutna krav}
     
   
    
     \section{Kvalitetskrav}
-    \subsection{Stabila krav}
+    \subsection*{Stabila krav}
   
-     \subsection{Ändringsbenägna krav}
+     \subsection*{Ändringsbenägna krav}
      
-     \subsubsection{Krav}
-    Systemet ska ha en svarstid på max ... sekunder.
+     \subsubsection*{R7}
+    Systemet ska ha en svarstid på max \underline{\hspace{1cm}} sekunder.
     
-    \subsubsection{Krav}
+    \subsubsection*{R8}
     Rapportering i systemet ska endast kunna göras av en användare som har fått tillgång till hemsidan via mail eller av admin.
     
-     \subsubsection{Krav}
-    ../.. användare ska kunna besvara enkäten inom ..minuter.
+     \subsubsection*{R9}
+   \underline{\hspace{1cm}} användare ska kunna besvara enkäten inom \underline{\hspace{1cm}} minuter.
     
-    \subsubsection{Krav}
-    ../.. användare ska anse att enkäten var lätt att svara på.
+    \subsubsection*{R10}
+    \underline{\hspace{1cm}} användare ska anse att enkäten var lätt att svara på.
     
-    \subsection{Uteslutna krav}
+    \subsection*{Uteslutna krav}
 \bibliographystyle{alpha}
 
 
