@@ -5,3 +5,4 @@ Website/.vscode/launch.json
 Website/__pycache__/app.cpython-310.pyc
 Kravprocess/Kravspecifikation/kravspecifikation.pdf
 Kravprocess/Kravspecifikation/kravspecifikation.synctex.gz
+.DS_Store
