@@ -23,11 +23,31 @@
 
     <!--Input och knapp-->
     <section class="text-center pt-5">
+        <!--Fråga 1-->
         <div class="container-fluid pt-5">
-            <div class="form-check-inline w-50">
-                <input type="text" class="form-control-lg form-control rounded-3"  placeholder="Exempeltext" id="q1-button">
+            <p>
+                Har ni Certifikat?
+            </p>
+            <div class="form-check-inline pb-3">
+                    <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>  Ja
+                    <label class="form-check-label" for="radio1"></label>
+
+                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">  Nej
+                    <label class="form-check-label" for="radio2"></label>
             </div>
 
+
+        <!--Välj Certifikat-->
+        <p class="pt-3">
+            Isåfall vilket?
+        </p>
+        <div class="container-fluid">
+            <div class="form-check-inline w-25">
+                <input type="text" class="form-control-lg form-control rounded-3"  placeholder="Certifikat:" id="q1-button">
+            </div>
+
+
+            <!--Knapp-->
             <div class="container-fluid pt-5 mt-5" id="btn1">
                 <a href="/templates/question2.html" class="btn btn-secondary btn-lg">Nästa
                     <i class="bi bi-arrow-right"></i> 
