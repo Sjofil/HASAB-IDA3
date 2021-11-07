@@ -18,30 +18,42 @@
 
      <!--Rubrik-->
      <section class="text-center container-fluid pt-5  align-items-center">
-            <h1 class="text-uppercase">Fråga 1</h1>
+            <h1 class="text-uppercase">Fråga 2</h1>
     </section>
 
     <!--Input och knapp-->
     <section class="text-center pt-5">
         <div class="container-fluid pt-5">
-            <div class="form-check-inline w-50">
-                <input type="text" class="form-control-lg form-control rounded-3"  placeholder="Exempeltext" id="q1-button">
+            <div class="form-check-inline form-switch ">
+                    <input class="form-check-input" style="transform: scale(1.8);" type="checkbox" id="mySwitch" name="darkmode" value="yes" checked>
+                    
+                  </div>
             </div>
 
             <div class="container-fluid pt-5 mt-5" id="btn1">
-                <a href="/templates/question2.html" class="btn btn-secondary btn-lg">Nästa
+                <a href="" class="btn btn-secondary btn-lg">Nästa
                     <i class="bi bi-arrow-right"></i> 
                 </a>
             </div>
     </section>
 
-    <!--Lista över frågor-->    
-    <footer class="container mt-5 pt-5 w-50 align-items-center">
-        <ul class="pagination justify-content-center">
-            <li class="page-item active"><a class="page-link" >1</a></li>
-            <li class="page-item disabled"><a class="page-link">2</a></li>
-            <li class="page-item disabled"><a class="page-link">3</a></li>
-          </ul>
+<!--Lista över frågor samt tillbaka knapp-->    
+    <footer class="container-fluid mt-5 pt-5 w-50">
+        <div class="row">
+            <div class="col-4">
+                <a href="/templates/question1.html" class="btn btn-secondary rounded"><i class="bi bi-arrow-left"></i></a>
+            </div>
+            
+            <div class="col-4">
+                <ul class="pagination float-none justify-content-center">
+                    <li class="page-item disabled"><a class="page-link" >1</a></li>
+                    <li class="page-item active"><a class="page-link">2</a></li>
+                    <li class="page-item disabled"><a class="page-link" >3</a></li>
+                  </ul>
+            </div>
+        </div>
+
+        
     </footer>
 
     </html>
