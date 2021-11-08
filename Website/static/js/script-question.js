@@ -23,7 +23,7 @@ document.location.href="last.html";
 }
 
 function nextQuest(){
-    document.location.href="question2-2.html";
+    document.location.href="/question2-2";
 }
 
 console.log(555555);
