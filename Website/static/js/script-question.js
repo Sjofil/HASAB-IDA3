@@ -5,7 +5,7 @@ const input = document.getElementById("answer");
 //disablar knappen tills man skrivit in något
 console.log(input);
 
-input.addEventListener('keypress', (e) => {
+input.addEventListener('keyup', (e) => {
 
     console.log(e.currentTarget.value);
 
