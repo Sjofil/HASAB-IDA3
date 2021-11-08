@@ -7,8 +7,8 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 #from flaskr.db import get_db
 
-bp = Blueprint('auth', __name__, url_prefix='/auth')
+bp = Blueprint('common', __name__, url_prefix='/')
 
-@bp.route("/register")
+@bp.route("/index")
 def main():
-    return render_template("/Admin-html/admin-log-in.html")
+    return render_template("index.html")
