@@ -1,8 +1,6 @@
-const radioButton = document.getElementById("radio1");
+
 const submitButton = document.getElementById("next");
 const input = document.getElementById("answer");
-
-
 //disablar knappen tills man skrivit in något
 console.log(input);
 
@@ -20,7 +18,7 @@ input.addEventListener('keyup', (e) => {
 });
 
 document.body.addEventListener('change', (e) => {
-
+    const radioButton = document.getElementById("radio1");
     const value = e.target;
     if(value.id === 'radio2'){
         input.disabled = true;
