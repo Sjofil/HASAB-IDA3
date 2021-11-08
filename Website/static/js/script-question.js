@@ -5,7 +5,6 @@ const input = document.getElementById("answer");
 console.log(input);
 
 input.addEventListener('keyup', (e) => {
-
     console.log(e.currentTarget.value);
 
     const value = e.currentTarget.value;
@@ -16,7 +15,7 @@ input.addEventListener('keyup', (e) => {
     }
     
 });
-
+//Disables text-input before radiobutton
 document.body.addEventListener('change', (e) => {
     const radioButton = document.getElementById("radio1");
     const value = e.target;
@@ -35,5 +34,3 @@ document.location.href="last.html";
 function nextQuest(){
     document.location.href="/question2";
 }
-
-console.log(555555);
