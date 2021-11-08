@@ -9,6 +9,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 bp = Blueprint('questions', __name__, url_prefix='/')
 
+
 @bp.route("/question1")
 def questioOne():
     return render_template("question1.html")
