@@ -26,3 +26,4 @@ function nextQuest(){
     document.location.href="question2-2.html";
 }
 
+console.log(555555);
