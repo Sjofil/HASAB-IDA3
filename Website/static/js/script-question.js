@@ -4,7 +4,7 @@ const input = document.getElementById("answer");
 
 //disablar knappen tills man skrivit in något
 console.log(input);
-if(input != null){
+
 input.addEventListener('keypress', (e) => {
 
     console.log(e.currentTarget.value);
@@ -16,14 +16,14 @@ input.addEventListener('keypress', (e) => {
         submitButton.disabled=false;
     }
     
-})};
+});
 
 function submitForm(){
 document.location.href="last.html";
 }
 
 function nextQuest(){
-    document.location.href="/question2-2";
+    document.location.href="/question2";
 }
 
 console.log(555555);

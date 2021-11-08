@@ -11,7 +11,7 @@ bp = Blueprint('questions', __name__, url_prefix='/')
 
 
 @bp.route("/question1")
-def questioOne():
+def questionOne():
     return render_template("question1.html")
 
 @bp.route("/question2")
