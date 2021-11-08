@@ -1,3 +1,4 @@
+const radioButton = document.getElementById("radio1");
 const submitButton = document.getElementById("next");
 const input = document.getElementById("answer");
 
@@ -14,6 +15,17 @@ input.addEventListener('keyup', (e) => {
         submitButton.disabled = true;
     } else {
         submitButton.disabled=false;
+    }
+    
+});
+
+document.body.addEventListener('change', (e) => {
+
+    const value = e.target;
+    if(value.id === 'radio2'){
+        input.disabled = true;
+    } else {
+        input.disabled =false;
     }
     
 });
