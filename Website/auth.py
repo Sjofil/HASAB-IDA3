@@ -11,4 +11,4 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 @bp.route("/register")
 def main():
-    return render_template("register.html")
+    return render_template("/Admin-html/admin-log-in.html")
