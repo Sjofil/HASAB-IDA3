@@ -38,4 +38,7 @@ def create_app(test_config=None):
     from . import questions
     app.register_blueprint(questions.bp)
 
+    from . import auth 
+    app.register_blueprint(auth.bp)
+
     return app
