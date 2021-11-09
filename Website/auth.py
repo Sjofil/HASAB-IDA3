@@ -32,7 +32,7 @@ def login():
 
 
     
-@bp.route("auth")
+@bp.route("/auth")
 def loginAdmin():
     if request.method == 'POST':
         username = request.form['Användarnamn:']
