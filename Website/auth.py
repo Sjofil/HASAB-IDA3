@@ -4,11 +4,12 @@ from flask import(
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 from werkzeug.security import check_password_hash, generate_password_hash
+from . import db
 
 bp = Blueprint('auth', __name__, url_prefix='/')
 
-@bp.route("/")
-def loginAdmin():
+@bp.route("/auth")
+def login():
     if request.method == 'POST':
         username = request.form['Identifieringskod:']
         db = get_db()

@@ -11,4 +11,8 @@ bp = Blueprint('common', __name__, url_prefix='/')
 
 @bp.route("/")
 def main():
+    return render_template("index.html")
+
+@bp.route("/login")
+def login():
     return render_template("Admin-html/admin-log-in.html")
