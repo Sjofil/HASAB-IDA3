@@ -2,6 +2,8 @@
 const submitButton = document.getElementById("next");
 const input = document.getElementById("answer");
 const radioButton = document.getElementById("radio1");
+const radioButton2 = document.getElementById("radio2");
+change = false;
 
 //disablar knappen tills man skrivit in något
 console.log(input);
@@ -17,17 +19,28 @@ input.addEventListener('keyup', (e) => {
     }
 });
 
-//Disables text-input before radiobutton
+//Enables input "answer" and clears input "answer" after radiobutton change
 document.body.addEventListener('change', (e) => {
     
-    const value = e.target;
-    if(value.id === 'radio2'){ // om [NEJ] - disable input
+   value = e.target;
+    
+    // if radio1 is pressed
+    if(value.id === 'radio1'){
+        input.disabled = false;
+        if(change){
+           submitButton.disabled = false;
+        }else{
+            submitButton.disabled = true;
+        }
+        change = true;
+    }
+    // if radio2 is pressed, disables 
+    if(value.id === 'radio2'){ 
         input.disabled = true;
         submitButton.disabled = false;
-    } else {
-        input.disabled =false;
-    }
-    
+        change = false;
+    } 
+    document.getElementById("answer").value = "";
 });
 
 function submitForm(){
