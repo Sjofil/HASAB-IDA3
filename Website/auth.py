@@ -46,7 +46,7 @@ def loginAdmin():
 
         if user is None:
             error = 'Felaktigt användarnamn.'
-        elif not check_password_hash(user['password'], password)
+        elif not check_password_hash(user['password'], password):
             error = 'Felaktigt lösenord.'
                 
         if error is None:
