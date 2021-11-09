@@ -1,6 +1,8 @@
 
 const submitButton = document.getElementById("next");
 const input = document.getElementById("answer");
+const radioButton = document.getElementById("radio1");
+
 //disablar knappen tills man skrivit in något
 console.log(input);
 
@@ -15,12 +17,14 @@ input.addEventListener('keyup', (e) => {
     }
     
 });
+
 //Disables text-input before radiobutton
 document.body.addEventListener('change', (e) => {
-    const radioButton = document.getElementById("radio1");
+    
     const value = e.target;
-    if(value.id === 'radio2'){
+    if(value.id === 'radio2'){ // om [NEJ] - disable input
         input.disabled = true;
+        submitButton.disabled = false;
     } else {
         input.disabled =false;
     }
