@@ -1,9 +1,9 @@
-CREATE TABLE `type` (
+CREATE TABLE `types` (
   `ID` int NOT NULL,
   PRIMARY KEY (`ID`)
 );
 
-CREATE TABLE `user` (
+CREATE TABLE `users` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `Type_ID` int DEFAULT NULL,
   `Answered` tinyint DEFAULT NULL,
