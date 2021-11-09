@@ -1,4 +1,5 @@
 import functools
+from sqlite3 import dbapi2
 
 from flask import(
     Blueprint, flash, g, redirect, render_template, request, session, url_for
@@ -12,7 +13,7 @@ bp = Blueprint('auth', __name__, url_prefix='/')
 def login():
     if request.method == 'POST':
         username = request.form['Identifieringskod:']
-        db = get_db()
+        db = dbapi2.get_db()
         error = None
         user = db.execute(
             'SELECT * FROM users WHERE username = ?', (username,)
@@ -37,7 +38,7 @@ def loginAdmin():
     if request.method == 'POST':
         username = request.form['Användarnamn:']
         password = request.form['Lösenord:']
-        db = get_db()
+        db = dbapi2.get_db()
         error = None
         user = db.execute(
             'SELECT * FROM users WHERE username = ? AND type = 5', (username,)
