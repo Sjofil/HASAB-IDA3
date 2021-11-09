@@ -15,7 +15,6 @@ input.addEventListener('keyup', (e) => {
     } else {
         submitButton.disabled=false;
     }
-    
 });
 
 //Disables text-input before radiobutton
