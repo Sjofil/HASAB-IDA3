@@ -30,6 +30,6 @@ def questionThree():
 def last():
     return render_template("last.html")  
 
-@bp.route("/start")
+@bp.route("/Admin-html/amdmin-log-in-html")
 def start():
-    return render_template("start.html")    
+    return render_template("ad.html")    
