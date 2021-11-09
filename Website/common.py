@@ -9,6 +9,6 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 bp = Blueprint('common', __name__, url_prefix='/')
 
-@bp.route("/index")
+@bp.route("/")
 def main():
     return render_template("index.html")
