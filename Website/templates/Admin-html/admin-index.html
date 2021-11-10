@@ -14,9 +14,10 @@
     </div>
     <div class="col">
         <button class="btn btn-secondary btn-lg rounded-3 rounded-circle" data-bs-toggle="modal" data-bs-target="#password-modal">
-            <i class="bi bi-gear"></i>
+            <i class="bi bi-gear-fill"></i>
         </button>
 
+        <!--Modal för byta lösenord-->
         <div class="modal fade" id="password-modal">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
@@ -57,7 +58,7 @@
 <section class="container-fluid text-center">
     
     <div class="container mt-5">
-        <p>Ladda ner fullständig sammanställning</p>
+        <p class="h5 pb-2">Ladda ner fullständig sammanställning</p>
         <button class="btn btn-secondary btn-lg"> Ladda ner </button>
         <div class="modal fade"></div>
     </div>
@@ -65,11 +66,11 @@
 
 
     <div class="container mt-5">
-        <p>Ladda ner enskild rapoprt</p>
+        <p class="h5 pb-2">Ladda ner enskild rapport</p>
         <button class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#search-modal"> Sök rapport </button>
     </div>
 
-    <!--Popup window för söka efter specifik rapport-->
+     <!--Modal för söka efter specifik rapport-->
     <div class="modal fade" id="search-modal">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -77,15 +78,15 @@
             <!-- Modal Header -->
             <div class="modal-header">
               <h4 class="modal-title">Sök efter enskild rapport</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              <button type="btn" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
       
-            <!-- Modal body -->
+            <!-- Modal body  sökfält-->
             <div class="modal-body">
                 <div class="input-group rounded">
                     <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
                     aria-describedby="search-addon" />
-                    <span class="input-group-text border-0" id="search-addon">
+                    <button class=" btn btn-secondary border-0" id="search">
                       <i class="bi bi-search"></i>
                     </span>
                   </div>
