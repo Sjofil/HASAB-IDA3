@@ -1,0 +1,140 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+ 
+\usepackage{array}
+\usepackage{makecell}
+
+% ---- Commands ------- %
+\newcommand{\documentNumber}[1]{
+    \LARGE  \textbf{Slutrapport}
+    \\
+    \medskip
+}
+\newcommand{\documentVersion}[1]{
+    \medskip
+}
+\newcommand{\documentTitle}[1]{
+    \centerline{\rule{13cm}{0.4pt}}
+    \bigskip \bigskip
+    \LARGE \textbf{MAMF40} \\
+    \bigskip
+    \LARGE {#1} \\
+    \bigskip \bigskip
+    \centerline{\rule{13cm}{0.4pt}}
+}
+
+\newcommand{\documentDate}[1]{
+    \date {#1} 
+}
+
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[5pt]}
+\renewcommand\cellgape{\Gape[5pt]}
+
+
+\renewcommand{\contentsname}{Innehållsförtäckning}
+
+% --- Header & Footer ---- %
+\pagestyle{fancy}
+\lhead{\leftmark}
+\rhead{}
+\rfoot{\thepage}
+\cfoot{}
+\lfoot{}
+
+
+% ------------------------------------------------ #
+
+% ----- FILL THIS ----- %
+\title {
+    \documentNumber {01}    
+
+    % Full name - SHORTNAME
+    \documentTitle {Helsingborg Event and Convention Bureau}
+    
+    % Format: YYYY-MM-DD
+    \documentDate {2021-09-29}
+    \documentVersion Vv 0.1
+    
+    \author{Anna Bergvall - Oscar Blixt - Pontus Persson - Filip Sjövall - David Vilppu - Sabah Zafar}
+}
+
+\begin{document}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+\maketitle
+
+\thispagestyle{empty}
+
+
+
+\newpage
+
+\tableofcontents
+
+
+\newpage
+
+\section{Dokument Historia}
+\begin{tabular}{ l | l | l }
+    Version & Datum & Beskrivning \\
+    \hline
+    0.1 & 2021-09-29 & Dokumentet skapat. \\
+    \hline
+   
+   
+\end{tabular}
+
+\newpage
+% ----- SKRIV UNDER VARJE TITEL ----- %
+
+\section{Division of work}
+On the inside of the cover page, you should make a named description of how the division of labor in the project has been – e.g., who has worked with different parts of the prototype(s) and the report. Keep a reasonable level of detail! This is a good preparation for your thesis project where you need to do this as well.
+
+\section{Abstract}
+A maximum of 250 words!Brief summary. It should be enough to read abstracts to get a reasonable understanding of what has been done and how.
+
+\section{Table of Contents}
+Table of contents, down to heading level 2.
+
+\section{Introduction}
+Short background, what is the basis for this project, for example an account of the project definition from the company and other relevant background.
+
+\section{Process}
+Needs to be divided in the sections: Planning, development, and risk analysis.
+
+\subsection{Planning}
+Relevant accounts of the planning process, including project model with motivations for choosing that specific model, time planning and other relevant information.
+\subsection{Development}
+A structured description of the process and important decisions. Use test results or theory to argue for your decisions. Divide section in some practical manner, for example in sprints. Name them in a good way (not sprint 1 2 3...). Don’t try to make a description of every single decision or feature but make an informed selection of important and interesting things to present.
+
+\subsection{Risk analysis}
+Presentation of original risk analysis with motivations, your plan for updating said risk analysis, and an account on the revisions made during the process.
+
+\section{Result}
+Presentation of final prototype. Limited number (good selection) of images / screen dumps. Focus on interaction and functionalities, but also technical issues, without going too deep into details. In short, describe the projects technical set-up, where you borrowed code, frameworks etc. As far as possible, use the same way of referencing as for text. That is, try to identify an author (if there is only a pseudonym or user, it is better than nothing), a title and then link to website or repository.
+
+\section{Discussion}
+Sections on reflections about the process, methods and result of the project work. Subheadings are encouraged, these need not be checked with supervisor. And finally: to what degree does the product solve the original problem? Motivate!
+
+\section{Advice for students next year}
+Present the 5 most important advice you would like to give students who study this course next year (discuss in group and rank them prior to documentation).Conclusion
+
+\section{Conclusion}
+Brief conclusion: What did you accomplish? What made you succeed or not? 
+
+\section{References}
+
+
+
+
+
+\bibliographystyle{alpha}
+
+
+\end{document}
