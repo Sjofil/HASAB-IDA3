@@ -6,3 +6,9 @@ Anna: sammanställt kriterierna som de facto ska vara med i vårt rapporteringsv
 Filip: 
 - Html och css template för frontend (samtliga sidor som behövs).
 - Suttit med Javascript för att fixa logiken när det kommer till viss knapp-input
+
+David:
+Måndags
+- Fixat funktioner via JS/HTML
+- Arbetat på designen för att försöka göra den mer konsekvent
+- Inläsning på JS/Bootstrap
