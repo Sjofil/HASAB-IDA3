@@ -16,3 +16,7 @@ def main():
 @bp.route("/login")
 def login():
     return render_template("Admin-html/admin-log-in.html")
+
+@bp.route("/admin")
+def index():
+    return render_template("Admin-html/admin-index.html")
