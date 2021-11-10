@@ -1,0 +1,4 @@
+ons 10/11 möte med miljöbron och hceb
+
+Anna: sammanställt kriterierna som de facto ska vara med i vårt rapporteringsverktyg i en wordfil och skickat till malin och malin.
+        Skrivit metoder login() och loginAdmin() i flask som är en del av blueprinten /auth. 
