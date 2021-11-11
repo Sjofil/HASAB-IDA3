@@ -83,7 +83,8 @@
 \end{tabular}
 
 \section{Introduktion}
-    Detta dokument innehåller kraven för ett rapporteringssystem, härefter kallat "systemet", utvecklat på beställning av Helsingborg Convention and Event Bureau. Systemet är ett frågeformulär vars syfte är att få Helsingborg miljöcertifierat av GDSM (Global Destination Sustainability Movement. Huvudfunktionaliteten är att HASAB ska kunna sammanställa den data som tillkommit till följd av svar på formuläret från näringslivet. Systemet ska kunna interagera med databas, server och klient.
+    Detta dokument innehåller kraven för ett rapporteringssystem, härefter kallat "systemet", utvecklat på beställning av Helsingborg Convention and Event Bureau. Systemet är ett frågeformulär vars syfte är att få Helsingborg miljöcertifierat av GDSM (Global Destination Sustainability Movement. I systemet ingår frontend/hemsidan(html, css, javascript), api:n samt databasen.  Huvudfunktionaliteten är att HASAB ska kunna sammanställa den data som tillkommit till följd av svar på formuläret från näringslivet. Systemet ska interageras i en server och det är detta som ska levereras till kunden. 
+    Dokumentets struktureras utifrån prioritering och numrering. Numrering sker enligt \textit{R1} vilka är krav som endast kan hittas i detta dokument, krav med numrering enligt \textit{SF} kommer från scrumboarden. Prioritering sker enligt rubrikerna \textit{stabila krav}, \textit{ändringsbenägna krav}, \textit{uteslutna krav}. 
     
 
 \section{Bakgrund och mål}
@@ -100,13 +101,14 @@
     
     \section{Terminologi}
     \begin{itemize}
-        \item \textbf{HASAB:} Förkortning av Helsingborg Arena och Scen AB vilket är företaget som ska utnyttja systemet.
-        \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ samt statistikföring över svaren.
         \item \textbf{Administratör:} Administratören har tillgång till systemets alla funktioner.
+         \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ samt statistikföring över svaren.
+        \item \textbf{HASAB:} Förkortning av Helsingborg Arena och Scen AB vilket är företaget som ska utnyttja systemet.
         \item \textbf{Slutanvändare:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
         \item\textbf{Stabila krav:}  Stabila krav är krav som inte är ändringbenägna - de baseras på funktioner som är grundläggande för att systemet ska möta beställarens behov.
+         \item \textbf{Uteslutna krav:}  Krav som är listade här är inte längre aktuella.
         \item \textbf{Ändringbenägna krav:}  Krav som är listade här kan förändras eller tas bort.
-        \item \textbf{Uteslutna krav:}  Krav som är listade här är inte längre aktuella.
+       
     \end{itemize}
     
     \section{Hemsidans design}
@@ -115,11 +117,11 @@
      
     \subsection*{Ändringsbenägna krav}
      \subsubsection*{R1}
-    Systemet ska ha ett utseende likt bilden nedan.
+    Systemet ska ha ett utseende likt figur 1.
     
     \begin{figure}[h!]
     \includegraphics[width=150mm]{prototyp.png}
-     \caption{prototyp}
+     \caption{Prototyp}
     \end{figure}
     \subsection*{Uteslutna krav}
     
@@ -133,7 +135,7 @@
         \\
        \indent \textbf{Scenario:} Slutanvändaren navigerar till hemsidan via mail.
         \\
-       \indent \textbf{Förutsättningar:} Slutanvändaren har mått ett mail med en länk till hemsidan.
+       \indent \textbf{Förutsättningar:} Slutanvändaren har fått ett mail som har skickats ut från HASAB. Mailet innehåller en länk till hemsidan.
             \begin{enumerate}
                 \item Slutanvändaren klickar på länken till formuläret som finns i mejlet.
                 \item Slutanvändaren möts av formulärets startsida.
@@ -159,7 +161,7 @@
        \indent \textbf{Förutsättningar:} Slutanvändaren har svarat på samtliga frågor och befinner sig på sidan med den sista frågan.
             \begin{enumerate}
                 \item Slutanvändaren klickar på knappen "Slutför formulär".
-                \item Slutanvändaren möts av en sidan med tack text enligt krav 5.2.1.
+                \item Slutanvändaren möts av en sidan med tack text enligt figur 1.
                 \item Slutanvändaren trycker på knappen "Skicka in formulär".
                 \item   Slutanvändaren möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
             \end{enumerate}
@@ -193,7 +195,7 @@ $$SR18\rightarrow SF-74$$
     
     \subsection*{Stabila krav}
     \subsubsection*{R5}
-    Systemet ska fungera enligt diagramet nedan.
+    Systemet ska fungera enligt figur 2.
     
     \begin{figure}[h!]
     \includegraphics[width=150mm]{Kontextdiagram.png}
@@ -202,7 +204,7 @@ $$SR18\rightarrow SF-74$$
     
     \newpage
     \subsubsection*{R6}
-    Systemt ska hantera data enligt diagrammet nedan.
+    Systemt ska hantera data enligt figur 3.
        \begin{figure}[h!]
     
     \includegraphics[width=150mm]{ERDIAGRAM.png}
