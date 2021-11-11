@@ -14,7 +14,7 @@ def get_db():
         current_app.config['MYSQL_DATABASE_HOST'] = 'vm23.cs.lth.se'
         mysql.init_app(current_app)
         g.db=mysql.connect()
-        return g.db
+    return g.db
 
 def close_db(e=None):
     db=g.pop('db',None)

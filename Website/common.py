@@ -23,7 +23,9 @@ def main():
         
         if error is None:
             session.clear()
+            #saves the id in the session for future safety checks.
             session['user_id'] = user[3]
+            print(session['user_id'])
             return redirect(url_for('questions.questionOne'))
 
         flash(error)
