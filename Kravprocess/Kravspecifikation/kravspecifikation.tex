@@ -83,8 +83,10 @@
 \end{tabular}
 
 \section{Introduktion}
-    Detta dokument innehåller kraven för ett rapporteringssystem, härefter kallat "systemet", utvecklat på beställning av Helsingborg Convention and Event Bureau. Systemet är ett frågeformulär vars syfte är att få Helsingborg miljöcertifierat av GDSM (Global Destination Sustainability Movement. I systemet ingår frontend/hemsidan(html, css, javascript), api:n samt databasen.  Huvudfunktionaliteten är att HASAB ska kunna sammanställa den data som tillkommit till följd av svar på formuläret från näringslivet. Systemet ska interageras i en server och det är detta som ska levereras till kunden. 
-    Dokumentets struktureras utifrån prioritering och numrering. Numrering sker enligt \textit{R1} vilka är krav som endast kan hittas i detta dokument, krav med numrering enligt \textit{SF} kommer från scrumboarden. Prioritering sker enligt rubrikerna \textit{stabila krav}, \textit{ändringsbenägna krav}, \textit{uteslutna krav}. 
+
+    Detta dokument innehåller kraven för ett rapporteringssystem som hädanefter benämns som "systemet". Sysemet är framtaget och utvecklat på beställning av Helsingborg Convention and Event Bureau. Det huvudsakliga syftet med systemet är att Helsingborg stad ska bli miljöcertifierat av GDSM (Global Destination Sustainability Movement) genom att inkorporera deras krav för miljöcertifiering i ett frågeformulär som näringslivet får svara på. Huvudfunktionaliteten är att HASAB ska kunna sammanställa den data som tillkommit till följd av svar på formuläret från näringslivet. Systemet ska interageras i en server och det är detta som ska levereras till kunden. I systemet ingår frontend/hemsidan(html, css, javascript), api:n samt databasen. 
+    \\\\
+    Dokumentets struktureras utifrån prioritering och numrering. Numrering sker enligt \textit{R1} vilka är krav som endast kan hittas i detta dokument, krav med numrering enligt \textit{SF} kommer från scrumboarden. Kraven är prioriterade utefter \textit{stabila krav}, \textit{ändringsbenägna krav} och \textit{uteslutna krav}. 
     
 
 \section{Bakgrund och mål}
@@ -120,9 +122,19 @@
     Systemet ska ha ett utseende likt figur 1.
     
     \begin{figure}[h!]
-    \includegraphics[width=150mm]{prototyp.png}
-     \caption{Prototyp}
+    \caption{Prototyp över frågeformuläret}
+    \includegraphics[width=160mm]{prototyp.png}
     \end{figure}
+    \newpage
+    \subsubsection*{R11}
+    Systemet ska ha ett utseende likt figur 2.
+    \begin{figure}[h!]
+        \centering
+        \caption{Prototyp över administratörens sida}
+        \includegraphics[width=100mm]{Prototyp-admin.jpg}
+        \label{fig:my_label}
+    \end{figure}
+
     \subsection*{Uteslutna krav}
     
     \section{Hemsidans funktion}
@@ -198,8 +210,9 @@ $$SR18\rightarrow SF-74$$
     Systemet ska fungera enligt figur 2.
     
     \begin{figure}[h!]
+    \caption{Kontext-diagram: Det utvecklade systemet innefattar \textit{Server, API, GUI} och \textit{Systemet}}
     \includegraphics[width=150mm]{Kontextdiagram.png}
-    \caption{Kontext-diagram}
+    
     \end{figure}
     
     \newpage
@@ -219,8 +232,11 @@ $$SR18\rightarrow SF-74$$
    
     \section{Kvalitetskrav}
     \subsection*{Stabila krav}
+    
   
      \subsection*{Ändringsbenägna krav}
+     \subsubsection*{R6}
+     Vid oförutsebara händelser som påverkar systemets tillgänglighet ska en session sparas i 24 timmar från att den påbörjades.
      
      \subsubsection*{R7}
     Systemet ska ha en svarstid på max \underline{\hspace{1cm}} sekunder.
