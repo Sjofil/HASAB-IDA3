@@ -15,3 +15,7 @@ Måndags
 - Fixat funktioner via JS/HTML
 - Arbetat på designen för att försöka göra den mer konsekvent
 - Inläsning på JS/Bootstrap
+
+Pontus
+- La till blueprints i flask för att underlätta sammarbete
+- Gjorde en prototyp för mailing listan där admin kan skicka ut länkar
