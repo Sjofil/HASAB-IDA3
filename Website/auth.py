@@ -9,16 +9,14 @@ from . import db
 
 bp = Blueprint('auth', __name__, url_prefix='/')
 
-@bp.route("/auth")
+@bp.route("/auth", methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
         username = request.form['Identifieringskod:']
-        db = dbapi2.get_db()
+        db1=db.get_db()
         error = None
-        user = db.execute(
-            'SELECT * FROM users WHERE username = ?', (username,)
-        ).fetchone()
-        
+        db1.cursor().execute("SELECT * FROM user WHERE Name ='" + username + "'" )
+        user=db1.cursor().fetchone()
         if user is None:
             error = 'Ogiltig identifieringskod.'
         
