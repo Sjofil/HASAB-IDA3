@@ -1,7 +1,10 @@
 ons 10/11 möte med miljöbron och hceb
 
+tors 11/11 coachning med ylva. Filip, David, Oscar och Anna närvarande. Pontus sjuk och Sabah kunde inte. 
+
 Anna: sammanställt kriterierna som de facto ska vara med i vårt rapporteringsverktyg i en wordfil och skickat till malin och malin.
         Skrivit metoder login() och loginAdmin() i flask som är en del av blueprinten /auth. 
+        Skapat grafisk schema för kommande vecka - så att vi enklare ska komma ihåh viktiga saker. 
 
 Filip: 
 - Html och css template för frontend (samtliga sidor som behövs).
