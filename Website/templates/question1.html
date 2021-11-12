@@ -30,10 +30,22 @@
         <p class="pt-3">
             Isåfall vilket?
         </p>
+
+        <!--Form för val av olika förbestämda certifikat-->
         <div class="container-fluid">
             <div class="form-check-inline w-25">
-                <input disabled autocomplete="off" id="answer" type="text" class="form-control-lg form-control rounded-3" required="required" placeholder="Certifikat:" id="q1-button">
+                <select disabled autocomplete="off" id="answer"
+                 type="select" class="form-control-lg form-control rounded-3"
+                  required="required" id="q1-button" onchange="getSelectedValue()">
+                    <option value = "" disabled selected hidden>Välj certifikat</option>
+                    <option value ="1">Certifikat 1</option>
+                    <option value ="2">Certifikat 2</option>
+                    <option value ="3">Certifikat 3</option>
+                    <option value ="4">Certifikat 4</option>
+                  </select>
             </div>
+
+            
 
 
             <!--Knapp-->

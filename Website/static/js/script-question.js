@@ -3,7 +3,10 @@ const submitButton = document.getElementById("next");
 const input = document.getElementById("answer");
 const radioButton = document.getElementById("radio1");
 const radioButton2 = document.getElementById("radio2");
+
+
 change = false;
+
 
 //disablar knappen tills man skrivit in något
 console.log(input);
@@ -50,3 +53,10 @@ document.location.href="last.html";
 function nextQuest(){
     document.location.href="/question2";
 }
+
+
+    function getSelectedValue(){
+        var selectedValue = document.getElementById("answer").value;
+        console.log(selectedValue);
+    }
+
