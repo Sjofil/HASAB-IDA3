@@ -42,8 +42,9 @@ document.body.addEventListener('change', (e) => {
         input.disabled = true;
         submitButton.disabled = false;
         change = false;
+        document.getElementById("answer").value = 5;
     } 
-    document.getElementById("answer").value = "";
+   
 });
 
 function submitForm(){

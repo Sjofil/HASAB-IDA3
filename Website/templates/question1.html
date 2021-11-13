@@ -32,11 +32,9 @@
         </p>
 
         <!--Form för val av olika förbestämda certifikat-->
-        <div class="container-fluid">
-            <div class="form-check-inline w-25">
-                <select disabled autocomplete="off" id="answer"
-                 type="select" class="form-control-lg form-control rounded-3"
-                  required="required" id="q1-button" onchange="getSelectedValue()">
+        <div class="container-fluid w-25">
+                <select id="answer" disabled
+                  class="form-select rounded-3" onchange="getSelectedValue()" >
                     <option value = "" disabled selected hidden>Välj certifikat</option>
                     <option value ="1">Certifikat 1</option>
                     <option value ="2">Certifikat 2</option>
@@ -70,5 +68,6 @@
     </footer>
 
     <script src="/static/js/script-question.js"></script>
+  
 
 {% endblock %}
