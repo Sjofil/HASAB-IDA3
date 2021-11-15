@@ -16,9 +16,12 @@ def main():
         db1=db.get_db()
         error = None
         cursor=db1.cursor()
-        cursor.execute("SELECT * FROM user WHERE Name ='" + username + "'" )
+        stmt="SELECT * FROM user WHERE Adress ='" + username + "'"
+        cursor.execute(stmt)
         user=cursor.fetchone()
         if user is None:
+            print(stmt)
+            print(user)
             error = 'Ogiltig identifieringskod.'
         
         if error is None:
@@ -26,7 +29,7 @@ def main():
             #saves the id in the session for future safety checks.
             session['user_id'] = user[3]
             print(session['user_id'])
-            return redirect(url_for('questions.questionOne'))
+            return redirect(url_for('questions.questionMain'))
 
         flash(error)
     return render_template("index.html")
