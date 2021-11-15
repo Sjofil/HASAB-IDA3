@@ -14,7 +14,7 @@ def questionMain():
         cursor = db.get_db().cursor()
         cursor.execute("SELECT * FROM questions WHERE Type_ID='1'")
         questions=cursor.fetchall()
-        
+        return questions
     return render_template("question1.html")
 
 @bp.route("/question2")
