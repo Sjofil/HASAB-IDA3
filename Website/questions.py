@@ -12,8 +12,9 @@ def questionMain():
     if request.method == 'GET':
         #questionIndex = request.args.get('page')
         cursor = db.get_db().cursor()
-        questions = cursor.execute('SELECT * FROM questions WHERE Type_ID=1').fetchall()
-        return questions
+        cursor.execute("SELECT * FROM questions WHERE Type_ID='1'")
+        questions=cursor.fetchall()
+        
     return render_template("question1.html")
 
 @bp.route("/question2")
