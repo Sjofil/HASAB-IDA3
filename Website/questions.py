@@ -1,17 +1,19 @@
-import functools
-
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
-from werkzeug.security import check_password_hash, generate_password_hash
 
-#from flaskr.db import get_db
+from . import db
 
 bp = Blueprint('questions', __name__, url_prefix='/')
 
 
-@bp.route("/question1")
-def questionOne():
+@bp.route("/question", methods = ['GET', 'POST'])
+def questionMain():
+    if request.method == 'GET':
+        #questionIndex = request.args.get('page')
+        cursor = db.get_db().cursor()
+        questions = cursor.execute('SELECT * FROM questions WHERE Type_ID=1').fetchall()
+        return questions
     return render_template("question1.html")
 
 @bp.route("/question2")
