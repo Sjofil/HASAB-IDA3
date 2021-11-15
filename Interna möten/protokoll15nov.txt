@@ -1,0 +1,14 @@
+Möte 15/11 kl 12:30
+
+Slutrapporten 
+Filip: development i slutrapporten
+David: skriver om riskanalys i slutrapporten
+Oscar: lägger in malins frågor i databasen
+pontus: sessions
+Anna: planning i slutrapporten, mail till malin
+När ska vi ta acceptanstestet?
+Ska vi gå igenom systemet med er?
+Vill ni ha en provperiod på t ex en vecka innan ni behöver säga att det är ok eller inte?
+Har ni tänkt något på underhåll/support?
+
+
