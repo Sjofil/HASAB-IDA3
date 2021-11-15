@@ -10,12 +10,16 @@ bp = Blueprint('questions', __name__, url_prefix='/')
 @bp.route("/question", methods = ['GET', 'POST'])
 def questionMain():
     if request.method == 'GET':
-        #questionIndex = request.args.get('page')
-        cursor = db.get_db().cursor()
-        cursor.execute("SELECT * FROM questions WHERE Type_ID='1'")
-        questions=cursor.fetchall()
-        return questions
-    return render_template("question1.html")
+        value=request.args.get('page')
+        page=int(1 if value is None else value)
+ 
+    if(page > 0):
+        return render_template("question1.html", questionText=session["questions"][page-1][2], page=page)
+    else:
+        error = "Ogilitigt sido nummer"
+        flash(error)
+
+    return render_template("question1.html", questionText=error, page=page)
 
 @bp.route("/question2")
 def questionTwo():

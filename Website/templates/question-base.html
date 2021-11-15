@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+<section class="text-center container-fluid align-items-center">
+    <h1 class="text-uppercase">Fråga {{ page }}</h1>
+</section>
+
+<section class="text-center h-100 ">
+    <!--Fråga 1-->
+    <div class="container-fluid pt-3">
+        <p>
+            {{ questionText }}
+        </p>
+
+        {% block question %}{% endblock %}
+
+        <button disabled id="next" onclick="nextQuest()" class="btn btn-secondary btn-lg">
+            Nästa<i class="bi bi-arrow-right"></i> 
+        </button>
+    </div>
+</section>
+
+<!--Lista över frågor-->    
+<footer class="container-fluid pt-5 w-50"> 
+    <ul class="pagination justify-content-center">
+        <li class="page-item active"><a class="page-link" >1</a></li>
+        <li class="page-item disabled"><a class="page-link">2</a></li>
+        <li class="page-item disabled"><a class="page-link">3</a></li>
+        <li class="page-item disabled"><a class="page-link">4</a></li>
+      </ul>
+</footer>
+
+<script src="/static/js/script-question.js"></script>
+
+{% endblock %}

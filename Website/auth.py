@@ -28,8 +28,6 @@ def login():
         flash(error)
 
     return render_template('admin-log-in.html')
-
-
     
 @bp.route("/auth")
 def loginAdmin():
