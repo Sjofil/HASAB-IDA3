@@ -18,20 +18,22 @@
 
         {% block question %}{% endblock %}
 
+        <section class="container-fluid pt-5 mt-5">
         <button id="next" onclick="nextQuest()" class="btn btn-secondary btn-lg">
             Nästa<i class="bi bi-arrow-right"></i> 
         </button>
+    </section>
     </div>
 </section>
 
 <!--Lista över frågor-->    
 <footer class="container-fluid pt-5 w-50"> 
     <div class="row">
-        <div class="col-4">
+        <div class="col-4 pt-1">
             <button disabled id="back" onclick="prevQuest()" class="btn btn-secondary rounded"><i class="bi bi-arrow-left"></i></a>
         </div>
-
-    <ul class="pagination justify-content-center " id="totalPages">
+        <div class="col-4">
+    <ul class="pagination float-none justify-content-center  " id="totalPages">
         {% for question in questionObject %}
         {% if page == loop.index %}
         <li class="page-item active"><a class="page-link" >{{ loop.index }}</a></li>
@@ -40,6 +42,8 @@
         {% endif %}
         {% endfor %}
       </ul>
+      </div>
+      </div>
 </footer>
 
 <script src="{{url_for('static', filename='js/script-question.js')}}"></script>
