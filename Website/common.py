@@ -16,8 +16,8 @@ def main():
         db1=db.get_db()
         error = None
         cursor=db1.cursor()
-        stmt="SELECT * FROM user WHERE Adress =%s", username
-        cursor.execute(stmt)
+        stmt="SELECT * FROM user WHERE Adress =%s"
+        cursor.execute(stmt, username)
         user=cursor.fetchone()
         if user is None:
             print(stmt)
