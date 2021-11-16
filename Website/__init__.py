@@ -8,7 +8,7 @@ def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
 
     app.config.from_mapping(
-        SECRET_KEY='dev'
+        SECRET_KEY='44ade0bebbe636e0fdaf814f4f82cee812b6598ccb53e1c757f093119430afbe'
     )
     db.init_app(app)
 
