@@ -13,15 +13,9 @@ def questionMain():
         value=request.args.get('page')
         page=int(1 if value is None else value)
 
-    if(page > 0):
-        return render_template("question1.html", 
-        questionObject=session["questions"], 
-        page=page)
-    else:
-        error = "Ogilitigt sido nummer"
-        flash(error)
-
-    return render_template("question1.html", questionObject=None, page=page)
+    return render_template("question1.html", 
+    questionObject=session["questions"], 
+    page=max(1, min(page, len(session["questions"]))))
 
 @bp.route("/question2")
 def questionTwo():
