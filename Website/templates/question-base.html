@@ -26,7 +26,12 @@
 
 <!--Lista över frågor-->    
 <footer class="container-fluid pt-5 w-50"> 
-    <ul class="pagination justify-content-center" id="totalPages">
+    <div class="row">
+        <div class="col-4">
+            <button disabled id="back" onclick="prevQuest()" class="btn btn-secondary rounded"><i class="bi bi-arrow-left"></i></a>
+        </div>
+
+    <ul class="pagination justify-content-center " id="totalPages">
         {% for question in questionObject %}
         {% if page == loop.index %}
         <li class="page-item active"><a class="page-link" >{{ loop.index }}</a></li>

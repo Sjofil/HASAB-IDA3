@@ -3,10 +3,21 @@ const submitButton = document.getElementById("next");
 const input = document.getElementById("answer");
 const radioButton = document.getElementById("radio1");
 const radioButton2 = document.getElementById("radio2");
+const totalPages = document.getElementById("totalPages").childElementCount;
 
 
 change = false;
 
+window.addEventListener('load', function() {
+    var page = getRequestVariable("page");
+    var pageNumber = parseInt(page);
+    if(pageNumber > 1){
+          document.getElementById("back").disabled=false; 
+    }else {
+        document.getElementById("back").disabled=true;
+    }
+  
+  })
 
 //disablar knappen tills man skrivit in något
 console.log(input);
@@ -54,10 +65,26 @@ document.location.href="last.html";
 function nextQuest(){
     var page = getRequestVariable("page");
     var pageNumber = parseInt(page);
-    var totalPages = document.getElementById("totalPages").childElementCount;
     if(page != undefined && page != NaN) 
     {
         document.location.href="/question?page=" + (pageNumber + 1);
+    }
+    else
+    {
+        document.location.href="/question?page=2"
+    }
+
+}
+
+function prevQuest(){
+    var page = getRequestVariable("page");
+    var pageNumber = parseInt(page);
+    if(page != undefined && page != NaN) 
+    {
+        if(pageNumber > 1){
+            document.location.href="/question?page=" + (pageNumber - 1);
+        }
+        
     }
     else
     {
