@@ -28,7 +28,7 @@ def login():
             session.clear()
             session['user_id'] = user[0]
             print(session['user_id'])
-            return redirect(url_for(adminLoggedIn))
+            return redirect(url_for('auth.adminLoggedIn'))
 
         flash(error)
 
