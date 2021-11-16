@@ -39,9 +39,10 @@ def login():
 @bp.route("/adminIndex", methods=('GET', 'POST'))
 def adminLoggedIn():
     if request.method == 'GET':
+        print(session['user_id'])
         if (session['user_id'] == 'Admin'):
             return render_template('Admin-html/admin-index.html')
         
         
-    return render_template('Admin-html/admin-log-in.html')
+        return redirect(url_for('auth.login'))
         
