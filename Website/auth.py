@@ -35,8 +35,12 @@ def login():
     return render_template('Admin-html/admin-log-in.html')
 
 
+# Checks if admin is logged in. If not - /admin is rendered
 @bp.route("/adminIndex")
 def adminLoggedIn():
-    return render_template('Admin-html/admin-index.html')
-
+    if request.method == 'POST':
+        if (session['user_id'] == 'admin'):
+            return render_template('Admin-html/admin-index.html')
+        
+        return render_template('Admin-html/admin-log-in.html')
         
