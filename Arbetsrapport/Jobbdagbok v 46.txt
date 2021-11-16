@@ -1,2 +1,4 @@
 David - Fixat funktioner i JS och fixat fråga 1 som en selectform istället
 för textfield. Skrivit på slutrapporten (Riskanalys),
+
+Oscar - Fixat admin login och logout, fixat vanlig log in
