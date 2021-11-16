@@ -18,7 +18,7 @@
 
         {% block question %}{% endblock %}
 
-        <button disabled id="next" onclick="nextQuest()" class="btn btn-secondary btn-lg">
+        <button id="next" onclick="nextQuest()" class="btn btn-secondary btn-lg">
             Nästa<i class="bi bi-arrow-right"></i> 
         </button>
     </div>
@@ -34,6 +34,6 @@
       </ul>
 </footer>
 
-<script src="/static/js/script-question.js"></script>
+<script src="{{url_for('static', filename='js/script-question.js')}}"></script>
 
 {% endblock %}

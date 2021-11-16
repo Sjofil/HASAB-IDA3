@@ -52,7 +52,18 @@ document.location.href="last.html";
 }
 
 function nextQuest(){
-    document.location.href="/question2";
+    var page = getRequestVariable(page);
+    var pageNumber = parseInt(page);
+    console.log(pageNumber);
+    if(page != undefined && page != NaN) 
+    {
+        document.location.href="/question?page=" + (pageNumber + 1);
+    }
+    else
+    {
+        document.location.href="/question?page=2"
+    }
+
 }
 
 

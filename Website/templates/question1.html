@@ -1,7 +1,8 @@
 {% extends 'question-base.html' %}
 
 {% block question %}
-     
+<!--Yes no question-->
+{% if questionType == 0 %}
 <div class="form-check-inline pb-3">
     <input type="radio" class="form-check-input" id="radio1" name="optradio" value="yes">
     <label class="form-check-label" for="radio1"> Ja</label>
@@ -9,22 +10,21 @@
     <input type="radio" class="form-check-input" id="radio2" name="optradio" >
     <label class="form-check-label" for="radio2"> Nej</label>
 </div>
-
-
-<!--Välj Certifikat-->
-<p class="pt-3">
-    Isåfall vilket?
-</p>
-
+{% elif questionType == 1 %}
+<div class="form-check-inline pb-3">
+    <input type="number" min="0" pattern="[0-9]" class="form-control-lg form-control rounded-3 " placeholder="Antal">
+</div>
+{% elif questionType == 2 %}
 <!--Form för val av olika förbestämda certifikat-->
 <div class="container-fluid w-25">
-    <select id="answer" disabled
-        class="form-select rounded-3" onchange="getSelectedValue()" >
-        <option value = "" disabled selected hidden>Välj certifikat</option>
+    <select id="answer" class="form-select rounded-3" onchange="getSelectedValue()" >
+        <option value = "" selected hidden>Välj certifikat</option>
         <option value ="1">Certifikat 1</option>
         <option value ="2">Certifikat 2</option>
         <option value ="3">Certifikat 3</option>
         <option value ="4">Certifikat 4</option>
     </select>
 </div>
+
+{% endif %}
 {% endblock %}
