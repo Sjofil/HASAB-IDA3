@@ -54,7 +54,7 @@ document.location.href="last.html";
 function nextQuest(){
     var page = getRequestVariable("page");
     var pageNumber = parseInt(page);
-    console.log(pageNumber);
+    var totalPages = document.getElementById("totalPages").childElementCount;
     if(page != undefined && page != NaN) 
     {
         document.location.href="/question?page=" + (pageNumber + 1);
