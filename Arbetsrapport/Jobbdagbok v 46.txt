@@ -5,4 +5,5 @@ Oscar - Fixat admin login och logout, fixat vanlig log in
 
 Filip - Suttit och skrivit delrapport samt fixat tillbaka knapp så vi kan gå tillbaka mellan sidorna.
 
- 
+Pontus
+La till de olika fråge-typerna samt fixade en del med fråge sidorna rent allmänt
