@@ -14,12 +14,14 @@ def questionMain():
         page=int(1 if value is None else value)
 
     if(page > 0):
-        return render_template("question1.html", questionText=session["questions"][page-1][2], page=page, questionType=session["questions"][page-1][3])
+        return render_template("question1.html", 
+        questionObject=session["questions"], 
+        page=page)
     else:
         error = "Ogilitigt sido nummer"
         flash(error)
 
-    return render_template("question1.html", questionText=error, page=page, questionType='0')
+    return render_template("question1.html", questionObject=None, page=page)
 
 @bp.route("/question2")
 def questionTwo():

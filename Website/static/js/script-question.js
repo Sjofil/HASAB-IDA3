@@ -52,7 +52,7 @@ document.location.href="last.html";
 }
 
 function nextQuest(){
-    var page = getRequestVariable(page);
+    var page = getRequestVariable("page");
     var pageNumber = parseInt(page);
     console.log(pageNumber);
     if(page != undefined && page != NaN) 

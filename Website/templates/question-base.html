@@ -13,7 +13,7 @@
     <!--Fråga 1-->
     <div class="container-fluid pt-3">
         <p>
-            {{ questionText }}
+            {{ questionObject[page-1][2] }}
         </p>
 
         {% block question %}{% endblock %}
@@ -27,10 +27,13 @@
 <!--Lista över frågor-->    
 <footer class="container-fluid pt-5 w-50"> 
     <ul class="pagination justify-content-center">
-        <li class="page-item active"><a class="page-link" >1</a></li>
-        <li class="page-item disabled"><a class="page-link">2</a></li>
-        <li class="page-item disabled"><a class="page-link">3</a></li>
-        <li class="page-item disabled"><a class="page-link">4</a></li>
+        {% for question in questionObject %}
+        {% if page == loop.index %}
+        <li class="page-item active"><a class="page-link" >{{ loop.index }}</a></li>
+        {% else %}
+        <li class="page-item disabled"><a class="page-link" >{{ loop.index }}</a></li>
+        {% endif %}
+        {% endfor %}
       </ul>
 </footer>
 
