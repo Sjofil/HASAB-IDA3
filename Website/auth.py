@@ -9,50 +9,34 @@ from . import db
 
 bp = Blueprint('auth', __name__, url_prefix='/')
 
-@bp.route("/auth", methods=('GET', 'POST'))
+@bp.route("/admin", methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
-        username = request.form['Identifieringskod:']
+        username = request.form['username']
+        password=request.form['password']
         db1=db.get_db()
+        cursor=db1.cursor()
         error = None
-        db1.cursor().execute("SELECT * FROM user WHERE Name ='" + username + "'" )
-        user=db1.cursor().fetchone()
+        stmt="SELECT * FROM admin WHERE Name =%s AND password=%s"
+        print(stmt)
+        cursor.execute(stmt,(username, password))
+        user=cursor.fetchone()
         if user is None:
             error = 'Ogiltig identifieringskod.'
         
         if error is None:
             session.clear()
-            session['user_id'] = user['id']
-            return redirect(url_for('index'))
+            session['user_id'] = user[0]
+            print(session['user_id'])
+            return redirect(url_for(adminLoggedIn))
 
         flash(error)
 
-    return render_template('admin-log-in.html')
-    
-@bp.route("/auth")
-def loginAdmin():
-    if request.method == 'POST':
-        username = request.form['Användarnamn:']
-        password = request.form['Lösenord:']
-        db = dbapi2.get_db()
-        error = None
-        user = db.execute(
-            'SELECT * FROM users WHERE username = ? AND type = 5', (username,)
-        ).fetchone()
-                
+    return render_template('Admin-html/admin-log-in.html')
 
-        if user is None:
-            error = 'Felaktigt användarnamn.'
-        elif not check_password_hash(user['password'], password):
-            error = 'Felaktigt lösenord.'
-                
-        if error is None:
-            session.clear()
-            session['user_id'] = user['ID']
-            return redirect(url_for('index'))
 
-        flash(error)
-
-    return render_template('auth/admin-log-in.html')
+@bp.route("/adminIndex")
+def adminLoggedIn():
+    return render_template('Admin-html/admin-index.html')
 
         

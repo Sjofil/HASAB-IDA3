@@ -10,19 +10,20 @@
 
     <div class="input-group container-fluid pt-4 w-25 ">
         <div class="col form-floating">
-            <input type="text" class="form-control-lg form-control rounded-3 " placeholder="Exempeltext" name="username">
+            <form method="post" id='myForm'> </form>
+            <input form="myForm" type="text" class="form-control-lg form-control rounded-3 " placeholder="Exempeltext" name="username">
             <label for="username">Användarnamn</label>
         </div>
     </div>
     <div class="input-group container-fluid pt-4 pb-1 w-25 ">
         <div class="col form-floating">
-            <input type="password" class="form-control-lg form-control rounded-3 " placeholder="Exempeltext" name="password">
+            <input form="myForm" type="password" class="form-control-lg form-control rounded-3 " placeholder="Exempeltext" name="password">
             <label for="password">Lösenord</label>
         </div>
     </div>   
     
     <div class="ps-2 pt-4">
-        <button class="btn btn-secondary btn-lg">Logga in</i></button>
+        <button type="submit" form="myForm" class="btn btn-secondary btn-lg">Logga in</i></button>
     </div>
 </section>
 {% endblock %}

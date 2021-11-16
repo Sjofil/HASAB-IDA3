@@ -16,7 +16,7 @@ def main():
         db1=db.get_db()
         error = None
         cursor=db1.cursor()
-        stmt="SELECT * FROM user WHERE Adress ='" + username + "'"
+        stmt="SELECT * FROM user WHERE Adress =%s", username
         cursor.execute(stmt)
         user=cursor.fetchone()
         if user is None:
@@ -40,10 +40,3 @@ def get_questions(typeID):
     cursor.execute("SELECT * FROM questions WHERE Type_ID=%s", typeID)
     return cursor.fetchall()
 
-@bp.route("/login")
-def login():
-    return render_template("Admin-html/admin-log-in.html")
-
-@bp.route("/admin")
-def index():
-    return render_template("Admin-html/admin-index.html")
