@@ -1,7 +1,7 @@
 David - Fixat funktioner i JS och fixat fråga 1 som en selectform istället
 för textfield. Skrivit på slutrapporten (Riskanalys),
 
-Oscar - Fixat admin login och logout, fixat vanlig log in
+Oscar - Fixat admin login och logout, fixat vanlig log in, lagt till hotell, byråer, campus och flygplatser i databasen
 
 Filip - Suttit och skrivit delrapport samt fixat tillbaka knapp så vi kan gå tillbaka mellan sidorna.
 
