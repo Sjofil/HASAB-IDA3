@@ -67,7 +67,10 @@ function nextQuest(){
     var pageNumber = parseInt(page);
     if(page != undefined && page != NaN) 
     {
-        document.location.href="/question?page=" + (pageNumber + 1);
+        if(totalPages > pageNumber){
+            document.location.href="/question?page=" + (pageNumber + 1);
+        }
+        
     }
     else
     {
