@@ -6,7 +6,7 @@
     .pagination > li > a
     {
         background-color: white;
-        color: #6c757d;
+        color: grey;
     }
     
     .pagination > li > a:focus,
@@ -14,26 +14,44 @@
     .pagination > li > span:focus,
     .pagination > li > span:hover
     {
-        color: #5a5a5a;
-        background-color: #eee;
-        border-color: #ddd;
+        color: grey;
+        background-color: grey;
+        border-color: grey;
     }
     
     .pagination > .active > a
     {
         color: white;
-        background-color: #6c757d !Important;
-        border: solid 1px #6c757d !Important;
+        background-color: grey !Important;
+        border: solid 1px grey !Important;
     }
     
     .pagination > .active > a:hover
     {
         color: white;
-        background-color: #6c757d !Important;
-        border: solid 1px #6c757d !Important;
+        background-color: grey !Important;
+        border: solid 1px grey !Important;
     }
 
     .dropdown-menu > li > a:active {
-        background-color: #6c757d !Important;
+        color: #eee;
+        background-color: grey !Important;
     
     }
+
+    .d{
+        background: #96b2aa;
+    }
+
+    .btn-secondary {
+        background-color:#96b2aa;
+        border-color: #96b2aa;
+    }
+
+    .btn-secondary:hover{
+        background-color:#6d877f;
+        border-color: #6d877f;
+    }
+    
+
+    
