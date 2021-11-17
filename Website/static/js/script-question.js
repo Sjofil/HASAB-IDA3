@@ -68,13 +68,23 @@ function nextQuest(){
     if(page != undefined && page != NaN) 
     {
         if(totalPages > pageNumber){
+            
+            let answers = JSON.parse(getCookie("answers"));
+            answers[pageNumber] = $('form').serialize();
+            setCookie("answers", JSON.stringify(answers), 1);
             document.location.href="/question?page=" + (pageNumber + 1);
         }
-        
+        else if(totalPages == pageNumber) {
+            console.log(getCookie("answers"));
+
+        }
     }
     else
     {
-        document.location.href="/question?page=2"
+        document.location.href="/question?page=2";
+        let answers = [];
+        answers[0] = $('form').serialize();
+        setCookie("answers", JSON.stringify(answers), 1);
     }
 
 }
