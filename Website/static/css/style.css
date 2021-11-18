@@ -1,12 +1,12 @@
 
     .form-control:focus{
-        border-color: grey;
-       box-shadow: 0.0 0 0 0.1rem grey;
+        border-color: #96b2aa;
+       box-shadow: 0.0 0 0 0.1rem #96b2aa;
     }
     .pagination > li > a
     {
         background-color: white;
-        color: grey;
+        color: #96b2aa;
     }
     
     .pagination > li > a:focus,
@@ -14,28 +14,28 @@
     .pagination > li > span:focus,
     .pagination > li > span:hover
     {
-        color: grey;
-        background-color: grey;
-        border-color: grey;
+        color: #96b2aa;
+        background-color: #96b2aa;
+        border-color: #96b2aa;
     }
     
     .pagination > .active > a
     {
         color: white;
-        background-color: grey !Important;
-        border: solid 1px grey !Important;
+        background-color: #96b2aa !Important;
+        border: solid 1px #96b2aa !Important;
     }
     
     .pagination > .active > a:hover
     {
         color: white;
-        background-color: grey !Important;
-        border: solid 1px grey !Important;
+        background-color: #96b2aa !Important;
+        border: solid 1px #96b2aa !Important;
     }
 
     .dropdown-menu > li > a:active {
         color: #eee;
-        background-color: grey !Important;
+        background-color: #96b2aa !Important;
     
     }
 
@@ -44,7 +44,7 @@
     }
 
     .btn-secondary {
-        background-color:#96b2aa;
+        background:#96b2aa;
         border-color: #96b2aa;
     }
 
@@ -52,6 +52,12 @@
         background-color:#6d877f;
         border-color: #6d877f;
     }
+
+    .btn-secondary:disabled,
+.btn-secondary[disabled]{
+  background-color: #6d877f;
+  border-color: #6d877f;
+}
     
 
     
