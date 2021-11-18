@@ -18,7 +18,9 @@
 </div>
 {% elif questionObject[page-1][3] == 2 %}
 <!--Form för val av olika förbestämda certifikat-->
-<div class="container-fluid w-25">
+<div class="container-fluid input-group ">
+    <div class="col-4"></div>
+    <div class="col">
     <form>
         <select id="answer" class="form-select rounded-3" onchange="getSelectedValue()" >
             <option value = "" selected hidden>Välj certifikat</option>
@@ -28,6 +30,8 @@
             <option value ="4">Certifikat 4</option>
         </select>
     </form>
+</div>
+    <div class="col-4"></div>
 </div>
 
 {% endif %}
