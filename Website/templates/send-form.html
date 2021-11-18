@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'question-base.html' %}
 
 {% block header %}
 
@@ -25,23 +25,7 @@
                 </div>
         </section>
 
-        <footer class="container-fluid pt-5 w-50">
-            <div class="row">
-                <div class="col-4">
-                    <a href="question2-2" class="btn btn-secondary rounded"><i class="bi bi-arrow-left"></i></a>
-                </div>
-                
-                <div class="col-4">
-                    <ul class="pagination float-none justify-content-center">
-                        <li class="page-item disabled"><a class="page-link" ><i class="bi bi-check"></i></a></li>
-                        <li class="page-item disabled"><a class="page-link"><i class="bi bi-check"></i></a></li>
-                        <li class="page-item disabled"><a class="page-link"><i class="bi bi-check"></i></a></li>
-                        <li class="page-item active"><a class="page-link">4</a></li>
-                      </ul>
-                </div>
-            </div>
-    
-            
+         
         </footer>
         <script src="{{url_for('static', filename='js/script-question.js')}}"></script>
        {% endblock %}
