@@ -15,10 +15,10 @@
                 <div class="container-fluid pt-5">
                     <section class="text-center">
                         <div class="container-fluid pt-5 " id="btn1">
-                            <a href="/last" class="btn btn-secondary btn-lg">
+                            <button onclick="sendCookie()" class="btn btn-secondary btn-lg">
                                 Skicka in <i class="bi bi-check2"></i>
-
-                            </a>
+                            </button>
+                            
                         </div>
                 </section>
                        
@@ -43,5 +43,5 @@
     
             
         </footer>
-
+        <script src="{{url_for('static', filename='js/script-question.js')}}"></script>
        {% endblock %}

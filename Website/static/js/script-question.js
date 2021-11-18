@@ -76,7 +76,7 @@ function nextQuest(){
         }
         else if(totalPages == pageNumber) {
             console.log(getCookie("answers"));
-
+            document.location.href="/send-form";
         }
     }
     else
@@ -87,6 +87,18 @@ function nextQuest(){
         setCookie("answers", JSON.stringify(answers), 1);
     }
 
+}
+
+function sendCookie(){
+    let answers = getCookie("answers");
+    console.log(answers)
+    $.ajax({
+        url: "/send-form",
+        type: 'POST',
+        data :{
+            answers: answers
+        },
+    });
 }
 
 function prevQuest(){

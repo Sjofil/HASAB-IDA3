@@ -1,3 +1,4 @@
+import re
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
@@ -12,6 +13,8 @@ def questionMain():
     if request.method == 'GET':
         value=request.args.get('page')
         page=int(1 if value is None else value)
+        if page>len(session["questions"]):
+            return redirect(url_for("questions.questionThree"))
 
     return render_template("question1.html", 
     questionObject=session["questions"], 
@@ -25,8 +28,10 @@ def questionTwo():
 def questionTwoTwo():
     return render_template("question2-2.html")   
 
-@bp.route("/send-form")
+@bp.route("/send-form" , methods=['GET','POST'])
 def questionThree():
+    if request.method == 'POST':
+        print(request.data)
     return render_template("send-form.html")
 
 @bp.route("/last")
