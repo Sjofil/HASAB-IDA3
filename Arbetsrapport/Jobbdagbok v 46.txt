@@ -6,6 +6,7 @@ kan sparas för senare sammanställning och inskickning till databasen, undersö
 hjälp av cookies.
 
 Filip - Suttit och skrivit delrapport samt fixat tillbaka knapp så vi kan gå tillbaka mellan sidorna.
+Suttit och mobilanpassat hemsidan samt fixat med designdetaljer.
 
 Pontus
 La till de olika fråge-typerna samt fixade en del med fråge sidorna rent allmänt
