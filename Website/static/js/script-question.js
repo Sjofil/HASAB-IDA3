@@ -1,8 +1,5 @@
 
 const submitButton = document.getElementById("next");
-const forwardButton = document.getElementById("forward");
-const radioButton = document.getElementById("radio1");
-const radioButton2 = document.getElementById("radio2");
 const totalPages = document.getElementById("totalPages").childElementCount;
 
 
@@ -96,39 +93,6 @@ function back(){
     }
 
 }
-
-
-function sendCookie(){
-    let answers = getCookie("answers");
-    console.log(answers)
-    $.ajax({
-        url: "/send-form",
-        type: 'POST',
-        data :{
-            answers: answers
-        },
-    });
-}
-
-function prevQuest(){
-    var page = getRequestVariable("page");
-    var pageNumber = parseInt(page);
-    if(page != undefined && page != NaN) 
-    {
-        if(pageNumber > 1){
-            document.location.href="/question?page=" + (pageNumber - 1);
-        }
-        
-    }
-    else
-    {
-        document.location.href="/question?page=2"
-    }
-
-}
-
-
-
 
     function getSelectedValue(){
         var selectedValue = document.getElementById("answer").value;
