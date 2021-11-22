@@ -22,7 +22,7 @@ def main():
         if user is None:
             print(stmt)
             print(user)
-            error = 'Ogiltig identifieringskod.'
+            error = 'Ogiltig email.'
         
         if error is None:
             session.clear()

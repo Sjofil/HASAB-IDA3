@@ -2,7 +2,6 @@
 const submitButton = document.getElementById("next");
 const totalPages = document.getElementById("totalPages").childElementCount;
 
-
 window.addEventListener('load', function() {
     var page = getRequestVariable("page");
     var pageNumber = parseInt(page);
@@ -25,14 +24,23 @@ function forward(){
     if(page != undefined && page != NaN) 
     {
         if(totalPages > pageNumber){
-          
             document.location.href="/question?page=" + (pageNumber + 1);
         }
         else if(totalPages == pageNumber) {
+            console.log(getCookie("answers"));
             document.location.href="/send-form";
         }
     }
+    else
+    {
+        document.location.href="/question?page=2";
+        let answers = [];
+        answers[0] = $('form').serialize();
+        setCookie("answers", JSON.stringify(answers), 1);
+    }
+
 }
+
 
 function nextQuest(){
     var page = getRequestVariable("page");
@@ -46,6 +54,7 @@ function nextQuest(){
             answers[pageNumber] = $('form').serialize();
             setCookie("answers", JSON.stringify(answers), 1);
             document.location.href="/question?page=" + (pageNumber + 1);
+            totalPageVisited++;
         }
         else if(totalPages == pageNumber) {
             console.log(getCookie("answers"));
@@ -68,8 +77,10 @@ function sendCookie(){
     $.ajax({
         url: "/send-form",
         type: 'POST',
-        contentType: "application/json",
-        data : answers,
+        data :{
+            contentType: "application/json",
+            data : answers,
+        },
     });
 }
 
@@ -94,4 +105,3 @@ function back(){
         var selectedValue = document.getElementById("answer").value;
         console.log(selectedValue);
     }
-

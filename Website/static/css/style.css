@@ -54,9 +54,10 @@
     }
 
     .btn-secondary:disabled,
-.btn-secondary[disabled]{
-  background-color: #6d877f;
-  border-color: #6d877f;
+
+    .btn-secondary[disabled]{
+        background-color: #6d877f;
+        border-color: #6d877f;
 }
 
     
