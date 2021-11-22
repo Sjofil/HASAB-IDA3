@@ -3,8 +3,6 @@ const submitButton = document.getElementById("next");
 const totalPages = document.getElementById("totalPages").childElementCount;
 
 
-change = false;
-
 window.addEventListener('load', function() {
     var page = getRequestVariable("page");
     var pageNumber = parseInt(page);
@@ -15,7 +13,6 @@ window.addEventListener('load', function() {
     }
   
   })
-
 
 function submitForm(){
 document.location.href="last.html";
