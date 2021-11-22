@@ -95,9 +95,8 @@ function sendCookie(){
     $.ajax({
         url: "/send-form",
         type: 'POST',
-        data :{
-            answers: answers
-        },
+        contentType: "application/json",
+        data : answers,
     });
 }
 

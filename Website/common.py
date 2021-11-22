@@ -27,7 +27,7 @@ def main():
         if error is None:
             session.clear()
             #saves the id in the session for future safety checks.
-            session['user_id'] = user[3]
+            session['user_id'] = user[0]
             print(session['user_id'])
             session['questions'] = get_questions(user[1])
             return redirect(url_for('questions.questionMain'))

@@ -1,4 +1,5 @@
 import re
+from types import NoneType
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
@@ -31,7 +32,22 @@ def questionTwoTwo():
 @bp.route("/send-form" , methods=['GET','POST'])
 def questionThree():
     if request.method == 'POST':
-        print(request.data)
+        jsonData = request.get_json()
+        connection = db.get_db()
+        cursor = connection.cursor()
+        for i in range(0, len(jsonData)):
+            try:
+                jsonSplit = jsonData[i].split('=')
+                questionID = jsonSplit[0]
+                questionValue = jsonSplit[1]
+                cursor.execute("INSERT INTO answers (Value, Question_ID, User_id) VALUES (%s, %s, %s)"
+                , (questionValue, questionID, session['user_id']))
+            except:
+                print("Type is not string")
+
+        connection.commit()
+        return redirect(url_for('questions.last'))
+
     return render_template("send-form.html")
 
 @bp.route("/last")
