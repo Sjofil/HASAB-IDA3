@@ -73,7 +73,7 @@
 
 \newpage
 
-\section{Dokument Historia}
+\section{Dokumenthistoria}
 \begin{tabular}{ l | l | l }
     Version & Date & Description \\
     \hline
@@ -84,32 +84,32 @@
 
 \section{Introduktion}
 
-    Detta dokument innehåller kraven för ett rapporteringssystem som hädanefter benämns som "systemet". Sysemet är framtaget och utvecklat på beställning av Helsingborg Convention and Event Bureau. Det huvudsakliga syftet med systemet är att Helsingborg stad ska bli miljöcertifierat av GDSM (Global Destination Sustainability Movement) genom att inkorporera deras krav för miljöcertifiering i ett frågeformulär som näringslivet får svara på. Huvudfunktionaliteten är att HASAB ska kunna sammanställa den data som tillkommit till följd av svar på formuläret från näringslivet. Systemet ska interageras i en server och det är detta som ska levereras till kunden. I systemet ingår frontend/hemsidan(html, css, javascript), api:n samt databasen. 
+    Detta dokument innehåller kraven för ett rapporteringssystem som hädanefter benämns som "systemet". Sysemet är framtaget och utvecklat på beställning av Helsingborg Convention and Event Bureau (HCEB). Det huvudsakliga syftet med systemet är att Helsingborg stad ska bli miljöcertifierat av GDSM (Global Destination Sustainability Movement) genom att inkorporera deras krav för miljöcertifiering i ett frågeformulär som näringslivet får svara på. Huvudfunktionaliteten är att HCEB ska kunna sammanställa den data som tillkommit till följd av svar på formuläret från näringslivet. Systemet ska interageras i en server och det är detta som ska levereras till kunden. I systemet ingår frontend/hemsidan(html, css, javascript), api:n samt databasen. 
     \\\\
     Dokumentets struktureras utifrån prioritering och numrering. Numrering sker enligt \textit{R1} vilka är krav som endast kan hittas i detta dokument, krav med numrering enligt \textit{SF} kommer från scrumboarden. Kraven är prioriterade utefter \textit{stabila krav}, \textit{ändringsbenägna krav} och \textit{uteslutna krav}. 
     
 
 \section{Bakgrund och mål}
-
+                                                                                                                
     \subsection{Mål}
-      Syftet med projektet är att få Helsingborg stad att bli miljöcertifierad genom att utveckla ett webbaserat frågeformulär som är snabbt och enkelt för användaren att svara på. När datan väl samlats in är det vår uppgift att ta fram en sammanställning som matchar GDSM:s målformat.
+      Helsingborg stad önskar bli certifierade av nätverket Global Detination Sustainability Movement (GDSM), vilket kräver att destinationen varje år skickar in information om hållbarhetsarbetet som utförs av aktörer verksamma inom besöksnäringen i regionen. Syftet med det här projektet är att hjälpa Helsingborg stad att samla in dennahållbarhetsdata genom att utveckla ett webbaserat frågeformulär som går snabbt och är enkelt att svara på. När datan väl samlats in är det vår uppgift att ta fram en sammanställning som matchar GDSM:s målformat. 
         
     \subsection{Viktiga aktörer}
-    Systemet kan användas av följande intressenter:
+    Systemet kommer ha två typer av användare:
     \begin{itemize}
-        \item \textbf{Slutanvändare:} Slutanvändaren kommer interagera med systemet genom att logga in och svara på de frågor som är relevant för dennes bransch.
-        \item \textbf{HASAB:} HASAB ska tilldelas rollen administratör och således ha tillgång till en administrationssida där de kan ta bort, lägga till och redigera frågor och användare.
+        \item \textbf{Svarspersoner:} De personer som jobbar på företagen till vilka frågorna riktar sig. Svarspersonerna kommer att logga in med sin mailadress och svara på formuläret.
+        \item \textbf{Admin:} HCEB ska tilldelas rollen administratör och således ha tillgång till en administrationssida där de kan sammanställa årets hållbarhetsdata på ett sätt som matchar GDSM:s målformat och även se enskilda aktörers svar.
      \end{itemize}
     
     \section{Terminologi}
     \begin{itemize}
         \item \textbf{Administratör:} Administratören har tillgång till systemets alla funktioner.
          \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ samt statistikföring över svaren.
-        \item \textbf{HASAB:} Förkortning av Helsingborg Arena och Scen AB vilket är företaget som ska utnyttja systemet.
-        \item \textbf{Slutanvändare:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
+        \item \textbf{HCEB:} Förkortning av Helsingborg Convention and Event Bureau, beställare av systemet.
+        \item \textbf{Svarspersoner:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
         \item\textbf{Stabila krav:}  Stabila krav är krav som inte är ändringbenägna - de baseras på funktioner som är grundläggande för att systemet ska möta beställarens behov.
-         \item \textbf{Uteslutna krav:}  Krav som är listade här är inte längre aktuella.
-        \item \textbf{Ändringbenägna krav:}  Krav som är listade här kan förändras eller tas bort.
+         \item \textbf{Uteslutna krav:}  Krav som inte längre är aktuella.
+        \item \textbf{Ändringbenägna krav:}  Krav som sannolikt kommer att förändras eller tas bort.
        
     \end{itemize}
     
@@ -147,39 +147,41 @@
         \\
        \indent \textbf{Scenario:} Slutanvändaren navigerar till hemsidan via mail.
         \\
-       \indent \textbf{Förutsättningar:} Slutanvändaren har fått ett mail som har skickats ut från HASAB. Mailet innehåller en länk till hemsidan.
+       \indent \textbf{Förutsättningar:} Svarspersonen har fått ett mail från från HCEB. Mailet innehåller en länk till hemsidan.
             \begin{enumerate}
                 \item Slutanvändaren klickar på länken till formuläret som finns i mejlet.
-                \item Slutanvändaren möts av formulärets startsida.
+                \item Slutanvändaren möts av formulärets startsida och ombeds mata in sin mailadress till vilken länken skickades. 
             \end{enumerate}
             
         \subsubsection*{R3}
     Följande scenario ska stödjas av systemet.
         \\
-       \indent \textbf{Scenario:} Slutanvändaren ska registrera sig på hemsidan för att få fortsätta rapportering.
+       \indent \textbf{Scenario:} Slutanvändaren ska logga in på hemsidan med sin samma mailadress som mailet skickades till.
         \\
-       \indent \textbf{Förutsättningar:} Slutanvändaren har fått en engångskod i samma mail som länken samt att slutanvändaren befinner sig på startsidan.
+       \indent \textbf{Förutsättningar:} Svarspersonen har fått en engångskod i samma mail som länken samt att svarspersonen befinner sig på startsidan.
             \begin{enumerate}
-               \item Slutavändaren skriver in koden som finns i mejlet.
-               \item Slutanvändaren trycker på knappen "Gå vidare".
-                \item  Användaren är nu registrerad och möts av en ny sida med första frågan.
+               \item Svarspersonen skriver in samma mailadress som mailet skickades till.
+               \item Svarspersonen trycker på knappen "Gå vidare".
+                \item  Svarspersonen blir omdirigerad till första frågan och kan börja svara på formuläret.
             \end{enumerate}
    
         \subsubsection*{R4}
     Följande scenario ska stödjas av systemet.
         \\
-       \indent \textbf{Scenario:} Slutanvändaren ska skicka in slutgiltig rapportering.
+       \indent \textbf{Scenario:} Svarspersonen ska skicka in slutgiltig rapportering.
         \\
-       \indent \textbf{Förutsättningar:} Slutanvändaren har svarat på samtliga frågor och befinner sig på sidan med den sista frågan.
+       \indent \textbf{Förutsättningar:} Svarspersonen har svarat på samtliga frågor och befinner sig på sidan med den sista frågan.
             \begin{enumerate}
-                \item Slutanvändaren klickar på knappen "Slutför formulär".
-                \item Slutanvändaren möts av en sidan med tack text enligt figur 1.
-                \item Slutanvändaren trycker på knappen "Skicka in formulär".
-                \item   Slutanvändaren möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
+                \item Svarspersonen klickar på knappen "Slutför formulär".
+                \item Svarspersonen möts av en sidan med tack text enligt figur 1.
+                \item Svarspersonen trycker på knappen "Skicka in formulär".
+                \item  Svarspersonen möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
             \end{enumerate}
 
 \subsubsection*{Krav från scrumboard}
-Följande mapning gäller för de krav som finns på projektets scrumboard,\\ d.v.s https://majken.atlassian.net/jira/software/projects/SF/boards/1.\\
+Följande mappning gäller för de krav som finns på projektets scrumboard som finns på \\
+https://trello.com/b/DHOoURT9/sustainable-forms
+\\
 När ett krav ska refereras till används denna graf.\\
 $$SR1\rightarrow SF-1$$
 $$SR2\rightarrow SF-5$$
