@@ -9,7 +9,7 @@
 <!--Templet för nästan alla frågor-->
 <div class="list-group container-fluid col-sm-6 col-lg-2 pb-3">
   {% for answer in answerOptions %}
-    <button type="submit" onclick="nextQuest()" class="list-group-item mb-2  btn-secondary" name="{{ questionObject[page-1][0] }}" value="{{ answer }}">{{ answer }}</button>
+    <button type="submit" onclick="nextQuest(this)" class="list-group-item mb-2  btn-secondary" name="{{ questionObject[page-1][0] }}" value="{{ answer }}">{{ answer }}</button>
   {% endfor %}
   </div>
 </div>
