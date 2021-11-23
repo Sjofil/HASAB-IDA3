@@ -1,35 +1,17 @@
 {% extends 'question-base.html' %}
 
 {% block question %}
-<!--Templet för flervalsfrågor KOMMER FÖRSVINNA-->
-{% if questionObject[page-1][3] == 0 %}
-<div class="list-group container-fluid col-sm-6 col-lg-2">
-    <button type="submit" onclick="nextQuest()" class="list-group-item mb-2 ms-2 btn-secondary" value="Ja">Ja</button>
-    <button type="submit" onclick="nextQuest()" class="list-group-item mb-2 ms-2 btn-secondary" value="Nej">Nej</button>
-  </div>
-</div>
-{% elif questionObject[page-1][3] == 1 %}
+{% if questionObject[page-1][3] == 1 %}
 <div class="form-check-inline pb-3">
     <input type="number" min="0" pattern="[0-9]" class="form-control-lg form-control rounded-3 " placeholder="Antal">
-</div>
-{% elif questionObject[page-1][3] == 2 %}
-<!--TEMPORÄR KOMMER FÖRSVINNA-->
-<div class="list-group container-fluid col-sm-6 col-lg-2 mb-3">
-    <button type="submit" onclick="nextQuest()" class="list-group-item mb-2 ms-2 btn-secondary" value="1">Cerifikat 1</button>
-    <button type="submit" onclick="nextQuest()" class="list-group-item mb-2 ms-2 btn-secondary" value="2">Cerifikat 2</button>
-    <button type="submit" onclick="nextQuest()" class="list-group-item mb-2 ms-2 btn-secondary" value="3">Cerifikat 3</button>
-    <button type="submit" onclick="nextQuest()" class="list-group-item mb-2 ms-2 btn-secondary" value="4">Cerifikat 4</button>
-  </div>
-</div>
-
-{% elif questionObject[page-1][3] == 4 %}
+</div> 
+{% else %}
 <!--Templet för nästan alla frågor-->
 <div class="list-group container-fluid col-sm-6 col-lg-2 pb-3">
-  {% for answers in answerObject %}
-    <button type="submit" onclick="nextQuest()" class="list-group-item mb-2  btn-secondary" name="{{ questionObject[page-1][0] }}" value="{{ answer }}">{{ answers }}</button>
+  {% for answer in answerOptions %}
+    <button type="submit" onclick="nextQuest()" class="list-group-item mb-2  btn-secondary" name="{{ questionObject[page-1][0] }}" value="{{ answer }}">{{ answer }}</button>
   {% endfor %}
   </div>
 </div>
-
 {% endif %}
 {% endblock %}

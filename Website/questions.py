@@ -16,10 +16,21 @@ def questionMain():
         page=int(1 if value is None else value)
         if page>len(session["questions"]):
             return redirect(url_for("questions.questionThree"))
-
     return render_template("question1.html", 
     questionObject=session["questions"], 
+    answerOptions=getAnswerOptions(session['questions'][page-1][3]),
     page=max(1, min(page, len(session["questions"]))))
+
+
+def getAnswerOptions(typeId):
+    cursor=db.get_db().cursor()
+    stmt="SELECT option FROM answer_options WHERE question_type = %s"
+    cursor.execute(stmt, typeId)
+    data=cursor.fetchall()
+    print(data)
+    return data
+
+
 
 @bp.route("/question2")
 def questionTwo():
