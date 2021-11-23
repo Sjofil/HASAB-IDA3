@@ -6,15 +6,16 @@
     .pagination > li > a
     {
         background-color: white;
-        color: #96b2aa;
+        color: #212529;
     }
+
     
     .pagination > li > a:focus,
     .pagination > li > a:hover,
     .pagination > li > span:focus,
     .pagination > li > span:hover
     {
-        color: #96b2aa;
+        color: white;
         background-color: #96b2aa;
         border-color: #96b2aa;
     }
