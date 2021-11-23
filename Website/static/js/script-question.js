@@ -42,7 +42,7 @@ function forward(){
 }
 
 
-function nextQuest(){
+function nextQuest(button){
     var page = getRequestVariable("page");
     var pageNumber = parseInt(page);
     console.log("Page: " + page + " Total: " + totalPages);
@@ -51,7 +51,7 @@ function nextQuest(){
         if(totalPages > pageNumber){
             
             let answers = JSON.parse(getCookie("answers"));
-            answers[pageNumber] = $('form').serialize();
+            answers[button.name] = button.value;
             setCookie("answers", JSON.stringify(answers), 1);
             document.location.href="/question?page=" + (pageNumber + 1);
             totalPageVisited++;
@@ -64,8 +64,8 @@ function nextQuest(){
     else
     {
         document.location.href="/question?page=2";
-        let answers = [];
-        answers[0] = $('form').serialize();
+        let answers = {};
+        answers[button.name] = button.value;
         setCookie("answers", JSON.stringify(answers), 1);
     }
 
@@ -77,10 +77,8 @@ function sendCookie(){
     $.ajax({
         url: "/send-form",
         type: 'POST',
-        data :{
-            contentType: "application/json",
-            data : answers,
-        },
+        contentType: "application/json",
+        data : answers,
     });
 }
 
