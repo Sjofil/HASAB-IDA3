@@ -80,6 +80,8 @@ function sendCookie(){
         contentType: "application/json",
         data : answers,
     });
+    //Dålig lösning men orkar inte, borde kolla om vi faktiskt lyckas göra vårt post request
+    document.location.href="/last";
 }
 
 function back(){
