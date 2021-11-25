@@ -1,3 +1,5 @@
 Filip - Suttit och mobilanpassat sidan, omstrukturerat fråge alternativ så att användaren endast svarar med knappar istället för radiobuttons. Fixat med varningar vid fel email.
 
 David - Arbetat med att försöka skicka data från hemsidan til databasen. Arbete med delredovisningen.
+
+Oscar - Konstruerat om databasen, arbetat med att hämta svarsalternativ från databasen till formuläret.
