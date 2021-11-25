@@ -1,4 +1,4 @@
-Filip - Suttit och mobilanpassat sidan, omstrukturerat fråge alternativ så att användaren endast svarar med knappar istället för radiobuttons. Fixat med varningar vid fel email.
+Filip - Suttit och mobilanpassat sidan, omstrukturerat svars alternativ så att användaren endast formuläret endast använder sig at flervalsfrågor istället för diverse andra val som fanns innan. Fixat så att slutanvändaren får varning om fel email skrivs in vid identifiering.
 
 David - Arbetat med att försöka skicka data från hemsidan til databasen. Arbete med delredovisningen.
 
