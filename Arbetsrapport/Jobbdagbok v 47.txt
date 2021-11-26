@@ -6,6 +6,6 @@ Oscar - Konstruerat om databasen, arbetat med att hämta svarsalternativ från d
 
 Pontus - La till så att frågorna skickas in till databasen när användaren trycker på "skicka in"
 
-Sabah - skrivit i slutrapprten om test scenarios, test scenarios (kommit igång) 
+Sabah - skrivit i slutrapporten om test scenarios, test scenarios (kommit igång) 
 
 Anna - Mailat med Malin och läst i SBC:s bok om enkäter och layout. Skrivit lite om det i slutrapporten. 
