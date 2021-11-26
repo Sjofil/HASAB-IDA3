@@ -56,7 +56,7 @@
         border-color: #96b2aa;
         letter-spacing: 1px;
         color: #FFFF;
-        background-image: linear-gradient(to left, #5c7a72, #96b2aa, #5c7a72);
+        background-image: linear-gradient(to left, #708d85, #96b2aa, #708d85);
     }
 
     .btn-secondary:hover{
