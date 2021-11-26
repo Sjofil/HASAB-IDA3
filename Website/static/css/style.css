@@ -47,6 +47,7 @@
     .btn-secondary {
         background:#96b2aa;
         border-color: #96b2aa;
+        color: #eee;
     }
 
     .btn-secondary:hover{
