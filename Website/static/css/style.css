@@ -16,21 +16,24 @@
     .pagination > li > span:hover
     {
         color: white;
-        background-color: #96b2aa;
+        /*background-color: #96b2aa;*/
+        background-image: linear-gradient(to left, #96b2aa, #7a9e95, #96b2aa);
         border-color: #96b2aa;
     }
     
     .pagination > .active > a
     {
+        /*background-color: 96b2aa;*/
         color: white;
-        background-color: #96b2aa !Important;
+        background-image: linear-gradient(to left, #96b2aa, #7a9e95, #96b2aa);
         border: solid 1px #96b2aa !Important;
     }
     
     .pagination > .active > a:hover
     {
+        /*background-color: 96b2aa;*/
         color: white;
-        background-color: #96b2aa !Important;
+        background-image: linear-gradient(to left, #96b2aa, #7a9e95, #96b2aa);
         border: solid 1px #96b2aa !Important;
        
     }
@@ -50,9 +53,10 @@
     }
 
     .btn-secondary {
-        background:#96b2aa;
         border-color: #96b2aa;
-        color: #eee;
+        letter-spacing: 1px;
+        color: #FFFF;
+        background-image: linear-gradient(to left, #96b2aa, #5c7a72, #96b2aa);
     }
 
     .btn-secondary:hover{
