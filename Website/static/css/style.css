@@ -1,7 +1,13 @@
-
-    .form-control:focus{
-        border-color: #96b2aa;
-       box-shadow: 0.0 0 0 0.1rem #96b2aa;
+:root {
+    --main-accent-color: #96b2aa;
+    --secondary-accent-color: #6d877f;
+  }
+  
+  
+  
+  .form-control:focus{
+        border-color: var(--main-accent-color);
+       box-shadow: 0.0 0 0 0.1rem var(--main-accent-color);
     }
     .pagination > li > a
     {
@@ -16,52 +22,52 @@
     .pagination > li > span:hover
     {
         color: white;
-        /*background-color: #96b2aa;*/
-        background-image: linear-gradient(to left, #96b2aa, #7a9e95, #96b2aa);
-        border-color: #96b2aa;
+        /*background-color: var(--main-accent-color);*/
+        background-image: linear-gradient(to left, var(--main-accent-color), --secondary-accent-color, var(--main-accent-color));
+        border-color: var(--main-accent-color);
     }
     
     .pagination > .active > a
     {
-        /*background-color: 96b2aa;*/
+        /*background-color:var(--main-accent-color);*/
         color: white;
-        background-image: linear-gradient(to left, #96b2aa, #7a9e95, #96b2aa);
-        border: solid 1px #96b2aa !Important;
+        background-image: linear-gradient(to left, var(--main-accent-color), --secondary-accent-color, var(--main-accent-color));
+        border: solid 1px var(--main-accent-color) !Important;
     }
     
     .pagination > .active > a:hover
     {
-        /*background-color: 96b2aa;*/
+        /*background-color:var(--main-accent-color);*/
         color: white;
-        background-image: linear-gradient(to left, #96b2aa, #7a9e95, #96b2aa);
-        border: solid 1px #96b2aa !Important;
+        background-image: linear-gradient(to left, var(--main-accent-color), --secondary-accent-color, var(--main-accent-color));
+        border: solid 1px var(--main-accent-color) !Important;
        
     }
 
     .dropdown-menu > li > a:active {
         color: #eee;
-        background-color: #96b2aa !Important;
+        background-color: var(--main-accent-color) !Important;
     
     }
 
     .bg{
-        background: #96b2aa;
+        background: var(--main-accent-color);
     }
 
     .d{
-        background: #96b2aa;
+        background: var(--main-accent-color);
     }
 
     .btn-secondary {
-        border-color: #96b2aa;
+        border-color: var(--main-accent-color);
         letter-spacing: 1px;
         color: #FFFF;
-        background-image: linear-gradient(to left, #708d85, #96b2aa, #708d85);
+        background-image: linear-gradient(to left, #708d85, var(--main-accent-color), #708d85);
     }
 
     .btn-secondary:hover{
         background-color:#6d877f;
-        border-color: #6d877f;
+        border-color: var(--secondary-accent-color);
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
        
     }
