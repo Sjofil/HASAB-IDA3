@@ -4,10 +4,9 @@
   }
   
   
-  
   .form-control:focus{
-        border-color: var(--main-accent-color);
-       box-shadow: 0.0 0 0 0.1rem var(--main-accent-color);
+        border-color: #96b2aa;
+       box-shadow: 0.0 0 0 0.1rem #96b2aa;
     }
     .pagination > li > a
     {
@@ -22,47 +21,47 @@
     .pagination > li > span:hover
     {
         color: white;
-        /*background-color: var(--main-accent-color);*/
-        background-image: linear-gradient(to left, var(--main-accent-color), --secondary-accent-color, var(--main-accent-color));
-        border-color: var(--main-accent-color);
+        /*background-color: #96b2aa;*/
+        background-image: linear-gradient(to left, #96b2aa, #7a9e95, #96b2aa);
+        border-color: #96b2aa;
     }
     
     .pagination > .active > a
     {
-        /*background-color:var(--main-accent-color);*/
+        /*background-color: 96b2aa;*/
         color: white;
-        background-image: linear-gradient(to left, var(--main-accent-color), --secondary-accent-color, var(--main-accent-color));
-        border: solid 1px var(--main-accent-color) !Important;
+        background-image: linear-gradient(to left, #96b2aa, #7a9e95, #96b2aa);
+        border: solid 1px #96b2aa !Important;
     }
     
     .pagination > .active > a:hover
     {
-        /*background-color:var(--main-accent-color);*/
+        /*background-color: 96b2aa;*/
         color: white;
-        background-image: linear-gradient(to left, var(--main-accent-color), --secondary-accent-color, var(--main-accent-color));
-        border: solid 1px var(--main-accent-color) !Important;
+        background-image: linear-gradient(to left, #96b2aa, #7a9e95, #96b2aa);
+        border: solid 1px #96b2aa !Important;
        
     }
 
     .dropdown-menu > li > a:active {
         color: #eee;
-        background-color: var(--main-accent-color) !Important;
+        background-color: #96b2aa !Important;
     
     }
 
     .bg{
-        background: var(--main-accent-color);
+        background: #96b2aa;
     }
 
     .d{
-        background: var(--main-accent-color);
+        background: #96b2aa;
     }
 
     .btn-secondary {
-        border-color: var(--main-accent-color);
+        border-color: #96b2aa;
         letter-spacing: 1px;
         color: #FFFF;
-        background-image: linear-gradient(to left, #708d85, var(--main-accent-color), #708d85);
+        background-image: linear-gradient(to left, #708d85, #96b2aa, #708d85);
     }
 
     .btn-secondary:hover{
