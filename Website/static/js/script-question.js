@@ -41,6 +41,17 @@ function forward(){
 
 }
 
+function saveQuestion(button) {
+    let answers = getCookie("answers");
+    if (answers == ""){
+        answers = {}
+    } else {
+        answers = JSON.parse(answers);
+    }
+
+    answers[button.name] = button.value;
+    setCookie("answers", JSON.stringify(answers), 1);
+}
 
 function nextQuest(button){
     var page = getRequestVariable("page");
@@ -50,9 +61,7 @@ function nextQuest(button){
     {
         if(totalPages > pageNumber){
             
-            let answers = JSON.parse(getCookie("answers"));
-            answers[button.name] = button.value;
-            setCookie("answers", JSON.stringify(answers), 1);
+            saveQuestion(button);
             document.location.href="/question?page=" + (pageNumber + 1);
             totalPageVisited++;
         }
@@ -64,9 +73,7 @@ function nextQuest(button){
     else
     {
         document.location.href="/question?page=2";
-        let answers = {};
-        answers[button.name] = button.value;
-        setCookie("answers", JSON.stringify(answers), 1);
+        saveQuestion(button);
     }
 
 }

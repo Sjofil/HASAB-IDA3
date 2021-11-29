@@ -1,4 +1,6 @@
 import functools
+
+from flask.helpers import make_response
 from . import db
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
@@ -30,7 +32,9 @@ def main():
             session['user_id'] = user[0]
             print(session['user_id'])
             session['questions'] = get_questions(user[1])
-            return redirect(url_for('questions.questionMain'))
+            response = make_response(redirect(url_for('questions.questionMain')))
+            response.set_cookie('answers', '', expires=0)
+            return response
 
         flash(error)
     return render_template("index.html")
@@ -51,5 +55,5 @@ def get_questions(typeID):
     cursor.execute("SELECT * FROM conditional_question WHERE question_id IN (" + delimiter + ")")
     conditional = cursor.fetchall()
     print(conditional)
-    return cursor.fetchall()
+    return questions
 
