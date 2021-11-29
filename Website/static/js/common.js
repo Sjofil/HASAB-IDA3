@@ -31,3 +31,6 @@ function getRequestVariable(name){
     if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
        return decodeURIComponent(name[1]);
  }
+
+
+ //Adds a user's email address and branch to the database

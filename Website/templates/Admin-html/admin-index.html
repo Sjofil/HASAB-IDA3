@@ -132,12 +132,13 @@
                       <input type="password" class="form-control mt-2" id="InputBranch" placeholder="Branch">
                     </div>
 
-                    <button type="button" class="btn btn-secondary mt-2 rounded-pill" >Lägg till</button>
+                    <button type="button" onclick="addUser()" class="btn btn-secondary mt-2 rounded-pill" >Lägg till</button>
                   </form>
                 </section>
           </div>
 </section>
 
+<script src="{{url_for('static', filename='js/common.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 
