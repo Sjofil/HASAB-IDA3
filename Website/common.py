@@ -38,5 +38,18 @@ def main():
 def get_questions(typeID):
     cursor = db.get_db().cursor()
     cursor.execute("SELECT * FROM questions WHERE Type_ID=%s", typeID)
+    questions = cursor.fetchall()
+
+    questionIDs = []
+    for question in questions:
+        questionIDs.append(str(question[0]))
+
+    delimiter = ","
+    delimiter = delimiter.join(questionIDs)
+
+    #Detta bör vara säkert från SQL-injektion då detta sker på servern enbart
+    cursor.execute("SELECT * FROM conditional_question WHERE question_id IN (" + delimiter + ")")
+    conditional = cursor.fetchall()
+    print(conditional)
     return cursor.fetchall()
 
