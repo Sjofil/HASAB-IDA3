@@ -122,19 +122,19 @@
           <!-- Modal body -->
           <div class="modal-body">
               <section class="mb-5 text-center">
-                  <form>
+                  <form method="post">
                     <div class="form-group">
                       <label for="InputEmail">Användarens email</label>
                       <input type="text" class="form-control mt-2" id="InputEmail" aria-describedby="emailHelp" placeholder="Email">
                     </div>
                     <!--Radio buttons for den nya användarens branch -->
-                    <section class="form-group">
-                      <label for="InputBranch">Användarens branch</label> <br>
-                      <input type="radio" id="hotell" name="add-user" value="hotell" >
-                        <label for="hotell">Hotell</label>
-                      <input type="radio" id="byrå" name="add-user" value="byrå">
-                        <label for="byrå">Byrå/Agentur</label>
-                  </section>
+                    <select class="form-select mt-2">
+                      <option selected>Branch</option>
+                      <option value="Hotell" name="choose-branch">Hotell</option>
+                      <option value="Resturang" name="choose-branch">Resturang</option>
+                      <option value="Anläggningar" name="choose-branch">Anläggningar</option>
+                      <option value="Byrå" name="choose-branch">Byrå</option>
+                    </select>
                     <button type="button" onclick="addUser()" class="btn btn-secondary mt-2 rounded-pill" >Lägg till</button>
                   </form>
                 </section>
