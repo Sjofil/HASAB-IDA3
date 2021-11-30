@@ -75,8 +75,11 @@ def adminLoggedIn():
             stmt = "SELECT distinct `Question_text`, `Value` from `answers`, `questions`, `user` where `questions.ID` = `answers.Question_ID` and `user.adress` = (%s)"
             cursor.execute(stmt, (request.form['email']))
             conn.commit()
-            rows = cursor.fetchall()
-            #vet inte riktigt hur jag ska displaya infon
+            records = cursor.fetchall()
+            for row in records:
+                print(row[0], row[1])
+            
+        
     return render_template("Admin-html/admin-index.html")
     
             
