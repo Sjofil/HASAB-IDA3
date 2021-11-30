@@ -87,7 +87,7 @@
 
     <div class="container mt-5">
       <form action="" method="post">
-        <button type="submit" class="btn btn-secondary col-lg-3 btn-lg rounded-pill">Logga ut</button>
+        <button type="submit" name="submit" value="logOut" class="btn btn-secondary col-lg-3 btn-lg rounded-pill">Logga ut</button>
       </form>
     </div>
 
@@ -133,17 +133,19 @@
                   <form method="post">
                     <div class="form-group">
                       <label for="InputEmail">Användarens email</label>
-                      <input type="text" class="form-control mt-2" id="InputEmail" aria-describedby="emailHelp" placeholder="Email">
+                      <input type="text" name="adress" class="form-control mt-2" id="InputEmail" aria-describedby="emailHelp" placeholder="Email">
+                      <label for="InputName">Användarens namn</label>
+                      <input type="text" name="name" class="form-control mt-2" id="InputEmail" aria-describedby="emailHelp" placeholder="Email">
                     </div>
                     <!--Radio buttons for den nya användarens branch -->
-                    <select class="form-select mt-2">
+                    <select name="branch" class="form-select mt-2">
                       <option selected>Branch</option>
-                      <option value="Hotell" name="choose-branch">Hotell</option>
-                      <option value="Resturang" name="choose-branch">Resturang</option>
-                      <option value="Anläggningar" name="choose-branch">Anläggningar</option>
-                      <option value="Byrå" name="choose-branch">Byrå</option>
+                      <option value="Hotell">Hotell</option>
+                      <option value="Restaurang">Resturang</option>
+                      <option value="Anläggningar">Anläggningar</option>
+                      <option value="Byrå">Byrå</option>
                     </select>
-                    <button type="submit" onclick="addUser()" class="btn btn-secondary mt-2 rounded" >Lägg till</button>
+                    <button type="submit" name="submit" value="addUser" class="btn btn-secondary mt-2 rounded-pill" >Lägg till</button>
                   </form>
                 </section>
           </div>
