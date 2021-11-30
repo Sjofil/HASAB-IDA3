@@ -56,7 +56,6 @@ def adminLoggedIn():
             cursor=conn.cursor()
             cursor.execute(stmt, (request.form['branch'], request.form['adress'], request.form['name']))
             conn.commit()
-<<<<<<< Updated upstream
         if(request.form['submit']=="changePassword"):
             if(request.form['pass1']==request.form['pass2']):
                 stmt="UPDATE `admin` SET `password` = %s WHERE (`name` = %s)"
@@ -68,18 +67,16 @@ def adminLoggedIn():
                 error="lösen matchade ej"
                 flash(error)
     
-=======
         # Om admin sökt en enskild rapport 
         if(request.form['submit']=="findReport"):
             print(request.form)
             conn=db.get_db()
             cursor=conn.cursor()
-            stmt = "SELECT distinct `Question_text`, `Value`, `Adress` from answers, questions, user where questions.ID = answers.Question_ID and user.adress = (%s)"
+            stmt = "SELECT distinct `Question_text`, `Value` from `answers`, `questions`, `user` where `questions.ID` = `answers.Question_ID` and `user.adress` = (%s)"
             cursor.execute(stmt, (request.form['email']))
             conn.commit()
             rows = cursor.fetchall()
-            return redirect(url_for('Admin-html/reportTemplate'), rows)
->>>>>>> Stashed changes
+            #vet inte riktigt hur jag ska displaya infon
     return render_template("Admin-html/admin-index.html")
     
             
