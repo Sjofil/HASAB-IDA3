@@ -59,7 +59,6 @@
 
     .btn-secondary {
         border-color: #96b2aa;
-        letter-spacing: 1px;
         color: #FFFF;
         background-image: linear-gradient(to left, #708d85, #96b2aa, #708d85);
     }
