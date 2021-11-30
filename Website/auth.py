@@ -39,15 +39,27 @@ def login():
 @bp.route("/adminIndex", methods=('GET', 'POST'))
 def adminLoggedIn():
     if request.method == 'GET':
-        if (session['user_id'] == 'Admin'):
-            print(session['user_id'])
-            return render_template('Admin-html/admin-index.html')
-        else :
+        if (session['user_id'] != 'Admin'):
             return redirect(url_for('auth.login'))
 
     if request.method == 'POST':
-        print("clearing session")
-        session.clear()
-        return redirect(url_for('auth.login'))
+        if(session['user_id'] != 'Admin' or request.form['submit']=="logOut"):
+            print("clearing session")
+            session.clear()
+            return redirect(url_for('auth.login'))
+        if(request.form['submit']=="addUser"):
+            print(request.form)
+            stmt="INSERT INTO `user` (`Type_ID`, `Adress`, `Name`) VALUES (%s, %s, %s)"
+            print(stmt)
+            conn=db.get_db()
+            cursor=conn.cursor()
+            cursor.execute(stmt, (request.form['branch'], request.form['adress'], request.form['name']))
+            conn.commit()
+    return render_template("Admin-html/admin-index.html")
+    
+            
+
+
+        
 
         
