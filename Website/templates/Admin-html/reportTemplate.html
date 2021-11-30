@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+
+<!--Rubrik-->
+<section class="container container-fluid text-center">
+    <div class="row">
+        <div class="col"></div>
+    <div class="col">
+        <h1 class="h1">Sammanställning av rapport</h1>
+    </div>
+
+<!---KOD--->
+<form method="POST">
+    <input type="submit" value="show data">
+</form>
+
+<h1>Report</h1>
+
+<!--Output 1 'Adress'-->
+<p>{{data}}</p>
+
+<!--Output 2 'Adress: name'-->
+{% for i in data %}
+<p>{{i}}</p>
+{% endfor %}
+
+<!-- Output 3 -->
+{% for i in data %}
+<p>{{i[0]}}</p>
+{% endfor %}
+
+
+
+{% endblock %}
