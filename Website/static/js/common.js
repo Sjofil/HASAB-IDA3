@@ -34,3 +34,13 @@ function getRequestVariable(name){
 
 
  //Adds a user's email address and branch to the database
+ function addUser() {
+     var email = document.getElementById("InputEmail");
+     var emailInput = setCookie(email);
+     var branch = document.getElementById("InputBranch");
+     var branchInput = setCookie(branch);
+     var list = {branchInput, emailInput};
+
+
+     document.getElementById("annatestar").innerHTML = JSON.stringify(list);
+ }
