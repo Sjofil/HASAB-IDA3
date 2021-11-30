@@ -36,11 +36,15 @@ function getRequestVariable(name){
  //Adds a user's email address and branch to the database
  function addUser() {
      var email = document.getElementById("InputEmail");
-     var emailInput = setCookie(email);
+    setCookie(email);
      var branch = document.getElementById("InputBranch");
-     var branchInput = setCookie(branch);
-     var list = {branchInput, emailInput};
+    setCookie(branch)
 
 
      document.getElementById("annatestar").innerHTML = JSON.stringify(list);
+
+     $.post("/postmethod", {
+            // get data from the HTML form and redirect the url to 
+            //a page saying "hey you submitted a new user" or something like that
+     })
  }
