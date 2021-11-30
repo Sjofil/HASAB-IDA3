@@ -23,7 +23,7 @@
             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#password-modal">Byt lösenord</a></li>
             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#add-user">Lägg till användare</a></li>
           </ul>
-</div>
+    </div>
         </div>
         <!--Modal för byta lösenord-->
         <div class="modal fade" id="password-modal">
@@ -63,13 +63,21 @@
 
 <!--Knappar för samtliga funktioner-->
 <section class="container-fluid text-center">
+
+  <div class=" container mt-5 dropdown text-center">
+    <p class="h5 mb-2">Ladda ner fullständig rapport</p>
+    <button type="button" class="btn btn-secondary rounded-pill  btn-lg col-lg-3 " data-bs-toggle="dropdown">
+       Välj branch
+      </button>
+      <ul class="dropdown-menu rounded-3 " id="dropdown-branch">
+        <li><a class="dropdown-item" >Resturang</a></li>
+        <li><a class="dropdown-item" >Hotell</a></li>
+        <li><a class="dropdown-item" >Byrå</a></li>
+        <li><a class="dropdown-item" >Anläggning</a></li>
+      </ul>
+</div>
     
-    <div class="container mt-5">
-        <p class="h5 mb-2">Ladda ner fullständig sammanställning</p>
-        <button class="btn btn-secondary btn-lg col-lg-3 rounded-pill"> Ladda ner </button>
-        <div class="modal fade"></div>
-    </div>
-    </div>
+  
 
 
     <div class="container mt-3 ">
@@ -135,7 +143,7 @@
                       <option value="Anläggningar" name="choose-branch">Anläggningar</option>
                       <option value="Byrå" name="choose-branch">Byrå</option>
                     </select>
-                    <button type="button" onclick="addUser()" class="btn btn-secondary mt-2 rounded-pill" >Lägg till</button>
+                    <button type="submit" onclick="addUser()" class="btn btn-secondary mt-2 rounded" >Lägg till</button>
                   </form>
                 </section>
           </div>
