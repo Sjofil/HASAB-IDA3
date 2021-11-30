@@ -4,6 +4,7 @@ from sqlite3 import dbapi2
 from flask import(
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
+from flask.wrappers import Request
 from werkzeug.security import check_password_hash, generate_password_hash
 from . import db
 
@@ -55,6 +56,17 @@ def adminLoggedIn():
             cursor=conn.cursor()
             cursor.execute(stmt, (request.form['branch'], request.form['adress'], request.form['name']))
             conn.commit()
+        if(request.form['submit']=="changePassword"):
+            if(request.form['pass1']==request.form['pass2']):
+                stmt="UPDATE `admin` SET `password` = %s WHERE (`name` = %s)"
+                conn=db.get_db()
+                cursor=conn.cursor()
+                cursor.execute(stmt, (request.form['pass1'], session['user_id']))
+                conn.commit()
+            else :
+                error="lösen matchade ej"
+                flash(error)
+    
     return render_template("Admin-html/admin-index.html")
     
             
