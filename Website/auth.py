@@ -128,7 +128,7 @@ def adminLoggedIn():
             conn=db.get_db()
             cursor=conn.cursor()
             print(stmt)
-            print("hit funkar det") # Fungerar om man söker på exakt rätt namn. 
+            print("hit funkar det") # Fungerar om man söker på nästan rätt namn. 
             cursor.execute(stmt, name)
             records = cursor.fetchall()
             print(records)     
