@@ -11,7 +11,7 @@ from . import db
 bp = Blueprint('auth', __name__, url_prefix='/')
 
 @bp.route("/reportTemplate")
-def reportTemplate():
+def reportTemplate2():
     return render_template("Admin-html/reportTemplate.html")
 
 @bp.route("/reportTemplate", methods= ('POST', 'GET'))
@@ -112,10 +112,11 @@ def adminLoggedIn():
                 print(row[0], " = ", row[1])
             return redirect(url_for('auth.reportTemplate'))        
     return render_template("Admin-html/admin-index.html")
-    
+
+
 #Hämta svaren från databasen, visa i reportTemplate
 @bp.route('/reportTemplate', methods = ['GET', 'POST'])
-def reportTemplate():
+def reportTemplate3():
     conn = db.get_db()
     cursor=conn.cursor()
     cursor.execute("select * from answers")

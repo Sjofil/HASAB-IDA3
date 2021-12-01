@@ -13,7 +13,10 @@
         <h1 class="h1">Sammanställning</h1>
     </div>
 
-<!---KOD--->
+<!---TABLE MED FRÅGOR OCH STATISTIK--->
+<!--[][][][]-->
+
+
 <table border="0" style="box-shadow:1px 1px 10px white" width="70%" height="70%" align="center">
     <tr>
     <td style="background-position:center center" valign="top" align="center">
@@ -26,13 +29,14 @@
      <td>Fråga 5</td>
      </tr>
       {% for item in data %}
+
     <tr>
-     <td>{{item.PRO_NAME}}</td>
-     <td>{{item.TECHNOLOGY}}</td>
-     <td>{{item.DESCRIPTION}}</td>
-     <td>{{item.GROUP_NAME}}</td>
-     {% if item.PRO_STATUS == 'Rejected' %}
-           <td style="background-color:red"> {{item.PRO_STATUS  }}</td>
+     <td>{{item.Question1}}</td> 
+     <td>{{item.Question2}}</td>
+     <td>{{item.Question3}}</td>
+     <td>{{item.Question4}}</td>
+     {% if item.Question1 == 'No' %}
+           <td style="background-color:red"> {{item.Question1  }}</td>
        {% elif item.PRO_STATUS == 'Accepted' %}
           <td style="background-color:green"> {{item.PRO_STATUS  }}</td>
       {% else %}
