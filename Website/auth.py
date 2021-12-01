@@ -1,4 +1,5 @@
 import functools
+from re import search
 from sqlite3 import dbapi2
 from pymysql.err import OperationalError
 
@@ -62,10 +63,13 @@ def adminLoggedIn():
             return redirect(url_for('auth.login'))
 
     if request.method == 'POST':
+
         if(session['user_id'] != 'Admin' or request.form['submit']=="logOut"):
             print("clearing session")
             session.clear()
             return redirect(url_for('auth.login'))
+
+
         if(request.form['submit']=="addUser"):
            
             stmt="INSERT INTO `user` (`Type_ID`, `Adress`, `Name`) VALUES (%s, %s, %s)"
@@ -119,19 +123,16 @@ def adminLoggedIn():
         if(request.form['submit']=="findReport"):
             name = request.form['name']
             #if (ifPresent("Name", name)):
-            print(request.form)
-            stmt = "SELECT distinct Question_text, Value, Name from answers, questions, user \
-             where questions.ID = Question_ID and Name = (%s)"
+            print(name)
+            stmt = "select Name from user where name LIKE CONCAT('%%', %s, '%%')" #Tror inte ni fattar hur lång tid detta tog
             conn=db.get_db()
             cursor=conn.cursor()
             print(stmt)
-            print("hit funkar det") # yes hit funkar det
-            cursor.execute(stmt, (request.form['name']))
+            print("hit funkar det") # Fungerar om man söker på exakt rätt namn. 
+            cursor.execute(stmt, name)
             records = cursor.fetchall()
-            print(records)
-            for row in records:
-                print(row[0], " = ", row[1])
-            return redirect(url_for('auth.reportTemplate'))        
+            print(records)     
+            #return redirect(url_for('auth.reportTemplate'))        
     return render_template("Admin-html/admin-index.html")
 
 
