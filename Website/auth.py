@@ -10,6 +10,10 @@ from . import db
 
 bp = Blueprint('auth', __name__, url_prefix='/')
 
+@bp.route("/reportTemplate")
+def reportTemplate():
+    return render_template("Admin-html/reportTemplate.html")
+
 @bp.route("/admin", methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
@@ -97,6 +101,15 @@ def adminLoggedIn():
         
     return render_template("Admin-html/admin-index.html")
     
+#Hämta svaren från databasen, visa i reportTemplate
+@bp.route('/reportTemplate', methods = ['GET', 'POST'])
+def reportTemplate():
+    conn = db.get_db()
+    cursor=conn.cursor()
+    cursor.execute("select * from answers")
+    data = cursor.fetchall()
+
+    return render_template("reportTemplate.html", data = data)
             
 
 
