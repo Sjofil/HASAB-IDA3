@@ -10,7 +10,7 @@
     <!--Fråga Text-->
     <div class="container-fluid justify-content-center mt-3 mb-5" id="fade3">
         <p class="h4">
-            {{ page }} . {{ questionObject[page-1][2] }}
+            {{ page }} . {{ questionText }}
         </p>
     </div>
         {% block question %}{% endblock %}
@@ -21,7 +21,7 @@
     <div class="row">
     <ul class="pagination justify-content-center flex-wrap" id="totalPages">
         <li disabled id="back" onclick="back()" class="page-item"><a class="page-link">Tillbaka</a>
-        {% for question in questionObject %}
+        {% for index in range(totalQuestions) %}
         {% if page == loop.index %}
         <li class="page-item active"><a class="page-link" >{{ loop.index }}</a></li>
         {% elif page > loop.index %}
