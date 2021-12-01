@@ -2,7 +2,7 @@
 const submitButton = document.getElementById("next");
 const totalPages = document.getElementById("totalPages").childElementCount;
 
-window.addEventListener('load', function() {
+window.addEventListener('input', function() {
     var page = getRequestVariable("page");
     var pageNumber = parseInt(page);
     if(pageNumber > 1){

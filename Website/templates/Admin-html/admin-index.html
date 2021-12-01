@@ -134,19 +134,19 @@
                   <form method="post">
                     <div class="form-group">
                       <label for="InputEmail">Användarens email</label>
-                      <input type="text" name="adress" class="form-control mt-2" id="InputEmail" placeholder="Email">
+                      <input id="email" type="text" name="adress" class="form-control mt-2" id="InputEmail" placeholder="Email">
                       <label for="InputName">Användarens namn</label>
-                      <input type="text" name="name" class="form-control mt-2" id="InputEmail" placeholder="Namn">
+                      <input id="name" type="text" name="name" class="form-control mt-2" id="InputEmail" placeholder="Namn">
                     </div>
                     <!--Radio buttons for den nya användarens branch -->
-                    <select name="branch" class="form-select mt-2">
+                    <select id="branch" name="branch" class="form-select mt-2">
                       <option selected value=0>Branch</option>
                       <option value="Hotell">Hotell</option>
                       <option value="Restaurang">Restaurang</option>
                       <option value="Anläggning">Anläggningar</option>
                       <option value="Byrå">Byrå</option>
                     </select>
-                    <button type="submit" name="submit" value="addUser" class="btn btn-secondary mt-2 rounded-pill" >Lägg till</button>
+                    <button disabled id="addUser" type="submit" name="submit" value="addUser" class="btn btn-secondary mt-2 rounded-pill" >Lägg till</button>
                   </form>
                 </section>
           </div>
@@ -155,5 +155,6 @@
 <script src="{{url_for('static', filename='js/common.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{{url_for('static', filename='js/script-admin.js')}}"></script>
 
 {% endblock %}
