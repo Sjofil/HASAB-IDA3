@@ -29,7 +29,6 @@ def questionMain():
 
             session["currentQuestion"] = jsonData["nextQuestion"]
         elif "previousQuestion" in jsonData:
-            print(jsonData["previousQuestion"])
             session["currentQuestion"] = jsonData["previousQuestion"]
             session["answered"].remove(jsonData["previousQuestion"])
         return ""
@@ -37,14 +36,24 @@ def questionMain():
         questionID = int(session["currentQuestion"])
         if questionID != -1:
             previousQuestion = -1
+            page = 1
+            questions = json.loads(session["questions"])
             if session.get("answered"):
-                print(session["answered"][-1])
                 previousQuestion = session["answered"][-1]
-            return returnTemplate(int(session["currentQuestion"]), previousQuestion)
+                for question in questions:
+                    page += 1
+                    if int(question["ID"]) == previousQuestion:
+                        if bool(question['Conditional']) and int(question['Conditional'][0]['ID']) == questionID:
+                            page -= 1
+                        break
+                    elif bool(question['Conditional']) and int(question['Conditional'][0]['ID']) == previousQuestion:
+                        break
+                    
+            return returnTemplate(int(session["currentQuestion"]), previousQuestion, len(questions), page)
         else:
             return redirect(url_for("questions.questionThree"))
 
-def returnTemplate(questionID: int, previousID: int):
+def returnTemplate(questionID: int, previousID: int, totalQuestions: int, page: int):
     questions = json.loads(session["questions"])
     foundNext = False
     nextQuestion = -1
@@ -62,7 +71,7 @@ def returnTemplate(questionID: int, previousID: int):
             foundNext = True
     
     question = getQuestion(questionID, nextQuestion, currentQuestion)
-    return render_template("question1.html", answerOptions=question.AnswerOptions, nextQuestion=nextQuestion, previousQuestion=previousID, questionID=question.ID, questionType=question.Type, questionText=question.Text, page=1, totalQuestions=10)
+    return render_template("question1.html", answerOptions=question.AnswerOptions, nextQuestion=nextQuestion, previousQuestion=previousID, questionID=question.ID, questionType=question.Type, questionText=question.Text, pageNumber=page, totalQuestions=totalQuestions)
 
 def getQuestion(questionID, nextQuestion, currentQuestion):
     cursor=db.get_db().cursor()
