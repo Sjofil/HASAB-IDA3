@@ -18,16 +18,42 @@ bp = Blueprint('questions', __name__, url_prefix='/')
 def questionMain():
     if request.method == 'POST':
         jsonData = request.get_json()
-        session["currentQuestion"] = jsonData
+        if "nextQuestion" in jsonData:
+            if session.get("answered"):
+                ansList = session["answered"]
+                ansList.append(session["currentQuestion"])
+                session["answered"] = ansList
+            else:
+                ansList = [session["currentQuestion"]]
+                session["answered"] = ansList
+
+            session["currentQuestion"] = jsonData["nextQuestion"]
+        elif "previousQuestion" in jsonData:
+            session["currentQuestion"] = jsonData["previousQuestion"]
+            session["answered"].remove(jsonData["previousQuestion"])
         return ""
     else:
         questionID = int(session["currentQuestion"])
         if questionID != -1:
-            return returnTemplate(int(session["currentQuestion"]))
+            previousQuestion = -1
+            page = 1
+            questions = json.loads(session["questions"])
+            if session.get("answered"):
+                previousQuestion = session["answered"][-1]
+                for question in questions:
+                    page += 1
+                    if int(question["ID"]) == previousQuestion:
+                        if bool(question['Conditional']) and int(question['Conditional'][0]['ID']) == questionID:
+                            page -= 1
+                        break
+                    elif bool(question['Conditional']) and int(question['Conditional'][0]['ID']) == previousQuestion:
+                        break
+                    
+            return returnTemplate(int(session["currentQuestion"]), previousQuestion, len(questions), page)
         else:
             return redirect(url_for("questions.questionThree"))
 
-def returnTemplate(questionID: int):
+def returnTemplate(questionID: int, previousID: int, totalQuestions: int, page: int):
     questions = json.loads(session["questions"])
     foundNext = False
     nextQuestion = -1
@@ -45,7 +71,7 @@ def returnTemplate(questionID: int):
             foundNext = True
     
     question = getQuestion(questionID, nextQuestion, currentQuestion)
-    return render_template("question1.html", answerOptions=question.AnswerOptions, nextQuestion=nextQuestion, questionID=question.ID, questionType=question.Type, questionText=question.Text, page=1, totalQuestions=10)
+    return render_template("question1.html", answerOptions=question.AnswerOptions, nextQuestion=nextQuestion, previousQuestion=previousID, questionID=question.ID, questionType=question.Type, questionText=question.Text, pageNumber=page, totalQuestions=totalQuestions)
 
 def getQuestion(questionID, nextQuestion, currentQuestion):
     cursor=db.get_db().cursor()

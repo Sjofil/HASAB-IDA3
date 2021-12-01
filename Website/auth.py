@@ -10,10 +10,6 @@ from . import db
 
 bp = Blueprint('auth', __name__, url_prefix='/')
 
-@bp.route("/reportTemplate")
-def reportTemplate():
-    return render_template("Admin-html/reportTemplate.html")
-
 @bp.route("/admin", methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
@@ -52,8 +48,6 @@ def adminLoggedIn():
             print("clearing session")
             session.clear()
             return redirect(url_for('auth.login'))
-
-        #Add user
         if(request.form['submit']=="addUser"):
             print(request.form)
             stmt="INSERT INTO `user` (`Type_ID`, `Adress`, `Name`) VALUES (%s, %s, %s)"
@@ -86,9 +80,11 @@ def adminLoggedIn():
     
         # Om admin sökt en enskild rapport 
         if(request.form['submit']=="findReport"):
+            name = request.form['name']
+            #if (ifPresent("Name", name)):
             print(request.form)
-            stmt = "SELECT distinct `Question_text`, `Value`, `Name` from `answers`, `questions`, `user` \
-                     where `questions.ID` = `answers.Question_ID` and `user.Name` = (%s)"
+            stmt = "SELECT distinct Question_text, Value, Name from answers, questions, user \
+             where questions.ID = Question_ID and Name = (%s)"
             conn=db.get_db()
             cursor=conn.cursor()
             print(stmt)
@@ -98,13 +94,15 @@ def adminLoggedIn():
             print(records)
             for row in records:
                 print(row[0], " = ", row[1])
-            
         
     return render_template("Admin-html/admin-index.html")
     
             
 
 
-        
-
+def ifPresent(column, value):
+    conn = db.get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * from user WHERE (%s) = (%s)", (column, value))
+    return cursor.fetchone() is not None
         

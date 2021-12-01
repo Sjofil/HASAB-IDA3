@@ -79,7 +79,7 @@ def main():
 
             questions = get_questions(user[1])
             session["questions"] = json.dumps(questions, cls=QuestionEncoder)
-            session["currentQuestion"] = str(questions[0].ID)
+            session["currentQuestion"] = questions[0].ID
 
             response = make_response(redirect(url_for('questions.questionMain')))
             response.set_cookie('answers', '', expires=0)
