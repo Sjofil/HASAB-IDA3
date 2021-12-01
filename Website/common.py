@@ -49,7 +49,7 @@ class Question:
         self.AnswerOptions = AnswerOptions
 
     def __repr__(self):
-        return "QuestionID: %s, Text: %s, Type: %s Condition: %s" % (self.ID, self.Text, self.Type, self.Conditional)
+        return "QuestionID: %s, Text: %s, Type: %s Condition: %s, AnswerOptions: %s" % (self.ID, self.Text, self.Type, self.Conditional, self.AnswerOptions)
 
 class QuestionEncoder(JSONEncoder):
     def default(self, obj):

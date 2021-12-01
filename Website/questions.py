@@ -17,28 +17,33 @@ bp = Blueprint('questions', __name__, url_prefix='/')
 @bp.route("/question", methods = ['GET', 'POST'])
 def questionMain():
     if request.method == 'POST':
-        if request.data != "end":
-            session["currentQuestion"] = request.data
-            return returnTemplate(request.data)
+        jsonData = request.get_json()
+        session["currentQuestion"] = jsonData
+        return ""
+    else:
+        questionID = int(session["currentQuestion"])
+        if questionID != -1:
+            return returnTemplate(int(session["currentQuestion"]))
         else:
             return redirect(url_for("questions.questionThree"))
-    else:
-        return returnTemplate(session["currentQuestion"])
 
-def returnTemplate(questionID):
+def returnTemplate(questionID: int):
     questions = json.loads(session["questions"])
     foundNext = False
     nextQuestion = -1
     currentQuestion = {}
+
     for question in questions:
         if foundNext:
             nextQuestion = question['ID']
             break
 
-        if question['ID'] == int(questionID):
+        if int(question['ID']) == questionID:
             currentQuestion = question
             foundNext = True
-
+        elif bool(question['Conditional']) and int(question['Conditional'][0]['ID']) == questionID:
+            foundNext = True
+    
     question = getQuestion(questionID, nextQuestion, currentQuestion)
     return render_template("question1.html", answerOptions=question.AnswerOptions, nextQuestion=nextQuestion, questionID=question.ID, questionType=question.Type, questionText=question.Text, page=1, totalQuestions=10)
 
@@ -52,10 +57,11 @@ def getQuestion(questionID, nextQuestion, currentQuestion):
     answerOptions = []
     for answer in options:
         foundCondition = False
-        for condition in currentQuestion['Conditional']:
-            if condition['ButtonID'] == answer[0]:
-                foundCondition = True
-                answerOptions.append(common.Answer(answer[1], int(condition['ID'])))
+        if bool(currentQuestion):
+            for condition in currentQuestion['Conditional']:
+                if condition['ButtonID'] == answer[0]:
+                    foundCondition = True
+                    answerOptions.append(common.Answer(answer[1], int(condition['ID'])))
         if not foundCondition:
             answerOptions.append(common.Answer(answer[1], nextQuestion))
 
