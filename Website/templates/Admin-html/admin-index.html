@@ -63,32 +63,22 @@
 
 <!--Knappar för samtliga funktioner-->
 <section class="container-fluid text-center">
-
+  <form method="post">
   <div class=" container mt-5 dropdown text-center">
     <p class="h5 mb-2">Ladda ner fullständig rapport</p>
-    <button type="button" class="btn btn-secondary rounded-pill  btn-lg col-lg-3 " data-bs-toggle="dropdown">
+    
+    <button class="btn btn-secondary rounded-pill  btn-lg col-lg-3 "  data-bs-toggle="dropdown">
        Välj branch
       </button>
       <ul class="dropdown-menu rounded-3 " id="dropdown-branch">
-        <li><a class="dropdown-item" >Resturang</a></li>
-        <li><a class="dropdown-item" >Hotell</a></li>
-        <li><a class="dropdown-item" >Byrå</a></li>
-        <li><a class="dropdown-item" >Anläggning</a></li>
+        <li><button type="submit" class="dropdown-item" name = "bransch" value="Resturang">Resturang</a></li>
+        <li><button type="submit" class="dropdown-item" name = "bransch" value="Hotell" >Hotell</a></li>
+        <li><button type="submit" class="dropdown-item" name = "bransch" value="Byrå" >Byrå</a></li>
+        <li><button type="submit" class="dropdown-item" name = "bransch" value="Anläggning" >Anläggning</a></li>
       </ul>
+   
 </div>
-    
-  <form method = "post">
-    <div class="container mt-5">
-        <p class="h5 mb-2">Ladda ner fullständig sammanställning</p>
-        <button class="btn btn-secondary btn-lg col-lg-3 rounded-pill" name="viewForm" value="viewForm"> Ladda ner </button>
-        <div class="modal fade"></div>
-    </div>
-  </form>
-    </div>
- 
-  
-
-
+</form>
     <div class="container mt-3 ">
         <p class="h5 mb-2">Ladda ner enskild rapport</p>
         <button class="btn btn-secondary btn-lg col-lg-3 rounded-pill" data-bs-toggle="modal" data-bs-target="#search-modal"> Sök rapport </button>

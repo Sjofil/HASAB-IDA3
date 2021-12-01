@@ -21,8 +21,3 @@ if request.method == "POST":
     else:
         return render_template("Admin-html/reportTemplate.html")
 """
-
-
-@bp.route("/reportTemplate", methods = ["POST", "GET"])
-def reportTemplate():
-    return render_template("Admin-html/reportTemplate.html")
