@@ -78,6 +78,7 @@ def adminLoggedIn():
             print("hit funkar det") # yes hit funkar det
             cursor.execute(stmt, (request.form['name']))
             records = cursor.fetchall()
+            print(records)
             for row in records:
                 print(row[0], " = ", row[1])
             
