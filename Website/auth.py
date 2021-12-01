@@ -70,11 +70,11 @@ def adminLoggedIn():
         # Om admin sökt en enskild rapport 
         if(request.form['submit']=="findReport"):
             print(request.form)
-            stmt = "SELECT distinct `Question_text`, `Value` from `answers`, `questions`, `user` where `questions.ID` = `answers.Question_ID` and `user.adress` = (%s)"
+            stmt = "SELECT distinct `Question_text`, `Value` from `answers`, `questions`, `user` where `questions.ID` = `answers.Question_ID` and `user.Name` = (%s)"
             conn=db.get_db()
             cursor=conn.cursor()
             print("hit funkar det") # yes hit funkar det
-            cursor.execute(stmt, (request.form['email']))
+            cursor.execute(stmt, (request.form['name']))
             conn.commit()
             records = cursor.fetchall()
             for row in records:
