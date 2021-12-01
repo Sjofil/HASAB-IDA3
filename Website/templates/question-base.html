@@ -22,9 +22,9 @@
     <ul class="pagination justify-content-center flex-wrap" id="totalPages">
         <li disabled id="back" onclick="back()" class="page-item"><a class="page-link">Tillbaka</a>
         {% for index in range(totalQuestions) %}
-        {% if page == loop.index %}
+        {% if questionID-9 == loop.index %}
         <li class="page-item active"><a class="page-link" >{{ loop.index }}</a></li>
-        {% elif page > loop.index %}
+        {% elif questionID-9 > loop.index %}
         <li class="page-item disabled"><a class="page-link" ><i class="bi bi-check"></i></a></li>
         {% else %}
         <li class="page-item disabled"><a class="page-link" >{{ loop.index }}</a></li>
