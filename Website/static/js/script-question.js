@@ -17,30 +17,6 @@ function submitForm(){
 document.location.href="last.html";
 }
 
-function forward(){
-    var page = getRequestVariable("page");
-    var pageNumber = parseInt(page);
-    console.log("Page: " + page + " Total: " + totalPages);
-    if(page != undefined && page != NaN) 
-    {
-        if(totalPages > pageNumber){
-            document.location.href="/question?page=" + (pageNumber + 1);
-        }
-        else if(totalPages == pageNumber) {
-            console.log(getCookie("answers"));
-            document.location.href="/send-form";
-        }
-    }
-    else
-    {
-        document.location.href="/question?page=2";
-        let answers = [];
-        answers[0] = $('form').serialize();
-        setCookie("answers", JSON.stringify(answers), 1);
-    }
-
-}
-
 function saveQuestion(button) {
     let answers = getCookie("answers");
     if (answers == ""){
@@ -58,13 +34,27 @@ function nextQuest(button, nextQuestion){
     goToQuestion(nextQuestion)
 }
 
-function goToQuestion(questionID) {
-    let jsonData = JSON.stringify(questionID)
+function back(questionID) {
+    let jsonData = { "previousQuestion": questionID }
     $.ajax({
         url: "/question",
         type: 'POST',
         contentType: "application/json",
-        data : jsonData,
+        data : JSON.stringify(jsonData),
+        success: function(result) {
+            document.location.reload(false)
+        }
+    });
+}
+
+
+function goToQuestion(questionID) {
+    let jsonData = { "nextQuestion": questionID };
+    $.ajax({
+        url: "/question",
+        type: 'POST',
+        contentType: "application/json",
+        data : JSON.stringify(jsonData),
         success: function(result) {
             document.location.reload(false)
         }
@@ -82,23 +72,6 @@ function sendCookie(){
     });
     //Dålig lösning men orkar inte, borde kolla om vi faktiskt lyckas göra vårt post request
     document.location.href="/last";
-}
-
-function back(){
-    var page = getRequestVariable("page");
-    var pageNumber = parseInt(page);
-    if(page != undefined && page != NaN) 
-    {
-        if(pageNumber > 1){
-            document.location.href="/question?page=" + (pageNumber - 1);
-        }
-        
-    }
-    else
-    {
-        document.location.href="/question?page=2"
-    }
-
 }
 
     function getSelectedValue(){

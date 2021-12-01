@@ -10,7 +10,7 @@
     <!--Fråga Text-->
     <div class="container-fluid justify-content-center mt-3 mb-5" id="fade3">
         <p class="h4">
-            {{ questionID - 9}} . {{ questionText }}
+            {{ page }} . {{ questionText }}
         </p>
     </div>
         {% block question %}{% endblock %}
@@ -20,7 +20,9 @@
 <footer class="container-fluid mt-5 "> 
     <div class="row">
     <ul class="pagination justify-content-center flex-wrap" id="totalPages">
-        <li disabled id="back" onclick="back()" class="page-item"><a class="page-link">Tillbaka</a>
+        {% if previousQuestion != -1 %}
+        <li disabled id="back" onclick="back({{ previousQuestion }})" class="page-item"><a class="page-link">Tillbaka</a>
+        {% endif %}
         {% for index in range(totalQuestions) %}
         {% if questionID-9 == loop.index %}
         <li class="page-item active"><a class="page-link" >{{ loop.index }}</a></li>
