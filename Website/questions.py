@@ -51,7 +51,7 @@ def questionMain():
                     
             return returnTemplate(int(session["currentQuestion"]), previousQuestion, len(questions), page)
         else:
-            return redirect(url_for("questions.questionThree"))
+            return redirect(url_for("questions.questionThree"), )
 
 def returnTemplate(questionID: int, previousID: int, totalQuestions: int, page: int):
     questions = json.loads(session["questions"])
@@ -106,6 +106,9 @@ def getAnswerOptions(typeId):
 
 @bp.route("/send-form" , methods=['GET','POST'])
 def questionThree():
+    questions = json.loads(session["questions"])
+    prev = -1
+    page = len(questions) +1
     if request.method == 'POST':
         if request.is_json:
             jsonData = request.get_json()
@@ -118,7 +121,7 @@ def questionThree():
             connection.commit()
             return redirect(url_for('questions.last'))
 
-    return render_template("send-form.html")
+    return render_template("send-form.html", totalQuestions = len(questions), pageNumber = page, previousQuestion = prev)
 
 @bp.route("/last")
 def last():
