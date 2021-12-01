@@ -63,8 +63,8 @@ def adminLoggedIn():
             cursor.execute(stmt, (request.form['branch'], request.form['adress'], request.form['name']))
             conn.commit()
             
-            
-        if(request.form['submit']=="Resturang"): #Value="Resturang", "Hotell", "Byrå", "Anläggning"          
+        # Sammanställ rapport av de olika branscherna
+        if(request.form['submit']=="Resturang"):    
             return redirect(url_for('auth.reportTemplate'))
         if(request.form['submit']=="Hotell"):
             return redirect(url_for('auth.reportTemplate'))

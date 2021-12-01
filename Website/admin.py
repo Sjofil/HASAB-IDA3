@@ -10,14 +10,3 @@ bp = Blueprint('admin', __name__, url_prefix='/admin')
 def mailingPage():
     return render_template("Admin-html/admin-mail-list.html")
 
-""""
-if request.method == "POST":
-        connection = db.get_db()
-        cursor = connection.cursor()
-        cursor.execute("SELECT * FROM answers")
-        connection.commit()
-        answers = cursor.fetchall()
-        return render_template("Admin-html/reportTemplate.html", data = answers)
-    else:
-        return render_template("Admin-html/reportTemplate.html")
-"""
