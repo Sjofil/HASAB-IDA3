@@ -14,6 +14,18 @@ bp = Blueprint('auth', __name__, url_prefix='/')
 def reportTemplate():
     return render_template("Admin-html/reportTemplate.html")
 
+@bp.route("/reportTemplate", methods= ('POST', 'GET'))
+def reportTemplate():
+    if (request.method == 'GET'):
+        return render_template("Admin-html/reportTemplate.html")
+
+def ifPresent(column, value):
+    conn = db.get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * from user WHERE (%s) = (%s)", (column, value))
+    return cursor.fetchone() is not None
+        
+
 @bp.route("/admin", methods=('GET', 'POST'))
 def login():
     if request.method == 'POST':
@@ -98,7 +110,7 @@ def adminLoggedIn():
             print(records)
             for row in records:
                 print(row[0], " = ", row[1])
-        
+            return redirect(url_for('auth.reportTemplate'))        
     return render_template("Admin-html/admin-index.html")
     
 #Hämta svaren från databasen, visa i reportTemplate
@@ -112,10 +124,3 @@ def reportTemplate():
     return render_template("reportTemplate.html", data = data)
             
 
-
-def ifPresent(column, value):
-    conn = db.get_db()
-    cursor = conn.cursor()
-    cursor.execute("SELECT * from user WHERE (%s) = (%s)", (column, value))
-    return cursor.fetchone() is not None
-        
