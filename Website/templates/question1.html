@@ -4,7 +4,7 @@
 {% if questionType == 1 %}
 <div class="form-check-inline pb-3" id="fade1">
     <input type="number" min="0" pattern="[0-9]" class="form-control-lg ms-2 form-control rounded-3 " placeholder="Antal">
-    <button type="submit" onclick="nextQuest(this, {{ answerOptions[0].NextQuestion }})" class="btn mt-2 btn-secondary col-lg-6 rounded">Nästa </button>
+    <button type="submit" onclick="nextQuest(this, {{ answerOptions[0].NextQuestion }})" class="btn mt-2 ms-2 btn-secondary col-lg-6 rounded">Nästa </button>
 </div> 
 {% else %}
 <!--Templet för nästan alla frågor-->
