@@ -1,13 +1,59 @@
 import functools
+from json import JSONEncoder
+import json
 
+from typing import List
 from flask.helpers import make_response
 from . import db
 from flask import (
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
-from werkzeug.security import check_password_hash, generate_password_hash
 
-#from flaskr.db import get_db
+class Answer:
+    Text: str
+    NextQuestion: int
+
+    def __init__(self, Text: str, NextQuestion: int) -> None:
+        self.Text = Text
+        self.NextQuestion = NextQuestion
+
+    def __repr__(self):
+        return "Text: %s, NextQuestion: %s" % (self.Text, self.NextQuestion)
+
+    def __str__(self):
+        return self.Text
+
+class Condition:
+    ID: int
+    ButtonID: int
+
+    def __init__(self, ID: int, ButtonID: int) -> None:
+        self.ButtonID = ButtonID
+        self.ID = ID
+
+    def __repr__(self):
+        return "NextQuestionID: %s, ButtonID: %s" % (self.ID, self.ButtonID)
+
+class Question:
+    ID: int
+    Text: str
+    Type: int
+    Conditional: List[Condition]
+    AnswerOptions: List[Answer]
+
+    def __init__(self, ID: int, Text: str = "", Type: int = -1, Conditional: List[Condition] = [], AnswerOptions: List[Answer] = []) -> None:
+        self.ID = ID
+        self.Conditional = Conditional
+        self.Text = Text
+        self.Type = Type
+        self.AnswerOptions = AnswerOptions
+
+    def __repr__(self):
+        return "QuestionID: %s, Text: %s, Type: %s Condition: %s, AnswerOptions: %s" % (self.ID, self.Text, self.Type, self.Conditional, self.AnswerOptions)
+
+class QuestionEncoder(JSONEncoder):
+    def default(self, obj):
+        return obj.__dict__
 
 bp = Blueprint('common', __name__, url_prefix='/')
 
@@ -30,8 +76,11 @@ def main():
             session.clear()
             #saves the id in the session for future safety checks.
             session['user_id'] = user[0]
-            print(session['user_id'])
-            session['questions'] = get_questions(user[1])
+
+            questions = get_questions(user[1])
+            session["questions"] = json.dumps(questions, cls=QuestionEncoder)
+            session["currentQuestion"] = str(questions[0].ID)
+
             response = make_response(redirect(url_for('questions.questionMain')))
             response.set_cookie('answers', '', expires=0)
             return response
@@ -39,21 +88,33 @@ def main():
         flash(error)
     return render_template("index.html")
 
-def get_questions(typeID):
+def get_questions(typeID) -> List[Question]:
     cursor = db.get_db().cursor()
-    cursor.execute("SELECT * FROM questions WHERE Type_ID=%s", typeID)
-    questions = cursor.fetchall()
+    cursor.execute("SELECT questions.ID, conditional_question.answer_id, conditional_question.next_question FROM questions LEFT JOIN conditional_question ON questions.ID = conditional_question.question_id WHERE Type_ID=%s", typeID)
+    response = cursor.fetchall()
 
-    questionIDs = []
-    for question in questions:
-        questionIDs.append(str(question[0]))
+    questions = []
+    removeIds = []
+    for question in response:
+        existingQuestion = find_question(question[0], questions)
+        if existingQuestion != None:
+            existingQuestion.Conditional.append(Condition(question[2], question[1]))
+            removeIds.append(question[2])
+        elif question[1] != None:
+            questions.append(Question(question[0], Conditional=[Condition(question[2], question[1])]))
+            removeIds.append(question[2])
+        else:
+            questions.append(Question(question[0]))
 
-    delimiter = ","
-    delimiter = delimiter.join(questionIDs)
-
-    #Detta bör vara säkert från SQL-injektion då detta sker på servern enbart
-    cursor.execute("SELECT * FROM conditional_question WHERE question_id IN (" + delimiter + ")")
-    conditional = cursor.fetchall()
-    print(conditional)
+    for id in removeIds:
+        for question in questions:
+            if question.ID == id:
+                questions.remove(question)
+           
     return questions
 
+def find_question(questionID: int, questionList: List[Question]):
+    for question in questionList:
+        if question.ID == questionID:
+            return question
+    return None

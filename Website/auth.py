@@ -4,6 +4,7 @@ from sqlite3 import dbapi2
 from flask import(
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
+from flask.wrappers import Request
 from werkzeug.security import check_password_hash, generate_password_hash
 from . import db
 
@@ -72,6 +73,33 @@ def adminLoggedIn():
         if(request.form['submit']=="Anläggning"):
             return redirect(url_for('auth.reportTemplate'))
     
+        if(request.form['submit']=="changePassword"):
+            if(request.form['pass1']==request.form['pass2']):
+                stmt="UPDATE `admin` SET `password` = %s WHERE (`name` = %s)"
+                conn=db.get_db()
+                cursor=conn.cursor()
+                cursor.execute(stmt, (request.form['pass1'], session['user_id']))
+                conn.commit()
+            else :
+                error="lösen matchade ej"
+                flash(error)
+    
+        # Om admin sökt en enskild rapport 
+        if(request.form['submit']=="findReport"):
+            print(request.form)
+            stmt = "SELECT distinct `Question_text`, `Value`, `Name` from `answers`, `questions`, `user` \
+                     where `questions.ID` = `answers.Question_ID` and `user.Name` = (%s)"
+            conn=db.get_db()
+            cursor=conn.cursor()
+            print(stmt)
+            print("hit funkar det") # yes hit funkar det
+            cursor.execute(stmt, (request.form['name']))
+            records = cursor.fetchall()
+            print(records)
+            for row in records:
+                print(row[0], " = ", row[1])
+            
+        
     return render_template("Admin-html/admin-index.html")
     
             

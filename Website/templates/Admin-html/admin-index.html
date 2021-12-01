@@ -42,19 +42,19 @@
 
                         <p>Välj ett nytt lösenord</p>
                       
-                        <form action="#!">
+                        <form action="" method="post">
                       
                           <div class="form-floating pb-3">
-                            <input type="password" id="newPass" class="form-control" placeholder="Exempeltext">
+                            <input name="pass1" type="password" id="newPass" class="form-control" placeholder="Exempeltext">
                             <label data-error="wrong" data-success="right" for="newPass">Nytt lösenord</label>
                           </div>
                       
                           <div class="form-floating pb-3">
-                            <input type="password" id="newPassConfirm" class="form-control" placeholder="Exempeltext">
+                            <input name="pass2" type="password" id="newPassConfirm" class="form-control" placeholder="Exempeltext">
                             <label data-error="wrong" data-success="right" for="newPassConfirm">Upprepa nytt lösenord</label>
                           </div>
                       
-                          <button type="submit" class="btn btn-secondary mb-4">Byt lösenord</button>
+                          <button type="submit" name="submit" value="changePassword" class="btn btn-secondary mb-4">Byt lösenord</button>
                       
                         </form>
                       </section>
@@ -103,13 +103,15 @@
       
             <!-- Modal body  sökfält-->
             <div class="modal-body">
+              <form method="post">
                 <div class="input-group rounded">
-                    <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+                    <input type="search" name="name" class="form-control rounded" placeholder="Search" aria-label="Search"
                     aria-describedby="search-addon" />
-                    <button class=" btn btn-secondary border-0 " id="search">
+                    <button class=" btn btn-secondary border-0 " name="submit" value="findReport" id="search">
                       <i class="bi bi-search"></i>
                     </span>
                   </div>
+                </form>
             </div>
         </div>
       </div>
@@ -132,9 +134,9 @@
                   <form method="post">
                     <div class="form-group">
                       <label for="InputEmail">Användarens email</label>
-                      <input type="text" name="adress" class="form-control mt-2" id="InputEmail" aria-describedby="emailHelp" placeholder="Email">
+                      <input type="text" name="adress" class="form-control mt-2" id="InputEmail" placeholder="Email">
                       <label for="InputName">Användarens namn</label>
-                      <input type="text" name="name" class="form-control mt-2" id="InputEmail" aria-describedby="emailHelp" placeholder="Email">
+                      <input type="text" name="name" class="form-control mt-2" id="InputEmail" placeholder="Namn">
                     </div>
                     <!--Radio buttons for den nya användarens branch -->
                     <select name="branch" class="form-select mt-2">

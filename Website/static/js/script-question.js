@@ -53,29 +53,22 @@ function saveQuestion(button) {
     setCookie("answers", JSON.stringify(answers), 1);
 }
 
-function nextQuest(button){
-    var page = getRequestVariable("page");
-    var pageNumber = parseInt(page);
-    console.log("Page: " + page + " Total: " + totalPages);
-    if(page != undefined && page != NaN) 
-    {
-        if(totalPages > pageNumber){
-            
-            saveQuestion(button);
-            document.location.href="/question?page=" + (pageNumber + 1);
-            totalPageVisited++;
-        }
-        else if(totalPages == pageNumber) {
-            console.log(getCookie("answers"));
-            document.location.href="/send-form";
-        }
-    }
-    else
-    {
-        document.location.href="/question?page=2";
-        saveQuestion(button);
-    }
+function nextQuest(button, nextQuestion){
+    saveQuestion(button);
+    goToQuestion(nextQuestion)
+}
 
+function goToQuestion(questionID) {
+    let jsonData = JSON.stringify(questionID)
+    $.ajax({
+        url: "/question",
+        type: 'POST',
+        contentType: "application/json",
+        data : jsonData,
+        success: function(result) {
+            document.location.reload(false)
+        }
+    });
 }
 
 function sendCookie(){
