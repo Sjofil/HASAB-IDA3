@@ -1,10 +1,12 @@
 import functools
 from sqlite3 import dbapi2
+from pymysql.err import OperationalError
 
 from flask import(
     Blueprint, flash, g, redirect, render_template, request, session, url_for
 )
 from flask.wrappers import Request
+import pymysql
 from werkzeug.security import check_password_hash, generate_password_hash
 from . import db
 
@@ -65,13 +67,32 @@ def adminLoggedIn():
             session.clear()
             return redirect(url_for('auth.login'))
         if(request.form['submit']=="addUser"):
-            print(request.form)
+           
             stmt="INSERT INTO `user` (`Type_ID`, `Adress`, `Name`) VALUES (%s, %s, %s)"
             print(stmt)
             conn=db.get_db()
             cursor=conn.cursor()
-            cursor.execute(stmt, (request.form['branch'], request.form['adress'], request.form['name']))
-            conn.commit()
+            try:
+                if(request.form['name'] == ''):
+                    name = None
+                else:    
+                    name = request.form['name']
+
+                if(request.form['branch'] == 0):
+                    branch = None
+                else:
+                    branch = request.form['branch']
+                
+                cursor.execute(stmt, (branch, request.form['adress'], name))
+                conn.commit()
+            except pymysql.IntegrityError as e:
+                error="Emailadressen:  " + request.form['adress'] + " finns redan i systemet"
+                flash(error)
+                
+            finally:
+                cursor.close
+
+           
             
         # Sammanställ rapport av de olika branscherna
         if(request.form['submit']=="Resturang"):    
