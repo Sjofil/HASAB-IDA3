@@ -52,7 +52,7 @@
     \documentTitle {Helsingborg Event and Convention Bureau}
     
     % Format: YYYY-MM-DD
-    \documentDate {2021-08-20}
+    \documentDate {2021-12-03}
     \documentVersion Vv 1.0
     
     \author{Anna Bergvall - Oscar Blixt - Pontus Persson - Filip Sjövall - David Vilppu}
@@ -85,7 +85,7 @@
 
 \section{Introduktion}
 
-    Detta dokument innehåller kraven för ett rapporteringssystem som hädanefter benämns som "systemet". Systemet är framtaget och utvecklat på beställning av Helsingborg Convention and Event Bureau (HCEB). Det huvudsakliga syftet med systemet är att Helsingborg stad ska bli miljöcertifierat av GDSM (Global Destination Sustainability Movement) genom att inkorporera deras krav för miljöcertifiering i ett frågeformulär som näringslivet får svara på. Huvudfunktionaliteten är att HCEB ska kunna sammanställa den data som tillkommit till följd av svar på formuläret från näringslivet. Systemet ska intrigeras i en server och det är detta som ska levereras till kunden. I systemet ingår frontend/hemsidan(html, css, javascript), api:n samt databasen. 
+    Detta dokument innehåller kraven för ett webbaserat rapporteringssystem som hädanefter benämns som "systemet". Systemet är framtaget och utvecklat på beställning av Helsingborg Convention and Event Bureau (HCEB). Det huvudsakliga syftet med systemet är att Helsingborg stad ska bli miljöcertifierat av GDSM (Global Destination Sustainability Movement) genom att inkorporera deras krav för miljöcertifiering i ett frågeformulär som näringslivet får svara på. Huvudfunktionaliteten är att HCEB ska kunna sammanställa den data som tillkommit till följd av svar på formuläret från näringslivet. Systemet ska intrigeras i en server och det är detta som ska levereras till kunden. I systemet ingår frontend/hemsidan(html, css, javascript), api:n samt databasen. 
     \\\\
     Dokumentets struktureras utifrån prioritering och numrering. Numrering sker enligt \textit{R1} vilka är krav som endast kan hittas i detta dokument, krav med numrering enligt \textit{SF} kommer från scrumboarden. Kraven är prioriterade utefter \textit{stabila krav}, \textit{ändringsbenägna krav} och \textit{uteslutna krav}. 
     
@@ -109,7 +109,7 @@
          \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ samt statistikföring över svaren.
         \item \textbf{HCEB:} Förkortning av Helsingborg Convention and Event Bureau, beställare av systemet.
         \item \textbf{Session:} Data som sparas under tiden som slutanvändaren befinner sig på hemsidan.
-        \item \textbf{Slutanvändare:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
+        \item \textbf{Svarspersoner:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
         \item\textbf{Stabila krav:}  Stabila krav är krav som inte är ändringbenägna - de baseras på funktioner som är grundläggande för att systemet ska möta beställarens behov.
          \item \textbf{Uteslutna krav:}  Krav som inte längre är aktuella.
         \item \textbf{Ändringbenägna krav:}  Krav som sannolikt kommer att förändras eller tas bort.
@@ -118,18 +118,21 @@
     \newpage
     \section{Hemsidans design}
     
-    \subsection*{Stabila krav}
+    \subsection{Stabila krav}
+    
+    T-5 (Från Trello).
      
-    \subsection*{Ändringsbenägna krav}
-     \subsubsection*{R1}
-    Systemet ska ha ett utseende likt figur 1.
+    \subsection{Ändringsbenägna krav}
+    
+    \large{\textbf{R1.}}
+    \normalsize{Systemet ska ha ett utseende likt figur 1.}
     
     \begin{figure}[h!]
     \caption{Prototyp över frågeformuläret}
     \includegraphics[width=140mm]{Proto-Coll-Q (1).jpg}
     \end{figure}
     \newpage
-    \subsubsection*{R2}
+    \large{\textbf{R2.}}
     Systemet ska ha ett utseende likt figur 2.
     \begin{figure}[h!]
         \centering
@@ -137,55 +140,59 @@
         \includegraphics[width=140mm]{Proto-Coll-A.jpg}
         \label{fig:my_label}
     \end{figure}
-
-    \subsection*{Uteslutna krav}
+\newpage
     
     \section{Hemsidans funktion}
+\normalsize{Det här sektionen behandlar krav som är knutna till systemets funktionalitet. R3-R5 fokuserar på funktionaliteten som tillhör själva formuläret. R6 och R7 beskriver scenarior som ska gälla för administratören av systemet.
+}
+    \subsection{Stabila krav}
     
-    \subsection*{Stabila krav}
-    
-      \subsubsection*{R3}
-    Följande scenario ska stödjas av systemet.
+    \large{\textbf{R3.}}
+    \normalsize{Följande scenario ska stödjas av systemet. \\
+    \textbf{Scenario:} Svarspersonen navigerar till systemet i en webbläsare med hjälp av en länk som sänts till deras email.
+        
+    \noindent \textbf{Förutsättningar:} Svarspersonen har fått ett email från från HCEB. Mailet innehåller en länk till hemsidan.
+        \begin{enumerate}
+            \item Svarspersonen klickar på länken till formuläret som finns i mailet.
+            \item Svarspersonen möts av formulärets startsida och ombeds mata in den mailadressen som länken skickades till. 
+        \end{enumerate}
+}
+\vspace{1em}
+
+\noindent \large{\textbf{R4.}}
+    \normalsize{Följande scenario ska stödjas av systemet. \\
+    \textbf{Scenario:} Svarspersonen ska logga in på hemsidan med samma mailadress som mailet skickades till.
         \\
-       \indent \textbf{Scenario:} Slutanvändaren navigerar till hemsidan via email.
-        \\
-       \indent \textbf{Förutsättningar:} Slutanvändaren har fått ett email från från HCEB. Mailet innehåller en länk till hemsidan.
-            \begin{enumerate}
-                \item Slutanvändaren klickar på länken till formuläret som finns i mailet.
-                \item Slutanvändaren möts av formulärets startsida och ombeds mata in sin mailadress till vilken länken skickades. 
-            \end{enumerate}
-            
-        \subsubsection*{R4}
-    Följande scenario ska stödjas av systemet.
-        \\
-       \indent \textbf{Scenario:} Slutanvändaren ska logga in på hemsidan med samma mailadress som mailet skickades till.
-        \\
-       \indent \textbf{Förutsättningar:} Slutanvändaren har fått en engångskod i samma mail som länken samt att svarspersonen befinner sig på startsidan.
-            \begin{enumerate}
-               \item Slutanvändaren skriver in samma mailadress som mailet skickades till.
-               \item Slutanvändaren trycker på knappen "Första frågan->".
-                \item  Slutanvändaren blir omdirigerad till första frågan och kan börja svara på formuläret.
-            \end{enumerate}
+    \textbf{Förutsättningar:} Svarspersonen har fått en engångskod i samma mail som länken samt att svarspersonen befinner sig på startsidan.
+        \begin{enumerate}
+           \item Svarspersonen skriver in samma mailadress som mailet skickades till.
+           \item Svarspersonen trycker på knappen "Första frågan".
+           \item  Svarspersonen blir omdirigerad till första frågan och kan börja svara på formuläret.
+        \end{enumerate}
+   }
    
-        \subsubsection*{R5}
-    Följande scenario ska stödjas av systemet.
+   \vspace{1em}
+\noindent \large{\textbf{R5.}}
+    \normalsize{Följande scenario ska stödjas av systemet.
         \\
-       \indent \textbf{Scenario:} Slutanvändaren ska skicka in slutgiltig rapportering.
+       \textbf{Scenario:} Svarspersonen ska skicka in slutgiltig rapportering.
         \\
-       \indent \textbf{Förutsättningar:} Slutanvändaren har svarat på samtliga frågor och befinner sig på sidan med den sista frågan.
+        \textbf{Förutsättningar:} Svarspersonen har svarat på samtliga frågor och befinner sig på sidan med den sista frågan.
             \begin{enumerate}
-                \item Slutanvändaren svarar på sista frågan.
-                \item Slutanvändaren möts av en sidan med tack text enligt figur 1.
-                \item Slutanvändaren trycker på knappen "Skicka in".
-                \item  Slutanvändaren möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
+                \item Svarspersonen svarar på sista frågan.
+                \item Svarspersonen möts av en sidan med tack text enligt figur 1.
+                \item Svarspersonen trycker på knappen "Skicka in".
+                \item  Svarspersonen möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
             \end{enumerate}
-            
-       \subsubsection*{R6}
-    Följande scenario ska stödjas av systemet.
+}
+
+\vspace{1em}
+\noindent \large{\textbf{R6.}}
+    \normalsize{Följande scenario ska stödjas av systemet.
         \\
-       \indent \textbf{Scenario:} Administratören ska få tillgång till sammanställd datan från enskild bransch.
+      \textbf{Scenario:} Administratören ska få tillgång till sammanställd data från en enskild bransch.
         \\
-       \indent \textbf{Förutsättningar:} Administratören är inloggad på admins hemsidan.
+      \textbf{Förutsättningar:} Administratören är inloggad på admins hemsidan.
             \begin{enumerate}
                 \item Administratören trycker på knappen "Ladda ner" under rubriken "Ladda ner fullständig rapport".
                 \item Administratören får upp en dropdown-meny med de olika branscherna.
@@ -193,12 +200,14 @@
                 \item  Administratören dirigeras om vidare till en separat sida med data sammanställd från den bransch hen valde.
             \end{enumerate}
             
-         \subsubsection*{R7}
-    Följande scenario ska stödjas av systemet.
+           } 
+           \vspace{1em}
+\noindent \large{\textbf{R7.}}
+    \normalsize{Följande scenario ska stödjas av systemet.
         \\
-       \indent \textbf{Scenario:} Administratören ska få tillgång till sammanställd datan från enskild aktör.
+       \textbf{Scenario:} Administratören ska få tillgång till sammanställd data från enskild aktör.
         \\
-       \indent \textbf{Förutsättningar:} Administratören är inloggad på admins hemsidan.
+       \textbf{Förutsättningar:} Administratören är inloggad på admins hemsidan.
             \begin{enumerate}
                 \item Administratören trycker på knappen "Sök rapport" under rubriken "Ladda ner enskild rapport".
                 \item Administratören får upp ett modal-fönster med en sökruta och en sök-knapp.
@@ -206,84 +215,112 @@
                 \item Administratören trycker på knappen med en sök ikon.
                 \item  Administratören dirigeras om vidare till en separat sida med data sammanställd från den enskilda aktör hen valde.
             \end{enumerate}
-            
-
-\subsection*{Ändringsbenägna krav}
-
-\subsubsection*{Krav från scrumboard}
-Krav \textit{SF-1} till och med \textit{SF-22} som finns på hemsidan https://trello.com/b/DHOoURT9/sustainable-forms är även del av detta dokument.
-
-
-    \subsection*{Uteslutna krav}
+    }
     
+    \vspace{1em}
+
+\subsection{Ändringsbenägna krav}
+Dessa krav är hämtade från vår scrumboard. Eftersom vi först använde jira för att senare gå över till Trello så har vi två olika indexsystem: SF - X har sitt ursprung i Jiratiden och T - X kom till senare.
+
+\subsubsection{Krav från scrumboard}
+Krav \textit{SF-1} till och med \textit{SF-22} och \textit{T-1} till och med \textit{T-9} som finns på hemsidan \\ https://trello.com/b/DHOoURT9/sustainable-forms är även del av detta dokument.
+
+
+    \subsection{Uteslutna krav}
+       En del krav från vår scrumboard har blivit arkiverade så läsaren hänvisas dit.
+     
     \newpage
      \section{Hemsidans hantering av data}
     
-    \subsection*{Stabila krav}
-    \subsubsection*{R8}
-    Systemet ska fungera enligt figur 2.
+    \subsection{Stabila krav}
+    \noindent \large{\textbf{R8.}}
+    \normalsize{Systemet ska fungera enligt figur 2.
     
     \begin{figure}[h!]
     \caption{Kontext-diagram: Det utvecklade systemet innefattar \textit{Server, API, GUI} och \textit{Systemet}}
     \includegraphics[width=150mm]{Kontextdiagram.png}
     
     \end{figure}
-    
+}
     \newpage
-    \subsubsection*{R9}
+    \noindent \large{\textbf{R9.}}
     Systemet ska hantera data enligt figur 3.
        \begin{figure}[h!]
     
-    \includegraphics[width=150mm]{ERDIAGRAM.png}
-    \caption{ER-Diagram}
+    \includegraphics[width=150mm]{er.png}
+    \caption{ER-diagram över datamodellen}
     \end{figure}
     
-    \newpage
-    \subsection*{Ändringsbenägna krav}
-    \subsection*{Uteslutna krav}
     
-  
+    \subsection{Ändringsbenägna krav och uteslutna krav}
+    Även här hänvisas läsaren till scrumboarden.
+    
+  \newpage
    
     \section{Kvalitetskrav}
-    \subsection*{Stabila krav}
+\normalsize{I den här sektionen presenteras krav som är relaterade till systemets användbarhet och användarupplevelse. Även krav kopplade till prestanda behandlas här.
+}
+    \subsection{Stabila krav}
     
   
-     \subsection*{Ändringsbenägna krav}
-     \subsubsection*{R10}
-     Vid oförutsägbara händelser som påverkar systemets tillgänglighet ska en session sparas i 24 timmar från att den påbörjades.
-     
+\subsection{Ändringsbenägna krav}
+     \noindent \large{\textbf{R10.}}
+    \normalsize{Vid oförutsägbara händelser som påverkar systemets tillgänglighet ska en session sparas i 24 timmar från att den påbörjades.}
+
+\vspace{1em}
+
+    \noindent \large{\textbf{R11.}}
+    \normalsize{Rapportering i systemet ska endast kunna göras av en användare som har fått tillgång till hemsidan via email.
+    }
     
-    \subsubsection*{R11}
-    Rapportering i systemet ska endast kunna göras av en användare som har fått tillgång till hemsidan via email.
+\vspace{1em}
+\noindent \large{\textbf{R12.}}
+    \normalsize{Fyra av fem svarspersoner ska anse att enkäten var lätt att svara på.
     
-     
-    \subsubsection*{R12}
-    Fyra av fem användare ska anse att enkäten var lätt att svara på.
+    }
+    \vspace{1em}
     
-    \subsubsection*{R13}
-    En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R2} och anlända till sidan inom 20 sekunder efter att de har klickat på länken.
+\noindent \large{\textbf{R13.}}
+\normalsize{En medelkunnig svarsperson ska kunna genomföra scenariot som beskrivs  \textbf{R2} och anlända till sidan inom 20 sekunder efter att de har klickat på länken.
+    }
+\vspace{1em}
+
+\noindent \large{\textbf{R14.}}
+    \normalsize{En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R3} inom en minut.
+    }
+    \vspace{1em}
     
-    \subsubsection*{R14}
-    En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R3} inom en minut.
+\noindent \large{\textbf{R15.}}
+    \normalsize{En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R4} inom 20 sekunder.
+    }
     
-    \subsubsection*{R15}
-    En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R4} inom 20 sekunder.
-    
-    \subsection*{Uteslutna krav}
-    
+    \vspace{1em}    
+    \subsection{Uteslutna krav}
+    De uteslutna kraven kan hittas på scrumboarden under arkiverade krav.
+    \newpage
     \section{Leveranskrav}
     
-    \subsection*{Stabila krav}
-     \subsubsection*{R16}
-     En leverans av systemet ska ske 2021-12-13 och ska inkludera en fungerande produkt som kan användas för testning av kunden. Vid leverans ingår en grundlig genomgång av systemet.
+    \subsection{Stabila krav}
+\noindent \large{\textbf{R16.}}
+     \normalsize{En leverans av systemet ska ske 2021-12-13 och ska inkludera en fungerande produkt som kan användas för testning av kunden. Vid leverans ingår en grundlig genomgång av systemet.
+     }
+     \vspace{1em}
      
-     \subsubsection*{R17}
-     Slutgiltig leverans av systemet ska ske 2021-12-13 och ska inkludera en fullt fungerande produkt.
+\noindent \large{\textbf{R17.}}
+    \normalsize{Slutgiltig leverans av systemet ska ske 2021-12-13 och ska inkludera en fullt fungerande produkt.}
      
      
-    \subsection*{Ändringsbenägna krav}
+    \subsection{Ändringsbenägna krav}
     
-    \subsection*{Uteslutna krav}
+    \noindent \large{\textbf{R18.}}
+    \normalsize{Efter leveransen har skett och beställaren accepterat systemet har projektgruppen ingen möjlighet att ge teknisk support med tanke på att projektet ingår i en universitetskurs.}
+    
+    \subsection{Uteslutna krav}
+    Läsaren hänvisas till scrumboarden.
+    
+
+\section{Sammanfattning}
+Syftet med denna kravspecifikation är att beskriva det webbaserade rapporteringssystem som beställts av Helsingborg Convention and Event Bureau. Funktionella krav har presenterats, så som kravet på att tillgång till systemet ska ske genom en länk och att endast ifyllda formulär ska kunna skickas in. Andra krav har ett större fokus på svarspersonernas upplevelse och det faktum att ett enkelt gränssnitt och få valmöjligheter kan göra svarsprocessen mindre krävande. För ändringsbenägna och uteslutna krav hänvisas läsaren till projektets scrumboard. Avslutningsvis presenterades krav knutna till leveransen. 
     
     
    
