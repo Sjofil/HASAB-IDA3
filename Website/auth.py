@@ -69,6 +69,15 @@ def adminLoggedIn():
             session.clear()
             return redirect(url_for('auth.login'))
 
+        if(request.form['submit'] == "deleteAnswers"):
+            stmt="Delete from answers"
+            conn=db.get_db()
+            cursor=conn.cursor()
+            cursor.execute(stmt)
+            conn.commit()
+            error="Alla svar från användarna togs bort"
+            flash(error)
+
         if(request.form['submit'] == "removeUser"):
            
             stmt="Delete from user where adress=(%s)"
