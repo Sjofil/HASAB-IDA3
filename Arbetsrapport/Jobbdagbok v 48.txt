@@ -1,1 +1,3 @@
 Filip - Omstrukturerat databasen så att man inte kan lägga till två användare med samma email. Lagt till funktioner på adminsidan: Ta bort användare från databasen, Varning om man försöker lägga till en användare som redan finns, lagt till knapp för att rensa alla svar från slutanvändare i databasen.
+
+Pontus - Gjorde om i koden så att man inte kan gå till en specifik sida av enkäten genom att ändra på URL:en, detta medförde också att det blev enklare att hantera tilläggs frågor som enbart ska visas för användaren vid specifika svar.
