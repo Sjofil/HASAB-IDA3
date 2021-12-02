@@ -10,3 +10,12 @@ window.addEventListener('input', function(){
      }
 
 })
+
+window.addEventListener('input', function(){  
+   if(email.value != ""){
+      this.document.getElementById("removeUser").disabled = false;
+   }else{
+      this.document.getElementById("removeUser").disabled = true;
+   }
+
+})

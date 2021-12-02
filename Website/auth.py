@@ -69,6 +69,21 @@ def adminLoggedIn():
             session.clear()
             return redirect(url_for('auth.login'))
 
+        if(request.form['submit'] == "removeUser"):
+           
+            stmt="Delete from user where adress=(%s)"
+            conn=db.get_db()
+            cursor=conn.cursor()
+
+            try:
+                    cursor.execute(stmt, request.form['adress'])
+                    conn.commit()
+                    error="Användaren: " + request.form['adress'] + " togs bort"
+                    flash(error)
+            except pymysql.IntegrityError :
+                error="Användaren: " + request.form['adress'] + "finns inte i systemet"
+                flash(error)
+
 
         if(request.form['submit']=="addUser"):
            
@@ -132,7 +147,7 @@ def adminLoggedIn():
             cursor.execute(stmt, name)
             records = cursor.fetchall()
             print(records)     
-            #return redirect(url_for('auth.reportTemplate'))        
+            return redirect(url_for('auth.reportTemplate'), hehe = records)        
     return render_template("Admin-html/admin-index.html")
 
 
