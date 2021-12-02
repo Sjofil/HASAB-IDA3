@@ -53,7 +53,7 @@
     
     % Format: YYYY-MM-DD
     \documentDate {2021-08-20}
-    \documentVersion Vv 0.2
+    \documentVersion Vv 1.0
     
     \author{Anna Bergvall - Oscar Blixt - Pontus Persson - Filip Sjövall - David Vilppu}
 }
@@ -79,6 +79,7 @@
     \hline
     0.1 & 2021-10-06 & Dokumentet skapat. \\
     0.2 & 2021-11-05 & Första utkast\\
+    1.0 & 2021-12-03 & Preliminär inlämning\\
     
 \end{tabular}
 
@@ -106,8 +107,8 @@
         \item \textbf{Administratör:} Administratören har tillgång till systemets alla funktioner.
          \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ samt statistikföring över svaren.
         \item \textbf{HCEB:} Förkortning av Helsingborg Convention and Event Bureau, beställare av systemet.
-        \item \textbf{Session:} Data som sparas under tiden som slutanvändaren befann sig på hemsidan.
-        \item \textbf{Svarspersoner och slutanvändare:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
+        \item \textbf{Session:} Data som sparas under tiden som slutanvändaren befinner sig på hemsidan.
+        \item \textbf{Slutanvändare:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
         \item\textbf{Stabila krav:}  Stabila krav är krav som inte är ändringbenägna - de baseras på funktioner som är grundläggande för att systemet ska möta beställarens behov.
          \item \textbf{Uteslutna krav:}  Krav som inte längre är aktuella.
         \item \textbf{Ändringbenägna krav:}  Krav som sannolikt kommer att förändras eller tas bort.
@@ -127,7 +128,7 @@
     \includegraphics[width=140mm]{Proto-Coll-Q (1).jpg}
     \end{figure}
     \newpage
-    \subsubsection*{R11}
+    \subsubsection*{R2}
     Systemet ska ha ett utseende likt figur 2.
     \begin{figure}[h!]
         \centering
@@ -142,67 +143,47 @@
     
     \subsection*{Stabila krav}
     
-      \subsubsection*{R2}
+      \subsubsection*{R3}
     Följande scenario ska stödjas av systemet.
         \\
        \indent \textbf{Scenario:} Slutanvändaren navigerar till hemsidan via mail.
         \\
-       \indent \textbf{Förutsättningar:} Svarspersonen har fått ett mail från från HCEB. Mailet innehåller en länk till hemsidan.
+       \indent \textbf{Förutsättningar:} Slutanvändaren har fått ett mail från från HCEB. Mailet innehåller en länk till hemsidan.
             \begin{enumerate}
                 \item Slutanvändaren klickar på länken till formuläret som finns i mejlet.
                 \item Slutanvändaren möts av formulärets startsida och ombeds mata in sin mailadress till vilken länken skickades. 
             \end{enumerate}
             
-        \subsubsection*{R3}
-    Följande scenario ska stödjas av systemet.
-        \\
-       \indent \textbf{Scenario:} Slutanvändaren ska logga in på hemsidan med sin samma mailadress som mailet skickades till.
-        \\
-       \indent \textbf{Förutsättningar:} Svarspersonen har fått en engångskod i samma mail som länken samt att svarspersonen befinner sig på startsidan.
-            \begin{enumerate}
-               \item Svarspersonen skriver in samma mailadress som mailet skickades till.
-               \item Svarspersonen trycker på knappen "Gå vidare".
-                \item  Svarspersonen blir omdirigerad till första frågan och kan börja svara på formuläret.
-            \end{enumerate}
-   
         \subsubsection*{R4}
     Följande scenario ska stödjas av systemet.
         \\
-       \indent \textbf{Scenario:} Svarspersonen ska skicka in slutgiltig rapportering.
+       \indent \textbf{Scenario:} Slutanvändaren ska logga in på hemsidan med samma mailadress som mailet skickades till.
         \\
-       \indent \textbf{Förutsättningar:} Svarspersonen har svarat på samtliga frågor och befinner sig på sidan med den sista frågan.
+       \indent \textbf{Förutsättningar:} Slutanvändaren har fått en engångskod i samma mail som länken samt att svarspersonen befinner sig på startsidan.
             \begin{enumerate}
-                \item Svarspersonen klickar på knappen "Slutför formulär".
-                \item Svarspersonen möts av en sidan med tack text enligt figur 1.
-                \item Svarspersonen trycker på knappen "Skicka in formulär".
-                \item  Svarspersonen möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
+               \item Slutanvändaren skriver in samma mailadress som mailet skickades till.
+               \item Slutanvändaren trycker på knappen "Första frågan->".
+                \item  Slutanvändaren blir omdirigerad till första frågan och kan börja svara på formuläret.
+            \end{enumerate}
+   
+        \subsubsection*{R5}
+    Följande scenario ska stödjas av systemet.
+        \\
+       \indent \textbf{Scenario:} Slutanvändaren ska skicka in slutgiltig rapportering.
+        \\
+       \indent \textbf{Förutsättningar:} Slutanvändaren har svarat på samtliga frågor och befinner sig på sidan med den sista frågan.
+            \begin{enumerate}
+                \item Slutanvändaren svara på sista frågan.
+                \item Slutanvändaren möts av en sidan med tack text enligt figur 1.
+                \item Slutanvändaren trycker på knappen "Skicka in".
+                \item  Slutanvändaren möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
             \end{enumerate}
 
 \subsection*{Ändringsbenägna krav}
 
 \subsubsection*{Krav från scrumboard}
-Följande mappning gäller för de krav som finns på projektets scrumboard som finns på \\
-https://trello.com/b/DHOoURT9/sustainable-forms
-\\
-När ett krav ska refereras till används denna graf.\\
-$$SR1\rightarrow SF-1$$
-$$SR2\rightarrow SF-5$$
-$$SR3\rightarrow SF-6$$
-$$SR4\rightarrow SF-7$$
-$$SR5\rightarrow SF-9$$
-$$SR6\rightarrow SF-12$$
-$$SR7\rightarrow SF-22$$
-$$SR8\rightarrow SF-13$$
-$$SR9\rightarrow SF-14$$
-$$SR10\rightarrow SF-16$$
-$$SR11\rightarrow SF-17$$
-$$SR12\rightarrow SF-18$$
-$$SR13\rightarrow SF-21$$
-$$SR14\rightarrow SF-25$$
-$$SR15\rightarrow SF-64$$
-$$SR16\rightarrow SF-65$$
-$$SR17\rightarrow SF-73$$
-$$SR18\rightarrow SF-74$$
+Krav \textit{SF-1} till och med \textit{SF-22} som finns på hemsidan https://trello.com/b/DHOoURT9/sustainable-forms är även del av detta dokument.
+
 
     \subsection*{Uteslutna krav}
     
@@ -210,7 +191,7 @@ $$SR18\rightarrow SF-74$$
      \section{Hemsidans hantering av data}
     
     \subsection*{Stabila krav}
-    \subsubsection*{R5}
+    \subsubsection*{R6}
     Systemet ska fungera enligt figur 2.
     
     \begin{figure}[h!]
@@ -220,7 +201,7 @@ $$SR18\rightarrow SF-74$$
     \end{figure}
     
     \newpage
-    \subsubsection*{R6}
+    \subsubsection*{R7}
     Systemt ska hantera data enligt figur 3.
        \begin{figure}[h!]
     
@@ -239,13 +220,11 @@ $$SR18\rightarrow SF-74$$
     
   
      \subsection*{Ändringsbenägna krav}
-     \subsubsection*{R6}
+     \subsubsection*{R8}
      Vid oförutsebara händelser som påverkar systemets tillgänglighet ska en session sparas i 24 timmar från att den påbörjades.
      
-     \subsubsection*{R7}
-    Systemet ska ha en svarstid på max \underline{\hspace{1cm}} sekunder.
     
-    \subsubsection*{R8}
+    \subsubsection*{R9}
     Rapportering i systemet ska endast kunna göras av en användare som har fått tillgång till hemsidan via mail.
     
      
@@ -267,7 +246,7 @@ $$SR18\rightarrow SF-74$$
     
     \subsection*{Stabila krav}
      \subsubsection*{R14}
-     En leverans av systemet ska ske 2021-12-13 och ska inludera en fungerande produkt som kan användas för testning av kunden.
+     En leverans av systemet ska ske 2021-12-13 och ska inludera en fungerande produkt som kan användas för testning av kunden. Vid leverans ingår en grundlig genomgång av systemet.
      
      \subsubsection*{R15}
      Slutgiltig leverans av systemet ska ske 2021-12-13 och ska inkludera en fullt fungerade produkt.
