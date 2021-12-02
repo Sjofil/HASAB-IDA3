@@ -75,7 +75,7 @@
 
 \section{Dokumenthistoria}
 \begin{tabular}{ l | l | l }
-    Version & Date & Description \\
+    Version & Datum & Beskrivning \\
     \hline
     0.1 & 2021-10-06 & Dokumentet skapat. \\
     0.2 & 2021-11-05 & Första utkast\\
@@ -85,7 +85,7 @@
 
 \section{Introduktion}
 
-    Detta dokument innehåller kraven för ett rapporteringssystem som hädanefter benämns som "systemet". Sysemet är framtaget och utvecklat på beställning av Helsingborg Convention and Event Bureau (HCEB). Det huvudsakliga syftet med systemet är att Helsingborg stad ska bli miljöcertifierat av GDSM (Global Destination Sustainability Movement) genom att inkorporera deras krav för miljöcertifiering i ett frågeformulär som näringslivet får svara på. Huvudfunktionaliteten är att HCEB ska kunna sammanställa den data som tillkommit till följd av svar på formuläret från näringslivet. Systemet ska interageras i en server och det är detta som ska levereras till kunden. I systemet ingår frontend/hemsidan(html, css, javascript), api:n samt databasen. 
+    Detta dokument innehåller kraven för ett rapporteringssystem som hädanefter benämns som "systemet". Systemet är framtaget och utvecklat på beställning av Helsingborg Convention and Event Bureau (HCEB). Det huvudsakliga syftet med systemet är att Helsingborg stad ska bli miljöcertifierat av GDSM (Global Destination Sustainability Movement) genom att inkorporera deras krav för miljöcertifiering i ett frågeformulär som näringslivet får svara på. Huvudfunktionaliteten är att HCEB ska kunna sammanställa den data som tillkommit till följd av svar på formuläret från näringslivet. Systemet ska intrigeras i en server och det är detta som ska levereras till kunden. I systemet ingår frontend/hemsidan(html, css, javascript), api:n samt databasen. 
     \\\\
     Dokumentets struktureras utifrån prioritering och numrering. Numrering sker enligt \textit{R1} vilka är krav som endast kan hittas i detta dokument, krav med numrering enligt \textit{SF} kommer från scrumboarden. Kraven är prioriterade utefter \textit{stabila krav}, \textit{ändringsbenägna krav} och \textit{uteslutna krav}. 
     
@@ -93,7 +93,7 @@
 \section{Bakgrund och mål}
                                                                                                                 
     \subsection{Mål}
-      Helsingborg stad önskar bli certifierade av nätverket Global Detination Sustainability Movement (GDSM), vilket kräver att destinationen varje år skickar in information om hållbarhetsarbetet som utförs av aktörer verksamma inom besöksnäringen i regionen. Syftet med det här projektet är att hjälpa Helsingborg stad att samla in dennahållbarhetsdata genom att utveckla ett webbaserat frågeformulär som går snabbt och är enkelt att svara på. När datan väl samlats in är det vår uppgift att ta fram en sammanställning som matchar GDSM:s målformat. 
+      Helsingborg stad önskar bli certifierade av nätverket Global Destination Sustainability Movement (GDSM), vilket kräver att destinationen varje år skickar in information om hållbarhetsarbetet som utförs av aktörer verksamma inom besöksnäringen i regionen. Syftet med det här projektet är att hjälpa Helsingborg stad att samla in hållbarhetsdata genom att utveckla ett webbaserat frågeformulär som går snabbt och är enkelt att svara på. När datan väl samlats in är det vår uppgift att ta fram en sammanställning som matchar GDSM:s målformat. 
         
     \subsection{Viktiga aktörer}
     Systemet kommer ha två typer av användare:
@@ -146,11 +146,11 @@
       \subsubsection*{R3}
     Följande scenario ska stödjas av systemet.
         \\
-       \indent \textbf{Scenario:} Slutanvändaren navigerar till hemsidan via mail.
+       \indent \textbf{Scenario:} Slutanvändaren navigerar till hemsidan via email.
         \\
-       \indent \textbf{Förutsättningar:} Slutanvändaren har fått ett mail från från HCEB. Mailet innehåller en länk till hemsidan.
+       \indent \textbf{Förutsättningar:} Slutanvändaren har fått ett email från från HCEB. Mailet innehåller en länk till hemsidan.
             \begin{enumerate}
-                \item Slutanvändaren klickar på länken till formuläret som finns i mejlet.
+                \item Slutanvändaren klickar på länken till formuläret som finns i mailet.
                 \item Slutanvändaren möts av formulärets startsida och ombeds mata in sin mailadress till vilken länken skickades. 
             \end{enumerate}
             
@@ -202,7 +202,7 @@ Krav \textit{SF-1} till och med \textit{SF-22} som finns på hemsidan https://tr
     
     \newpage
     \subsubsection*{R7}
-    Systemt ska hantera data enligt figur 3.
+    Systemet ska hantera data enligt figur 3.
        \begin{figure}[h!]
     
     \includegraphics[width=150mm]{ERDIAGRAM.png}
@@ -221,11 +221,11 @@ Krav \textit{SF-1} till och med \textit{SF-22} som finns på hemsidan https://tr
   
      \subsection*{Ändringsbenägna krav}
      \subsubsection*{R8}
-     Vid oförutsebara händelser som påverkar systemets tillgänglighet ska en session sparas i 24 timmar från att den påbörjades.
+     Vid oförutsägbara händelser som påverkar systemets tillgänglighet ska en session sparas i 24 timmar från att den påbörjades.
      
     
     \subsubsection*{R9}
-    Rapportering i systemet ska endast kunna göras av en användare som har fått tillgång till hemsidan via mail.
+    Rapportering i systemet ska endast kunna göras av en användare som har fått tillgång till hemsidan via email.
     
      
     \subsubsection*{R10}
@@ -246,10 +246,10 @@ Krav \textit{SF-1} till och med \textit{SF-22} som finns på hemsidan https://tr
     
     \subsection*{Stabila krav}
      \subsubsection*{R14}
-     En leverans av systemet ska ske 2021-12-13 och ska inludera en fungerande produkt som kan användas för testning av kunden. Vid leverans ingår en grundlig genomgång av systemet.
+     En leverans av systemet ska ske 2021-12-13 och ska inkludera en fungerande produkt som kan användas för testning av kunden. Vid leverans ingår en grundlig genomgång av systemet.
      
      \subsubsection*{R15}
-     Slutgiltig leverans av systemet ska ske 2021-12-13 och ska inkludera en fullt fungerade produkt.
+     Slutgiltig leverans av systemet ska ske 2021-12-13 och ska inkludera en fullt fungerande produkt.
      
      
     \subsection*{Ändringsbenägna krav}
