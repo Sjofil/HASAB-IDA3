@@ -105,6 +105,7 @@
     \section{Terminologi}
     \begin{itemize}
         \item \textbf{Administratör:} Administratören har tillgång till systemets alla funktioner.
+        \item \textbf{Bransch:} Resturanger, hotell, anläggningar samt byråer är de branscher som syftas på.
          \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ samt statistikföring över svaren.
         \item \textbf{HCEB:} Förkortning av Helsingborg Convention and Event Bureau, beställare av systemet.
         \item \textbf{Session:} Data som sparas under tiden som slutanvändaren befinner sig på hemsidan.
@@ -173,11 +174,39 @@
         \\
        \indent \textbf{Förutsättningar:} Slutanvändaren har svarat på samtliga frågor och befinner sig på sidan med den sista frågan.
             \begin{enumerate}
-                \item Slutanvändaren svara på sista frågan.
+                \item Slutanvändaren svarar på sista frågan.
                 \item Slutanvändaren möts av en sidan med tack text enligt figur 1.
                 \item Slutanvändaren trycker på knappen "Skicka in".
                 \item  Slutanvändaren möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
             \end{enumerate}
+            
+       \subsubsection*{R6}
+    Följande scenario ska stödjas av systemet.
+        \\
+       \indent \textbf{Scenario:} Administratören ska få tillgång till sammanställd datan från enskild bransch.
+        \\
+       \indent \textbf{Förutsättningar:} Administratören är inloggad på admins hemsidan.
+            \begin{enumerate}
+                \item Administratören trycker på knappen "Ladda ner" under rubriken "Ladda ner fullständig rapport".
+                \item Administratören får upp en dropdown-meny med de olika branscherna.
+                \item Administratören väljer den bransch som hen vill ha sammanställd data från.
+                \item  Administratören dirigeras om vidare till en separat sida med data sammanställd från den bransch hen valde.
+            \end{enumerate}
+            
+         \subsubsection*{R7}
+    Följande scenario ska stödjas av systemet.
+        \\
+       \indent \textbf{Scenario:} Administratören ska få tillgång till sammanställd datan från enskild aktör.
+        \\
+       \indent \textbf{Förutsättningar:} Administratören är inloggad på admins hemsidan.
+            \begin{enumerate}
+                \item Administratören trycker på knappen "Sök rapport" under rubriken "Ladda ner enskild rapport".
+                \item Administratören får upp ett modal-fönster med en sökruta och en sök-knapp.
+                \item Administratören skriver in namnet på den enskilda aktör hen vill söka efter.
+                \item Administratören trycker på knappen med en sök ikon.
+                \item  Administratören dirigeras om vidare till en separat sida med data sammanställd från den enskilda aktör hen valde.
+            \end{enumerate}
+            
 
 \subsection*{Ändringsbenägna krav}
 
@@ -191,7 +220,7 @@ Krav \textit{SF-1} till och med \textit{SF-22} som finns på hemsidan https://tr
      \section{Hemsidans hantering av data}
     
     \subsection*{Stabila krav}
-    \subsubsection*{R6}
+    \subsubsection*{R8}
     Systemet ska fungera enligt figur 2.
     
     \begin{figure}[h!]
@@ -201,7 +230,7 @@ Krav \textit{SF-1} till och med \textit{SF-22} som finns på hemsidan https://tr
     \end{figure}
     
     \newpage
-    \subsubsection*{R7}
+    \subsubsection*{R9}
     Systemet ska hantera data enligt figur 3.
        \begin{figure}[h!]
     
@@ -220,24 +249,24 @@ Krav \textit{SF-1} till och med \textit{SF-22} som finns på hemsidan https://tr
     
   
      \subsection*{Ändringsbenägna krav}
-     \subsubsection*{R8}
+     \subsubsection*{R10}
      Vid oförutsägbara händelser som påverkar systemets tillgänglighet ska en session sparas i 24 timmar från att den påbörjades.
      
     
-    \subsubsection*{R9}
+    \subsubsection*{R11}
     Rapportering i systemet ska endast kunna göras av en användare som har fått tillgång till hemsidan via email.
     
      
-    \subsubsection*{R10}
+    \subsubsection*{R12}
     Fyra av fem användare ska anse att enkäten var lätt att svara på.
     
-    \subsubsection*{R11}
+    \subsubsection*{R13}
     En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R2} och anlända till sidan inom 20 sekunder efter att de har klickat på länken.
     
-    \subsubsection*{R12}
+    \subsubsection*{R14}
     En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R3} inom en minut.
     
-    \subsubsection*{R13}
+    \subsubsection*{R15}
     En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R4} inom 20 sekunder.
     
     \subsection*{Uteslutna krav}
@@ -245,10 +274,10 @@ Krav \textit{SF-1} till och med \textit{SF-22} som finns på hemsidan https://tr
     \section{Leveranskrav}
     
     \subsection*{Stabila krav}
-     \subsubsection*{R14}
+     \subsubsection*{R16}
      En leverans av systemet ska ske 2021-12-13 och ska inkludera en fungerande produkt som kan användas för testning av kunden. Vid leverans ingår en grundlig genomgång av systemet.
      
-     \subsubsection*{R15}
+     \subsubsection*{R17}
      Slutgiltig leverans av systemet ska ske 2021-12-13 och ska inkludera en fullt fungerande produkt.
      
      
