@@ -3,3 +3,6 @@ Filip - Omstrukturerat databasen så att man inte kan lägga till två användar
 Pontus - Gjorde om i koden så att man inte kan gå till en specifik sida av enkäten genom att ändra på URL:en, detta medförde också att det blev enklare att hantera tilläggs frågor som enbart ska visas för användaren vid specifika svar.
 
 Sabah: Gått genom rapporten och gjort ändringar enligt feedback från delrapport inlämningen, skrivit i rapporten under utveckling(om de senaste 3 sprintarna) samt diskussion(lagt ytterligare info under testning), lagt till Slutsatser, process rapport. 
+
+
+David - Ändrat design färgmässigt/formmässigt på hemsidans knappar. Arbetat med kravspecifikationen. Påbörjat arbete med att kunna ta fram sammanställning för de olika branscherna.
