@@ -1,0 +1,1 @@
+Filip - Omstrukturerat databasen så att man inte kan lägga till två användare med samma email. Lagt till funktioner på adminsidan: Ta bort användare från databasen, Varning om man försöker lägga till en användare som redan finns, lagt till knapp för att rensa alla svar från slutanvändare i databasen.
