@@ -1,9 +1,13 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{fancyhdr}
 \usepackage{graphicx}
 \usepackage{geometry}
 \usepackage{float}
+\usepackage[utf8]{inputenc}
+ 
+\usepackage{array}
+\usepackage{makecell}
 
 % ---- Commands ------- %
 \newcommand{\documentNumber}[1]{
@@ -28,8 +32,11 @@
     \date {#1} 
 }
 
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[5pt]}
+\renewcommand\cellgape{\Gape[5pt]}
 
-\renewcommand{\arraystretch}{1.7}  % Vertical padding for tables
 
 \renewcommand{\contentsname}{Innehållsförtäckning}
 
@@ -538,6 +545,95 @@ scrumboarden ses mer som ett verktyg än ett hinder.
           \item[Handlingsplan:] Tydlig kommunikation med användaren om när datan är inskickad och sidan kan stängas ner.
     \end{description}
 \end{itemize}
+
+\subsection{Riskanalys enligt miniriskmetoden}
+Vi har här använt oss av en metod som kallas miniriskmetoden för att identifiera och analysera risker. Vi tog hjälp av "Riskanalys"[4] för att genomföra denna metod. Det slutade med att vi har kommit fram till ett antal risker och ska nu uppskatta sannolikheten att det sker och konsekvenserna om de sker på en skala 1-4. 
+\\
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \thead{\makecell{Risk-\\nummer}} & \thead{Projektrisk} & \thead{Sannolikhet} & \thead{Konsekvens} & \thead{Riskmått}\\
+      \hline
+      2 &\makecell{Dålig uppfattning \\ av tid} & 4 & 4 & 16 \\
+      \hline
+      5 &\makecell{Konflikter inom \\ gruppen} & 4 & 3 & 12 \\
+      \hline
+      1 &\makecell{Dålig kommunikation\\ och missförstånd} & 3 & 3 & 9 \\
+      \hline
+      6 &\makecell{Dålig planering av\\ projektet} & 4 & 2 & 8 \\
+      \hline
+      9 &\makecell{Försenad information \\ om format på utdata} & 4 & 2 & 8 \\
+      \hline
+     4 & \makecell{Oförutsägbara händelser} & 2 & 3 & 6 \\
+      \hline
+      8 & \makecell{Brist på erfarenhet} & 3 & 2 & 6 \\
+      \hline
+     10 & \makecell{Upptagen kontaktperson,\\innebär långsamma svar} & 2 & 3 & 6 \\
+      \hline
+     7 & \makecell{Kompetens saknas} & 4 & 1 & 4 \\
+      \hline
+     3 & \makecell{Förändringar\\i kraven} & 4 & 1 & 4 \\
+      \hline
+      \end{tabular}
+\end{center}
+      
+      \begin{center}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      \thead{\makecell{Risk-\\nummer}} & \thead{Produktrisk} & \thead{Sannolikhet} & \thead{Konsekvens} & \thead{Riskmått}\\
+       \hline
+      2 & \makecell{Produkten är ej \\ tillräckligt intuitiv} & 2 & 4 & 8 \\
+      \hline
+     4 & \makecell{Bristande javadokumentation} & 4 & 2 & 8 \\
+      \hline
+      6 & \makecell{För få slutanvändare fyller\\ i formuläret} & 3 & 2 & 6 \\
+      \hline
+      5 & \makecell{För lite testning} & 3 & 2 & 6 \\
+      \hline
+      8 &\makecell{Lyckas ej implementera \\ hemsida på server} & 1 & 4 & 4 \\
+      \hline
+     7 & \makecell{Dåligt val av servertjänst, \\leder till text\\överbelastning } & 1 & 4 & 4 \\
+      \hline
+     1 & \makecell{Uppfyller ej kraven} & 2 & 2 & 4 \\
+      \hline
+      9 &\makecell{Produkten är inte \\ tillräckligt säker} & 2 & 2 & 4 \\
+      \hline
+     3 &\makecell{Dåligt utformad kod} & 3 & 1 & 3 \\
+      \hline
+     10 & \makecell{Dåliga tester som \\förvränger värdefull\\data} & 1 & 1 & 1 \\
+      \hline
+    \end{tabular}
+\end{center}
+
+\newpage
+\subsection{Utvärdering av risker enligt miniriskmetoden}
+Här har vi valt de tre  risker med högst riskmått från projket- och produktrisker. Vi har sedan sett vad vi ska vidta för återgärd och vad det förväntade utfallet av återgärden blir. 
+
+ \begin{center}
+    \begin{tabular}{ | c | c | c | c |}
+      \hline
+      \thead{\makecell{Risk-\\nummer}} & \thead{Projektrisk} & \thead{Åtgärd} & \thead{Förväntat utfall} \\
+      \hline
+      1 & \makecell{Dålig kommunikation\\ och missförstånd} &  \makecell{Tydlig \\ kommunikationsplan \\ samt uppsatta \\ ground roules.}  & \makecell{Bättre stämning och \\ minskad risk för \\missförstånd.} \\
+      \hline
+      2 & \makecell{Dålig tidsuppfattning} &  \makecell{En god struktur samt \\ kontinuerlig uppföjning \\under sprints.}  & \makecell{Bättre stämning och \\ En bättre uppfattning om \\ projektet ligger i fas.} \\
+      \hline
+      5 & \makecell{Konflikter inom \\ gruppen} &  \makecell{Respektera varandra, \\ god kommunikartion och, \\ visa förtroende för andra.}  & \makecell{Alla kommer trivas\\ bättre och \\ mer framgångsrikt projekt.} \\
+      \hline
+       &\makecell{\textbf{Produktrisk}\\} &   &  \\
+      \hline
+     2 & \makecell{Produkten är ej \\ tillräckligt intuitiv} & Mer användartest.  & \makecell{Bättre helhetsbil\\ av användare} \\
+      \hline
+       4 &\makecell{Bristande \\ javadokumentation} &\makecell{ Använd javas guide för\\ dokumentation.} & \makecell{Koden blir mer\\ återanvändbar och \\ projektmedlemmarna får \\en större \\ förståelse över koden.} \\
+      \hline
+      5 & \makecell{För lite testning} & \makecell{Se till att ha en plan över\\ hur ofta och\\ vad man testar.} & \makecell{Med en plan över\\ hur ofta och vad  \\ man tester eliminerar\\ man risken att ha för få tester.} \\
+      \hline
+    \end{tabular}
+  \end{center}
+
+
+  
 
 \section{Validering och Prioritering}
 \subsection {Vilka personer/roller ska läsa kravspecifikationen?}
