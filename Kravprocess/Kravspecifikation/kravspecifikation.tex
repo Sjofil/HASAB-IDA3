@@ -55,7 +55,7 @@
     \documentDate {2021-08-20}
     \documentVersion Vv 0.2
     
-    \author{Anna Bergvall - Oscar Blixt - Pontus Persson - Filip Sjövall - David Vilppu - Sahab Zafar}
+    \author{Anna Bergvall - Oscar Blixt - Pontus Persson - Filip Sjövall - David Vilppu}
 }
 
 \begin{document}
@@ -106,6 +106,7 @@
         \item \textbf{Administratör:} Administratören har tillgång till systemets alla funktioner.
          \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ samt statistikföring över svaren.
         \item \textbf{HCEB:} Förkortning av Helsingborg Convention and Event Bureau, beställare av systemet.
+        \item \textbf{Session:} Data som sparas under tiden som slutanvändaren befann sig på hemsidan.
         \item \textbf{Svarspersoner och slutanvändare:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
         \item\textbf{Stabila krav:}  Stabila krav är krav som inte är ändringbenägna - de baseras på funktioner som är grundläggande för att systemet ska möta beställarens behov.
          \item \textbf{Uteslutna krav:}  Krav som inte längre är aktuella.
@@ -140,7 +141,6 @@
     \section{Hemsidans funktion}
     
     \subsection*{Stabila krav}
-    \subsection*{Ändringsbenägna krav}
     
       \subsubsection*{R2}
     Följande scenario ska stödjas av systemet.
@@ -177,6 +177,8 @@
                 \item Svarspersonen trycker på knappen "Skicka in formulär".
                 \item  Svarspersonen möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
             \end{enumerate}
+
+\subsection*{Ändringsbenägna krav}
 
 \subsubsection*{Krav från scrumboard}
 Följande mappning gäller för de krav som finns på projektets scrumboard som finns på \\
@@ -244,28 +246,39 @@ $$SR18\rightarrow SF-74$$
     Systemet ska ha en svarstid på max \underline{\hspace{1cm}} sekunder.
     
     \subsubsection*{R8}
-    Rapportering i systemet ska endast kunna göras av en användare som har fått tillgång till hemsidan via mail eller av admin.
+    Rapportering i systemet ska endast kunna göras av en användare som har fått tillgång till hemsidan via mail.
     
-     \subsubsection*{R9}
-   \underline{\hspace{1cm}} användare ska kunna besvara enkäten inom \underline{\hspace{1cm}} minuter.
-    
+     
     \subsubsection*{R10}
-    \underline{\hspace{1cm}} användare ska anse att enkäten var lätt att svara på.'
+    Fyra av fem användare ska anse att enkäten var lätt att svara på.
     
     \subsubsection*{R11}
-    Slutanvändaren ska kunna genomföra scenariot som beskrivs i \textbf{R2} och anlända till sidan inom 20 sekunder efter att länken har klickats på.
+    En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R2} och anlända till sidan inom 20 sekunder efter att de har klickat på länken.
     
     \subsubsection*{R12}
-    Slutanvändaren ska kunna genomföra scenariot som beskrivs i \textbf{R3} inom en minut.
+    En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R3} inom en minut.
     
     \subsubsection*{R13}
-    Slutanvändaren ska kunna genomföra scenariot som beskrivs i \textbf{R4} inom 20 sekunder från den tidpunkt användaren har anlänt till sidan med tack-texten.
-    
-    \subsubsection*{R14}
-    Systemet ska vara fullt fungerande och testbart vid första leverans 2021-12-13.
-    
+    En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R4} inom 20 sekunder.
     
     \subsection*{Uteslutna krav}
+    
+    \section{Leveranskrav}
+    
+    \subsection*{Stabila krav}
+     \subsubsection*{R14}
+     En leverans av systemet ska ske 2021-12-13 och ska inludera en fungerande produkt som kan användas för testning av kunden.
+     
+     \subsubsection*{R15}
+     Slutgiltig leverans av systemet ska ske 2021-12-13 och ska inkludera en fullt fungerade produkt.
+     
+     
+    \subsection*{Ändringsbenägna krav}
+    
+    \subsection*{Uteslutna krav}
+    
+    
+   
 \bibliographystyle{alpha}
 
 
