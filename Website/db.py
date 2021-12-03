@@ -8,10 +8,10 @@ import click
 def get_db():
     if'db' not in g:
         mysql=MySQL()
-        current_app.config['MYSQL_DATABASE_USER'] = 'fi5004sj'
-        current_app.config['MYSQL_DATABASE_PASSWORD'] = 'f601lghw'
-        current_app.config['MYSQL_DATABASE_DB'] = 'fi5004sj'
-        current_app.config['MYSQL_DATABASE_HOST'] = 'vm23.cs.lth.se'
+        current_app.config['MYSQL_DATABASE_USER'] = 'developer'
+        current_app.config['MYSQL_DATABASE_PASSWORD'] = 'Developer'
+        current_app.config['MYSQL_DATABASE_DB'] = 'Sustainableform'
+        current_app.config['MYSQL_DATABASE_HOST'] = '85.228.153.209'
         mysql.init_app(current_app)
         g.db=mysql.connect()
     return g.db
