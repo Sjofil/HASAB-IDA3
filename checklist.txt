@@ -1,0 +1,14 @@
+Dokument:
+
+finns sammanfattning - ja.
+finns författare - ja
+finns datum - ja
+finns innehållsförteckning - ja
+finns alla klasser av krav? - kvalitetskrav, leveranskrav, datakrav och funktionella krav. Japp alla finns.
+finns definiion av termer och begrepp? - Ja
+finns index? - ja
+
+Krav:
+
+Beskriver kravet design eller ger förslag till lösningar?
+	Ja jag antar att våra designkrav är lösningar, alltså bilderna. Men vi har förstått att det är så man gör?
