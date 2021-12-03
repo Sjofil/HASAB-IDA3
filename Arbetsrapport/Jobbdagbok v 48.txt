@@ -7,3 +7,5 @@ Sabah: Gått genom rapporten och gjort ändringar enligt feedback från delrappo
 Anna: implementerat funktionen att söka efter en specifik användares rapport. Skrev sammanfattning till kravspecen och la till korta introduktionstexter till de enskilda avsnitten. Såg till att numreringen av avsnittnen kom med i innehållsförteckningen. Gjorde konsistenscheck. 
 
 David - Ändrat design färgmässigt/formmässigt på hemsidans knappar. Arbetat med kravspecifikationen. Påbörjat arbete med att kunna ta fram sammanställning för de olika branscherna.
+
+Oscar - Implementerat funktion för admin att kunna ändra lösenord på användare, implementerat en funktion för admin att lägga till användare
