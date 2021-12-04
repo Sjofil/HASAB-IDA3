@@ -7,6 +7,7 @@ DROP TABLE Answers;
 
 CREATE TABLE Types (
   ID int NOT NULL,
+  Industry VARCHAR(45),
   PRIMARY KEY (ID)
 );
 
