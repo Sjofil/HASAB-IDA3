@@ -25,7 +25,7 @@ CREATE TABLE Questions (
   Type_ID int DEFAULT NULL,
   Next_question longtext,
   PRIMARY KEY (ID),
-  KEY type_idx (Type_ID),
+  KEY type_idx (Type_ID)
   -- CONSTRAINT `typek` FOREIGN KEY (`Type_ID`) REFERENCES `type` (`ID`)
 );
 
@@ -41,5 +41,7 @@ CREATE TABLE Answers (
   CONSTRAINT qtype FOREIGN KEY (Question_ID) REFERENCES questions (ID), 
   CONSTRAINT utype FOREIGN KEY (User_id) REFERENCES user (ID)
 );
+
+SET FOREIGN_KEY_CHECKS = 1;
 
 
