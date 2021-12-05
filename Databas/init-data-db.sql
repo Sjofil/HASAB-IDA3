@@ -23,9 +23,6 @@ VALUES ("cl.grandhelsingborg@choice.se", "Clarion Grand Hotel", 1, 0);
 
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("cl.grandhelsingborg@choice.se", "Clarion Grand Hotel", 1, 0);
-
-INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("co.nouveau@choice.se", "Comfort Hotel", 1, 0);
 
 
@@ -112,22 +109,19 @@ INSERT INTO Questions (Type_ID, Question_text)
 VALUES (1, "Jobbar ni aktivt med att minska matsvinnet? Om ja, hur stor del i % har ni lyckats minska ert matsvinn?");
 -- Om ja:
 
-
 INSERT INTO Questions (Type_ID, Question_text)
 VALUES (1, "Hur många procent jämfört med föregående år av ert årliga matsvinn har ni lyckats minska?");
 
 
 -- Q3 -------------------------------------------------
-
-INSERT INTO Questions (ID, Type_ID, Question_text)
+INSERT INTO Questions (Type_ID, Question_text)
 VALUES (1, "Jobbar ni aktivt med att minska engångsartiklar och plastmaterial?");
 
+INSERT INTO Questions (Type_ID, Question_text)
+VALUES (1, "Sorterar ni organiskt avfall?");
 
-INSERT INTO Questions (ID, Type_ID, Question_text)
-VALUES (3, 1, "Sorterar ni organiskt avfall?");
-
-INSERT INTO Questions (ID, Type_ID, Question_text)
-VALUES (3, 1, "Finns det en publicerad publik rapport rörande resultaten av ert miljöarbete?");
+INSERT INTO Questions (Type_ID, Question_text)
+VALUES (1, "Finns det en publicerad publik rapport rörande resultaten av ert miljöarbete?");
 -- Följdfråga finns 
 
 
