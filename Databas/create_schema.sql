@@ -24,7 +24,7 @@ CREATE TABLE Users (
 CREATE TABLE Questions (
   ID int NOT NULL AUTO_INCREMENT,
   Type_ID int DEFAULT NULL,
-  Next_question longtext,
+  Question_text longtext,
   PRIMARY KEY (ID),
   KEY type_idx (Type_ID)
   -- CONSTRAINT `typek` FOREIGN KEY (`Type_ID`) REFERENCES `type` (`ID`)

@@ -90,3 +90,27 @@ VALUES ("info@sundsgarden.se", "Hotell Sundsgården", 1, 0);
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("group.sweden@scandichotels.com", "Scandic Oceanhamnen", 1, 0);
 -- 180 rooms
+
+
+-- Insert data into Questions
+
+INSERT INTO Questions (ID, Type_ID, Question_text)
+VALUES (1, 1, "Har ditt hotell någon miljöcertifiering?");
+-- Följdfråga finns
+
+INSERT INTO Questions (ID, Type_ID, Question_text)
+VALUES (2, 1, "Jobbar ni aktivt med att minska matsvinnet? Om ja, hur stor del i % har ni lyckats minska ert matsvinn?");
+-- Följdfråga finns
+
+
+INSERT INTO Questions (ID, Type_ID, Question_text)
+VALUES (3, 1, "Jobbar ni aktivt med att minska engångsartiklar och plastmaterial?");
+
+
+INSERT INTO Questions (ID, Type_ID, Question_text)
+VALUES (3, 1, "Sorterar ni organiskt avfall?");
+
+INSERT INTO Questions (ID, Type_ID, Question_text)
+VALUES (3, 1, "Finns det en publicerad publik rapport rörande resultaten av ert miljöarbete?");
+-- Följdfråga finns 
+
