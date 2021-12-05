@@ -64,7 +64,7 @@ def main():
         db1=db.get_db()
         error = None
         cursor=db1.cursor()
-        stmt="SELECT * FROM user WHERE Adress =%s"
+        stmt="SELECT ID, Type_ID FROM Users WHERE Email =%s"
         cursor.execute(stmt, username)
         user=cursor.fetchone()
         if user is None:
@@ -90,7 +90,7 @@ def main():
 
 def get_questions(typeID) -> List[Question]:
     cursor = db.get_db().cursor()
-    cursor.execute("SELECT questions.ID, conditional_question.answer_id, conditional_question.next_question FROM questions LEFT JOIN conditional_question ON questions.ID = conditional_question.question_id WHERE Type_ID=%s", typeID)
+    cursor.execute("SELECT Questions.ID, Conditions.Button_ID, Conditions.Next_ID FROM Questions LEFT JOIN Conditions ON Questions.ID = Conditions.Question_ID WHERE Industry_ID=%s", typeID)
     response = cursor.fetchall()
 
     questions = []
@@ -111,6 +111,7 @@ def get_questions(typeID) -> List[Question]:
             if question.ID == id:
                 questions.remove(question)
            
+    print(questions)
     return questions
 
 def find_question(questionID: int, questionList: List[Question]):

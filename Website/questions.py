@@ -75,7 +75,7 @@ def returnTemplate(questionID: int, previousID: int, totalQuestions: int, page: 
 
 def getQuestion(questionID, nextQuestion, currentQuestion):
     cursor=db.get_db().cursor()
-    stmt="SELECT Question_text, Question_type FROM questions WHERE ID=%s"
+    stmt="SELECT Question_text, Type_ID FROM Questions WHERE ID=%s"
     cursor.execute(stmt, questionID)
     question = cursor.fetchone()
     options = getAnswerOptions(question[1])
@@ -91,11 +91,12 @@ def getQuestion(questionID, nextQuestion, currentQuestion):
         if not foundCondition:
             answerOptions.append(common.Answer(answer[1], nextQuestion))
 
+    print(question)
     return common.Question(questionID, question[0], question[1], AnswerOptions=answerOptions)
 
 def getAnswerOptions(typeId):
     cursor=db.get_db().cursor()
-    stmt="SELECT ID, option FROM answer_options WHERE question_type = %s"
+    stmt="SELECT ID, Button_Text FROM Answer_Types WHERE Type_ID = %s"
     cursor.execute(stmt, typeId)
     data=cursor.fetchall()
     options = []
@@ -115,7 +116,7 @@ def questionThree():
             connection = db.get_db()
             cursor = connection.cursor()
             for answer in jsonData:
-                cursor.execute("INSERT INTO answers (Value, Question_ID, User_id) VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE Value=VALUES(Value)"
+                cursor.execute("INSERT INTO Answers (Answer, Question_ID, User_ID) VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE Answer=VALUES(Answer)"
                 , (jsonData[answer], answer, session['user_id']))
 
             connection.commit()

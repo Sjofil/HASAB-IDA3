@@ -25,7 +25,7 @@ def reportTemplate():
 def ifPresent(column, value):
     conn = db.get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT * from user WHERE (%s) = (%s)", (column, value))
+    cursor.execute("SELECT * FROM Users WHERE (%s) = (%s)", (column, value))
     return cursor.fetchone() is not None
         
 
@@ -37,7 +37,7 @@ def login():
         db1=db.get_db()
         cursor=db1.cursor()
         error = None
-        stmt="SELECT * FROM admin WHERE Name =%s AND password=%s"
+        stmt="SELECT * FROM Admins WHERE Username =%s AND Password=%s"
         print(stmt)
         cursor.execute(stmt,(username, password))
         user=cursor.fetchone()
@@ -70,7 +70,7 @@ def adminLoggedIn():
             return redirect(url_for('auth.login'))
 
         if(request.form['submit'] == "deleteAnswers"):
-            stmt="Delete from answers"
+            stmt="DELETE FROM Answers"
             conn=db.get_db()
             cursor=conn.cursor()
             cursor.execute(stmt)
@@ -80,7 +80,7 @@ def adminLoggedIn():
 
         if(request.form['submit'] == "removeUser"):
            
-            stmt="Delete from user where adress=(%s)"
+            stmt="DELETE FROM Users WHERE Email=(%s)"
             conn=db.get_db()
             cursor=conn.cursor()
 
@@ -96,7 +96,7 @@ def adminLoggedIn():
 
         if(request.form['submit']=="addUser"):
            
-            stmt="INSERT INTO `user` (`Type_ID`, `Adress`, `Name`) VALUES (%s, %s, %s)"
+            stmt="INSERT INTO Users (Type_ID, Email, Name) VALUES (%s, %s, %s)"
             print(stmt)
             conn=db.get_db()
             cursor=conn.cursor()
@@ -134,7 +134,7 @@ def adminLoggedIn():
     
         if(request.form['submit']=="changePassword"):
             if(request.form['pass1']==request.form['pass2']):
-                stmt="UPDATE `admin` SET `password` = %s WHERE (`name` = %s)"
+                stmt="UPDATE Admin SET Password = %s WHERE (Username = %s)"
                 conn=db.get_db()
                 cursor=conn.cursor()
                 cursor.execute(stmt, (request.form['pass1'], session['user_id']))
@@ -148,7 +148,7 @@ def adminLoggedIn():
             name = request.form['name']
             #if (ifPresent("Name", name)):
             print(name)
-            stmt = "select Name from user where name LIKE CONCAT('%%', %s, '%%')" #Tror inte ni fattar hur lång tid detta tog
+            stmt = "SELECT Name FROM Users WHERE Name LIKE CONCAT('%%', %s, '%%')" #Tror inte ni fattar hur lång tid detta tog
             conn=db.get_db()
             cursor=conn.cursor()
             print(stmt)
@@ -165,7 +165,7 @@ def adminLoggedIn():
 def reportTemplate3():
     conn = db.get_db()
     cursor=conn.cursor()
-    cursor.execute("select * from answers")
+    cursor.execute("SELECT * FROM Answers")
     data = cursor.fetchall()
 
     return render_template("reportTemplate.html", data = data)
