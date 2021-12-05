@@ -68,3 +68,25 @@ INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("info@cityvandrarhemmet.com", "Cityvandrarhem", 1, 0);
 -- 41 rooms
 
+INSERT INTO Users (Email, Name, Type_ID, Submitted)
+VALUES ("boka@miatorp.nu", "STF Miatorp Hostel & Hotel", 1, 0);
+-- 75 - 100 beds
+
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted)
+VALUES ("info.helsingborg@radissonblu.com", "Radisson Blu Metropol Hotel", 1, 0);
+-- 205 rooms
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted)
+VALUES ("cl.seau@choice.se", "Clarion Hotel SeaU", 1, 0);
+-- 250 rooms
+
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted)
+VALUES ("info@sundsgarden.se", "Hotell Sundsgården", 1, 0);
+-- 94 rooms
+
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted)
+VALUES ("group.sweden@scandichotels.com", "Scandic Oceanhamnen", 1, 0);
+-- 180 rooms
