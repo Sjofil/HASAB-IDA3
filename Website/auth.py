@@ -37,16 +37,15 @@ def login():
         db1=db.get_db()
         cursor=db1.cursor()
         error = None
-        stmt="SELECT * FROM Admins WHERE Username =%s AND Password=%s"
-        print(stmt)
-        cursor.execute(stmt,(username, password))
+        print(username, password)
+        cursor.execute("SELECT * FROM Admins WHERE Username=%s AND Password=%s", (username, password))
         user=cursor.fetchone()
         if user is None:
             error = 'Ogiltig identifieringskod.'
         
         if error is None:
             session.clear()
-            session['user_id'] = user[0]
+            session['user_id'] = 'Admin'
             print(session['user_id'])
             return redirect(url_for('auth.adminLoggedIn'))
 
@@ -59,6 +58,7 @@ def login():
 @bp.route("/adminIndex", methods=('GET', 'POST'))
 def adminLoggedIn():
     if request.method == 'GET':
+        # Detta måste ändras, finns nog bättre sätt att kolla på om man är admin. Kanske en checksum eller något
         if (session['user_id'] != 'Admin'):
             return redirect(url_for('auth.login'))
 
