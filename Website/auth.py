@@ -13,6 +13,7 @@ from . import db
 
 bp = Blueprint('auth', __name__, url_prefix='/')
 
+#hej
 
 @bp.route("/reportTemplate", methods= ('POST', 'GET'))
 def reportTemplate():
