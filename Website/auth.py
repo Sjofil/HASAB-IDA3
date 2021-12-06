@@ -13,9 +13,6 @@ from . import db
 
 bp = Blueprint('auth', __name__, url_prefix='/')
 
-@bp.route("/reportTemplate")
-def reportTemplate2():
-    return render_template("Admin-html/reportTemplate.html")
 
 @bp.route("/reportTemplate", methods= ('POST', 'GET'))
 def reportTemplate():
@@ -123,14 +120,15 @@ def adminLoggedIn():
            
             
         # Sammanställ rapport av de olika branscherna
-        if(request.form['submit']=="Resturang"):    
-            return redirect(url_for('auth.reportTemplate'))
+        if(request.form['submit']=="Resturang"):
+            return render_template("Admin-html/reportTemplate.html", bransch = "Resturang") 
+            #return redirect(url_for('auth.reportTemplate'))
         if(request.form['submit']=="Hotell"):
-            return redirect(url_for('auth.reportTemplate'))
+            return render_template("Admin-html/reportTemplate.html", bransch = "Hotell") 
         if(request.form['submit']=="Byrå"):
-            return redirect(url_for('auth.reportTemplate'))
+            return render_template("Admin-html/reportTemplate.html", bransch = "Byrå") 
         if(request.form['submit']=="Anläggning"):
-            return redirect(url_for('auth.reportTemplate'))
+            return render_template("Admin-html/reportTemplate.html", bransch = "Anläggning") 
     
         if(request.form['submit']=="changePassword"):
             if(request.form['pass1']==request.form['pass2']):

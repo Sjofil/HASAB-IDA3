@@ -6,45 +6,11 @@
 {% block content %}
 
 <!--Rubrik-->
-<section class="container container-fluid text-center">
-    <div class="row">
-        <div class="col"></div>
-    <div class="col">
-        <h1 class="h1">Sammanställning för {{ hehe }}</h1>
+<section class="container-fluid text-center">
+
+        <h1 class="h1">Sammanställning för {{ bransch }}</h1>
     </div>
 
-<!---TABLE MED FRÅGOR OCH STATISTIK--->
-<!--[][][][]-->
-
-
-<table border="0" style="box-shadow:1px 1px 10px white" width="70%" height="70%" align="center">
-    <tr>
-    <td style="background-position:center center" valign="top" align="center">
-     <table border="0" cellpadding="8px" width="100%" style="background-color:#CCCCCC">
-     <tr style="background-color: #96b2aa">
-     <td>Fråga 1</td>
-     <td>Fråga 2</td>
-     <td>Fråga 3</td>
-     <td>Fråga 4</td>
-     <td>Fråga 5</td>
-     </tr>
-      {% for item in data %}
-
-    <tr>
-     <td>{{item.Question1}}</td> 
-     <td>{{item.Question2}}</td>
-     <td>{{item.Question3}}</td>
-     <td>{{item.Question4}}</td>
-     {% if item.Question1 == 'No' %}
-           <td style="background-color:red"> {{item.Question1  }}</td>
-       {% elif item.PRO_STATUS == 'Accepted' %}
-          <td style="background-color:green"> {{item.PRO_STATUS  }}</td>
-      {% else %}
-          <td style="background-color:yellow"> {{item.PRO_STATUS  }}</td>
-        {% endif %}
-     </tr>
-      {% endfor %}
-     </table>
 
 
 
