@@ -118,17 +118,11 @@ def adminLoggedIn():
                 cursor.close
 
            
-            
-        # Sammanställ rapport av de olika branscherna
-        if(request.form['submit']=="Resturang"):
-            return render_template("Admin-html/reportTemplate.html", bransch = "Resturang") 
-            #return redirect(url_for('auth.reportTemplate'))
-        if(request.form['submit']=="Hotell"):
-            return render_template("Admin-html/reportTemplate.html", bransch = "Hotell") 
-        if(request.form['submit']=="Byrå"):
-            return render_template("Admin-html/reportTemplate.html", bransch = "Byrå") 
-        if(request.form['submit']=="Anläggning"):
-            return render_template("Admin-html/reportTemplate.html", bransch = "Anläggning") 
+       
+
+        branches=["Resturang", "Hotell", "Byrå", "Anläggning"]
+        if(request.form['submit'] in branches):
+            return render_template("Admin-html/reportTemplate.html", branch=request.form['submit'])
     
         if(request.form['submit']=="changePassword"):
             if(request.form['pass1']==request.form['pass2']):
@@ -158,14 +152,6 @@ def adminLoggedIn():
     return render_template("Admin-html/admin-index.html")
 
 
-#Hämta svaren från databasen, visa i reportTemplate
-@bp.route('/reportTemplate', methods = ['GET', 'POST'])
-def reportTemplate3():
-    conn = db.get_db()
-    cursor=conn.cursor()
-    cursor.execute("SELECT * FROM Answers")
-    data = cursor.fetchall()
 
-    return render_template("reportTemplate.html", data = data)
             
 
