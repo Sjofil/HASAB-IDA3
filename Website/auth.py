@@ -4,7 +4,7 @@ from sqlite3 import dbapi2
 from pymysql.err import OperationalError
 
 from flask import(
-    Blueprint, flash, g, redirect, render_template, request, session, url_for
+    Blueprint, flash, g, redirect, render_template, request, session, url_for, jsonify
 )
 from flask.wrappers import Request
 import pymysql
@@ -39,7 +39,7 @@ def login():
         cursor.execute("SELECT * FROM Admins WHERE Username=%s AND Password=%s", (username, password))
         user=cursor.fetchone()
         if user is None:
-            error = 'Ogiltig identifieringskod.'
+            error = 'Ogiltig inloggning för admin.'
         
         if error is None:
             session.clear()
@@ -61,6 +61,16 @@ def adminLoggedIn():
             return redirect(url_for('auth.login'))
 
     if request.method == 'POST':
+
+        if(request.form.get('text') != " " ):
+            searchbox = request.form.get("text")
+            conn=db.get_db()
+            cursor=conn.cursor()
+            stmt= "select Name from Users where Name LIKE '{}%' order by Name".format(searchbox)
+            cursor.execute(stmt)
+            result = cursor.fetchall()
+            return jsonify(result)
+
 
         if(session['user_id'] != 'Admin' or request.form['submit']=="logOut"):
             print("clearing session")

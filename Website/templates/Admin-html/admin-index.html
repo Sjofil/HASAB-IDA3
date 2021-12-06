@@ -107,13 +107,15 @@
               <p>Sök efter användarens exakta namn</p>
               <form method="post">
                 <div class="input-group rounded">
-                    <input type="search" name="name" class="form-control rounded" placeholder="Search" aria-label="Search"
-                    aria-describedby="search-addon" />
+                    <input id ="livebox" type="text" name="text" value="find" class="form-control rounded" placeholder="Search" aria-label="Search"
+                    aria-describedby="search-addon">
                     <button class=" btn btn-secondary border-0 " name="submit" value="findReport" id="search">
                       <i class="bi bi-search"></i>
+                      
                     </span>
                   </div>
                 </form>
+                <p id="datalist"></p>
             </div>
         </div>
       </div>
@@ -183,9 +185,11 @@
       </div>
 </section>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="{{url_for('static', filename='js/common.js')}}"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{url_for('static', filename='js/script-admin.js')}}"></script>
+
 
 {% endblock %}
