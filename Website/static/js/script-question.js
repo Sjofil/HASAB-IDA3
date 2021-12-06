@@ -17,7 +17,7 @@ function submitForm(){
 document.location.href="last.html";
 }
 
-function saveQuestion(button) {
+function saveQuestion(name, value) {
     let answers = getCookie("answers");
     if (answers == ""){
         answers = {}
@@ -25,13 +25,19 @@ function saveQuestion(button) {
         answers = JSON.parse(answers);
     }
 
-    answers[button.name] = button.value;
+    answers[name] = value;
     setCookie("answers", JSON.stringify(answers), 1);
 }
 
 function nextQuest(button, nextQuestion){
-    saveQuestion(button);
-    goToQuestion(nextQuestion)
+    if(button.value == "numberInput")
+    {
+        saveQuestion(button.name, document.getElementById("numberInput").valueAsNumber);
+    }
+    else {
+        saveQuestion(button.name, button.value);
+    }
+    goToQuestion(nextQuestion);
 }
 
 function back(questionID) {
@@ -63,7 +69,7 @@ function goToQuestion(questionID) {
 
 function sendCookie(){
     let answers = getCookie("answers");
-    console.log(answers)
+    console.log(answers);
     $.ajax({
         url: "/send-form",
         type: 'POST',
