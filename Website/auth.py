@@ -89,8 +89,6 @@ def adminLoggedIn():
 
     if request.method == 'POST':
 
-        print(request.form.get('text'))
-
         if(request.form.get('text') != " " and request.form.get('text') != None):
             print(request.form.get('text'))
             print("doing this")
@@ -99,8 +97,9 @@ def adminLoggedIn():
             cursor=conn.cursor()
             stmt= "select Name from Users where Name LIKE '{}%' order by Name".format(searchbox)
             cursor.execute(stmt)
-            result = cursor.fetchall()
-            return jsonify(result)
+            if(cursor.rowcount < 5):
+                result = cursor.fetchall()
+                return jsonify(result)
 
 
         if(request.form['submit']=="logOut"):
