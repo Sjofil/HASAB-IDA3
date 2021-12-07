@@ -125,7 +125,7 @@
     \subsection{Ändringsbenägna krav}
     
     \large{\textbf{R1.}}
-    \normalsize{Systemet ska ha ett utseende likt figur 1.}
+    \normalsize{Frågeformuläret vilket används av slutanvändarna samt ingår i systemet ska ha ett utseende likt figur 1.}
     
     \begin{figure}[h!]
     \caption{Prototyp över frågeformuläret}
@@ -133,7 +133,7 @@
     \end{figure}
     \newpage
     \large{\textbf{R2.}}
-    Systemet ska ha ett utseende likt figur 2.
+    Administratörens sida som ingår i systemet ska ha ett utseende likt figur 2.
     \begin{figure}[h!]
         \centering
         \caption{Prototyp över administratörens sida}
@@ -149,12 +149,12 @@
     
     \large{\textbf{R3.}}
     \normalsize{Följande scenario ska stödjas av systemet. \\
-    \textbf{Scenario:} Svarspersonen navigerar till systemet i en webbläsare med hjälp av en länk som sänts till deras email.
+    \textbf{Scenario:} Svarspersonen navigerar till slutanvändarnas frågeformulär enligt figur 1.
         
-    \noindent \textbf{Förutsättningar:} Svarspersonen har fått ett email från från HCEB. Mailet innehåller en länk till hemsidan.
+    \noindent \textbf{Förutsättningar:} Svarspersonen har fått ett email från från HCEB. Mailet innehåller en länk till svarspersonenernas frågeformulär enligt figur 1.
         \begin{enumerate}
             \item Svarspersonen klickar på länken till formuläret som finns i mailet.
-            \item Svarspersonen möts av formulärets startsida och ombeds mata in den mailadressen som länken skickades till. 
+            \item Svarspersonen möts av formulärets startsida enligt figur 1 och ombeds mata in samma mailadressen som länken skickades till. 
         \end{enumerate}
 }
 \vspace{1em}
@@ -166,8 +166,8 @@
     \textbf{Förutsättningar:} Svarspersonen har fått en engångskod i samma mail som länken samt att svarspersonen befinner sig på startsidan.
         \begin{enumerate}
            \item Svarspersonen skriver in samma mailadress som mailet skickades till.
-           \item Svarspersonen trycker på knappen "Första frågan".
-           \item  Svarspersonen blir omdirigerad till första frågan och kan börja svara på formuläret.
+           \item Svarspersonen trycker på knappen "Första frågan" enligt figur 1.
+           \item  Svarspersonen blir omdirigerad till första frågan enligt figur 1 och kan börja svara på formuläret.
         \end{enumerate}
    }
    
@@ -177,12 +177,12 @@
         \\
        \textbf{Scenario:} Svarspersonen ska skicka in slutgiltig rapportering.
         \\
-        \textbf{Förutsättningar:} Svarspersonen har svarat på samtliga frågor och befinner sig på sidan med den sista frågan.
+        \textbf{Förutsättningar:} Svarspersonen har svarat på samtliga frågor och befinner sig på sidan med den sista frågan enligt figur 1.
             \begin{enumerate}
                 \item Svarspersonen svarar på sista frågan.
                 \item Svarspersonen möts av en sidan med tack text enligt figur 1.
                 \item Svarspersonen trycker på knappen "Skicka in".
-                \item  Svarspersonen möts av en bekräftelsesida som bekräftar att formuläret är inskickat.
+                \item  Svarspersonen möts av en bekräftelsesida enligt figur 1 som bekräftar att formuläret är inskickat.
             \end{enumerate}
 }
 
@@ -192,7 +192,7 @@
         \\
       \textbf{Scenario:} Administratören ska få tillgång till sammanställd data från en enskild bransch.
         \\
-      \textbf{Förutsättningar:} Administratören är inloggad på admins hemsidan.
+      \textbf{Förutsättningar:} Administratören är inloggad på admins hemsidan enligt figur 2.
             \begin{enumerate}
                 \item Administratören trycker på knappen "Ladda ner" under rubriken "Ladda ner fullständig rapport".
                 \item Administratören får upp en dropdown-meny med de olika branscherna.
@@ -207,7 +207,7 @@
         \\
        \textbf{Scenario:} Administratören ska få tillgång till sammanställd data från enskild aktör.
         \\
-       \textbf{Förutsättningar:} Administratören är inloggad på admins hemsidan.
+       \textbf{Förutsättningar:} Administratören är inloggad på admins hemsidan enligt figur 2.
             \begin{enumerate}
                 \item Administratören trycker på knappen "Sök rapport" under rubriken "Ladda ner enskild rapport".
                 \item Administratören får upp ett modal-fönster med en sökruta och en sök-knapp.
@@ -237,7 +237,7 @@ Krav \textit{SF-1} till och med \textit{SF-22} och \textit{T-1} till och med \te
     \normalsize{Systemet ska fungera enligt figur 2.
     
     \begin{figure}[h!]
-    \caption{Kontext-diagram: Det utvecklade systemet innefattar \textit{Server, API, GUI} och \textit{Systemet}}
+    \caption{Kontext-diagram: Det utvecklade systemet innefattar \textit{Server, API, GUI} och \textit{Systemet}} och kommer hantera information mellan samtliga pilar exklusive kommunikationen mellan användare och HASAB.
     \includegraphics[width=150mm]{Kontextdiagram.png}
     
     \end{figure}
@@ -302,17 +302,22 @@ Krav \textit{SF-1} till och med \textit{SF-22} och \textit{T-1} till och med \te
     
     \subsection{Stabila krav}
 \noindent \large{\textbf{R16.}}
-     \normalsize{En leverans av systemet ska ske 2021-12-13 och ska inkludera en fungerande produkt som kan användas för testning av kunden. Vid leverans ingår en grundlig genomgång av systemet.
+     \normalsize{Leverans av en testbar version av systemet ska ske 2021-12-13. Vid leverans ingår en grundlig genomgång av systemet.
      }
+\noindent \large{\textbf{R17.}}
+     \normalsize{Vid första leverans enligt R16 skall en grundligt genomgång av systemet göras med kund. Denna genomgång kommer att ske under ett möte online.}
+     
      \vspace{1em}
      
-\noindent \large{\textbf{R17.}}
-    \normalsize{Slutgiltig leverans av systemet ska ske 2021-12-13 och ska inkludera en fullt fungerande produkt.}
+
      
+\noindent \large{\textbf{R18.}}
+    \normalsize{Slutgiltig leverans av systemet ska ske 2022-01-20 och ska inkludera en fullt fungerande version av systemet.}
+    
      
     \subsection{Ändringsbenägna krav}
     
-    \noindent \large{\textbf{R18.}}
+    \noindent \large{\textbf{R19.}}
     \normalsize{Efter leveransen har skett och beställaren accepterat systemet har projektgruppen ingen möjlighet att ge teknisk support med tanke på att projektet ingår i en universitetskurs.}
     
     \subsection{Uteslutna krav}
