@@ -140,8 +140,7 @@ On the inside of the cover page, you should make a named description of how the 
 \section{Abstract}
 A maximum of 250 words!Brief summary. It should be enough to read abstracts to get a reasonable understanding of what has been done and how.
 \\\\
-Sustainability is becoming an increasingly important part of businesses’ and organisation’s values. As a result, a wide array of sustainability certificates are attainable for showing environmental good-will and to support continuous efforts. One of these certificates is Global Destination Sustainability Movement (GDSM). The city of Helsingborg, a national hub for events and conferences, is aiming to acquire this certificate. In order to be a part of GDSM, cities must fill in a form containing 69 criteria ”that measures, benchmarks and improves the sustainability strategy and performance of tourism and events destinations” (GDS-Index 2021, Methodology). 
-
+Sustainability is becoming an increasingly important part of businesses’ and organisation’s values. As a result, a wide array of sustainability certificates are attainable for showing environmental good-will and to support continuous efforts. One of these certificates is Global Destination Sustainability Movement (GDSM). The city of Helsingborg, a national hub for events and conferences, is aiming to acquire this certificate. In order to be a part of GDSM, cities must fill in a form containing 69 criteria ”that measures, benchmarks and improves the sustainability strategy and performance of tourism and events destinations” (GDS-Index 2021, Methodology).\\\\
 For the purpose of collecting sustainability data from hotels and restaurants in Helsingborgs stad, a web based questionnaire was developed. The data was saved in a database using MySQL through the Flask API, written in Python. To ensure a mobile friendly and responsive application, the system was built using the CSS framework Bootstrap. 
 Given the fact that the success of the project was dependent on response frequency, making the system easy to use for users of various technichal backgrounds was paramount. 
 
@@ -149,8 +148,7 @@ Given the fact that the success of the project was dependent on response frequen
 
 \newpage
 \section{Introduktion}
-Short background, what is the basis for this project, for example an account of the project definition from the company and other relevant background.
-
+Short background, what is the basis for this project, for example an account of the project definition from the company and other relevant background.\\\\
 Vår kund Helsingborg Convention and Event Bureau(HCEB)\footnote{https://helsingborgceb.com/} önskade att gå med i det globala nätverket Global Destination Sustainability Movement (GDSM). Som medlem i nätverket rapporteras det årligen in hållbarhetsdata som bidrar till en positiv utveckling av staden som en mötes- och evenemangsdestination. Målet med projektet är att utveckla ett digitalt rapporteringsverktyg som samlar in och sammanställer hållbarhetsdata från aktörer inom besöksnäring i städer och kommuner. Rapporteringsverktyget erbjuder en skräddarsydd sammanställning och större kontroll över distribution och administration av den insamlade datan. Det utvecklade rapporteringsverktyget är en webbaserad hemsida som ska användas av aktörer med olika tekniska färdigheter, vilket gör att stora krav ställs på användarvänlighet.
 
 
@@ -184,20 +182,14 @@ Efter \textbf{sprint ett} las arbetete med projektet på is på grund av tentape
 Arbetet enligt sprints återupptogs igen och på grund av att tidsplaneringen skapades utan tanke på att ett uppehåll skulle ske under tentaperioden så hamnade gruppen efter i tidsplaneringen. Detta ledde till att vi mer och mer slutade arbeta utifrån scrumboarden och arbetade med uppgifter vi kommit överens om under mötet vi har i början av varje sprint/vecka. Det blev också en naturlig övergång med tanke på att den tid som egentligen var utsatt för planering istället gick åt till att koda. \\\\
 \textbf{Sprint tre, vecka 45} \\\\
 Det hade tidigare diskuterats hur användaren skulle verifiera sig för att endast ett svar från unik användare skulle registreras för sammanställning av hållbarhetsdata. Enligt agilt utveckling finns det utrymme för förändringar av nya krav och därför togs beslutet att nya krav skulle införas att användaren identifierar sig med ett mailadress. Det övervägdes noga att det skulle bli enklare att utgå från dessa nya kraven eftersom kunden hade en önskan om att det skulle vara enklare för de att inte behöva administrera mycket jobb för identifiering av användare och därför övervägde vi att inte utesluta kravet. XXX(ange källa)
-Vi beslutade också att användaren skulle endast ha möjlighet att välja bland flervalsfrågor för enklare sammanställning av data. Detta stödjas och av [3] som menar att man endast ska visa nödvändig information för användarna.  
-
-\textbf{Sprint tre, vecka 46} \\\\
-Utvecklingsarbetet tog fart och funktionalitet för på adminsidan, admin login och logout,  vidareutvecklades. Knappen för att kunna navigera mellan olika sidor har också förbättrats. Funktionerna i JavaScript följdes upp och vi lagt in diverse frågetyper som ska vara möjligt för användaren att kunna svara på inför datainsamlingen. 
-
-I databasen kunde vi lägga information som berörde hotell, byråer, institutioner och flygplatser. Vi undersökning har gjort på hur vi kan lagra användarens fråga svar för att kunna använda detta för sammanställningen. Vi beslutade att använda cookies för att lagra användarens svar på besvarade frågor för att senare kunna sammanställa. 
-
-Ett viktigt beslutat under denna sprinten var att flytta vår scrum board från Atlassian till Trello, som ett digital verktyg till vår hjälp i kommande sprintar. Atlassian var krånglig att använda, den hängde sig mycket och det var mer krävande att göra ändringar på Atlassian. Vi tog därför beslutet att göra övergången då meningen är att vi flitigt ska ha nytta av det i vår utveckling utan hinder. 
-
-
-\textbf{Sprint tre, vecka 47} \\\\
-Under denna sprinten började arbetet för att kunna mobilanpassa webbplatsen samtidigt togs det fram en lösning för felidentifiering av användare. Databasen konstruerades om för att det skulle vara möjligt att hämta svarsalternativ från databasen som användaren kan sedan välja bland från webbplatsen. Samtidigt implementerades funktionaliteten för att kunna skicka in användarens svar till databasen. Svarsalternativen omstrukturerades så att användaren skulle endast använda sig av flervalsfrågor. Vi tog fram test scenario för att testa vår webbplats utifrån användbarhetsperspektiv och undersökning om enkäter och dess layout gjordes för att koppla teorin till verkligheten.
-
-\textbf{Sprint tre, vecka 48} \\\\
+Vi beslutade också att användaren skulle endast ha möjlighet att välja bland flervalsfrågor för enklare sammanställning av data. Detta stödjas och av [3] som menar att man endast ska visa nödvändig information för användarna.\\\\
+\textbf{Sprint tre, vecka 46} \\\
+Utvecklingsarbetet tog fart och funktionalitet för på adminsidan, admin login och logout,  vidareutvecklades. Knappen för att kunna navigera mellan olika sidor har också förbättrats. Funktionerna i JavaScript följdes upp och vi lagt in diverse frågetyper som ska vara möjligt för användaren att kunna svara på inför datainsamlingen.\\\\
+I databasen kunde vi lägga information som berörde hotell, byråer, institutioner och flygplatser. Vi undersökning har gjort på hur vi kan lagra användarens fråga svar för att kunna använda detta för sammanställningen. Vi beslutade att använda cookies för att lagra användarens svar på besvarade frågor för att senare kunna sammanställa.\\\\
+Ett viktigt beslutat under denna sprinten var att flytta vår scrum board från Atlassian till Trello, som ett digital verktyg till vår hjälp i kommande sprintar. Atlassian var krånglig att använda, den hängde sig mycket och det var mer krävande att göra ändringar på Atlassian. Vi tog därför beslutet att göra övergången då meningen är att vi flitigt ska ha nytta av det i vår utveckling utan hinder.\\\\
+\textbf{Sprint tre, vecka 47} \\\
+Under denna sprinten började arbetet för att kunna mobilanpassa webbplatsen samtidigt togs det fram en lösning för felidentifiering av användare. Databasen konstruerades om för att det skulle vara möjligt att hämta svarsalternativ från databasen som användaren kan sedan välja bland från webbplatsen. Samtidigt implementerades funktionaliteten för att kunna skicka in användarens svar till databasen. Svarsalternativen omstrukturerades så att användaren skulle endast använda sig av flervalsfrågor. Vi tog fram test scenario för att testa vår webbplats utifrån användbarhetsperspektiv och undersökning om enkäter och dess layout gjordes för att koppla teorin till verkligheten.\\\\
+\textbf{Sprint tre, vecka 48} \\\
 Under denna sprinten omstrukturerades databasen så att det endast skulle finnas en användare kopplad till en unik mailadress för identifiering. Funktionalitet för adminsidan vidare implementerades exempelvis kunde admin ta bort en användare från databasen och kunde även få en varning om samma användare lades till två gånger. En annan viktig ändring som gjordes i implementeringen var att det inte skulle vara möjligt att kunna navigera till en viss sida av webbplatsen genom ändring av URL:en. 
 
 
@@ -213,40 +205,25 @@ Presentation of original risk analysis with motivations, your plan for updating 
 
 
 \section{Resultat}
-Presentation of final prototype. Limited number (good selection) of images / screen dumps. Focus on interaction and functionalities, but also technical issues, without going too deep into details. In short, describe the projects technical set-up, where you borrowed code, frameworks etc. As far as possible, use the same way of referencing as for text. That is, try to identify an author (if there is only a pseudonym or user, it is better than nothing), a title and then link to website or repository.
-
-
-
-Vi utvecklade en enkelt webbapplikation grundad på Bootstrap eftersom då kunde vi bygga en responsiv design för webbsidan. Det ger användaren möjligheten att kunna få utkomst till webbsidan även från andra enheter än en dator såsom en mobil. Vi valde att jobba med Bootstrap eftersom det finns fördefinierade CSS-klasser, många komponenter för HTML-element samt stöd för JavaScript-plugins, vilket gjorde utvecklingen flexibelt för oss. Databasen mySQL lades med servern XXX för att vi skulle ha friheten att hantera både servern och databasen genom XXX oberoende av extern mjukvaruprogram. Databasens uppbyggnad kan återfinnas i figuren XXX i appendix XXX. 
-
-
+Presentation of final prototype. Limited number (good selection) of images / screen dumps. Focus on interaction and functionalities, but also technical issues, without going too deep into details. In short, describe the projects technical set-up, where you borrowed code, frameworks etc. As far as possible, use the same way of referencing as for text. That is, try to identify an author (if there is only a pseudonym or user, it is better than nothing), a title and then link to website or repository.\\\\
+Vi utvecklade en enkelt webbapplikation grundad på Bootstrap eftersom då kunde vi bygga en responsiv design för webbsidan. Det ger användaren möjligheten att kunna få utkomst till webbsidan även från andra enheter än en dator såsom en mobil. Vi valde att jobba med Bootstrap eftersom det finns fördefinierade CSS-klasser, många komponenter för HTML-element samt stöd för JavaScript-plugins, vilket gjorde utvecklingen flexibelt för oss. Databasen mySQL lades med servern XXX för att vi skulle ha friheten att hantera både servern och databasen genom XXX oberoende av extern mjukvaruprogram. Databasens uppbyggnad kan återfinnas i figuren XXX i appendix XXX.\\\\
 Utifrån kundens önskan hålls uppbyggnaden av webbapplikationen enkelt eftersom användaren förväntas ha varierande teknisk kunskap. Förutom att användaren kan med en förutbestämt unik inloggningskod rapportera data i form av svar på frågor som är aktuella för just deras bransch finns också en admin sida, se Appendix XXX. På admin sidan kan man sammanställa data och få en överblick av statistiken men även söka efter svar från en viss aktör se Appendix XXX. 
 
 \section{Diskussion}
-Sections on reflections about the process, methods and result of the project work. Subheadings are encouraged, these need not be checked with supervisor. And finally: to what degree does the product solve the original problem? Motivate!
-
-Under projektets gång stötte vi på problem som vi inte hade räknat med från början. Det var krångligt att sätta upp databasen med mysql vid användning av Flask. Detta med anledning av att det fanns bristfällig dokumentationen på hur man kunde gå tillväga och tog därför lång tid att åtgärda felet. Ett annat problem som vi stötte på var att kunna skicka POST requests för servern vid implementering av inloggningsfunktionen. Vi hade också problem med att synkronisera vissa funktioner för hemsidan med Flask. Misstaget som gjordes här var att vi inte hade tänkt på att de implementerade funktionerna skulle även synkroniseras med Flask. 
-
-Vår tidsuppskattning som gjordes i början för utvecklingsarbetet för olika deluppgifter var inte noggran planerad. Vi hade inte ett tydligt tidsmål för hur mycket tid en teammedlem skulle lägga per sprint och därför kunde ibland vissa uppgifter antingen bli klara mycket fortare än räknat med eller ta ännu längre tid. Genom att blicka tillbaka tänker vi oss att det har varit en lärande process som lärt oss vikten av noggrann planering och att försöka göra mer realistiska tidsuppskattningar. Vi hade inte heller räknad med att under nästan två veckors period var både tentaplugg och tentaperioden. Det ledde till att vi hamnade lite efter i planeringen och fick därför lägga mer tid för att ligga i fas igen för att undvika förseningar. 
-
-Backloggen utnyttjades mestadels för tekniska utvecklingen och har främjat arbetsflödet. Det gav en överblick över utförd jobb och så att vi försökte att hålla deadlines. 
-
-Hade vi brist på kompetens inom något område????? diskutera det här
-
-
+Sections on reflections about the process, methods and result of the project work. Subheadings are encouraged, these need not be checked with supervisor. And finally: to what degree does the product solve the original problem? Motivate!\\\\
+Under projektets gång stötte vi på problem som vi inte hade räknat med från början. Det var krångligt att sätta upp databasen med mysql vid användning av Flask. Detta med anledning av att det fanns bristfällig dokumentationen på hur man kunde gå tillväga och tog därför lång tid att åtgärda felet. Ett annat problem som vi stötte på var att kunna skicka POST requests för servern vid implementering av inloggningsfunktionen. Vi hade också problem med att synkronisera vissa funktioner för hemsidan med Flask. Misstaget som gjordes här var att vi inte hade tänkt på att de implementerade funktionerna skulle även synkroniseras med Flask.\\\\
+Vår tidsuppskattning som gjordes i början för utvecklingsarbetet för olika deluppgifter var inte noggran planerad. Vi hade inte ett tydligt tidsmål för hur mycket tid en teammedlem skulle lägga per sprint och därför kunde ibland vissa uppgifter antingen bli klara mycket fortare än räknat med eller ta ännu längre tid. Genom att blicka tillbaka tänker vi oss att det har varit en lärande process som lärt oss vikten av noggrann planering och att försöka göra mer realistiska tidsuppskattningar. Vi hade inte heller räknad med att under nästan två veckors period var både tentaplugg och tentaperioden. Det ledde till att vi hamnade lite efter i planeringen och fick därför lägga mer tid för att ligga i fas igen för att undvika förseningar.\\\\
+Backloggen utnyttjades mestadels för tekniska utvecklingen och har främjat arbetsflödet. Det gav en överblick över utförd jobb och så att vi försökte att hålla deadlines.\\\\
+Hade vi brist på kompetens inom något område????? diskutera det här ........... \\\\
 %- Test av HiFo prototyp - flytta ett en annan sektion men diskutera under Diskussion 
-\textbf{Test av HiFo prototyp }\\\\
-För att utvärdera den slutliga prototypen skapades några testscenarier med frågor som rör användbarhet och användarupplevelse. Observationstest planerades på ett sätt där en  testperson skulle interagera med prototypen av webbplatsen baserat på testscenarierna utan att förklara sitt agerande. Det för att låta testpersonen göra val baserat på deras naturliga användning av hur de i verkligheten skulle svara på frågeformuläret på vår utvecklade rapporteringsverktyg. Dessa interaktioner skulle sedan dokumenteras och  analyseras.   
-
-Under testsession ställde en av projektmedlemmarna förberedda frågorna till en person tänkt som en användare och resultatet observerades. Detta gav en insikt att kunna jämföra testpersonens agerande med gruppens förväntningar för att vid behov kunna korrelera det som inte varit så intuitivt.  
-
-Användbarhetstesterna gjordes av totalt XXX försökspersoner vars bakgrund var variende både gällande ålder och datorkunskaper. En del av försökspersonerna jobbade dagligen med datorer medan andra hade måttlig interaktion med en dator och var flitiga användare av mobiltelefonen. 
-
+\textbf{Test av HiFo prototyp }\\\
+För att utvärdera den slutliga prototypen skapades några testscenarier med frågor som rör användbarhet och användarupplevelse. Observationstest planerades på ett sätt där en  testperson skulle interagera med prototypen av webbplatsen baserat på testscenarierna utan att förklara sitt agerande. Det för att låta testpersonen göra val baserat på deras naturliga användning av hur de i verkligheten skulle svara på frågeformuläret på vår utvecklade rapporteringsverktyg. Dessa interaktioner skulle sedan dokumenteras och  analyseras.\\\\
+Under testsession ställde en av projektmedlemmarna förberedda frågorna till en person tänkt som en användare och resultatet observerades. Detta gav en insikt att kunna jämföra testpersonens agerande med gruppens förväntningar för att vid behov kunna korrelera det som inte varit så intuitivt.\\\\
+Användbarhetstesterna gjordes av totalt XXX försökspersoner vars bakgrund var variende både gällande ålder och datorkunskaper. En del av försökspersonerna jobbade dagligen med datorer medan andra hade måttlig interaktion med en dator och var flitiga användare av mobiltelefonen. \\\\
 Vi försökte balansera vad det gällde utval av försökspersoner för att rättvis skulle spegla vår slutanvändare och tog feedback från dessa om hur de upplevde vid användning av webbplatsen,. Användbarhetstestningen var grunden för att kunna ändra innehåll och göra det konsekvent  samt uppenbar för användaren vad det gäller exempelvis namnval av knappar eller hur informationen var tillgänglig för användaren.. 
 
 \section{Råd till studenter för kommande år}
-Present the 5 most important advice you would like to give students who study this course next year (discuss in group and rank them prior to documentation).Conclusion
-
+Present the 5 most important advice you would like to give students who study this course next year (discuss in group and rank them prior to documentation).Conclusion\\\\
 Våra fem råd till studenter som ska läsa kursen kommande året hade varit nedanstående:
 \begin{enumerate}
 
