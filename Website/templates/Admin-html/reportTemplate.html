@@ -12,6 +12,7 @@
     {%if loop.previtem is defined and loop.previtem[2]==row[2]%}
     <p>Svar: {{row[1]}}, Antal: {{row[0]}}</p>
     {% else %}
+    <hr>
     <p class="mt-3">{{row[2]}}</p>
     <p>Svar: {{row[1]}}, Antal: {{row[0]}}</p>
     {% endif %}
