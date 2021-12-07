@@ -9,6 +9,8 @@ from flask import(
 from flask.wrappers import Request
 import pymysql
 from werkzeug.security import check_password_hash, generate_password_hash
+
+from Website.common import Answer
 from . import db
 
 bp = Blueprint('auth', __name__, url_prefix='/')
@@ -18,7 +20,15 @@ bp = Blueprint('auth', __name__, url_prefix='/')
 @bp.route("/reportTemplate", methods= ('POST', 'GET'))
 def reportTemplate():
     if (request.method == 'GET'):
-        return render_template("Admin-html/reportTemplate.html")
+        conn=db.get_db()
+        cursor=conn.cursor()
+        stmt="SELECT * FROM Answers WHERE "
+        cursor.execute(stmt)
+        answers=cursor.fetchall()
+        for row in answers:
+            print(row[1])
+        
+        return render_template("Admin-html/reportTemplate.html", branch=session['branch'])
 
 def ifPresent(column, value):
     conn = db.get_db()
@@ -62,7 +72,9 @@ def adminLoggedIn():
 
     if request.method == 'POST':
 
-        if(request.form.get('search') != " " ):
+        if(request.form.get('search') != " " and request.form.get('search') != None):
+            print(request.form.get('text'))
+            print("doing this")
             searchbox = request.form.get("text")
             conn=db.get_db()
             cursor=conn.cursor()
@@ -133,7 +145,8 @@ def adminLoggedIn():
 
         branches=["Resturang", "Hotell", "Byrå", "Anläggning"]
         if(request.form['submit'] in branches):
-            return render_template("Admin-html/reportTemplate.html", branch=request.form['submit'])
+            session['branch']=request.form['submit']
+            return redirect(url_for("auth.reportTemplate"))
     
         if(request.form['submit']=="changePassword"):
             if(request.form['pass1']==request.form['pass2']):
