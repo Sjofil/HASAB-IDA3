@@ -35,7 +35,7 @@ def buildString(value):
     print (value)
     for row in value:
 
-    return value
+        return value
 
 def ifPresent(column, value):
     conn = db.get_db()
@@ -171,7 +171,8 @@ def adminLoggedIn():
             name = request.form['name']
             #if (ifPresent("Name", name)):
             print(name)
-            stmt = "SELECT Name FROM Users WHERE Name LIKE CONCAT('%%', %s, '%%')" #Tror inte ni fattar hur lång tid detta tog
+            stmt = "SSELECT distinct Question_text, Answer, Email from Answers, Questions, Users \
+where Questions.ID = Answers.Question_ID and Users.Email = %s;" #Tror inte ni fattar hur lång tid detta tog
             conn=db.get_db()
             cursor=conn.cursor()
             print(stmt)
