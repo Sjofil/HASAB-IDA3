@@ -75,9 +75,10 @@ function sendCookie(){
         type: 'POST',
         contentType: "application/json",
         data : answers,
+        success: function(result) {
+            document.location.href="/last"
+        }
     });
-    //Dålig lösning men orkar inte, borde kolla om vi faktiskt lyckas göra vårt post request
-    document.location.href="/last";
 }
 
     function getSelectedValue(){
