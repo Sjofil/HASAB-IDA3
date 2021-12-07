@@ -13,7 +13,7 @@ $(document).ready(function(){
            success:function(res){
                var data = "<ul>";
                $.each(res,function(index,value){
-                   data += "<li>"+value+"</li>";
+                   data += "<li>" + value + "</li>";
                });
                data += "</ul>";
                $("#datalist").html(data);

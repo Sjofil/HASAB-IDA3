@@ -1,14 +1,14 @@
 
-const submitButton = document.getElementById("next");
-const totalPages = document.getElementById("totalPages").childElementCount;
+
+
+
 
 window.addEventListener('input', function() {
-    var page = getRequestVariable("page");
-    var pageNumber = parseInt(page);
-    if(pageNumber > 1){
-          document.getElementById("back").disabled=false; 
+    var numberInput = this.document.getElementById("numberInput");
+    if(numberInput.value > 0){
+        document.getElementById("numberSubmit").disabled = false;
     }else {
-        document.getElementById("back").disabled=true;
+        document.getElementById("numberSubmit").disabled = true;
     }
   
   })

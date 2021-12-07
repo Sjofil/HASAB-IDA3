@@ -62,7 +62,7 @@ def adminLoggedIn():
 
     if request.method == 'POST':
 
-        if(request.form.get('text') != " " ):
+        if(request.form.get('search') != " " ):
             searchbox = request.form.get("text")
             conn=db.get_db()
             cursor=conn.cursor()
