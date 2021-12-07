@@ -29,7 +29,7 @@ def reportTemplate():
         WHERE Industry=%s
         group by Question_text, Answer"""
         cursor.execute(stmt, session['branch'])
-        return render_template("Admin-html/reportTemplate.html", branch=session['branch'], answers=buildString(cursor.fetchall()))
+        return render_template("Admin-html/reportTemplate.html", branch=session['branch'], answers=cursor.fetchall())
         
 def buildString(value):
     print (value)
@@ -171,8 +171,8 @@ def adminLoggedIn():
             name = request.form['name']
             #if (ifPresent("Name", name)):
             print(name)
-            stmt = "SSELECT distinct Question_text, Answer, Email from Answers, Questions, Users \
-where Questions.ID = Answers.Question_ID and Users.Email = %s;" #Tror inte ni fattar hur lång tid detta tog
+            stmt = "SELECT distinct Question_text, Answer, Email from Answers, Questions, Users \
+                    where Questions.ID = Answers.Question_ID and Users.Email = %s;" 
             conn=db.get_db()
             cursor=conn.cursor()
             print(stmt)

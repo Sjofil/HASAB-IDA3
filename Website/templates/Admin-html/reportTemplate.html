@@ -7,11 +7,16 @@
 
 <!--Rubrik-->
 <section class="container-fluid text-center">
-        <h1 class="h1">Sammanställning för {{ branch }}</h1>
-        {%for row in answers%}
-        <p>Fråga:{{row[2]}} svar:{{row[1]}} Antal{{row[0]}}</p>
-        {% endfor%}
-    </div>
+    <h1 class="h1">Sammanställning för {{ branch }}</h1>
+    {%for row in answers%}
+    {%if loop.previtem is defined and loop.previtem[2]==row[2]%}
+    <p>Svar{{row[0]}}st {{row[1]}}</p>
+    {% else %}
+    <p>Fråga:{{row[2]}}</p>
+    <p>Svar{{row[0]}}st {{row[1]}}</p>
+    {% endif %}
+    {% endfor %}
+</div>
 
 
 
