@@ -76,7 +76,8 @@
  %   \and
  % Oscar Blixt\\
 %    \and
-%  Sabah Zafar\\
+
+% Sabah Zafar\\
  %   \and
  % Pontus Persson\\
 %}
@@ -133,10 +134,18 @@ On the inside of the cover page, you should make a named description of how the 
 
 \textbf{Pontus}: Gjort prototyp för admin att maila ut länkar, lagt till blueprints i Flask för enklare samarbete. Flask sessions. Skissat på designen för prototypen.
 
-
+\newpage
 \section{Abstract}
 A maximum of 250 words!Brief summary. It should be enough to read abstracts to get a reasonable understanding of what has been done and how.
+\\\\
+Sustainability is becoming an increasingly important part of businesses’ and organisation’s values. As a result, a wide array of sustainability certificates are attainable for showing environmental good-will and to support continuous efforts. One of these certificates is Global Destination Sustainability Movement (GDSM). The city of Helsingborg, a national hub for events and conferences, is aiming to acquire this certificate. In order to be a part of GDSM, cities must fill in a form containing 69 criteria ”that measures, benchmarks and improves the sustainability strategy and performance of tourism and events destinations” (GDS-Index 2021, Methodology). 
 
+For the purpose of collecting sustainability data from hotels and restaurants in Helsingborgs stad, a web based questionnaire was developed. The data was saved in a database using MySQL through the Flask API, written in Python. To ensure a mobile friendly and responsive application, the system was built using the CSS framework Bootstrap. 
+Given the fact that the success of the project was dependent on response frequency, making the system easy to use for users of various technichal backgrounds was paramount. 
+
+(and then something about user testing maybe)
+
+\newpage
 \section{Introduktion}
 Short background, what is the basis for this project, for example an account of the project definition from the company and other relevant background.
 
@@ -163,9 +172,9 @@ För att säkerställa att alla gruppmedlemmar var uppdaterade med rätt informa
 
 \subsection{Utveckling}
 A structured description of the process and important decisions. Use test results or theory to argue for your decisions. Divide section in some practical manner, for example in sprints. Name them in a good way (not sprint 1 2 3...). Don’t try to make a description of every single decision or feature but make an informed selection of important and interesting things to present.\\\\
-I projketets början togs beslutet att använda en scrumboard och att arbeta under sprints som skulle sträckta sig över två veckors perioder. Tanken bakom sprintens längd var att det troligtvis skulle ta mer än en vecka att implementera samt att om tiden för sprintsen var för kort skulle för mycket tid behöva läggas på planering istället för arbete.\\\\
+I projketets början togs beslutet att använda en scrumboarden. Inledningsvis sattes sprintarnas längd till en vecka med motivation att det skulle tvinga fram snabb feedback och ge en mer responsiv utveckling. Dock visade det sig att en vecka inte var ultimat som sprintperiod. Enligt Kniberg \& Skarin [2] brukar en sprint vara mellan 1-4 veckor. Därför togs beslutet att istället låta en sprint sträckta sig över två veckor. Tanken bakom sprintens längd var att det troligtvis skulle ta mer än en vecka att implementera samt att om tiden för sprintarna var för kort skulle för mycket tid behöva läggas på planering istället för arbete. \\\\
 \textbf{Sprint ett, vecka 40}
-Arbetet under första sprinten kretsade kring dokumentation och det var bestämt att ER-digaram samt flödesdiagram skulle framställas. Tidigt under sprintsen togs ett besult om att slopa UML-diagram där insperation från Matz, K [2] där det läggs fram att det vid agil utveckling behövs mindre dokument. 
+Arbetet under första sprinten kretsade kring dokumentation och det var bestämt att ER-digaram samt flödesdiagram skulle framställas. Tidigt under sprintsen togs ett besult om att slopa UML-diagram där insperation från Matz, K [3] där det läggs fram att det vid agil utveckling behövs mindre dokument. 
 I gruppen bestämdes också att sprintens längd skulle minskas från två till en vecka, detta för att för att samtliga medlemmar var osäkra på vad som faktiskt skulle göras och mer struktur behövdes för att komma framåt i projektet. \\\\
 \textbf{Sprint två, vecka 43}\\\\
 Efter \textbf{sprint ett} las arbetete med projektet på is på grund av tentaperioder, detta innebar också att inga beslut togs. Samtidigt som gruppen inte arbetade med projektet så fortsatte en mailkonversation mellan kunden och Malin Planander på miljöbron, här bollades ideér om nya frågor till formuläret initierade en liten orolighet i gruppen eftersom det var luddigt om dessa faktiskt skulle behöva vara med i den slutgiltiga produkten eller inte.\\\\
@@ -173,7 +182,7 @@ Efter \textbf{sprint ett} las arbetete med projektet på is på grund av tentape
 Arbetet enligt sprints återupptogs igen och på grund av att tidsplaneringen skapades utan tanke på att ett uppehåll skulle ske under tentaperioden så hamnade gruppen efter i tidsplaneringen. Detta ledde till att vi mer och mer slutade arbeta utifrån scrumboarden och arbetade med uppgifter vi kommit överens om under mötet vi har i början av varje sprint/vecka. Det blev också en naturlig övergång med tanke på att den tid som egentligen var utsatt för planering istället gick åt till att koda. \\\\
 \textbf{Sprint tre, vecka 45} \\\\
 Det hade tidigare diskuterats hur användaren skulle verifiera sig för att endast ett svar från unik användare skulle registreras för sammanställning av hållbarhetsdata. Enligt agilt utveckling finns det utrymme för förändringar av nya krav och därför togs beslutet att nya krav skulle införas att användaren identifierar sig med ett mailadress. Det övervägdes noga att det skulle bli enklare att utgå från dessa nya kraven eftersom kunden hade en önskan om att det skulle vara enklare för de att inte behöva administrera mycket jobb för identifiering av användare och därför övervägde vi att inte utesluta kravet. XXX(ange källa)
-Vi beslutade också att användaren skulle endast ha möjlighet att välja bland flervalsfrågor för enklare sammanställning av data. Detta stödjas och av [2] som menar att man endast ska visa nödvändig information för användarna.  
+Vi beslutade också att användaren skulle endast ha möjlighet att välja bland flervalsfrågor för enklare sammanställning av data. Detta stödjas och av [3] som menar att man endast ska visa nödvändig information för användarna.  
 
 \textbf{Sprint tre, vecka 46} \\\\
 Utvecklingsarbetet tog fart och funktionalitet för på adminsidan, admin login och logout,  vidareutvecklades. Knappen för att kunna navigera mellan olika sidor har också förbättrats. Funktionerna i JavaScript följdes upp och vi lagt in diverse frågetyper som ska vara möjligt för användaren att kunna svara på inför datainsamlingen. 
@@ -216,7 +225,7 @@ Sections on reflections about the process, methods and result of the project wor
 
 Under projektets gång stötte vi på problem som vi inte hade räknat med från början. Det var krångligt att sätta upp databasen med mysql vid användning av Flask. Detta med anledning av att det fanns bristfällig dokumentationen på hur man kunde gå tillväga och tog därför lång tid att åtgärda felet. Ett annat problem som vi stötte på var att kunna skicka POST requests för servern vid implementering av inloggningsfunktionen. Vi hade också problem med att synkronisera vissa funktioner för hemsidan med Flask. Misstaget som gjordes här var att vi inte hade tänkt på att de implementerade funktionerna skulle även synkroniseras med Flask. 
 
-Vår tidsuppskattning som gjordes i början för utvecklingsarbetet för olika deluppgifter var inte noggran planerad. Vi hade inte ett tydligt tidsmål för hur mycket tid en teammedlem skulle lägga per sprint och därför kunde ibland vissa uppgifter antingen bli klara mycket fortare än räknat med eller ta ännu längre tid. Genom att blicka tillbaka tänker vi oss att det har varit en lärande process att inför framtiden utföra planeringen ännu noga och försöka avsätta tidsuppskattningen mer realistiskt. Vi hade inte heller räknad med att under nästan två veckors period var både tentaplugg och tentaperioden. Det ledde till att vi hamnade lite efter i planeringen och fick därför lägga mer tid för att ligga i fas igen för att undvika förseningar. 
+Vår tidsuppskattning som gjordes i början för utvecklingsarbetet för olika deluppgifter var inte noggran planerad. Vi hade inte ett tydligt tidsmål för hur mycket tid en teammedlem skulle lägga per sprint och därför kunde ibland vissa uppgifter antingen bli klara mycket fortare än räknat med eller ta ännu längre tid. Genom att blicka tillbaka tänker vi oss att det har varit en lärande process som lärt oss vikten av noggrann planering och att försöka göra mer realistiska tidsuppskattningar. Vi hade inte heller räknad med att under nästan två veckors period var både tentaplugg och tentaperioden. Det ledde till att vi hamnade lite efter i planeringen och fick därför lägga mer tid för att ligga i fas igen för att undvika förseningar. 
 
 Backloggen utnyttjades mestadels för tekniska utvecklingen och har främjat arbetsflödet. Det gav en överblick över utförd jobb och så att vi försökte att hålla deadlines. 
 
@@ -253,10 +262,16 @@ Projektgruppen lyckades bygga en fungerande rapporteringsverktyg som tillåter a
 \textbf{(bruhhh har vi verkligen gjort det???? ändrish sen utifrån slutresultatet)}En sammanställning av hållbarhetsdata kunde göras för att få statistik av en administratör från adminsidan på rapporteringsverktyget. Projektgruppen har tillämpat och lärt sig använda det agila arbetssättet samtidigt som vi har utifrån kundens uppdraget hjälpt till att utveckla ett  rapporteringsverktyg som kommer kunna användas till ett gott syfte för stadens hållbarhetsutveckling. Arbetet var utmanade men samtidigt väldigt lärorikt och kul. 
 
 \section{Referenser}
-[2] Matz, K. (2013). Designing Usable Apps, An Agile Approach to User Experience Design. Hämtad 2021-
-10–10 från https://canvas.education.lu.se/courses/13397/files/
-1703747?wrap=1
+[1] Sharp. H, Preece, J., \& Rogers, Y. (2019). \textit{Interaction Design - Beyond Human/Computer Interaction}. John Wiley \& Sons. Hoboken, New Jersey, United States. \\
 
+\noindent
+[2] Kniberg \& H. Skarin, M. (2010), Kanban And Scrum Making Most of Both, C4Media Inc., U.S. \\\\
+\noindent
+[3] Matz, K. (2013). Designing Usable Apps, An Agile Approach to User Experience Design. Hämtad 2021-
+10–10 från https://canvas.education.lu.se/courses/13397/files/
+1703747?wrap=1 \\\\
+\noindent
+[4] Eriksson, M. \& Lilliesköld J. (2005), Handbok f ̈or mindre projekt, Liber, Solna, Sweden, pp. 42–46.
 \bibliographystyle{alpha}
 
 
