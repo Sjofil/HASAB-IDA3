@@ -89,7 +89,9 @@ def adminLoggedIn():
 
     if request.method == 'POST':
 
-        if(request.form.get('search') != " " and request.form.get('search') != None):
+        print(request.form.get('text'))
+
+        if(request.form.get('text') != " " and request.form.get('text') != None):
             print(request.form.get('text'))
             print("doing this")
             searchbox = request.form.get("text")
