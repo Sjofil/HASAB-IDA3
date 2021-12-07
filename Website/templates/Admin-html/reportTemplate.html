@@ -9,7 +9,7 @@
 <section class="container-fluid text-center">
         <h1 class="h1">Sammanställning för {{ branch }}</h1>
         {%for row in answers%}
-        <p>Fråga:{{row[1]}} svar:{{row[0]}}</p>
+        <p>Fråga:{{row[2]}} svar:{{row[1]}} Antal{{row[0]}}</p>
         {% endfor%}
     </div>
 

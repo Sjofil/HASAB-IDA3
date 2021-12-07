@@ -29,8 +29,13 @@ def reportTemplate():
         WHERE Industry=%s
         group by Question_text, Answer"""
         cursor.execute(stmt, session['branch'])
+        return render_template("Admin-html/reportTemplate.html", branch=session['branch'], answers=buildString(cursor.fetchall()))
         
-        return render_template("Admin-html/reportTemplate.html", branch=session['branch'], answers=cursor.fetchall())
+def buildString(value):
+    print (value)
+    for row in value:
+
+    return value
 
 def ifPresent(column, value):
     conn = db.get_db()
