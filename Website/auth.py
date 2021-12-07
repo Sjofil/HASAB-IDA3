@@ -74,7 +74,8 @@ def login():
 def adminLoggedIn():
     if request.method == 'GET':
         # Detta måste ändras, finns nog bättre sätt att kolla på om man är admin. Kanske en checksum eller något
-        if (session['user_id'] != 'Admin'):
+        if session.get('user_id') is None or session['user_id'] != 'Admin':
+            session.clear()
             return redirect(url_for('auth.login'))
 
     if request.method == 'POST':
@@ -91,7 +92,7 @@ def adminLoggedIn():
             return jsonify(result)
 
 
-        if(session['user_id'] != 'Admin' or request.form['submit']=="logOut"):
+        if(request.form['submit']=="logOut"):
             print("clearing session")
             session.clear()
             return redirect(url_for('auth.login'))
