@@ -89,17 +89,17 @@ def adminLoggedIn():
 
     if request.method == 'POST':
 
-        if(request.form.get('text') != " " and request.form.get('text') != None):
-            print(request.form.get('text'))
-            print("doing this")
-            searchbox = request.form.get("text")
-            conn=db.get_db()
-            cursor=conn.cursor()
-            stmt= "select Name from Users where Name LIKE '{}%' order by Name".format(searchbox)
-            cursor.execute(stmt)
-            if(cursor.rowcount < 5):
-                result = cursor.fetchall()
-                return jsonify(result)
+        print(request.form.get('text'))
+
+       # if(request.form.get('text') != " " and request.form.get('text') != None):
+        #    searchbox = request.form.get("text")
+         #   conn=db.get_db()
+          #  cursor=conn.cursor()
+           # stmt= "select Name from Users where Name LIKE '{}%' order by Name".format(searchbox)
+            #cursor.execute(stmt)
+            #if(cursor.rowcount < 5):
+             #   result = cursor.fetchall()
+              #  return jsonify(result)
 
 
         if(request.form['submit']=="logOut"):
@@ -179,6 +179,7 @@ def adminLoggedIn():
     
         # Om admin sökt en enskild rapport 
         if(request.form['submit'] == "findReport"):
+            print("Ska vara här")
             if(ifPresent(request.form.get('text')) != False):
                 session['name']=request.form.get('text')
                 return redirect(url_for('auth.specificReport'))   
