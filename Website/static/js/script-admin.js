@@ -11,9 +11,9 @@ $(document).ready(function(){
            url:"/adminIndex",
            data:{text:$("#livebox").val()},
            success:function(res){
-               var data = "<ul>";
+               var data = "<ul class =\"list-group\">";
                $.each(res,function(index,value){
-                   data += "<li>" + value + "</li>";
+                   data += "<li class =\"list-group-item\">" + value + "</li>";
                });
                data += "</ul>";
                $("#datalist").html(data);
