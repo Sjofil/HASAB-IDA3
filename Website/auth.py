@@ -22,13 +22,15 @@ def reportTemplate():
     if (request.method == 'GET'):
         conn=db.get_db()
         cursor=conn.cursor()
-        stmt="SELECT * FROM Answers WHERE "
-        cursor.execute(stmt)
-        answers=cursor.fetchall()
-        for row in answers:
-            print(row[1])
+        stmt="""SELECT count(*), Answers.Answer, Questions.Question_text FROM Answers
+        LEFT JOIN Users ON User_ID=Users.ID
+        LEFT JOIN Types on Types.ID=Type_ID
+        LEFT JOIN Questions on Questions.ID=Question_ID
+        WHERE Industry=%s
+        group by Question_text, Answer"""
+        cursor.execute(stmt, session['branch'])
         
-        return render_template("Admin-html/reportTemplate.html", branch=session['branch'])
+        return render_template("Admin-html/reportTemplate.html", branch=session['branch'], answers=cursor.fetchall())
 
 def ifPresent(column, value):
     conn = db.get_db()
