@@ -42,17 +42,15 @@ def reportTemplate():
         cursor.execute(stmt, session['branch'])
         return render_template("Admin-html/reportTemplate.html", branch=session['branch'], answers=cursor.fetchall())
         
-def buildString(value):
-    print (value)
-    for row in value:
 
-        return value
-
-def ifPresent(column, value):
+def ifPresent(value):
     conn = db.get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM Users WHERE (%s) = (%s)", (column, value))
-    return cursor.fetchone()
+    cursor.execute("SELECT * FROM Users WHERE Name = (%s)", (value))
+    if(cursor.rowcount > 0):
+        return True
+    else:
+        return False
         
 
 @bp.route("/admin", methods=('GET', 'POST'))
@@ -180,7 +178,7 @@ def adminLoggedIn():
     
         # Om admin sökt en enskild rapport 
         if(request.form['submit'] == "findReport"):
-            if(ifPresent("Name", request.form.get('text')) != None):
+            if(ifPresent(request.form.get('text')) != False):
                 session['name']=request.form.get('text')
                 return redirect(url_for('auth.specificReport'))   
             else:
