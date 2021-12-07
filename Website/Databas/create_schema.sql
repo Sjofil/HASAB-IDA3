@@ -45,7 +45,8 @@ CREATE TABLE Answers (
   KEY Question_idx (Question_ID),
   KEY User_idx (User_id),
   CONSTRAINT Question_Constraint FOREIGN KEY (Question_ID) REFERENCES Questions (ID), 
-  CONSTRAINT User_Constraint FOREIGN KEY (User_ID) REFERENCES Users (ID)
+  CONSTRAINT User_Constraint FOREIGN KEY (User_ID) REFERENCES Users (ID),
+  CONSTRAINT Unique_idx UNIQUE(Question_ID, User_ID)
 );
 
 CREATE TABLE Conditions (
