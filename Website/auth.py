@@ -17,6 +17,17 @@ bp = Blueprint('auth', __name__, url_prefix='/')
 
 #hej
 
+@bp.route("/specificReport", methods= ('POST', 'GET'))
+def specificReport():
+    if (request.method == 'GET'):
+        stmt = "SELECT distinct Question_text, Answer, Email from Answers, Questions, Users \
+                    where Questions.ID = Answers.Question_ID and Users.Name = %s;" 
+        conn=db.get_db()
+        cursor=conn.cursor() 
+        cursor.execute(stmt, session['name'])  
+        answers = cursor.fetchall()
+        return render_template("Admin-html/specificReport.html", name=session['name'], answers=answers)
+
 @bp.route("/reportTemplate", methods= ('POST', 'GET'))
 def reportTemplate():
     if (request.method == 'GET'):
@@ -41,7 +52,7 @@ def ifPresent(column, value):
     conn = db.get_db()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM Users WHERE (%s) = (%s)", (column, value))
-    return cursor.fetchone() is not None
+    return cursor.fetchone()
         
 
 @bp.route("/admin", methods=('GET', 'POST'))
@@ -136,20 +147,20 @@ def adminLoggedIn():
 
                 if(request.form['branch'] == 0):
                     branch = None
-                else:
-                    branch = request.form['branch']
+                elif(request.form['branch'] == "Resturang"):
+                    branch = 2
+                elif(request.form['branch'] == "Hotell"):
+                    branch = 1
+                elif(request.form['branch'] == "Byrå"):
+                    branch = 3
                 
                 cursor.execute(stmt, (branch, request.form['adress'], name))
                 conn.commit()
             except pymysql.IntegrityError as e:
                 error="Emailadressen:  " + request.form['adress'] + " finns redan i systemet"
-                flash(error)
-                
+                flash(error) 
             finally:
                 cursor.close
-
-           
-       
 
         branches=["Resturang", "Hotell", "Byrå", "Anläggning"]
         if(request.form['submit'] in branches):
@@ -164,24 +175,19 @@ def adminLoggedIn():
                 cursor.execute(stmt, (request.form['pass1'], session['user_id']))
                 conn.commit()
             else :
-                error="lösen matchade ej"
+                error="Lösenorden matchade ej"
                 flash(error)
     
         # Om admin sökt en enskild rapport 
-        if(request.form['submit']=="findReport"):
-            name = request.form['name']
-            #if (ifPresent("Name", name)):
-            print(name)
-            stmt = "SELECT distinct Question_text, Answer, Email from Answers, Questions, Users \
-                    where Questions.ID = Answers.Question_ID and Users.Email = %s;" 
-            conn=db.get_db()
-            cursor=conn.cursor()
-            print(stmt)
-            print("hit funkar det") # Fungerar om man söker på nästan rätt namn. 
-            cursor.execute(stmt, name)
-            records = cursor.fetchall()
-            print(records)     
-            return redirect(url_for('auth.reportTemplate'), hehe = records)        
+        if(request.form['submit'] == "findReport"):
+            if(ifPresent("Name", request.form.get('text')) != None):
+                session['name']=request.form.get('text')
+                return redirect(url_for('auth.specificReport'))   
+            else:
+                error="Användaren: " + request.form.get('text') + " finns inte"
+                flash(error)
+
+
     return render_template("Admin-html/admin-index.html")
 
 
