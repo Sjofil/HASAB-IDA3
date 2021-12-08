@@ -384,6 +384,71 @@ VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
 
+--Byråer--
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 2
+VALUES ("mail@turretur.se", "Tur & Retur", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 3
+VALUES ("helsingborg@ticket.se", "Ticket resebyrå", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 4
+VALUES ("042216333@telia.com", "Fly Center", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 5 INGEN MAIL
+VALUES ("boka@folketshushelsingborg.se", "Suntours ", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 6
+VALUES ("info@sindibad.se", "Sindibad Travel", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 7
+VALUES ("helsingborg@respartner.se", "Respartner", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 8
+VALUES ("info@poseidontravel.se", "Poseidon Travel AB", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 9
+VALUES ("bokning@travelpoint.se", "Travel Point AB", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 10
+VALUES ("info@tjeckienexperten.se", "TjeckienExperten", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 11
+VALUES ("support@flygstolen.se", "Flygstolen", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 12
+VALUES ("info@sydafrikaresor.se", "Sydafrikaresor", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 13
+VALUES ("travel@tourpacific.se", "Tour Pacific", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 14
+VALUES ("info@goxplore.se", "GoXplore Sweden", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 15 INGEN MAIL
+VALUES ("boka@folketshushelsingborg.se", "ÖsterrikeExperten", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 16
+VALUES ("nyati@nyati.com", "Nyati Safari Sweden", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 17 INGEN MAIL
+VALUES ("boka@folketshushelsingborg.se", "Sembo", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 18
+VALUES ("info@soderhavsresor.se", "Söderhavsresor", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 19
+VALUES ("jp@jpr.se", "JP Resor AB", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 20
+VALUES ("info@tronsproduction.se", "Tronds Production", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 21
+VALUES ("info@icegroup.se", "I.C.E Group", 3, 0);
+
+INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 22
+VALUES ("roland@byrafemtiotva.se", "Byrå Femtitvå", 3, 0);
+
+
 
 
 
