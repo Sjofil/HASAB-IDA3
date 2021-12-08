@@ -9,6 +9,51 @@ VALUES (2, "Restaurang");
 INSERT INTO Types (ID, Industry)
 VALUES (3, "Resebyråer");
 
+INSERT INTO Types (ID, Industry)
+VALUES (4, "Evenemangshallar");
+
+
+-- Conditions--
+
+-- Hotell--
+
+INSERT INTO Conditions(Question_ID, Button_ID, Next_ID)
+VALUES(1, 1, 2);
+
+INSERT INTO Conditions(Question_ID, Button_ID, Next_ID)
+VALUES(3, 1, 4);
+
+INSERT INTO Conditions(Question_ID, Button_ID, Next_ID)
+VALUES(7, 1, 8);
+
+-- Byråer --
+
+INSERT INTO Conditions(Question_ID, Button_ID, Next_ID)
+VALUES(9, 1, 10);
+
+INSERT INTO Conditions(Question_ID, Button_ID, Next_ID)
+VALUES(11, 1, 12);
+
+-- Restauranger --
+
+INSERT INTO Conditions(Question_ID, Button_ID, Next_ID)
+VALUES(13, 1, 14);
+
+INSERT INTO Conditions(Question_ID, Button_ID, Next_ID)
+VALUES(18, 1, 19);
+
+-- Evenemangshallar --
+
+INSERT INTO Conditions(Question_ID, Button_ID, Next_ID)
+VALUES(22, 1, 23);
+
+INSERT INTO Conditions(Question_ID, Button_ID, Next_ID)
+VALUES(24, 1, 25);
+
+INSERT INTO Conditions(Question_ID, Button_ID, Next_ID)
+VALUES(28, 1, 29);
+
+
 
 -- Insert Users data --
 
@@ -93,39 +138,172 @@ VALUES ("group.sweden@scandichotels.com", "Scandic Oceanhamnen", 1, 0);
 -- Insert Question data --
 
 -- Q1 ------------------------------------------------
-INSERT INTO Questions (Type_ID, Question_text)
-VALUES (1, "Har ert hotell någon miljöcertifiering?");
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Har ert hotell någon miljöcertifiering?", 1);
 -- Om ja:
 
-INSERT INTO Questions (Type_ID, Question_text)
-VALUES (1, "Vilken miljöcertifiering har ni?");
-
-INSERT INTO Questions (Type_ID, Question_text)
-VALUES (1, "Hur många rum har ert hotell?");
-
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (1, "Vilken miljöcertifiering har ni?", 1);
 
 -- Q2 -------------------------------------------------
-INSERT INTO Questions (Type_ID, Question_text)
-VALUES (1, "Jobbar ni aktivt med att minska matsvinnet? Om ja, hur stor del i % har ni lyckats minska ert matsvinn?");
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Jobbar ni aktivt med att minska matsvinnet?", 1);
 -- Om ja:
 
-INSERT INTO Questions (Type_ID, Question_text)
-VALUES (1, "Hur många procent jämfört med föregående år av ert årliga matsvinn har ni lyckats minska?");
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (2, "Hur många procent jämfört med föregående år av ert årliga matsvinn har ni lyckats minska?", 1);
 
 
 -- Q3 -------------------------------------------------
-INSERT INTO Questions (Type_ID, Question_text)
-VALUES (1, "Jobbar ni aktivt med att minska engångsartiklar och plastmaterial?");
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Jobbar ni aktivt med att minska engångsartiklar och plastmaterial?", 1);
 
-INSERT INTO Questions (Type_ID, Question_text)
-VALUES (1, "Sorterar ni organiskt avfall?");
+-- Q4---------------------------------------------------
 
-INSERT INTO Questions (Type_ID, Question_text)
-VALUES (1, "Finns det en publicerad publik rapport rörande resultaten av ert miljöarbete?");
--- Följdfråga finns 
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Sorterar ni organiskt avfall?", 1);
+
+-- Q5----------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Finns det en publicerad publik rapport rörande resultaten av ert miljöarbete?", 1);
+
+INSERT INTO Questions(Type_ID, Question_text, Industry_ID)
+VALUES(4, "Bifoga länk till rapporten här", 1);
 
 
--- Insert Answers --
+-- Byråer------------------------------------------------
 
+-- Q1----------------------------------------------------
 
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0,"Har ni en extern hållbarhetscertifiering/miljöcertifiering?", 3);
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES(4, "Vilken hållbarhetscertifiering/miljöcertifiering har ni?", 3);
+
+-- Q2-----------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES(0, "Har ni en skriftlig hållbarhetspolicy?", 3);
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES(4,"Är den publikt publicerad bifoga länken till den här:", 3);
+
+-- Restauranger---------------------------------------------
+
+-- Q1------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES(0, "Har ni någon miljöcertifiering?", 2);
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (1, "Vilken miljöcertifiering har ni?", 2);
+
+-- Q2------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Arbetar ni aktivt med att minska engångsmaterial i plast?", 2);
+
+-- Q3------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Arbetar ni aktivt med att använda er av ekologiska eller på annat sätt mer hållbara produkter?", 2);
+
+-- Q4------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Sorterar ni organiskt avfall?", 2);
+
+-- Q5------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Jobbar ni aktivt med att minska matsvinnet?", 2);
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (2, "Hur stor del i % jämfört med föregående år av ert årliga matsvinn har ni lyckats minska?", 2);
+
+-- Q6-------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Arbetar ni aktivt med att använda lokalt producerade råvaror?", 2);
+
+-- Q7--------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Erbjuder ni plantbaserade rätter som alternativ till den ordinarie menyn?", 2);
+
+-- EVENEMANGSHALLAR-------------------------------------------
+
+-- Q1--------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Har ni någon extern hållbarhets eller miljöcertifiering?", 4);
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (1, "Vilken av nedan certifiering har ni?", 4);
+
+-- Q2---------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Jobbar ni aktivt med att minska matsvinnet?", 4);
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (2, "Hur stor del i % jämfört med föregående år av ert årliga matsvinn har ni lyckats minska?", 4);
+
+-- Q3----------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Jobbar ni aktivt med att minska engångsartiklar och plastmaterial?", 4);
+
+-- Q4----------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Sorterar ni organiskt avfall?", 4);
+
+-- Q5----------------------------------------------------------
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (0, "Finns det en publicerad publik rapport rörande resultaten av ert miljöarbete?", 4);
+
+INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
+VALUES (4, "Bifoga länk till rapporten här", 4);
+
+-- Answer Types -- 
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("Ja", 0);
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("Nej", 0);
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("Svensk Miljöbas", 1);
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("Green Key", 1);
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("ISO 14001", 1);
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("Svanen", 1);
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("Annan Certifiering", 1);
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("1-30%", 2);
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("30-50%", 2);
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("50% och uppåt", 2);
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("Antal", 3);
+
+INSERT INTO Answer_Types (Button_Text, Type_ID)
+VALUES("Link", 4);
 

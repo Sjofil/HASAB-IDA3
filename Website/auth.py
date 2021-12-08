@@ -151,7 +151,7 @@ def adminLoggedIn():
 
                 if(request.form['branch'] == 0):
                     branch = None
-                elif(request.form['branch'] == "Resturang"):
+                elif(request.form['branch'] == "Restaurang"):
                     branch = 2
                 elif(request.form['branch'] == "Hotell"):
                     branch = 1
@@ -166,7 +166,7 @@ def adminLoggedIn():
             finally:
                 cursor.close
 
-        branches=["Resturang", "Hotell", "Byrå", "Anläggning"]
+        branches=["Restaurang", "Hotell", "Byrå", "Evenemangshall"]
         if(request.form['submit'] in branches):
             session['branch']=request.form['submit']
             return redirect(url_for("auth.reportTemplate"))
