@@ -9,7 +9,7 @@
 {% elif questionType == 4 %}
 <div class="form-check-inline pb-3" id="fade1">
   <input id="textInput" type="text" class="form-control-lg ms-2 form-control rounded-3 " placeholder="Länk">
-  <button disabled type="submit" id="textSubmit" onclick="nextQuest(this, {{ answerOptions[0].NextQuestion }})" name="{{ questionID }}" value="textInput" class="btn mt-2 ms-2 btn-secondary col-lg-6 rounded">Nästa </button>
+  <button type="submit" id="textSubmit" onclick="nextQuest(this, {{ answerOptions[0].NextQuestion }})" name="{{ questionID }}" value="textInput" class="btn mt-2 ms-2 btn-secondary col-lg-6 rounded">Nästa </button>
 </div> 
 
 {% else %}
