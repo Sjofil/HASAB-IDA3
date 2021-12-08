@@ -195,14 +195,11 @@ Under denna sprinten omstrukturerades databasen så att det endast skulle finnas
 
 \subsection{Riskanalys}
 Presentation of original risk analysis with motivations, your plan for updating said risk analysis, and an account on the revisions made during the process. \\\\
- Tidigt i projektet, med hjälp av artikeln \textit{Riskanalys} [4], implementerades miniriskmetoden för att kunna identifiera riskerna och därefter analysera dem. En uppskattning av sannolikheten att dessa risker inträffar och konsekvenserna till följd av detta gjordes.\\\\
+ Tidigt i projektet, med hjälp av artikeln \textit{Riskanalys} [4], implementerades miniriskmetoden för att kunna identifiera riskerna och därefter analysera dem. En uppskattning av sannolikheten att dessa risker skulle kunna inträffa och vilka konsekvenserna följd av riskerna gjordes.\\\\
  Syftet med riskanalysen var att ta fram en åtgärdsplan som skulle följas vid hantering av risker, både proaktivt men även då eventuella risker är ett faktum. I riskanalysen skapades en lista över \textit{projektrisker, produktrisker} och \textit{affärsrisker}.\\\\
  Den största projektrisken som identifierades var en bristfällig kommunikation bland projektmedlemmarna. För att minimera denna risk skapades en tydlig kommunikationsplan samt grundregler. Denna åtgärd skulle leda till en bättre stämning i gruppen genom att missförstånd minimeras.\\\\
  Den största produktrisken som identifierades var att produkten inte skulle vara tillräckligt intuitiv, dvs. att användbarheten var för låg. För att minimera denna risk beslutades att utföra många användartester. Gruppen ansåg att detta skulle ge en god insikt om hur användare upplever systemet.\\\\
  Projektgruppen beslutade att i början av varje sprint koppla riskerna till de delmoment som sprinten innehöll för att kunna identifiera eventuella risker i den specifika sprinten. Om en gruppmedlem stötte på risker skulle detta meddelas under veckovisa möten, där riskerna kunde ställas mot åtgärdsplanen för att kunna hantera dessa omgående.\\\\
- Eter hand som vi arbetade med projektet blev det tydligt vilka risker som var relevanta och vilka som inte var ett så stort problem som vi hade tänkt oss i början. Att den största produktrisken var att produkten inte skulle vara tillräckligt intuitiv insåg vi snabbt inte stämde då vi upplevde det relativt enkelt att göra ett frågeformulär som var lättförståeligt.\\\\
- Däremot blev det tydligt att våra begränsade kunskaper kring servrar och databaser löpte än större risk att påverka projektets slutresultat. Därav såg vi just implementeringen av databas samt hemsida på en extern server som den största produktrisken.\\\\
- Gällande projektriskerna gjordes det inte några större ändringar. Kommunikationen är alltid svår, speciellt i en tid med pandemi och restriktioner. Vi gjorde vårt bästa för att träffas så ofta som möjligt då samtliga i gruppen ansåg detta vara vägen fram för en bättre kommunikation. 
  
 
 
@@ -214,7 +211,19 @@ Utifrån kundens önskan hålls uppbyggnaden av webbapplikationen enkelt efterso
 
 \section{Diskussion}
 Sections on reflections about the process, methods and result of the project work. Subheadings are encouraged, these need not be checked with supervisor. And finally: to what degree does the product solve the original problem? Motivate!\\\\
-Under projektets gång stötte vi på problem som vi inte hade räknat med från början. Det var krångligt att sätta upp databasen med mysql vid användning av Flask. Detta med anledning av att det fanns bristfällig dokumentationen på hur man kunde gå tillväga och tog därför lång tid att åtgärda felet. Ett annat problem som vi stötte på var att kunna skicka POST requests för servern vid implementering av inloggningsfunktionen. Vi hade också problem med att synkronisera vissa funktioner för hemsidan med Flask. Misstaget som gjordes här var att vi inte hade tänkt på att de implementerade funktionerna skulle även synkroniseras med Flask.\\\\
+\subsection{Förändrade målbilder}
+
+Projektets mål var inledningsvis att samla in hållbarhetsdata för samtliga fyra områden som ska finnas representerade i GDS-index, vilka förutom besöksnäringen även inkluderade stadens miljöarbete, sociala utveckling och styre. Projektets angränsningsområde har begränsats och två gånger under utvecklingens gång. Första gången var under det inledande mötet med beställaren då de klargjorde att det beställda systemet endast skulle fokusera på besöksnäringen - hotell, restaurang, flygplats, högskola och byråer. Andra gången var under uppföljningsmöte med kund i november då det meddelades att de sköter insamlingen av data från högskola och flygplats via telefon eller mail. Det system som slutligen skulle levereras riktade sig därför enbart mot restauranger, hotell och byråer. 
+
+
+\subsection{Utmaningar under utvecklingen}
+
+\subsubsection{Tekniska utmaningar}
+Under projektets gång stötte vi på problem som vi inte hade räknat med från början. Det visade sig vara krångligt att sätta upp databasen med MySQL vid användning av Flask. Att projektgruppen hade mycket lite erfarenhet av att programmera i Python förenklade inte situationen.  
+
+Ett annat problem som vi stötte på var att kunna skicka POST requests för servern vid implementering av inloggningsfunktionen. Vi hade också problem med att synkronisera vissa funktioner för hemsidan med Flask. Misstaget som gjordes här var att vi inte hade tänkt på att de implementerade funktionerna skulle även synkroniseras med Flask.
+
+\subsubsection{Rollfördelning och tidsuppskattning}
 Vår tidsuppskattning som gjordes i början för utvecklingsarbetet för olika deluppgifter var inte noggran planerad. Vi hade inte ett tydligt tidsmål för hur mycket tid en teammedlem skulle lägga per sprint och därför kunde ibland vissa uppgifter antingen bli klara mycket fortare än räknat med eller ta ännu längre tid. Genom att blicka tillbaka tänker vi oss att det har varit en lärande process som lärt oss vikten av noggrann planering och att försöka göra mer realistiska tidsuppskattningar. Vi hade inte heller räknad med att under nästan två veckors period var både tentaplugg och tentaperioden. Det ledde till att vi hamnade lite efter i planeringen och fick därför lägga mer tid för att ligga i fas igen för att undvika förseningar.\\\\
 Backloggen utnyttjades mestadels för tekniska utvecklingen och har främjat arbetsflödet. Det gav en överblick över utförd jobb och så att vi försökte att hålla deadlines.\\\\
 Hade vi brist på kompetens inom något område????? diskutera det här ........... \\\\
