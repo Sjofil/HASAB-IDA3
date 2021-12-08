@@ -13,6 +13,16 @@ window.addEventListener('input', function() {
   
   })
 
+  window.addEventListener('input', function() {
+    var textInput = this.document.getElementById("textInput");
+    if(textInput.value != " "){
+        document.getElementById("textSubmit").disabled = false;
+    }else {
+        document.getElementById("textSubmit").disabled = true;
+    }
+  
+  })
+
 function submitForm(){
 document.location.href="last.html";
 }
@@ -33,8 +43,9 @@ function nextQuest(button, nextQuestion){
     if(button.value == "numberInput")
     {
         saveQuestion(button.name, document.getElementById("numberInput").valueAsNumber);
-    }
-    else {
+    } else if(button.value == "textInput"){
+        saveQuestion(button.name, document.getElementById("textInput").value);
+    } else {
         saveQuestion(button.name, button.value);
     }
     goToQuestion(nextQuestion);
