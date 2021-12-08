@@ -20,11 +20,16 @@ bp = Blueprint('auth', __name__, url_prefix='/')
 @bp.route("/specificReport", methods= ('POST', 'GET'))
 def specificReport():
     if (request.method == 'GET'):
-        stmt = "SELECT distinct Question_text, Answer, Email from Answers, Questions, Users \
-                    where Questions.ID = Answers.Question_ID and Users.Name = %s;" 
+        stmt = """SELECT Name, Question_text, Answer FROM Users, Questions, Answers
+                where Answers.Question_ID = Questions.ID and
+                Answers.User_ID = (
+                Select Users.ID from Users
+                where Users.Name = %s) and Users.Name = %s;"""
+
         conn=db.get_db()
         cursor=conn.cursor() 
-        cursor.execute(stmt, session['name'])  
+       
+        cursor.execute(stmt, (session['name'], session['name']))  
         answers = cursor.fetchall()
         return render_template("Admin-html/specificReport.html", name=session['name'], answers=answers)
 
@@ -179,7 +184,6 @@ def adminLoggedIn():
     
         # Om admin sökt en enskild rapport 
         if(request.form['submit'] == "findReport"):
-            print("Ska vara här")
             if(ifPresent(request.form.get('text')) != False):
                 session['name']=request.form.get('text')
                 return redirect(url_for('auth.specificReport'))   
