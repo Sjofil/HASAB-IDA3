@@ -16,6 +16,7 @@
     \\
     \medskip
 }
+\graphicspath{ {./images/} }
 \newcommand{\documentVersion}[1]{
     \medskip
 }
@@ -211,9 +212,30 @@ Utvecklingen fortsatte och tidigt under veckan färdigställdes all funktionalit
 
 \section{Resultat}
 Presentation of final prototype. Limited number (good selection) of images / screen dumps. Focus on interaction and functionalities, but also technical issues, without going too deep into details. In short, describe the projects technical set-up, where you borrowed code, frameworks etc. As far as possible, use the same way of referencing as for text. That is, try to identify an author (if there is only a pseudonym or user, it is better than nothing), a title and then link to website or repository.\\\\
-Vi utvecklade en enkelt webbapplikation grundad på Bootstrap eftersom då kunde vi bygga en responsiv design för webbsidan. Det ger användaren möjligheten att kunna få utkomst till webbsidan även från andra enheter än en dator såsom en mobil. Vi valde att jobba med Bootstrap eftersom det finns fördefinierade CSS-klasser, många komponenter för HTML-element samt stöd för JavaScript-plugins, vilket gjorde utvecklingen flexibelt för oss. Databasen mySQL lades med servern XXX för att vi skulle ha friheten att hantera både servern och databasen genom XXX oberoende av extern mjukvaruprogram. Databasens uppbyggnad kan återfinnas i figuren XXX i appendix XXX.\\\\
-Utifrån kundens önskan hålls uppbyggnaden av webbapplikationen enkelt eftersom användaren förväntas ha varierande teknisk kunskap. Förutom att användaren kan med en förutbestämt unik inloggningskod rapportera data i form av svar på frågor som är aktuella för just deras bransch finns också en admin sida, se Appendix XXX. På admin sidan kan man sammanställa data och få en överblick av statistiken men även söka efter svar från en viss aktör se Appendix XXX. 
+Vi utvecklade en enkel webbapplikation med Bootstrap, ett CSS-ramverk som underlättar byggandet av responsiva och mobilanpassade hemsidor. Vi valde att jobba med Bootstrap eftersom det finns fördefinierade CSS-klasser, många komponenter för HTML-element samt stöd för JavaScript-plugins, vilket gjorde utvecklingen mer flexibelt. När vi byggde databasen använde vi mySQL. vilket  lades med servern XXX för att vi skulle ha friheten att hantera både servern och databasen genom XXX oberoende av extern mjukvaruprogram. Databasens uppbyggnad kan återfinnas i figuren XXX i appendix XXX.\\\\
 
+Varje användare loggar in på applikationen med sin emailadress. Detta för att förenkla för svarspersonerna då de skulle slippa att skapa konto och lösenord. Figur 1 visar inloggningssidan för svarspersonerna. Loggan och färgen är hämtad från HCEB:s grafiska profil. \\
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{images/log_in_page.png}
+    \caption{Inloggningssidan för personer som gör enkäten}
+    \label{fig:my_label}
+\end{figure}
+
+Beställaren hade krav på ett enkelt användargränssnitt eftersom svarspersonerna antogs ha varierande teknisk kunskap. Det skulle därför finnas få knappval för de personer som svarade på enkäten. 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{images/question_page.png}
+    \caption{Fråga 1}
+    \label{fig:my_label}
+\end{figure}
+
+ På admin sidan kan man sammanställa data och få en överblick av statistiken men även söka efter svar från en viss aktör se Appendix XXX. 
+
+\newpage
 \section{Diskussion}
 Sections on reflections about the process, methods and result of the project work. Subheadings are encouraged, these need not be checked with supervisor. And finally: to what degree does the product solve the original problem? Motivate!\\\\
 \subsection{Förändrade målbilder}
@@ -266,7 +288,7 @@ Projektgruppen lyckades bygga en fungerande rapporteringsverktyg som tillåter a
 10–10 från https://canvas.education.lu.se/courses/13397/files/
 1703747?wrap=1 \\\\
 \noindent
-[4] Eriksson, M. \& Lilliesköld J. (2005), Handbok f ̈or mindre projekt, Liber, Solna, Sweden, pp. 42–46.
+[4] Eriksson, M. \& Lilliesköld J. (2005), Handbok f ̈or mindre projekt, Liber, Solna, Sweden, pp. 42–46. \\\\
 
 
 \bibliographystyle{alpha}
