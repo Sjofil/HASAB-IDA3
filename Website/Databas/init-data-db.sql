@@ -7,10 +7,10 @@ INSERT INTO Types (ID, Industry)
 VALUES (2, "Restaurang");
 
 INSERT INTO Types (ID, Industry)
-VALUES (3, "Resebyråer");
+VALUES (3, "Byrå");
 
 INSERT INTO Types (ID, Industry)
-VALUES (4, "Evenemangshallar");
+VALUES (4, "Evenemangshall");
 
 
 -- Conditions--
@@ -476,7 +476,7 @@ INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
 VALUES (0,"Har ni en extern hållbarhetscertifiering/miljöcertifiering?", 3);
 
 INSERT INTO Questions (Type_ID, Question_text, Industry_ID)
-VALUES(4, "Vilken hållbarhetscertifiering/miljöcertifiering har ni?", 3);
+VALUES(1, "Vilken hållbarhetscertifiering/miljöcertifiering har ni?", 3);
 
 -- Q2-----------------------------------------------------
 
