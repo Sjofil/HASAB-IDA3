@@ -57,7 +57,7 @@ VALUES(28, 1, 29);
 
 -- Insert Users data --
 
---Hotell--
+-- Hotell--
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("info.marinaplaza@elite.se", "Elite Hotel Marina Plaza", 1, 0);
@@ -136,12 +136,11 @@ INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("group.sweden@scandichotels.com", "Scandic Oceanhamnen", 1, 0);
 -- 180 rooms
 
---Evenemangshall--
+-- Evenemangshall--
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("hbgarena@helsingborg.se", "Helsingborg Arena", 4, 0);
 
-INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("info@sofieroslottsrestaurang.se", "Sofiero Slottsrestaurang", 4, 0);
+
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("kontakt@jacobhansenshus.se", "Jacob Hansens Hus", 4, 0);
@@ -172,8 +171,8 @@ VALUES ("info@bollbrolyckan.com", "Bollbrolyckan", 4, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 4, 0);
-
---Resturanger--
+ 
+-- Resturanger--
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("info@drottninggatan35.se", "Drottninggatan 35 ", 2, 0);
 
@@ -248,9 +247,6 @@ VALUES ("bokning@charlesdickens.nu", "Charles Dickens Bar & Scen Helsingborg", 2
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("Bikten", "Bikten", 2, 0);
-
-INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("info@bollbrolyckan.com", "Bollbrolyckan", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("bokning@brasseriethelsingborg.se", "Brasseriet Helsingborg", 2, 0);
@@ -373,7 +369,7 @@ INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("Ålgrändens Ost & Deli", "INFO@ALGRANDENSOST.SE", 2, 0);
 
 
---Byråer--
+-- Byråer--
 INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 2
 VALUES ("mail@turretur.se", "Tur & Retur", 3, 0);
 
@@ -383,8 +379,6 @@ VALUES ("helsingborg@ticket.se", "Ticket resebyrå", 3, 0);
 INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 4
 VALUES ("042216333@telia.com", "Fly Center", 3, 0);
 
-INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 5 INGEN MAIL
-VALUES ("boka@folketshushelsingborg.se", "Suntours ", 3, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 6
 VALUES ("info@sindibad.se", "Sindibad Travel", 3, 0);
@@ -413,14 +407,8 @@ VALUES ("travel@tourpacific.se", "Tour Pacific", 3, 0);
 INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 14
 VALUES ("info@goxplore.se", "GoXplore Sweden", 3, 0);
 
-INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 15 INGEN MAIL
-VALUES ("boka@folketshushelsingborg.se", "ÖsterrikeExperten", 3, 0);
-
 INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 16
 VALUES ("nyati@nyati.com", "Nyati Safari Sweden", 3, 0);
-
-INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 17 INGEN MAIL
-VALUES ("boka@folketshushelsingborg.se", "Sembo", 3, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 18
 VALUES ("info@soderhavsresor.se", "Söderhavsresor", 3, 0);
@@ -436,7 +424,6 @@ VALUES ("info@icegroup.se", "I.C.E Group", 3, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 22
 VALUES ("roland@byrafemtiotva.se", "Byrå Femtitvå", 3, 0);
-
 
 
 
@@ -615,4 +602,8 @@ VALUES("Antal", 3);
 
 INSERT INTO Answer_Types (Button_Text, Type_ID)
 VALUES("Link", 4);
+
+-- Admin -- 
+INSERT INTO Admins (Username, Password)
+VALUES("admin", "123")
 
