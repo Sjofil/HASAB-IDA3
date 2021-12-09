@@ -223,17 +223,39 @@ Varje användare loggar in på applikationen med sin emailadress. Detta för att
     \label{fig:my_label}
 \end{figure}
 
-Beställaren hade krav på ett enkelt användargränssnitt eftersom svarspersonerna antogs ha varierande teknisk kunskap. Det skulle därför finnas få knappval för de personer som svarade på enkäten. 
+Beställaren hade krav på ett enkelt användargränssnitt eftersom svarspersonerna antogs ha varierande teknisk kunskap. REFERERA TILL DON'tMAKE ME THINK.
+Därför finns det minimalt med knappar och val i själva formuläret. I databasen har varje företag ett branschattribut knutet till sig. Även här är syftet att begränsa antalet valmöjligheter samtidigt som endast de frågor som faktiskt är riktade till branschen personen företräder visas. I figur 2 nedan syns den inledande frågan för restaurangbranschen.
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{images/question_page.png}
-    \caption{Fråga 1}
-    \label{fig:my_label}
+    \caption{Fråga 1 riktad till hotell och restauranger}
+    \label{fig:question}
 \end{figure}
 
- På admin sidan kan man sammanställa data och få en överblick av statistiken men även söka efter svar från en viss aktör se Appendix XXX. 
+
+Samma html-sida användes för samtliga frågor, där själva frågeinnehållet uppdateras dynamiskt med hjälp av JavaScript när användaren klickar i ett svarsalternativ. Som ett steg i att skapa en mer flexibel och modulär applikation hämtas frågorna och svaren direkt från databasen.
+
+Applikationen innehåller även en administrationssida. Det är inte nåbar via användargränssnittet 
+ På admin sidan kan man sammanställa data och få en överblick av statistiken men även söka efter svar från en viss aktör.  Appendix XXX. 
+ 
+ \begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{images/admin_log_in.png}
+    \caption{Inloggningssida för admin}
+    \label{fig:admin_login}
+\end{figure}
+
+Adminsidan kan endast nås via URL:en för att inte förvirra personerna som svarar på formuläret. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=12cm]{images/admin_index.png}
+    \caption{Administrationssidan}
+    \label{fig:question}
+\end{figure}
+
 
 \newpage
 \section{Diskussion}
