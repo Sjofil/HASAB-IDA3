@@ -325,64 +325,53 @@ INSERT INTO Users (Email, Name, Type_ID, Submitted)
 VALUES ("info@oasenfondue.se", "Oasen Fonduerestaurang", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("info@pubnessie.se", "Pub Nessie", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("info@restaurangedelweiss.se", "Restaurang Edelweiss", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("info@papadamindisk.se", "Restaurant Papadam", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("kullavagenhelsingborg@sugoirestauranger.se", "Sugoi", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("boka@tacosyburritos.se", "Tacos y Burritos", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("telegrafenhbg@gmail.com", "Telegrafen", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("info@thaicorner.se", "Thai Corner", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("boka@tikal.nu", "Tikal", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("INFO@VEDBYMARIA.SE", "Ved by Maria", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("vegeriet@vegeriet.se", "Vegeriet", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("Venti Trattoria", "reception@thevaulthotel.se", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("pokebowlsweden@gmail.com", "Vibes Poké Bar", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("info@wokonfire.nu", "Wok on fire", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("helsingborg@woso.se", "Woso Sallad & Sushi", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("kontakt@yokodinnerclub.se", "Yoko", 2, 0);
 
 INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
+VALUES ("Ålgrändens Ost & Deli", "INFO@ALGRANDENSOST.SE", 2, 0);
 
-INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
-
-INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
-
-INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
-
-INSERT INTO Users (Email, Name, Type_ID, Submitted)
-VALUES ("boka@folketshushelsingborg.se", "Folkets Hus", 2, 0);
 
 --Byråer--
 INSERT INTO Users (Email, Name, Type_ID, Submitted) -- 2
