@@ -122,22 +122,12 @@
 % ----- SKRIV UNDER VARJE TITEL ----- %
 
 \section{Arbetsfördelning}
-On the inside of the cover page, you should make a named description of how the division of labor in the project has been – e.g., who has worked with different parts of the prototype(s) and the report. Keep a reasonable level of detail! This is a good preparation for your thesis project where you need to do this as well.
-    
-
-\textbf{Anna}: Sammanställt kriterierna som de facto ska vara med i rapporteringsverktyg i en wordfil. Implementerat metoderna login och loginAdmin i flask. Planerat grafisk schema för arbetsveckor. Haft ansvar för kommunikationen med Malin Planander och Malin Hollgren. Skrivit på slutrapporten(planering). Skissat på designen för prototypen. Planerat sprintar och skapat en PowerPoint for delredovisning.
-
-\textbf{Filip}: Planerat sprintar, implementerat för samtliga sidor Html och CSS kod template för frontend, Funktionalitet för kunna gå mellan sidor. Implementerat logiken för knapp-inputs. Skrivit på slutrapporten(utveckling). Skissat på designen för prototypen. 
-
-\textbf{David}: Implementerat funktioner via JS/HTML, Tagit fram E/R diagram, Försökt göra designen mer konsekvent. Skrivit på slutrapporten(Riskanalys), skissat på designen för prototypen. 
-
-\textbf{Oscar}: Implementerat databasen. Lagt in frågor i databasen. Implementerat funktionalitet för användarlogin, admin login, admin logut och framställning av data. Tagit fram E/R diagram. Skissat på designen för prototypen.
-
-\textbf{Sabah}: Processrapport, arbetsrapport(1 och 2). Skrivit på slutrapporten(introduktion, process, planering, utveckling, riskanalys, resultat, diskussion). Implementerat startsidan med Html och CSS. Skissat på designen för prototypen.  
-
-\textbf{Pontus}: Gjort prototyp för admin att maila ut länkar, lagt till blueprints i Flask för enklare samarbete. Flask sessions. Skissat på designen för prototypen.
-
-\newpage
+\textbf{Filip}: Haft rollen som projektledare vilket har medfört arbete som att planerat sprintar, förvaltat scrumboarden och varit talesperson vid interna och externa möten. Utöver rollen som projektledare har Filip jobbat med allt inom hemsidan och dokument, från att skapa templets med html och css för frontend till att implementera funktioner på hemsidan med API och javascript och tillslut skriva i dokument som slutrapporten.\\\\
+\textbf{Anna}: Varit projektledare tillsammans med Filip. Lett till en delad arbetsfördelning med att förvalta scrumboarden och planerat sprintar. Har också haft ansvar för mail med kunden. Vid möten har tagit rollen som sekreterare vid möten och generellt jobbat mycket med dokument som slutrapporten. Utöver detta har Anna fokuserat på arbete med databas och API för att implementera funktioner som inloggning för admin och till vara med och skriva databasen.\\\\
+\textbf{David}: Arbetat med lite av allt inom projektet. Till en början hade David större delaktigthet i att designa databasen men gick senare över till att hjälpa till med design, som att designa utseende på knappar och att implementera funktioner i backend. I slutet av projketet hade David hand om användartesing samt att skriva i slutrapporten.\\\\
+\textbf{Oscar}: Har genom hela projektet haft stort focus på arbete med databas och api. Att implementera allt från inlogging för admin och svarspersoner, sammaställa data för brancher samt att skriva stora delar av databasen. Oscar har även varit delaktigt i att skriva slutrapporten.\\\\
+\textbf{Sabah}: Genom projketet har Sabah haft ansvar för dokument som Processrapport och arbetsrapport. Under projketet har Sabah dokumenterat det gruppen har gjort via arbetsrapporten och kontinuerligt skrivit i slutrapporten. Senare under projektet har Sabah också arbetat med testfall.\\\\
+\textbf{Pontus}: Har tagit stort ansvar för api:n under projektet. Från att undersöka vilka programmeringsvertyg gruppen skulle använda för att tackla uppgiften till att implementera stora moment som att få formuläret att gå mellan olika frågor, spara användardata i cookies samt skicka denna data till databasen. I slutet av projektet har Pontus även tagit ansvar för hur  systemet skall diftsättas på en server.\\\\
 \section{Abstract}
 A maximum of 250 words!Brief summary. It should be enough to read abstracts to get a reasonable understanding of what has been done and how.
 \\\\
@@ -257,40 +247,39 @@ Adminsidan kan endast nås via URL:en för att inte förvirra personerna som sva
 \end{figure}
 
 Funktionerna som visar inrapporterade data är implementerad med JavaScript och vyn är statisk och har ingen nedladdningsfunktion.
-
+\newpage
 \section{Diskussion}
 I det här avsnittet förs en kort diskussion om projektets förändrade målbild, rollfördelningen i gruppen och hur väl tidsplaneringen visade sig stämma överrens med verkligheten.
 \subsection{Förändrade målbilder}
 
-Projektets mål var inledningsvis att samla in hållbarhetsdata för samtliga fyra områden som ska finnas representerade i GDS-index, vilka förutom besöksnäringen även inkluderade stadens miljöarbete, sociala utveckling och styre. Projektets angränsningsområde har begränsats två gånger under utvecklingens gång. Första gången var under det inledande mötet med beställaren då de klargjorde att det beställda systemet endast skulle fokusera på besöksnäringen - hotell, restaurang, flygplats, högskola och byråer. Andra gången var efter ett uppföljningsmöte med kunden då det meddelade att de samlar in hållbarhetsdata från högskolan och flygplatsen via kontakt över telefon eller mail. Slutprodukten som skulle levereras riktade sig därför enbart mot restauranger, hotell och byråer. Även om skalan för projektet ändrades så är resultatet ändå hand i hand med den ursprungliga målbeskrivningen eftersom de absolut flesta aktörer inom besöks- och turistnäringen inom Helsingborgs stad finns inom just dessa tre branscher.
+Projektets mål var inledningsvis att samla in hållbarhetsdata för samtliga fyra områden som ska finnas representerade i GDS-index, vilka förutom besöksnäringen även inkluderade stadens miljöarbete, sociala utveckling och styre. Projektets angränsningsområde har begränsats två gånger under utvecklingens gång. Första gången var under det inledande mötet med beställaren då de klargjorde att det beställda systemet endast skulle fokusera på besöksnäringen - hotell, restaurang, flygplats, högskola och byråer. Andra gången var efter ett uppföljningsmöte med kunden då det meddelade att de samlar in hållbarhetsdata från högskolan och flygplatsen via kontakt över telefon eller mail. Slutprodukten som skulle levereras riktade sig därför enbart mot restauranger, hotell, byråer och evenemangshallar. Även om skalan för projektet ändrades så är resultatet ändå hand i hand med den ursprungliga målbeskrivningen eftersom de absolut flesta aktörer inom besöks- och turistnäringen inom Helsingborgs stad finns inom just dessa tre branscher.
 
 
 \subsection{Utmaningar under utvecklingen}
 
 \subsubsection{Tekniska utmaningar}
-Under projektets gång stötte vi på problem som vi inte hade räknat med från början. Det visade sig vara krångligt att sätta upp databasen med MySQL vid användning av Flask. Att projektgruppen hade mycket lite erfarenhet av att programmera i Python förenklade inte situationen.  
+Under projektets gång stötte vi på problem som vi inte hade räknat med från början. Det visade sig vara krångligt att sätta upp databasen med MySQL vid användning av ramverket Flask. Att projektgruppen hade mycket lite erfarenhet av att programmera i Python förenklade inte situationen.\\\\
+Ett annat problem som vi stötte på var att kunna skicka POST requests till servern vid implementering av inloggningsfunktionen. Vi hade också problem med att synkronisera vissa funktioner för hemsidan med Flask.\\\\
+Den största utmaningen är att driftsätta applikationen, dvs. få upp systemet på en webbserver så att beställaren kan börja använda den.
 
-Ett annat problem som vi stötte på var att kunna skicka POST requests till servern vid implementering av inloggningsfunktionen. Vi hade också problem med att synkronisera vissa funktioner för hemsidan med Flask.
-
-Den största utmaningen är att deploya applikationen på en webbserver så att beställaren kan börja använda den. 
-
-\subsubsection{Logistiska utmaningar och sjuksom}
+\subsubsection{Logistiska utmaningar och sjukdom}
 
 När utvecklingen drog igång på allvar hade restriktionerna mot campusförlagd undervisning försvunnit och det fanns en unison vilja att vara fysiskt på plats och arbeta tillsammans som grupp. Redan i ett tidigt stadie märktes det att arbetet fortskred med större hastighet då alla var på plats. I praktiken var det svårt att få till. Hälften av teammedlemmarna är inte bosatta i Helsingborg så oftast var några medlemmar frånvarande på arbetspassen vilket ledde till en mer splittrad utvecklingsprocess och försvårade kunskapsdelning. I riskanalysen utsågs sjukdomsbortfall som en stor risk. Dock blev konsekvenserna av sjukdomsfrånvaro inte lika stora som först befarats. En möjlig anledning till detta är att det inte fanns klara rekommendationer från Folkhälsomyndigheterna att stanna hemma vid minsta lilla symptom.
 
 \subsection{Rollfördelning och tidsuppskattning}
 
-Gruppen har kompetens inom olika områden och skiftande erfarenhet inom framför allt programmering vilket har lett till att några personer har fått dra ett större lass. Kunskap har delats inom gruppen och det har funnits en vilja att göra så att den som vill förstå implementeringsdetaljer ska kunna få göra det. Projektledarrollen tog Filip sig an på ett bra sätt och var den som samlade gruppen till möten då det ofta var svårt att träffas alla på plats. 
-
+Gruppen har kompetens inom olika områden och skiftande erfarenhet inom framför allt programmering vilket har lett till att några personer har fått dra ett större lass. Kunskap har delats inom gruppen och det har funnits en vilja att göra så att den som vill förstå implementeringsdetaljer ska kunna få göra det. Projektledarrollen tog Filip sig an på ett bra sätt och var den som samlade gruppen till möten då det ofta var svårt att träffas alla på plats.\\\\
 Vår ursprungliga tidsuppskattning för utvecklingsarbetets olika deluppgifter var inte tillräckligt noggrannt planerad. Det fanns inget tydligt mål för hur mycket tid varje teammedlem skulle lägga per sprint och därför kunde ibland vissa uppgifter antingen bli klara mycket fortare än beräknat eller ta ännu längre tid. Dessutom togs det ingen höjd för den tvåveckorsperiod av tentaplugg och tentaskrivning. Det ledde till att vi hamnade efter i planeringen och fick därför lägga mer tid för att ligga i fas igen för att undvika förseningar. Genom att blicka tillbaka tänker vi oss att det har varit en lärande process som belyst vikten av noggrann planering och att försöka göra mer realistiska tidsuppskattningar. \\\\
 Backloggen utnyttjades mestadels för tekniska utvecklingen och har främjat arbetsflödet. Det gav en överblick över utförda jobb och så att vi försökte att hålla deadlines.\\\
 
 %- Test av HiFo prototyp - flytta ett en annan sektion men diskutera under Diskussion 
 \subsection{Användbarhetstestning}
 För att utvärdera den slutliga prototypen skapades några testscenarier med frågor som rör användbarhet och användarupplevelse. Observationstest planerades på ett sätt där en  testperson skulle interagera med prototypen av webbplatsen baserat på testscenarierna utan att förklara sitt agerande och utan ett ingripande av observeraren. Det för att låta testpersonen göra val baserat på deras naturliga användning av hur de i verkligheten skulle svara på frågeformuläret på vår utvecklade rapporteringsverktyg. Dessa interaktioner skulle sedan dokumenteras och  analyseras.\\\\
-Under en testsession gav en av projektmedlemmarna uppgifter till en person tänkt som en användare och resultatet observerades. Detta gav en insikt att kunna jämföra testpersonens agerande med gruppens förväntningar för att vid behov kunna korrelera det som inte varit så intuitivt.\\\\
+Under en testsession fick testpersonen uppgiften att utföra olika moment som till exempel: "Logga in med användarnamn X", "Svara på formuläret." och "Lägg till en ny användare.". Med hjälp av testerna kunde projektmedlemmarna notera eventuella moment eller funktioner som inte uppfyllde gruppens krav på intuitet och därmed korrigera dessa. Om inga brister i användbarheten hittades gav testerna en möjlighet att bekräfta uppfyllandet av användbarhetskrav.\\\\
 Användbarhetstesterna gjordes av totalt 4 försökspersoner vars bakgrund var variende både gällande ålder och datorkunskaper. En del av försökspersonerna jobbade dagligen med datorer medan andra hade måttlig interaktion med en dator och var flitiga användare av mobiltelefonen. \\\\
-Försökspersoner valdes med baktanken om att de skulle vara av varierande karaktär för att mer rättvist spegla vår slutanvändare. Efter en testsession ställdes öppna frågor som till exempelvis "Var det något du tänkte på under tiden du svarade på frågorna?", varpå deras svar noterades och analyserades tillsammans med samtliga gruppmedlemmar. Användbarhetstestningen var grunden för att kunna ändra innehåll och göra det konsekvent samt uppenbar för användaren vad det gäller exempelvis namnval av knappar eller hur informationen var tillgänglig för användaren.
+Försökspersoner valdes med baktanken om att de skulle vara av varierande karaktär för att mer rättvist spegla vår slutanvändare. Efter en testsession ställdes öppna frågor som till exempelvis "Var det något du tänkte på under tiden du svarade på frågorna?", varpå deras svar noterades och analyserades tillsammans med samtliga gruppmedlemmar.\\\\
+Användbarhetstesterna var grunden för att kunna ändra systemets innehåll i syfte att göra systemet mer uppenbart och intuitivt för användaren. Testerna resulterade i att de användbarhetskrav gruppen framställt uppfylldes och systemet kunde därmed bekräftas vara tillräckligt intuitivt och uppebart.
+
 
 \section{Råd till studenter för kommande år}
 
