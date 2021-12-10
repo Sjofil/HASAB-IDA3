@@ -62,7 +62,7 @@
     
     % Format: YYYY-MM-DD
     \documentDate {\today}
-    \documentVersion Vv 0.1
+    \documentVersion Vv 1.0
     
 \author{Anna Bergvall - Oscar Blixt - Pontus Persson\\\\ David Vilppu - Filip Sjövall - Sabah Zafar}
 
@@ -122,15 +122,13 @@
 % ----- SKRIV UNDER VARJE TITEL ----- %
 
 \section{Arbetsfördelning}
-\textbf{Filip}: Haft rollen som projektledare vilket har medfört arbete som att planerat sprintar, förvaltat scrumboarden och varit talesperson vid interna och externa möten. Utöver rollen som projektledare har Filip jobbat med allt inom hemsidan och dokument, från att skapa templets med html och css för frontend till att implementera funktioner på hemsidan med API och javascript och tillslut skriva i dokument som slutrapporten.\\\\
-\textbf{Anna}: Varit projektledare tillsammans med Filip. Lett till en delad arbetsfördelning med att förvalta scrumboarden och planerat sprintar. Har också haft ansvar för mail med kunden. Vid möten har tagit rollen som sekreterare vid möten och generellt jobbat mycket med dokument som slutrapporten. Utöver detta har Anna fokuserat på arbete med databas och API för att implementera funktioner som inloggning för admin och till vara med och skriva databasen.\\\\
+\textbf{Filip}: Haft rollen som projektledare vilket har medfört arbete som att planerat sprintar, förvalta scrumboarden och vara talesperson vid interna och externa möten. Utöver rollen som projektledare har Filip jobbat med allt inom hemsidan och dokument, från att skapa templets med html och css för frontend till att implementera funktioner på hemsidan med API och javascript och tillslut skriva i slutrapporten.\\\\
+\textbf{Anna}: Varit projektledare tillsammans med Filip. Detta har lett till en delad arbetsfördelning med att förvalta scrumboarden och planera sprintar. Har också haft ansvar för mail med kunden. Vid möten har Anna tagit rollen som sekreterare, Anna har generellt jobbat mycket med dokument tillexempel slutrapporten. Utöver detta har hon fokuserat på arbete med databas och API för att implementera funktioner som inloggning för admin  och varit med och skrivit databasen.\\\\
 \textbf{David}: Arbetat med lite av allt inom projektet. Till en början hade David större delaktigthet i att designa databasen men gick senare över till att hjälpa till med design, som att designa utseende på knappar och att implementera funktioner i backend. I slutet av projketet hade David hand om användartesing samt att skriva i slutrapporten.\\\\
-\textbf{Oscar}: Har genom hela projektet haft stort focus på arbete med databas och api. Att implementera allt från inlogging för admin och svarspersoner, sammaställa data för brancher samt att skriva stora delar av databasen. Oscar har även varit delaktigt i att skriva slutrapporten.\\\\
+\textbf{Oscar}: Har genom hela projektet haft stort fokus på arbete med databas och api. Att implementera allt från inlogging för admin och svarspersoner, sammaställa data för brancher samt att skriva stora delar av databasen. Oscar har även varit lite delaktigt i att skriva slutrapporten.\\\\
 \textbf{Sabah}: Genom projketet har Sabah haft ansvar för dokument som Processrapport och arbetsrapport. Under projketet har Sabah dokumenterat det gruppen har gjort via arbetsrapporten och kontinuerligt skrivit i slutrapporten. Senare under projektet har Sabah också arbetat med testfall.\\\\
-\textbf{Pontus}: Har tagit stort ansvar för api:n under projektet. Från att undersöka vilka programmeringsvertyg gruppen skulle använda för att tackla uppgiften till att implementera stora moment som att få formuläret att gå mellan olika frågor, spara användardata i cookies samt skicka denna data till databasen. I slutet av projektet har Pontus även tagit ansvar för hur  systemet skall diftsättas på en server.\\\\
+\textbf{Pontus}: Har tagit stort ansvar för api:n under projektet. Från att undersöka vilka programmeringsvertyg gruppen skulle använda för att tackla uppgiften, till att implementera stora moment som att få formuläret att gå mellan olika frågor, spara användardata i cookies samt skicka denna data till databasen. I slutet av projektet har Pontus även tagit ansvar för hur  systemet skall diftsättas på en server.\\\\
 \section{Abstract}
-A maximum of 250 words!Brief summary. It should be enough to read abstracts to get a reasonable understanding of what has been done and how.
-\\\\
 Sustainability is becoming an increasingly important part of businesses’ and organisation’s values. As a result, a wide array of sustainability certificates are attainable for showing environmental good-will and to support continuous efforts. One of these certificates is Global Destination Sustainability Movement (GDSM). The city of Helsingborg, a national hub for events and conferences, is aiming to acquire this certificate. In order to be a part of GDSM, cities must fill in a form containing 69 criteria ”that measures, benchmarks and improves the sustainability strategy and performance of tourism and events destinations” (GDS-Index 2021, Methodology).\\\\
 For the purpose of collecting sustainability data from hotels and restaurants in Helsingborgs stad, a web based questionnaire was developed. The data was saved in a database using MySQL through the Flask API, written in Python. To ensure a mobile friendly and responsive application, the system was built using the CSS framework Bootstrap. 
 Given the fact that the success of the project was dependent on response frequency, making the system easy to use for users of various technichal backgrounds was paramount. 
@@ -139,7 +137,6 @@ Given the fact that the success of the project was dependent on response frequen
 
 \newpage
 \section{Introduktion}
-Short background, what is the basis for this project, for example an account of the project definition from the company and other relevant background.\\\\
 Vår kund Helsingborg Convention and Event Bureau(HCEB)\footnote{https://helsingborgceb.com/} önskade att gå med i det globala nätverket Global Destination Sustainability Movement (GDSM). Som medlem i nätverket rapporteras det årligen in hållbarhetsdata som bidrar till en positiv utveckling av staden som en mötes- och evenemangsdestination. Målet med projektet är att utveckla ett digitalt rapporteringsverktyg som samlar in och sammanställer hållbarhetsdata från aktörer inom besöksnäring i städer och kommuner. Rapporteringsverktyget erbjuder en skräddarsydd sammanställning och större kontroll över distribution och administration av den insamlade datan. Det utvecklade rapporteringsverktyget är en webbaserad hemsida som ska användas av aktörer med olika tekniska färdigheter, vilket gör att stora krav ställs på användarvänlighet.
 
 
@@ -149,16 +146,14 @@ Vår kund Helsingborg Convention and Event Bureau(HCEB)\footnote{https://helsing
 
 
 \section{Process}
-Needs to be divided in the sections: Planning, development, and risk analysis.
 
 \subsection{Planering}
-Relevant accounts of the planning process, including project model with motivations for choosing that specific model, time planning and other relevant information.\\\\
 En fördel med ett agilt arbetssätt där det finns en tät kontakt med uppdragsgivare är att det upprätthåller en regelbunden kommunikation mellan kunden och utvecklingsteamet där fungerande programvara prioriteras över utförlig dokumentation. Dessutom värderas möjlighet för anpassning och förändring. Projektgruppen har därför valt att tillämpa Scrum [1].  \\\\
 Projektets mål var att utveckla ett fungerande rapporteringsverktyg som ska användas av Helsingborg Convention and Event Bureau för sammanställning av \\ hållbarhetsdata från aktörer verksamma inom besöksnäringen i Helsingborg. \\\\
-Utifrån målbildanalysen valdes en lättrörlig projektmodell eftersom informationen och kunskapen om projektet i det inledande skedet var knapp. Vi ville snabbt kunna agera och ta beslut om arbetet skulle gå i fel riktning vilket det kan finnas risk för i början. Projektgruppen ville på det sättet ha frihet att kunna ta beslut i efterhand om det exempelvis skulle dyka upp nya krav. Förhoppningen var att detta skulle leda till en mer flexibel och anpassningsbar utveckling. Av denna anledning beslutades det att inledningsvis sätta våra sprints till en vecka. \\\\ 
+Utifrån målbildanalysen valdes en lättrörlig projektmodell eftersom informationen och kunskapen om projektet i det inledande skedet var knapp. Gruppen ville snabbt kunna agera och ta beslut om arbetet skulle gå i fel riktning vilket det kan finnas risk för i början. Medlemmarna ville på det sättet ha frihet att kunna ta beslut i efterhand om det exempelvis skulle dyka upp nya krav. Förhoppningen var att detta skulle leda till en mer flexibel och anpassningsbar utveckling. Av denna anledning beslutades det att inledningsvis sätta våra sprints till en vecka. \\\\ 
 En annan anledning till att arbeta med en lättrörlig modell var möjligheten att hela tiden jobba med en testbar produkt istället för att bara arbeta med en slutprodukt. Med andra ord var målet att jobba med "evolutionary prototypes" som inte skulle kasseras mellan varje användartest utan snarare vidareutvecklas enligt kundens önskemål [1].\\\\
-Senare i projektet jobbade vi mer med en iterativ process eftersom vi hade då fått en tydligare målbild och kunde strukturera upp arbetet. Vi valde då att jobba utifrån en scrum board där den uppgift som fanns högst upp på scrum boarden skulle bli tagen först. \\\\
-För att säkerställa att alla gruppmedlemmar var uppdaterade med rätt information hade vi kommunikation på discord. Vi hade även många inplanerade möten internt inom projektgruppen för att kunna ta viktiga besult och diskutera utvecklingsarbetet. Kunden var också involverad i vårt arbete med en kontinuerligt kontakt vid förutbestämda möten med jämna mellanrum för att få en återkoppling. Dessutom skapades en för projektgruppen gemensam mailadress för mailkommunikation med kunden under utvecklingen.
+Senare i projektet arbetades enligt en iterativ process eftersom en tydligare målbild hade skapats och gruppen kunde strukturera upp arbetet utifrån detta. Efter struktureringen valde gruppen att jobba utifrån en scrumboard där den uppgift som fanns högst upp på scrum boarden skulle bli tagen först. \\\\
+För att säkerställa att alla gruppmedlemmar var uppdaterade med rätt information hade vi kommunikation på discord. På schemat fanns även många inplanerade interna möten för att kunna ta viktiga besult och diskutera utvecklingsarbetet. Kunden var också involverad i arbetet genom en kontinuerligt kontakt vid förutbestämda möten med jämna mellanrum. Dessutom skapades en gemensam mailadress inom projektgruppen för mailkommunikation med kunden under utvecklingen.
 
 
 \subsection{Utveckling}
@@ -201,8 +196,6 @@ Utvecklingen fortsatte och tidigt under veckan färdigställdes all funktionalit
 
 
 \section{Resultat}
-Presentation of final prototype. Limited number (good selection) of images / screen dumps. Focus on interaction and functionalities, but also technical issues, without going too deep into details. In short, describe the projects technical set-up, where you borrowed code, frameworks etc. As far as possible, use the same way of referencing as for text. That is, try to identify an author (if there is only a pseudonym or user, it is better than nothing), a title and then link to website or repository.\\\\
-
 Vi utvecklade en enkel webbapplikation med Bootstrap, ett CSS-ramverk som underlättar byggandet av responsiva och mobilanpassade hemsidor. Vi valde att jobba med Bootstrap eftersom det finns fördefinierade CSS-klasser, många komponenter för HTML-element samt stöd för JavaScript-plugins, vilket gjorde utvecklingen mer flexibelt. När vi byggde databasen använde vi MySQL genom Flask API, programmerat i Python. Databasen lades på servern GoDaddy.com som är en molnplattform och fungerar som en webbhotell. Domänen som valdes för webbplatsen är HallbartHelsingborg.com\footnote{https://HallbartHelsingborg.com/}. Vi valde att utnyttja molntjänsten GoDaddy.com för att vi skulle ha friheten att hantera både servern och databasen oberoende av extern mjukvaruprogram. Databasens uppbyggnad kan återfinnas i figuren XXX i appendix XXX.\\\\
 
 Varje användare loggar in på applikationen med sin emailadress. Detta för att förenkla för svarspersonerna då de skulle slippa att skapa konto och lösenord. Figur 1 visar inloggningssidan för svarspersonerna. Loggan och färgen är hämtad från HCEB:s grafiska profil. \\
