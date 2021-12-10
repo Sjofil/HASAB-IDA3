@@ -78,7 +78,7 @@ def login():
             print(session['user_id'])
             return redirect(url_for('auth.adminLoggedIn'))
 
-        flash(error)
+        flash(error, 'error')
 
     return render_template('Admin-html/admin-log-in.html')
 
@@ -134,7 +134,7 @@ def adminLoggedIn():
                     flash(error, 'sucess')
             except pymysql.IntegrityError :
                 error="Användaren: " + request.form['adress'] + " finns inte i systemet"
-                flash(error 'error')
+                flash(error, 'error')
 
 
         if(request.form['submit']=="addUser"):
@@ -182,7 +182,7 @@ def adminLoggedIn():
                 flash("Lösenordsbytet lyckades.", 'sucess')
             else :
                 error="Lösenorden matchade ej"
-                flash(error)
+                flash(error,'')
     
         # Om admin sökt en enskild rapport 
         if(request.form['submit'] == "findReport"):
