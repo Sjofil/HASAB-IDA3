@@ -133,8 +133,8 @@ def adminLoggedIn():
                     error="Användaren: " + request.form['adress'] + " togs bort"
                     flash(error, 'sucess')
             except pymysql.IntegrityError :
-                error="Användaren: " + request.form['adress'] + "finns inte i systemet"
-                flash(error)
+                error="Användaren: " + request.form['adress'] + " finns inte i systemet"
+                flash(error 'error')
 
 
         if(request.form['submit']=="addUser"):
@@ -160,10 +160,10 @@ def adminLoggedIn():
                 
                 cursor.execute(stmt, (branch, request.form['adress'], name))
                 conn.commit()
-                flash("Du la till användaren " + request.form['adress'] + "i systemet", 'success')
+                flash("Du la till användaren " + request.form['adress'] + " i systemet", 'success')
             except pymysql.IntegrityError as e:
                 error="Emailadressen:  " + request.form['adress'] + " finns redan i systemet"
-                flash(error) 
+                flash(error, 'error') 
             finally:
                 cursor.close
 
