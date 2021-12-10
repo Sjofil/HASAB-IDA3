@@ -160,9 +160,9 @@ def adminLoggedIn():
                 
                 cursor.execute(stmt, (branch, request.form['adress'], name))
                 conn.commit()
-                flash("Du la till användaren " + request.form['adress'] + " i systemet", 'success')
+                flash("Användaren: " + request.form['adress'] + " har lagts till i systemet", 'success')
             except pymysql.IntegrityError as e:
-                error="Emailadressen:  " + request.form['adress'] + " finns redan i systemet"
+                error="Användaren:  " + request.form['adress'] + " finns redan i systemet"
                 flash(error, 'error') 
             finally:
                 cursor.close
@@ -191,7 +191,7 @@ def adminLoggedIn():
                 return redirect(url_for('auth.specificReport'))   
             else:
                 error="Användaren: " + request.form.get('text') + " finns inte"
-                flash(error)
+                flash(error, 'error')
 
 
     return render_template("Admin-html/admin-index.html")
