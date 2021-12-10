@@ -85,7 +85,7 @@ def main():
             response.set_cookie('answers', '', expires=0)
             return response
 
-        flash(error)
+        flash(error, 'error')
     return render_template("index.html")
 
 def get_questions(typeID) -> List[Question]:

@@ -119,7 +119,7 @@ def adminLoggedIn():
             cursor.execute(stmt)
             conn.commit()
             error="Alla svar från användarna togs bort"
-            flash(error)
+            flash(error, 'success')
 
         if(request.form['submit'] == "removeUser"):
            
@@ -131,7 +131,7 @@ def adminLoggedIn():
                     cursor.execute(stmt, request.form['adress'])
                     conn.commit()
                     error="Användaren: " + request.form['adress'] + " togs bort"
-                    flash(error)
+                    flash(error, 'sucess')
             except pymysql.IntegrityError :
                 error="Användaren: " + request.form['adress'] + "finns inte i systemet"
                 flash(error)
@@ -160,6 +160,7 @@ def adminLoggedIn():
                 
                 cursor.execute(stmt, (branch, request.form['adress'], name))
                 conn.commit()
+                flash("Du la till användaren " + request.form['adress'] + "i systemet", 'success')
             except pymysql.IntegrityError as e:
                 error="Emailadressen:  " + request.form['adress'] + " finns redan i systemet"
                 flash(error) 
@@ -178,6 +179,7 @@ def adminLoggedIn():
                 cursor=conn.cursor()
                 cursor.execute(stmt, (request.form['pass1'], session['user_id']))
                 conn.commit()
+                flash("Lösenordsbytet lyckades.", 'sucess')
             else :
                 error="Lösenorden matchade ej"
                 flash(error)
