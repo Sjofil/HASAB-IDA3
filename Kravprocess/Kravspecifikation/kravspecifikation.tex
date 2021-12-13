@@ -106,9 +106,9 @@
     \begin{itemize}
         \item \textbf{Administratör:} Administratören har tillgång till systemets alla funktioner.
         \item \textbf{Bransch:} Resturanger, hotell, anläggningar samt byråer är de branscher som syftas på.
-         \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ.
+         \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ samt statistikföring över svaren.
         \item \textbf{HCEB:} Förkortning av Helsingborg Convention and Event Bureau, beställare av systemet.
-        \item \textbf{Session:} Data som sparas under tiden som svarspersonen befinner sig på hemsidan.
+        \item \textbf{Session:} Data som sparas under tiden som slutanvändaren befinner sig på hemsidan.
         \item \textbf{Svarspersoner:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
         \item\textbf{Stabila krav:}  Stabila krav är krav som inte är ändringbenägna - de baseras på funktioner som är grundläggande för att systemet ska möta beställarens behov.
          \item \textbf{Uteslutna krav:}  Krav som inte längre är aktuella.
@@ -125,7 +125,7 @@
     \subsection{Ändringsbenägna krav}
     
     \large{\textbf{R1.}}
-    \normalsize{Frågeformuläret, som är en del av systemet och används av svarspersonerna ska ha ett utseende likt figur 1.}
+    \normalsize{Frågeformuläret, som är en del av systemet och används av slutanvändarna ska ha ett utseende likt figur 1.}
     
     \begin{figure}[h!]
     \caption{Prototyp över frågeformuläret}
@@ -149,7 +149,7 @@
     
     \large{\textbf{R3.}}
     \normalsize{Följande scenario ska stödjas av systemet. \\
-    \textbf{Scenario:} Svarspersonen navigerar till frågeformuläret enligt figur 1.
+    \textbf{Scenario:} Svarspersonen navigerar till slutanvändarnas frågeformulär enligt figur 1.
         
     \noindent \textbf{Förutsättningar:} Svarspersonen har fått ett email från från HCEB. Mailet innehåller en länk till svarspersonenernas frågeformulär enligt figur 1.
         \begin{enumerate}
@@ -163,11 +163,11 @@
     \normalsize{Följande scenario ska stödjas av systemet. \\
     \textbf{Scenario:} Svarspersonen ska logga in på hemsidan med samma mailadress som mailet skickades till.
         \\
-    \textbf{Förutsättningar:} Svarspersonen har fått en engångskod i samma mail som länken samt att svarspersonen befinner sig på startsidan enligt figur 1.
+    \textbf{Förutsättningar:} Svarspersonen har fått en engångskod i samma mail som länken samt att svarspersonen befinner sig på startsidan.
         \begin{enumerate}
            \item Svarspersonen skriver in samma mailadress som mailet skickades till.
-           \item Svarspersonen trycker på knappen "Första frågan".
-           \item  Svarspersonen blir omdirigerad till första frågan och kan börja svara på formuläret.
+           \item Svarspersonen trycker på knappen "Första frågan" enligt figur 1.
+           \item  Svarspersonen blir omdirigerad till första frågan enligt figur 1 och kan börja svara på formuläret.
         \end{enumerate}
    }
    
@@ -182,7 +182,7 @@
                 \item Svarspersonen svarar på sista frågan.
                 \item Svarspersonen möts av en sidan med tack text enligt figur 1.
                 \item Svarspersonen trycker på knappen "Skicka in".
-                \item  Svarspersonen möts av en bekräftelsesida som bekräftar att formuläret är inskickat enligt figur 1.
+                \item  Svarspersonen möts av en bekräftelsesida enligt figur 1 som bekräftar att formuläret är inskickat.
             \end{enumerate}
 }
 
@@ -234,10 +234,10 @@ Krav \textit{SF-1} till och med \textit{SF-22} och \textit{T-1} till och med \te
     
     \subsection{Stabila krav}
     \noindent \large{\textbf{R8.}}
-    \normalsize{Systemet ska fungera enligt figur 3.
+    \normalsize{Systemet ska fungera enligt figur 2.
     
     \begin{figure}[h!]
-    \caption{Kontext-diagram: Det utvecklade systemet innefattar \textit{Server, API, GUI} och \textit{Systemet}} och kommer hantera information mellan samtliga pilar exklusive kommunikationen mellan användare och HASAB. Flödet genom systemet börjar med att ett mail skickas från HASAB till svarspersonen innehållande en länk till programmet. Svarspersonen använder länken för att få tillgång till frågeformuläret. Svarspersonens svar lagras i databasen vilket administratören(motsvarande HASAB i figuren) kan ladda ner en sammanställning av.\\
+    \caption{Kontext-diagram: Det utvecklade systemet innefattar \textit{Server, API, GUI} och \textit{Systemet}} och kommer hantera information mellan samtliga pilar exklusive kommunikationen mellan användare och HASAB.
     
     \includegraphics[width=150mm]{Kontextdiagram.png}
     
@@ -287,12 +287,12 @@ Krav \textit{SF-1} till och med \textit{SF-22} och \textit{T-1} till och med \te
 \vspace{1em}
 
 \noindent \large{\textbf{R14.}}
-    \normalsize{En medelkunnig svarsperson ska kunna genomföra scenariot som beskrivs i \textbf{R3} inom en minut.
+    \normalsize{En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R3} inom en minut.
     }
     \vspace{1em}
     
 \noindent \large{\textbf{R15.}}
-    \normalsize{En medelkunnig svarsperson ska kunna genomföra scenariot som beskrivs i \textbf{R4} inom 20 sekunder.
+    \normalsize{En medelkunnig slutanvändare ska kunna genomföra scenariot som beskrivs i \textbf{R4} inom 20 sekunder.
     }
     
     \vspace{1em}    
