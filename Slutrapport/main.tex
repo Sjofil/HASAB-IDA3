@@ -203,18 +203,26 @@ Utvecklingen fortsatte och tidigt under veckan färdigställdes all funktionalit
 
 
 \section{Resultat}
-Vi utvecklade en enkel webbapplikation med Bootstrap, ett CSS-ramverk som underlättar byggandet av responsiva och mobilanpassade hemsidor. Vi valde att jobba med Bootstrap eftersom det finns fördefinierade CSS-klasser, många komponenter för HTML-element samt stöd för JavaScript-plugins, vilket gjorde utvecklingen mer flexibelt. När vi byggde databasen använde vi MySQL genom Flask API, programmerat i Python. Databasen lades på servern GoDaddy.com som är en molnplattform och fungerar som en webbhotell. Domänen som valdes för webbplatsen är HallbartHelsingborg.com\footnote{https://HallbartHelsingborg.com/}. Vi valde att utnyttja molntjänsten GoDaddy.com för att vi skulle ha friheten att hantera både servern och databasen oberoende av extern mjukvaruprogram. Databasens uppbyggnad kan återfinnas i figuren XXX i appendix XXX.\\\\
+Vi utvecklade en enkel webbapplikation med Bootstrap, ett CSS-ramverk som underlättar byggandet av responsiva och mobilanpassade hemsidor. Vi valde att jobba med Bootstrap eftersom det finns fördefinierade CSS-klasser, många komponenter för HTML-element samt stöd för JavaScript-plugins, vilket gjorde utvecklingen mer flexibelt. När vi byggde databasen använde vi MySQL genom Flask API, programmerat i Python. Databasen lades på servern GoDaddy.com som är en molnplattform och fungerar som en webbhotell. Domänen som valdes för webbplatsen är HallbartHelsingborg.com\footnote{https://HallbartHelsingborg.com/}. Vi valde att utnyttja molntjänsten GoDaddy.com för att vi skulle ha friheten att hantera både servern och databasen oberoende av extern mjukvaruprogram. Figur \ref{fig:ER}} nedan visar databasens datamodell.\\\\
+
+\begin{figure}
+    \centering
+    \includegraphics[width=10cm]{ER-diagram.png}
+    \caption{ER-diagram över databasen.}
+    \label{fig:ER}
+\end{figure}
+
 Användbarhetstesterna tillsammans med intervjuandet av försökspersoner resulterade i att de användbarhetskrav gruppen framställt uppfylldes och systemet kunde därmed bekräftas vara tillräckligt intuitivt och uppebart.\\\\
-Varje användare loggar in på applikationen med sin emailadress. Detta för att förenkla för svarspersonerna då de skulle slippa att skapa konto och lösenord. Figur 1 visar inloggningssidan för svarspersonerna. Loggan och färgen är hämtad från HCEB:s grafiska profil. \\
+Varje användare loggar in på applikationen med sin emailadress. Detta för att förenkla för svarspersonerna då de skulle slippa att skapa konto och lösenord. Figur \ref{fig:login} visar inloggningssidan för svarspersonerna. Loggan och färgen är hämtad från HCEB:s grafiska profil. \\
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{images/log_in_page.png}
     \caption{Inloggningssidan för personer som gör enkäten}
-    \label{fig:my_label}
+    \label{fig:login}
 \end{figure}
 
-Beställaren hade krav på ett enkelt användargränssnitt eftersom svarspersonerna antogs ha varierande teknisk kunskap. Målet var att begränsa antalet valmöjligheter användarna skulle ställas inför. Applikationen kommer att uppfattas som mer intuitiv om användarna slipper undra om de gör rätt eller om en viss länk eller knapp går att klicka på [5]. Därför finns det minimalt med knappar och val i själva formuläret. I databasen har varje företag ett branschattribut knutet till sig. Även här är syftet att begränsa antalet valmöjligheter samtidigt som endast de frågor som faktiskt är riktade till branschen personen företräder visas. I figur 2 nedan syns den inledande frågan för restaurangbranschen.
+Beställaren hade krav på ett enkelt användargränssnitt eftersom svarspersonerna antogs ha varierande teknisk kunskap. Målet var att begränsa antalet valmöjligheter användarna skulle ställas inför. Applikationen kommer att uppfattas som mer intuitiv om användarna slipper undra om de gör rätt eller om en viss länk eller knapp går att klicka på [5]. Därför finns det minimalt med knappar och val i själva formuläret. I databasen har varje företag ett branschattribut knutet till sig. Även här är syftet att begränsa antalet valmöjligheter samtidigt som endast de frågor som faktiskt är riktade till branschen personen företräder visas. I figur \ref{fig:question} nedan syns den inledande frågan för restaurangbranschen.
 
 
 \begin{figure}[H]
@@ -228,7 +236,7 @@ Beställaren hade krav på ett enkelt användargränssnitt eftersom svarspersone
 Samma html-sida användes för samtliga frågor, där själva frågeinnehållet uppdateras dynamiskt med hjälp av JavaScript och Flask när användaren klickar i ett svarsalternativ. Som ett steg i att skapa en mer flexibel och modulär applikation hämtas frågorna och svaren direkt från databasen.
 
 Applikationen innehåller även en administrationssida.
- På adminsidan kan man sammanställa data och få en överblick av statistiken men även söka efter svar från en särskild aktör som man är intresserad av. I figur 3 nedan syns själva inloggningssidan.
+ På adminsidan kan man sammanställa data och få en överblick av statistiken men även söka efter svar från en särskild aktör som man är intresserad av. I figur \ref{fig:admin_login} nedan syns själva inloggningssidan.
  
  \begin{figure}[H]
     \centering
@@ -237,13 +245,13 @@ Applikationen innehåller även en administrationssida.
     \label{fig:admin_login}
 \end{figure}
 
-Adminsidan kan endast nås via URL:en för att inte förvirra personerna som svarar på formuläret. I inloggat läge finns knappvalen "välj bransch", för att se sammanställning av en enskild bransch, "sök rapport", för att se en enskild rapport, och en knapp för att logga ut. Dessutom finns det i högra övre hörnet en kugghjulsikon. När man klickar på den syns en drop-downmeny med val för att byta lösenord och lägga till användare. När admin trycker på någon av dessa kommer en pop-up-ruta med textfält för inmatning av nytt lösen, användare, eller för att söka efter specifik rapport. Figur 4 visar adminsiddan i inloggat läge.
+Adminsidan kan endast nås via URL:en för att inte förvirra personerna som svarar på formuläret. I inloggat läge finns knappvalen "välj bransch", för att se sammanställning av en enskild bransch, "sök rapport", för att se en enskild rapport, och en knapp för att logga ut. Dessutom finns det i högra övre hörnet en kugghjulsikon. När man klickar på den syns en drop-downmeny med val för att byta lösenord och lägga till användare. När admin trycker på någon av dessa kommer en pop-up-ruta med textfält för inmatning av nytt lösen, användare, eller för att söka efter specifik rapport. Figur \ref{fig:admin_index} visar adminsiddan i inloggat läge.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{images/admin_index.png}
     \caption{Administrationssidan}
-    \label{fig:question}
+    \label{fig:admin_index}
 \end{figure}
 
 Funktionerna som visar inrapporterade data är implementerad med JavaScript och vyn är statisk och har ingen nedladdningsfunktion.
@@ -298,7 +306,7 @@ Projektgruppen lyckades bygga en fungerande rapporteringsverktyg som tillåter a
 10–10 från https://canvas.education.lu.se/courses/13397/files/
 1703747?wrap=1 \\\\
 \noindent
-[4] Eriksson, M. \& Lilliesköld J. (2005), Handbok f ̈or mindre projekt, Liber, Solna, Sweden, pp. 42–46. \\\\
+[4] Eriksson, M. \& Lilliesköld J. (2005), Handbok f̈or mindre projekt, Liber, Solna, Sweden, pp. 42–46. \\\\
 
 \noindent
 [5] Krug S., (2010). Don’t Make Me Think, New Riders Publishing, Indianapolis, IN, United States. \\\\
