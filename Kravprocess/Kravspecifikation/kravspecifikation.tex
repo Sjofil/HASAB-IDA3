@@ -106,7 +106,7 @@
     \begin{itemize}
         \item \textbf{Administratör:} Administratören har tillgång till systemets alla funktioner.
         \item \textbf{Bransch:} Resturanger, hotell, anläggningar samt byråer är de branscher som syftas på.
-         \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ samt statistikföring över svaren.
+         \item \textbf{Frågeformulär:} Ett webbaserat system som innehåller frågor med flervalsalternativ.
         \item \textbf{HCEB:} Förkortning av Helsingborg Convention and Event Bureau, beställare av systemet.
         \item \textbf{Session:} Data som sparas under tiden som svarspersonen befinner sig på hemsidan.
         \item \textbf{Svarspersoner:}  De personer som svarar på frågeformuläret, vilka främst arbetar inom besöksnäringen i Helsingborgs stad. 
@@ -163,11 +163,11 @@
     \normalsize{Följande scenario ska stödjas av systemet. \\
     \textbf{Scenario:} Svarspersonen ska logga in på hemsidan med samma mailadress som mailet skickades till.
         \\
-    \textbf{Förutsättningar:} Svarspersonen har fått en engångskod i samma mail som länken samt att svarspersonen befinner sig på startsidan.
+    \textbf{Förutsättningar:} Svarspersonen har fått en engångskod i samma mail som länken samt att svarspersonen befinner sig på startsidan enligt figur 1.
         \begin{enumerate}
            \item Svarspersonen skriver in samma mailadress som mailet skickades till.
-           \item Svarspersonen trycker på knappen "Första frågan" enligt figur 1.
-           \item  Svarspersonen blir omdirigerad till första frågan enligt figur 1 och kan börja svara på formuläret.
+           \item Svarspersonen trycker på knappen "Första frågan".
+           \item  Svarspersonen blir omdirigerad till första frågan och kan börja svara på formuläret.
         \end{enumerate}
    }
    
@@ -182,7 +182,7 @@
                 \item Svarspersonen svarar på sista frågan.
                 \item Svarspersonen möts av en sidan med tack text enligt figur 1.
                 \item Svarspersonen trycker på knappen "Skicka in".
-                \item  Svarspersonen möts av en bekräftelsesida enligt figur 1 som bekräftar att formuläret är inskickat.
+                \item  Svarspersonen möts av en bekräftelsesida som bekräftar att formuläret är inskickat enligt figur 1.
             \end{enumerate}
 }
 
@@ -237,7 +237,7 @@ Krav \textit{SF-1} till och med \textit{SF-22} och \textit{T-1} till och med \te
     \normalsize{Systemet ska fungera enligt figur 3.
     
     \begin{figure}[h!]
-    \caption{Kontext-diagram: Det utvecklade systemet innefattar \textit{Server, API, GUI} och \textit{Systemet}} och kommer hantera information mellan samtliga pilar exklusive kommunikationen mellan användare och HASAB. Flödet genom systemet börjar med att ett mail skickas från HASAB till svarspersonen innehållande en länk till programmet. Svarspersonen använder länken för att få tillgång till programmet för att kunna svara på formuläret. Svarspersonens svar lagras i databasen vilket administratören(motsvarande HASAB i figuren) kan ladda ner en sammanställning av, både i form av en hel bransch samt i enskild aktör.\\
+    \caption{Kontext-diagram: Det utvecklade systemet innefattar \textit{Server, API, GUI} och \textit{Systemet}} och kommer hantera information mellan samtliga pilar exklusive kommunikationen mellan användare och HASAB. Flödet genom systemet börjar med att ett mail skickas från HASAB till svarspersonen innehållande en länk till programmet. Svarspersonen använder länken för att få tillgång till frågeformuläret. Svarspersonens svar lagras i databasen vilket administratören(motsvarande HASAB i figuren) kan ladda ner en sammanställning av.\\
     
     \includegraphics[width=150mm]{Kontextdiagram.png}
     
