@@ -726,22 +726,93 @@ De produktrisker med störst riskmått identifierades inledningsvis till
 
 Risk 1 har inte förändrats nämvärt under utvecklingen, däremot har mycket gjorts för att verkligen begränsa användarnas valmöjligheter under själva besvarandet av formuläret. Det är möjligt att adminsidan inte är riktigt lika intuitiv som frågemodulen. Konsekvenserna av en ointuitiv adminsida ansågs vara mindre än ett ointuitivt formulär, eftersom hela projektets framgång hängde på att folk faktiskt svarar på frågorna. 
 
-Risk 2 har inte följts upp särskilt noga under utvecklingens gång. Sannolikheten sattes då till 4 och det är bara att konstatera att detta var ett korrekt antagande. Nu skrevs inte systemet i Java utan i Python vilket medförde en annan större risk: Ingen av gruppens medlemmar hade någon särskild erfarenhet av Python. Risken minimerades av att det fanns en stark vilja hos alla att faktiskt lära sig språket.
-
+Risk 2 har inte följts upp särskilt noga under utvecklingens gång. Sannolikheten sattes då till 4 och det är bara att konstatera att detta var ett korrekt antagande. Nu skrevs inte systemet i Java utan i Python vilket medförde en annan större risk: Ingen av gruppens medlemmar hade någon särskild erfarenhet av Python. Risken minimerades av att det fanns en stark vilja hos alla att faktiskt lära sig språket.\\\\
 Risk 3 har inte förändrats. 
 
-\subsection{Våran användare}
-
-De användarna våran produkt har är personer som jobbar inom någon slags service branch, vi har antagit att alla som tänker använda produkten är stressade och vill inte behöva spendera mer tid en nödvändigt på vår produkt.
-Vi har även antagit att dessa användarna är personer runt 30-50 år och är förmodligen inte så vana vid att arbeta med datorer. När vi senare under projekts gång fick lite mer insikt till vilka våran användare var så märkte vi att vi har haft en rätt så bra uppfattning om vilka våran användare var redan från början. Så vi har inte behövt tänka om vilka våran användare kommer att vara.
+\newpage
 
 \subsection{Entreprenörsskap}
+\subsubsection{Partners}
+Projektets framgång är beroende av olika aktörer listade nedan:
+
+\begin{itemize}
+    \item Anställda och konsulter
+    \begin{itemize}
+    \item De anställda är de som ser till att produkten skapas.
+    \end{itemize}
+    \item Kunden
+    \begin{itemize}
+    \item Utan kunder genereras inga intäkter.
+    \end{itemize}
+    \item Slutanvändarna
+    \begin{itemize}
+    \item Slutanvändare krävs för att produkten ska uppfylla sitt syfte, dvs. statistikföra svar på olika frågeställningar.
+    \end{itemize}
+    \item Ägarna av servern
+    \begin{itemize}
+    \item Ägarna av servern tillhandahåller servern vilket är grunden i att spara och behandla datan på hemsidan.
+    \end{itemize}
+    \item Internetleverantörer
+    \begin{itemize}
+        \item Eftersom produkten är ett internetbaserat frågeformulär krävs internetåtkomst, vilket internetleverantörerna står för.
+    \end{itemize}
+    \item Marknadsföringsplattformar
+    \begin{itemize}
+        \item För att kunna generera intäkter krävs en kundbas vilket kan nås via marknadsföringsplattformar.
+    \end{itemize}
+\end{itemize}
+\newpage
+\subsubsection{Aktiviteter}
+Utöver aktörerna är projektet beroende av följande aktiviteter:
+
+\begin{itemize}
+    \item Utveckling
+    \begin{itemize}
+        \item Utveckling är den primära aktiviteten för att produkten ska kunna skräddarsys efter kundens behov och önskemål.
+    \end{itemize}
+    \item Statistikföring
+    \begin{itemize}
+        \item Då data är insamlad statistikförs detta via programmering, vilket är en av produktens viktiaste funktioner.
+    \end{itemize}
+    \item Marknadsföring
+    \begin{itemize}
+        \item Utöver marknadsföringsplattformar krävs eget engagemang av marknadsföring genom exempelvis deltagande på mässor.
+    \end{itemize}
+    \item Sälj
+    \begin{itemize}
+        \item För att kunna knyta kontakter och slutligen avtal krävs ett konstant arbete med sälj.
+    \end{itemize}
+\end{itemize}\\\\
+
+\subsubsection{Resurser}
+Vidare har projektets framgång varit beroende av följande resurser:
+\begin{itemize}
+    \item Anställda
+    \begin{itemize}
+        \item Den absolut viktigaste resursen är att det finns tillräckligt med anställda för att kunna möta kundens behov.
+    \end{itemize}
+    \item Aktiva användare
+    \begin{itemize}
+        \item Aktiva användare är viktigt för att kunna generera intäkter.
+    \end{itemize}
+    \item Programvaran
+    \begin{itemize}
+        \item Hemsidan, databasen och servern är innefattar hela systemet och är den produkt som kunderna erbjuds. Den är oumbärlig.
+    \end{itemize}
+    \item Data från beställaren
+    \begin{itemize}
+        \item Frågor samt på vilket sätt datan ska sammanställas krävs för att systemet ska kunna byggas.
+    \end{itemize}
+\end{itemize}
+
+
+
 \subsubsection{Värdeerbjudande (Value Preposition)}
 
-Sustainable Forms riktar sig mot organisationer och myndigheter som har ett behov av att samla in kvantitativ data snabbt och enkelt och dessutom har speciella krav på utdatans format. Det kan vara så att den insamlade informationen ska utgöra underlag för ansökningar eller andra rapporter. Då ser vi till att datan passar den målformateringen.
+Vad är det som skiljer Sustainable Forms från konkurrenter som Google Forms?
 
-Vi tror att folk vill lägga så lite tid av sina liv som möjligt på att svara på enkäter. Dessutom brukar det uppfattas som störande om man först måste skapa ett konto för att sen kunna fylla i sina svar. Med Sustainable Forms flyttas ansvaret för registreringen av svarspersonerna över till administratören. Administratören fyller i en unik identifierare för varje svarsperson som också kommer att fungera som inlogging i systemet. 
-
+Sustainable Forms riktar sig mot organisationer och myndigheter som har ett behov av att samla in kvantitativ data snabbt och enkelt och dessutom har speciella krav på utdatans format. Det kan vara så att den insamlade informationen ska utgöra underlag för ansökningar eller andra rapporter. Då ser vi till att datan passar den målformateringen. \\\\
+Vi tror att folk vill lägga så lite tid av sina liv som möjligt på att svara på enkäter. Dessutom brukar det uppfattas som störande om man först måste skapa ett konto för att sen kunna fylla i sina svar. Med Sustainable Forms flyttas ansvaret för registreringen av svarspersonerna över till administratören. Administratören fyller i en unik identifierare för varje svarsperson som också kommer att fungera som inlogging i systemet.\\\\
 Sustainable Forms har ett enkelt och stilrent gränssnitt som funkar på olika typer av skärmar. Det förutsätter inte heller någon större teknisk färdighet.
 
 \bibliographystyle{alpha}
