@@ -11,7 +11,7 @@ def get_db():
         current_app.config['MYSQL_DATABASE_USER'] = 'developer'
         current_app.config['MYSQL_DATABASE_PASSWORD'] = 'Developer'
         current_app.config['MYSQL_DATABASE_DB'] = 'Sustainableform'
-        current_app.config['MYSQL_DATABASE_HOST'] = '85.228.153.209'
+        current_app.config['MYSQL_DATABASE_HOST'] = '85.225.90.155'
         mysql.init_app(current_app)
         g.db=mysql.connect()
     return g.db
